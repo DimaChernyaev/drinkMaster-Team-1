@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { colorStyled } from '../../helpers/colorStyled';
 
 export const Container = styled.div`
   max-width: 1440px;

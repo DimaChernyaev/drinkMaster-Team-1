@@ -1,4 +1,4 @@
-import { RecipePreparation } from '../RecipePreparation/RecipePreparation';
+import { RecipePreparation } from './RecipePreparation/RecipePreparation';
 
 const Drink = () => {
   // console.log(id);

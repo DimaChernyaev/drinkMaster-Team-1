@@ -1,5 +1,14 @@
+import { RecipePreparation } from '../RecipePreparation/RecipePreparation';
+
 const Drink = () => {
-  return <div>DrinkPage</div>;
+  // console.log(id);
+
+  return (
+    <>
+      <div>DrinkPage</div>
+      <RecipePreparation />
+    </>
+  );
 };
 
 export default Drink;

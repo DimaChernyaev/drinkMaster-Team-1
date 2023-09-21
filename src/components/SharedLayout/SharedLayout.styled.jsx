@@ -18,3 +18,9 @@ export const Container = styled.div`
     width: 1280px;
   }
 `;
+
+export const Header = styled.header`
+  padding-top: 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid ${colorStyled.colorWhiteTwenty};
+`;

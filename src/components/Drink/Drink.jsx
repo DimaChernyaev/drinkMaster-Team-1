@@ -1,3 +1,5 @@
+import { DrinkIngredientsList } from './DrinkIngredientsList/DrinkIngredientsList';
+import { DrinkPageHero } from './DrinkPageHero/DrinkPageHero';
 import { RecipePreparation } from './RecipePreparation/RecipePreparation';
 
 const Drink = () => {
@@ -5,7 +7,8 @@ const Drink = () => {
 
   return (
     <>
-      <div>DrinkPage</div>
+      <DrinkPageHero />
+      <DrinkIngredientsList />
       <RecipePreparation />
     </>
   );

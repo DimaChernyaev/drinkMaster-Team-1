@@ -10,25 +10,25 @@
 репозиторію свого проєкту. Для цього натисни на кнопку `"Use this template"` і
 обери опцію `"Create a new repository"`, як показано на зображенні.
 
-![Creating repo from a template step 1](./src/assets/template-step-1.png)
+![Creating repo from a template step 1]
 
 На наступному кроці відкриється сторінка створення нового репозиторію. Заповни
 поле його імені, переконайся що репозиторій публічний, після чого натисни кнопку
 `"Create repository from template"`.
 
-![Creating repo from a template step 2](./src/assets/template-step-2.png)
+![Creating repo from a template step 2]
 
 Після того як репозиторій буде створено, необхідно перейти в налаштування
 створеного репозиторію на вкладку `Settings` > `Actions` > `General` як показано
 на зображенні.
 
-![Settings GitHub Actions permissions step 1](./src/assets/gh-actions-perm-1.png)
+![Settings GitHub Actions permissions step 1]
 
 Проскроливши сторінку до самого кінця, у секції `"Workflow permissions"` вибери
 опцію `"Read and write permissions"` і постав галочку в чекбоксі. Це необхідно
 для автоматизації процесу деплою проєкту.
 
-![Settings GitHub Actions permissions step 2](./src/assets/gh-actions-perm-2.png)
+![Settings GitHub Actions permissions step 2]
 
 Тепер у тебе є особистий репозиторій проєкту, зі структурою файлів і папок
 репозиторія-шаблону. Далі працюй з ним як з будь-яким іншим особистим
@@ -55,7 +55,7 @@
 виставити роздачу продакшн версії файлів із папки `/root` гілки `gh-pages`, якщо
 це не було зроблено автоматично.
 
-![GitHub Pages settings](./src/assets/repo-settings.png)
+![GitHub Pages settings]
 
 ### Статус деплоя
 
@@ -68,14 +68,14 @@
 Детальнішу інформацію про статус можна подивитися, клікнувши на іконку, і в
 випадаючому вікні перейти за посиланням `Details`.
 
-![Deployment status](./src/assets/deploy-status.png)
+![Deployment status]
 
 ### Жива сторінка
 
 Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися за
 адресою, вказаною в налаштуваннях GitHub-репозиторію (`Settings` > `Pages`).
 
-![GitHub-pages URL](./src/assets/gh-pages-url.png)
+![GitHub-pages URL]
 
 Якщо відкривається порожня сторінка, переконайся що у вкладці `Console` немає
 помилок пов'язаних із неправильними шляхами до CSS і JS файлів проекту
@@ -96,7 +96,7 @@
 ### Додавання змінних в  .env
 Для зберігання конфігураційних даних, таких як API ключі, адреси серверів, порти та інші змінні використовуйте файл `.env`. Для цього необхідно з назви файлу `.env.template` видалити зайві ".template",після чого файл відповідатиме умовам файлу `.ignore` і буде зберігатися лише локально, не публікуючись на віддаленому репозиторії з метою безпеки. Задля використання змінних на GitHub-pages усі змінні, передбачені файлом .env, слід додати до файлу `.github/workflows/deploy.yml`, а також до налаштувань репозиторію. Для цього слід перейти (`Settings` > `Secrets and variables` > `Actions`)
 
-![Add enviroments from .env](./src/assets/secrets.png)
+![Add enviroments from .env]
 
 ## Як це працює
 

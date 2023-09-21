@@ -1,15 +1,41 @@
-body {
-  background-color: #000;
-  background-image: url('./assets/background.png');
-  background-size: auto 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  font-family: 'Roboto', sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Manrope', sans-serif;
+  src: url(../src/assets/fonts/Manrope-Regular.ttf);
   font-weight: 400;
+  font-display: swap;
   font-style: normal;
-  color: #111111;
-  width: 100%;
-  height: 100vh;
+}
+
+@font-face {
+  font-family: 'Manrope', sans-serif;
+  src: url(../src/assets/fonts/Manrope-Medium.ttf);
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope', sans-serif;
+  src: url(../src/assets/fonts/Manrope-SemiBold.ttf);
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+body {
+  background-color: #0a0a11;
+  /* background-image: url('./assets/background.png'); */
+  /* background-size: auto 100%;
+  background-position: center center;
+  background-repeat: no-repeat; */
+  font-family: 'Manrope', sans-serif;
+  color: #f3f3f3;
 }
 h1,
 h2,
@@ -19,9 +45,12 @@ h5,
 h6,
 p {
   margin-top: 0;
+  padding: 0;
 }
 a {
   text-decoration: none;
+  font-family: inherit;
+  color: inherit;
 }
 ul {
   list-style: none;
@@ -33,4 +62,5 @@ img {
 }
 button {
   cursor: pointer;
+  font-family: inherit;
 }

@@ -25,5 +25,3 @@ export const Header = styled.header`
   padding-bottom: 22px;
   border-bottom: 1px solid ${colorStyled.colorWhiteTwenty};
 `;
-
-console.log(colorStyled.colorWhiteTwenty);

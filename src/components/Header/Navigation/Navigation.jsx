@@ -10,8 +10,6 @@ const Navigation = () => {
       <StyledLink to="/favorites">Favorites</StyledLink>
 
       <StyledLink to="/welcome">Welcome</StyledLink>
-      <StyledLink to="/signup">Sign Up</StyledLink>
-      <StyledLink to="/signin">Sign In</StyledLink>
     </NavigationList>
   );
 };

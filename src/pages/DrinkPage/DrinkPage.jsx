@@ -1,7 +1,9 @@
+import { useParams } from 'react-router-dom';
 import Drink from '../../components/Drink/Drink';
 
 const DrinkPage = () => {
-  return <Drink />;
+  const {drinkId} = useParams()
+  return <Drink id={drinkId}/>;
 };
 
 export default DrinkPage;

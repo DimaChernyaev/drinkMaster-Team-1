@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { colorStyled } from '../../helpers/colorStyled';
 
 export const Container = styled.div`
   max-width: 1440px;
@@ -19,11 +18,3 @@ export const Container = styled.div`
     width: 1280px;
   }
 `;
-
-export const Header = styled.header`
-  padding-top: 22px;
-  padding-bottom: 22px;
-  border-bottom: 1px solid ${colorStyled.colorWhiteTwenty};
-`;
-
-console.log(colorStyled.colorWhiteTwenty);

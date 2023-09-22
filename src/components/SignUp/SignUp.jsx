@@ -41,6 +41,7 @@ const SignUp = () => {
     console.log('newUser-->', newUser);
     try {
       const response = await signup(newUser);
+      console.log(response);
     } catch (error) {
       console.log(error.message);
     }

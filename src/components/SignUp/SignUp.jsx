@@ -21,7 +21,7 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import { Link } from 'react-router-dom';
 import { SignupSchema } from '../../helpers/validateForm/validate-register';
 import StyledDatepicker from '../StyledDatepicker/StyledDatepicker';
-import { signup } from '../../redux/users/authOperations';
+import { signup } from '../../redux/auth/authOperations';
 
 const SignUp = () => {
   // const [isLoading, setIsLoading] = useState(false);
@@ -33,15 +33,14 @@ const SignUp = () => {
   };
 
   const getDate = (date) => {
-    setDate(date)
-  }
+    setDate(date);
+  };
 
   const handleSubmit = async (values, { resetForm }) => {
-    const newUser = {...values, date};
+    const newUser = { ...values, date };
     console.log('newUser-->', newUser);
     try {
       const response = await signup(newUser);
-      
     } catch (error) {
       console.log(error.message);
     }
@@ -88,7 +87,11 @@ const SignUp = () => {
                   </TypographySuccess>
                 ) : null}
                 <Box sx={{ position: 'relative', width: '100%' }}>
-                  <StyledField name="date" placeholder="dd/mm/yyyy" value={date}/>
+                  <StyledField
+                    name="date"
+                    placeholder="dd/mm/yyyy"
+                    value={date}
+                  />
                   <IconButton
                     sx={{
                       position: 'absolute',
@@ -104,9 +107,7 @@ const SignUp = () => {
                     <CalendarTodayIcon />
                   </IconButton>
                 </Box>
-                {isOpenCalendar && (
-                  <StyledDatepicker getDate={getDate}/>
-                )}
+                {isOpenCalendar && <StyledDatepicker getDate={getDate} />}
                 {/* {errors.date && touched.date ? (
                   <TypographyError>{errors.date}</TypographyError>
                 ) : null} */}

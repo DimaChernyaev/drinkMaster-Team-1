@@ -1,4 +1,4 @@
-import{n as c,j as e,u as x,c as g,a as o,b as p}from"./index-37a80c0d.js";const m=c.h2`
+import{n as c,j as e,u as x,c as g,a as o,b as p}from"./index-a951da0b.js";const m=c.h2`
   font-size: 32px;
   font-weight: 600;
   line-height: 1.1875;

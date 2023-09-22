@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchContacts, deleteDrink } from './drinksOperations';
+import { fetchDrinks, deleteDrinks } from './drinksOperations';
 
 const drinksSlice = createSlice({
   name: 'drinks',
@@ -10,7 +10,7 @@ const drinksSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
-      .addCase(fetchDrinks.pending, (state, action) => {
+      .addCase(fetchDrinks.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(fetchDrinks.fulfilled, (state, action) => {
@@ -23,7 +23,7 @@ const drinksSlice = createSlice({
         state.error = action.payload;
       })
 
-      .addCase(deleteDrinks.pending, (state, action) => {
+      .addCase(deleteDrinks.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(deleteDrinks.fulfilled, (state, action) => {

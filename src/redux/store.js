@@ -11,7 +11,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { configureStore } from '@reduxjs/toolkit';
 import { authReducer } from './auth/authSlice';
-import { drinksReducer } from './drinks/drinksSlise';
+import { drinksReducer } from './drinks/drinksSlice';
 
 const authPersistConfig = {
   key: 'auth',

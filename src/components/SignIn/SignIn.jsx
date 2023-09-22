@@ -20,7 +20,7 @@ import {
   StyledSection,
 } from '../Welcome/Welcome.styled';
 import { SkeletonAuth } from '../Skeletons/SkeletonAuth';
-import { sigin } from '../../redux/auth/authOperations';
+import { signin } from '../../redux/auth/authOperations';
 import { SignInSchema } from '../../helpers/validateForm/validate-login';
 
 const SignIn = () => {
@@ -31,7 +31,7 @@ const SignIn = () => {
   const handleSubmit = async (values, { resetForm }) => {
     try {
       setIsLoading(true);
-      const response = await dispatch(sigin(values));
+      const response = await dispatch(signin(values));
       setIsLoading(false);
       if (response.data) {
         Notify.success('Login success!', {

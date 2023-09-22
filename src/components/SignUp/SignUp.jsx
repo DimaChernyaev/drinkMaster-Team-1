@@ -22,25 +22,30 @@ import { Link } from 'react-router-dom';
 import { SignupSchema } from '../../helpers/validateForm/validate-register';
 import StyledDatepicker from '../StyledDatepicker/StyledDatepicker';
 import { signup } from '../../redux/auth/authOperations';
+import { useDispatch } from 'react-redux';
 
 const SignUp = () => {
   // const [isLoading, setIsLoading] = useState(false);
   const [isOpenCalendar, setIsOpenCalendar] = useState(false);
-  const [date, setDate] = useState('');
+  const [birthdate, setBirthdate] = useState('');
+  const dispatch = useDispatch();
 
   const handleClickDate = () => {
     setIsOpenCalendar(true);
   };
 
-  const getDate = (date) => {
-    setDate(date);
+  const getDate = (birthdate) => {
+    setBirthdate(birthdate);
   };
 
   const handleSubmit = async (values, { resetForm }) => {
-    const newUser = { ...values, date };
+    console.log(values);
+    const data = birthdate.split(' ').join('.');
+    console.log(data);
+    const newUser = { ...values, birthdate: data };
     console.log('newUser-->', newUser);
     try {
-      const response = await signup(newUser);
+      const response = await dispatch(signup(newUser));
       console.log(response);
     } catch (error) {
       console.log(error.message);
@@ -91,7 +96,7 @@ const SignUp = () => {
                   <StyledField
                     name="date"
                     placeholder="dd/mm/yyyy"
-                    value={date}
+                    value={birthdate}
                   />
                   <IconButton
                     sx={{

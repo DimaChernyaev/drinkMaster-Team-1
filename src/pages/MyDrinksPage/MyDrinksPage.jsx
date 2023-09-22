@@ -1,7 +1,15 @@
-import MyDrinks from '../../components/MyDrinks/MyDrinks';
+import DrinksList from '../../components/DrinksList/DrinksList';
+import Paginator from '../../components/Paginator/Paginator';
+import { Container, Title } from './MyDrinksPage.styled';
 
 const MyDrinksPage = () => {
-  return <MyDrinks />;
+  return (
+    <Container>
+      <Title>My drinks</Title>
+      <DrinksList />
+      <Paginator />
+    </Container>
+  );
 };
 
 export default MyDrinksPage;

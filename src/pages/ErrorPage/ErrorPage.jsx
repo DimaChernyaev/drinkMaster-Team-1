@@ -1,5 +1,5 @@
 import { Title, ContainerError, Image } from './ErrorPage.styled';
-import image from '../../assets/images/coctailPhoto.png';
+import image from '../../assets/images/NotFoundImg/error_blue_iced_tea_1.png';
 
 const ErrorPage = () => {
   return (

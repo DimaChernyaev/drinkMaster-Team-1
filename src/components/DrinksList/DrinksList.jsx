@@ -3,13 +3,22 @@
 // import { useDispatch } from 'react-redux';
 // import { deleteContact } from 'redux/contacts/contactOperations';
 // import { selectIsLoading } from 'redux/contacts/contactSelectors';
-// import { IoClose } from 'react-icons/io5';
+import NotFound from '../NotFound/NotFound';
+import { Link } from 'react-router-dom';
+import Img from '../DrinksList/Weeks.jpg';
+import icon from '../../assets/images/favoritePage/trash.svg';
 import {
-  DrinksListBlock,
-  // DrinksItem,
-  // DrinksInfo,
-  // DrinksName,
-  // ButtonDel,
+  DrinksListSet,
+  CardWrap,
+  ImgCard,
+  TitleWrap,
+  BtnWrap,
+  Title,
+  TitleType,
+  TitleDescription,
+  ButtonSeeMore,
+  ButtonDell,
+
   // Text,
 } from './DrinksList.styled';
 
@@ -23,11 +32,45 @@ const DrinksList = ({ drinks, onDeleteDrinks }) => {
   return (
     <>
       {/* {!isLoading && contacts.length === 0 && (
-        <Text textAlign="center">
-          You haven't added any favorite cocktails yet{' '}
-        </Text>
+        <NotFound />
       )} */}
-      <DrinksListBlock>
+
+      <DrinksListSet>
+        <CardWrap>
+          <ImgCard src={Img} alt="drink" />
+          <TitleWrap>
+            <Title>drink</Title>
+            <TitleType>alcoholic</TitleType>
+            <TitleDescription>shortDescription</TitleDescription>
+          </TitleWrap>
+
+          <BtnWrap>
+            <Link to="/drink/:drinkId">
+              <ButtonSeeMore>See more</ButtonSeeMore>
+            </Link>
+            <ButtonDell type="button">
+              <img src={icon} alt="trash" />
+            </ButtonDell>
+          </BtnWrap>
+        </CardWrap>
+        <CardWrap>
+          <ImgCard src={Img} alt="drink" />
+          <TitleWrap>
+            <Title>drink</Title>
+            <TitleType>alcoholic</TitleType>
+            <TitleDescription>shortDescription</TitleDescription>
+          </TitleWrap>
+
+          <BtnWrap>
+            <Link to="/drink/:drinkId">
+              <ButtonSeeMore>See more</ButtonSeeMore>
+            </Link>
+            <ButtonDell type="button">
+              <img src={icon} alt="trash" />
+            </ButtonDell>
+          </BtnWrap>
+        </CardWrap>
+        {/* <DrinksItem /> */}
         {/* {drinks.length > 0 &&
           drinks.map(({ id, name, number }) => (
             <DrinksItem key={id}>
@@ -42,7 +85,7 @@ const DrinksList = ({ drinks, onDeleteDrinks }) => {
               </ButtonDel>
             </DrinksItem>
           ))} */}
-      </DrinksListBlock>
+      </DrinksListSet>
     </>
   );
 };

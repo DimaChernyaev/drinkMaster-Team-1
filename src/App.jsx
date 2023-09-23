@@ -27,12 +27,12 @@ function App() {
       <Route path="/signin" element={<SignInPage />} />
 
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<HomePage />} />
+        {/* <Route index element={<HomePage />} />
         <Route path="drinks" element={<DrinksPage />} />
         <Route path="drink/:drinkId" element={<DrinkPage />} />
         <Route path="add" element={<AddDrinksPage />} />
         <Route path="my" element={<MyDrinksPage />} />
-        <Route path="favorites" element={<FavoriteDrinksPage />} />
+        <Route path="favorites" element={<FavoriteDrinksPage />} /> */}
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>

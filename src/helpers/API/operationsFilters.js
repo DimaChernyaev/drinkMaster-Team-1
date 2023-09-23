@@ -1,15 +1,9 @@
 import axios from 'axios';
-import { selectToken } from '../../redux/auth/authSelectors';
-import { useSelector } from 'react-redux';
 
-const token = useSelector(selectToken);
-
-axios.defaults.baseURL = 'https://drink-master-server.onrender.com';
-axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-
+// отримання списку категорій
 export async function getCategories() {
   try {
-    const { data } = await axios.get(`/fiters/categories`);
+    const { data } = await axios.get(`/filters/categories`);
 
     return data;
   } catch (error) {
@@ -17,9 +11,10 @@ export async function getCategories() {
   }
 }
 
+// отримання списку інгрідієнтів
 export async function getIngridients() {
   try {
-    const { data } = await axios.get(`/fiters/ingridients`);
+    const { data } = await axios.get(`/filters/ingridients`);
 
     return data;
   } catch (error) {
@@ -27,9 +22,11 @@ export async function getIngridients() {
   }
 }
 
+
+// отримання списку бокалів
 export async function getGlasses() {
   try {
-    const { data } = await axios.get(`/fiters/glasses`);
+    const { data } = await axios.get(`/filters/glasses`);
 
     return data;
   } catch (error) {

@@ -32,6 +32,7 @@ const SignIn = () => {
     try {
       setIsLoading(true);
       const response = await dispatch(signin(values));
+      console.log(response)
       setIsLoading(false);
       if (response.status === 204) {
         Notify.success('Login success!', {

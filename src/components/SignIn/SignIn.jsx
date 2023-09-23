@@ -39,7 +39,7 @@ const SignIn = () => {
           distance: '10px',
         });
         resetForm();
-        navigate('/archive', { replace: true });
+        navigate('/', { replace: true });
         return;
       }
       Notify.failure(`${response.error.data.message}`, {

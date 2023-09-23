@@ -3,34 +3,29 @@ import { useParams } from 'react-router-dom';
 import { DrinkIngredientsList } from './DrinkIngredientsList/DrinkIngredientsList';
 import { DrinkPageHero } from './DrinkPageHero/DrinkPageHero';
 import { RecipePreparation } from './RecipePreparation/RecipePreparation';
-import { getCoctailById } from './service';
+// import { getCoctailById } from './service';
 import { useEffect, useState } from 'react';
+import { getCurrentCoctail } from '../../helpers/API/operationsDrinks';
 
 const Drink = () => {
   const [coctailData, setCoctailData] = useState(null);
-
-// console.log(coctailData)
-
   const { drinkId } = useParams();
-
-  const fetchData = async (id) => {
-    try {
-      const result = await getCoctailById(id);
-      setCoctailData(result);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  console.log(drinkId);
 
   useEffect(() => {
-    fetchData(drinkId);
+    const currentCocteil = async () => {
+      const data = await getCurrentCoctail(drinkId);
+      console.log(data);
+      setCoctailData(data);
+    };
+    currentCocteil();
   }, []);
 
   return (
     <>
       <DrinkPageHero coctailInfo={coctailData} />
       <DrinkIngredientsList coctailInfo={coctailData} />
-      <RecipePreparation coctailInfo={coctailData}/>
+      <RecipePreparation coctailInfo={coctailData} />
     </>
   );
 };

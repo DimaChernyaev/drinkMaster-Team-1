@@ -32,9 +32,9 @@ const SignIn = () => {
     try {
       setIsLoading(true);
       const response = await dispatch(signin(values));
-      console.log(response)
+      console.log(response);
       setIsLoading(false);
-      if (response.status === 204) {
+      if (response) {
         Notify.success('Login success!', {
           position: 'center-top',
           distance: '10px',

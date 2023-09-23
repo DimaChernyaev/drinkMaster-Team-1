@@ -1,4 +1,4 @@
-import{j as e,c as t,r as d,e as l}from"./index-2ba05341.js";import{s as i,P as c}from"./styled-components.browser.esm-3583d705.js";const m=()=>e.jsx("div",{children:"Drink Ingredients List"}),p=i.button`
+import{j as e,c as t,r as d,e as l}from"./index-d63d39c4.js";import{s as i,P as c}from"./styled-components.browser.esm-cc5bd6a4.js";const m=()=>e.jsx("div",{children:"Drink Ingredients List"}),p=i.button`
   color: ${t.colorBlue};
   background-color: ${t.colorWhite};
   border-radius: 42px;

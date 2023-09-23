@@ -1,4 +1,4 @@
-import{n as t,j as n}from"./index-4d3ad070.js";const e=t.ul`
+import{n as t,j as n}from"./index-1065711b.js";const e=t.ul`
   padding-left: 0px;
 `;t.li`
   width: 100%;

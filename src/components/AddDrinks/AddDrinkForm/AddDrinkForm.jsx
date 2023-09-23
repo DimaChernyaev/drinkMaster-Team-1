@@ -16,18 +16,16 @@ const AddDrinkForm = () => {
       isAlcoholic: 'false', // Додайте поле для типу коктейлю
     },
     validationSchema: Yup.object({
-      name: Yup.string().required('Це поле обовʼязкове для заповнення'),
+      name: Yup.string().required('This field is mandatory'),
       ingredients: Yup.array().of(
         Yup.object().shape({
-          name: Yup.string().required('Це поле обовʼязкове для заповнення'),
+          name: Yup.string().required('This field is mandatory'),
         }),
       ),
-      preparationInstructions: Yup.string().required(
-        'Це поле обовʼязкове для заповнення',
-      ),
-      category: Yup.string().required('Виберіть категорію коктейлю'),
-      serving: Yup.string().required('Виберіть тип сервування'),
-      isAlcoholic: Yup.string().required('Виберіть тип коктейлю'),
+      preparationInstructions: Yup.string().required('This field is mandatory'),
+      category: Yup.string().required('Select a cocktail category'),
+      serving: Yup.string().required('Select the type of serving'),
+      isAlcoholic: Yup.string().required('Select the type of cocktail'),
     }),
     onSubmit: async (values) => {
       // Обработка отправки формы...

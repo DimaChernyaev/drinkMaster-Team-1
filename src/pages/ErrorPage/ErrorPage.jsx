@@ -1,12 +1,14 @@
-import { Title, ContainerError, Image } from './ErrorPage.styled';
+import { NotFound, ContainerError, Image, Wrapper } from './ErrorPage.styled';
 import image from '../../assets/images/coctailPhoto.png';
 
 const ErrorPage = () => {
   return (
     <ContainerError>
-      <Title>4</Title>
-      <Image src={image} alt="404"></Image>
-      <Title>4</Title>
+      <Wrapper>
+        <NotFound>4</NotFound>
+        <Image src={image} alt="404"></Image>
+        <NotFound>4</NotFound>
+      </Wrapper>
     </ContainerError>
   );
 };

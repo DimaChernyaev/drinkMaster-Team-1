@@ -5,6 +5,13 @@ export const signupFulfilled = (state, action) => {
   state.error = null;
 };
 
+export const signinFulfilled = (state, action) => {
+  state.user = action.payload.user;
+  state.token = action.payload.token;
+  state.isLoggedIn = true;
+  state.error = null;
+};
+
 export const signupRejected = (state, action) => {
   state.error = action.payload;
 };

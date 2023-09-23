@@ -23,7 +23,7 @@ const authSlice = createSlice({
       .addCase(auth.signin.pending, (state) => {
         state.error = null;
       })
-      .addCase(auth.signin.fulfilled, reducer.signupFulfilled)
+      .addCase(auth.signin.fulfilled, reducer.signinFulfilled)
       .addCase(auth.signin.rejected, (state, action) => {
         state.error = action.payload;
       })

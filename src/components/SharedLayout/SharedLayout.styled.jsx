@@ -25,3 +25,16 @@ export const Header = styled.header`
   padding-bottom: 22px;
   border-bottom: 1px solid ${colorStyled.colorWhiteTwenty};
 `;
+
+export const StyledBlock = styled.div`
+  position: absolute;
+  top: 20px;
+  left: -623px;
+  width: 784px;
+  height: 849px;
+  flex-shrink: 0;
+  border-radius: 550px;
+  background: rgba(64, 112, 205, 0.5);
+  filter: blur(104.854px);
+  z-index: 1;
+`;

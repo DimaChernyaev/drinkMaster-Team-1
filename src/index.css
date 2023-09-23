@@ -79,3 +79,15 @@ button {
 .air-datepicker-nav {
   color: #f3f3f3
 }
+
+.air-datepicker-nav:hover,
+.air-datepicker-nav:focus,
+.air-datepicker-cell:hover,
+.air-datepicker-cell:focus,
+.air-datepicker-cell.-day-.-other-month-:hover,
+.air-datepicker-cell.-day-.-other-month-:focus {
+  color: #161f37
+}
+.air-datepicker-cell.-day-.-other-month-{
+  color: grey
+}

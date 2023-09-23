@@ -11,8 +11,8 @@ import { Link } from 'react-router-dom';
 
 const Welcome = () => {
   return (
-    <StyledSection>
-      <StyledDiv>
+    <StyledSection sx={{ fontFamily: 'inherit' }}>
+      <StyledDiv sx={{ fontFamily: 'inherit' }}>
         <StyledBoxBig></StyledBoxBig>
         <StyledBox></StyledBox>
         <Typography
@@ -21,7 +21,7 @@ const Welcome = () => {
           sx={{
             marginBottom: '14px',
             color: '#FAFAFA',
-            fontFamily: 'Manrope',
+            fontFamily: 'inherit',
             fontSize: '28px',
             fontStyle: 'normal',
             fontWeight: '600',
@@ -37,7 +37,7 @@ const Welcome = () => {
           sx={{
             marginBottom: '40px',
             color: '#FAFAFA',
-            fontFamily: 'Manrope',
+            fontFamily: 'inherit',
             fontSize: '14px',
             fontStyle: 'normal',
             fontWeight: '400',
@@ -51,15 +51,15 @@ const Welcome = () => {
         </StyledTypography>
 
         <Box sx={{ display: 'flex', gap: '14px', justifyContent: 'center' }}>
-          <Link to='/signup'>
-          <StyledButton >
-            <StyledTypography>Sign Up</StyledTypography>
-          </StyledButton>
+          <Link to="/signup">
+            <StyledButton>
+              <StyledTypography>Sign Up</StyledTypography>
+            </StyledButton>
           </Link>
-          <Link to='/signin'>
-          <StyledButton >
-            <StyledTypography>Sign In</StyledTypography>
-          </StyledButton>
+          <Link to="/signin">
+            <StyledButton>
+              <StyledTypography>Sign In</StyledTypography>
+            </StyledButton>
           </Link>
         </Box>
       </StyledDiv>

@@ -1,0 +1,192 @@
+.container{
+    background-color: #0A0A11;
+    /* padding-left: 100px;
+    padding-right: 100px; */
+    /* padding: 150px 100px; */
+    /* overflow: hidden; */
+}
+
+.cont{
+    display: flex;
+    margin-top: 185px;
+}
+
+/* .conttwo{
+margin-top: -150px;    
+} */
+
+.title{
+width: 715px;
+color: #F3F3F3;
+font-family: Manrope;
+font-size: 64px;
+font-style: normal;
+font-weight: 600;
+line-height: 68px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28px;
+}
+
+.text{
+width: 500px;
+color: #F3F3F3;
+font-family: Manrope;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+margin: 0;
+padding-bottom: 40px;
+
+}
+
+.btnAddDrinks{
+    border-radius: 42px;
+        background: #F3F3F3;
+        color: #161F37;
+        padding: 18px 44px;
+        cursor: pointer;
+}
+
+.box{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* gap: 40px; */
+}
+
+.boxtwo{
+    /* position: relative; */
+    width: 387px;
+    height: 381px;
+    margin-top: 180px;
+    margin-left: -78px;
+    flex-shrink: 0;
+    border-radius: 387px;
+background: rgba(188, 230, 210, 0.30);
+filter: blur(104.8543701171875px);
+}
+
+.boxtree{
+/* position: relative; */
+width: 549px;
+height: 543px;
+flex-shrink: 0;
+/* top: 458px;
+left: 1181px; */
+margin-top: 167px;
+
+border-radius: 549px;
+background: rgba(64, 112, 205, 0.50);
+filter: blur(104.8543701171875px);
+transform: translateY(50%);
+}
+
+.boxfour{
+    position: absolute;
+    top: 20px;
+    left:-623px;
+    width: 784px;
+    height: 849px;
+    flex-shrink: 0;
+    border-radius: 550px;
+    background: rgba(64, 112, 205, 0.5);
+    filter: blur(104.854px);
+    z-index: 1;
+}
+
+.titleOrdinary{
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    color: #F3F3F3;
+    margin: 0;
+    padding-bottom: 40px;
+    /* margin-top: 218px; */
+}
+
+.titleCocktail{
+
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+color: #F3F3F3;
+margin: 0;
+margin-top: 80px;
+padding-bottom: 40px;    
+}
+.titleShake{
+    
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    color: #F3F3F3;
+    margin: 0;
+    margin-top: 80px;
+    padding-bottom: 40px;   
+}
+
+.titleOtherUnknow{
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    color: #F3F3F3;
+    margin: 0;
+    margin-top: 80px;
+    padding-bottom: 40px;
+}
+.list{
+    display: flex;
+    gap: 20px;
+}
+/* .listOtherUnknow{
+margin-bottom: 80px;    
+} */
+
+.item{
+    list-style: none;
+    color: #F3F3F3;
+    width: 400px;
+    height: 400px;
+    border: 2px solid #F3F3F3;
+}
+
+.itemContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnOtherDrinks {
+    border-radius: 42px;
+    background: #F3F3F3;
+    color: #161F37;
+    padding: 18px 44px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.otherDrinks{
+display: flex;
+justify-content: center;
+margin-top: 80px;
+margin-bottom: 140px;
+}
+
+.namecoktail{
+display: flex;
+}
+
+.nameCoktailLi{
+display: flex;
+justify-content: flex-start;
+gap: 200px;
+margin-right: 25px;
+margin-top: 14px;
+}
+.nameCoktailLi:last-child{
+margin-right: 0px;    
+}

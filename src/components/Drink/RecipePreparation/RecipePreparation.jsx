@@ -1,10 +1,13 @@
 import { DrinkPageImg } from '../DrinkPageImg/DrinkPageImg';
+import { Recipe,Title,Preparation } from './RecipePreparation.style';
 
 export const RecipePreparation = () => {
   return (
     <>
-      <DrinkPageImg />
-      <p>
+    <Title>Recipe Preparation</Title>
+    <Recipe>
+  
+      <Preparation>
         Placer tous les ingrédients dans le bol du mélangeur - couvrir et
         fouetter à vitesse moyenne jusquà ce que le tout soit bien mélangé.
         Verser dans un grand, 2 moyens ou 3 petits verres et boire. Mettere
@@ -24,7 +27,10 @@ export const RecipePreparation = () => {
         glass. The result is a crisp and invigorating drink with a hint of
         sweetness from the mint syrup. Sip on this cocktail and let the coolness
         of the mint refresh your palate.
-      </p>
+      </Preparation>
+      <DrinkPageImg />
+    </Recipe>
+    
     </>
   );
 };

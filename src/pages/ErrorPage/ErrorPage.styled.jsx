@@ -17,6 +17,12 @@ export const ContainerError = styled.div`
   }
 `;
 
+export const Wrapper = styled.div`
+  padding-top: 200px;
+  padding-bottom: 140px;
+  display: flex;
+`;
+
 export const Image = styled.img`
   width: 123px;
   height: 156px;

@@ -61,3 +61,20 @@ button {
   cursor: pointer;
   font-family: inherit;
 }
+/* =============стилі для календаря ======================== */
+.air-datepicker {
+  background-color: #161F37;
+  width: 219px;
+  border-radius: 8px;
+  color: #F3F3F3;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.32px;
+}
+
+.air-datepicker-nav {
+  color: #f3f3f3
+}

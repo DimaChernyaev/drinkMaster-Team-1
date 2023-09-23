@@ -3,9 +3,7 @@ import { Notify } from 'notiflix';
 import { Box, IconButton } from '@mui/material';
 import { useState } from 'react';
 
-import AirDatepicker from 'air-datepicker';
-import 'air-datepicker/air-datepicker.css';
-import localeEn from 'air-datepicker/locale/en';
+
 
 import {
   StyledButton,
@@ -27,6 +25,7 @@ import { SignupSchema } from '../../helpers/validateForm/validate-register';
 import { signup } from '../../redux/auth/authOperations';
 import { useDispatch } from 'react-redux';
 import { SkeletonAuth } from '../Skeletons/SkeletonAuth';
+import { openCalendar } from '../../helpers/openCalendar';
 
 const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -34,17 +33,7 @@ const SignUp = () => {
   const dispatch = useDispatch();
 
   const handleClickDate = () => {
-    const dateInput = document.getElementById('date');
-    if (dateInput) {
-      new AirDatepicker(dateInput, {
-        isMobile: true,
-        autoClose: true,
-        locale: localeEn,
-        onSelect: (formattedDate, date, inst) => {
-          setBirthdate(formattedDate);
-        },
-      });
-    }
+    openCalendar()
   };
 
   const handleSubmit = async (values, { resetForm }) => {
@@ -53,8 +42,9 @@ const SignUp = () => {
     try {
       setIsLoading(true);
       const response = await dispatch(signup(newUser));
+      console.log('response-->', response)
       setIsLoading(false);
-      if (response.data) {
+      if (response.status === 204) {
         Notify.success('Registration success!', {
           position: 'center-top',
           distance: '10px',
@@ -62,7 +52,7 @@ const SignUp = () => {
         resetForm();
         return;
       }
-      Notify.failure(`${response.error.data.message}`, {
+      Notify.failure(`${response.message}`, {
         position: 'center-top',
         distance: '10px',
       });
@@ -117,13 +107,13 @@ const SignUp = () => {
                       <TypographySuccess color="#3CBC81">
                         This is an CORRECT name
                       </TypographySuccess>
-                    ) : null}
+                      ) : null}
+
                     <Box sx={{ position: 'relative', width: '100%' }}>
                       <StyledField
                         name="date"
                         placeholder="dd/mm/yyyy"
                         id="date"
-                        // value={birthdate}
                       />
                       <IconButton
                         sx={{

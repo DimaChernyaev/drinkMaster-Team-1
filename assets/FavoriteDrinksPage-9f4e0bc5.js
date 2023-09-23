@@ -1,1 +1,0 @@
-import{j as s}from"./index-3f501434.js";import{C as r,T as i,E as a,a as e,D as t}from"./FavoriteDrinksPage.styled-d4b40a99.js";const x=()=>s.jsxs(r,{children:[s.jsx(i,{children:"Favorites"}),s.jsx(a,{}),s.jsx(e,{}),s.jsx(t,{})]});export{x as default};

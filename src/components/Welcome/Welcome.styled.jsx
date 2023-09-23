@@ -58,7 +58,7 @@ export const StyledButton = styled(Button)`
 `;
 
 export const StyledTypography = styled(Typography)`
-  font-family: Manrope;
+  font-family: inherit;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;

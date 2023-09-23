@@ -33,7 +33,7 @@ const SignIn = () => {
       setIsLoading(true);
       const response = await dispatch(signin(values));
       setIsLoading(false);
-      if (response.data) {
+      if (response.status === 204) {
         Notify.success('Login success!', {
           position: 'center-top',
           distance: '10px',
@@ -42,7 +42,7 @@ const SignIn = () => {
         navigate('/', { replace: true });
         return;
       }
-      Notify.failure(`${response.error.data.message}`, {
+      Notify.failure(`${response.message}`, {
         position: 'center-top',
         distance: '10px',
       });

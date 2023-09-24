@@ -41,27 +41,28 @@ const SignUp = () => {
         autoClose: true,
         selectedDates: [new Date()],
         locale: localeEn,
-        onSelect: (formattedDate, date, inst) => {
+        onSelect: (formattedDate) => {
           setBirthdate(formattedDate);
-           calendar.hide();
+          calendar.hide();
+          calendar.destroy();
         },
         buttons: ['today', 'clear'],
       });
-      calendar.show()
+      calendar.show();
     }
-  }
+  };
+
   const handleSubmit = async (values, { resetForm }) => {
     const { date } = birthdate;
     const newUser = { ...values, birthdate: date };
+
     try {
       setIsLoading(true);
-      const response = await dispatch(signup(newUser));
+      await dispatch(signup(newUser));
       setIsLoading(false);
 
-      console.log('response-->', response)
       resetForm();
-    } catch (error) {
-    }
+    } catch (error) {}
     resetForm();
   };
 

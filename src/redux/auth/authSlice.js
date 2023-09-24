@@ -20,19 +20,28 @@ const authSlice = createSlice({
       .addCase(auth.signup.rejected, (state, action) => {
         state.error = action.payload;
       })
-      .addCase(auth.sigin.pending, (state) => {
+      .addCase(auth.signin.pending, (state) => {
         state.error = null;
       })
-      .addCase(auth.sigin.fulfilled, reducer.signupFulfilled)
-      .addCase(auth.sigin.rejected, (state, action) => {
+      .addCase(auth.signin.fulfilled, reducer.signinFulfilled)
+      .addCase(auth.signin.rejected, (state, action) => {
         state.error = action.payload;
       })
       .addCase(auth.signout.pending, (state) => {
         state.error = null;
       })
-      .addCase(auth.signout.fulfilled, reducer.sugnoutFulfilled)
+      .addCase(auth.signout.fulfilled, reducer.signoutFulfilled)
       .addCase(auth.signout.rejected, (state, action) => {
         state.error = action.payload;
+      })
+      .addCase(auth.refresh.pending, (state) => {
+        state.isRefreshing = true;
+        state.error = null;
+      })
+      .addCase(auth.refresh.fulfilled, reducer.refreshFulfilled)
+      .addCase(auth.refresh.rejected, (state, action) => {
+        state.error = action.payload;
+        state.isRefreshing = false;
       });
   },
 });

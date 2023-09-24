@@ -30,10 +30,6 @@
 
 body {
   background-color: #0a0a11;
-  /* background-image: url('./assets/background.png'); */
-  /* background-size: auto 100%;
-  background-position: center center;
-  background-repeat: no-repeat; */
   font-family: 'Manrope', sans-serif;
   color: #f3f3f3;
 }
@@ -46,6 +42,7 @@ h6,
 p {
   margin: 0;
   padding: 0;
+  font-family: inherit;
 }
 a {
   text-decoration: none;
@@ -63,4 +60,22 @@ img {
 button {
   cursor: pointer;
   font-family: inherit;
+
+}
+/* =============стилі для календаря ======================== */
+.air-datepicker {
+  background-color: #161F37;
+  width: 219px;
+  border-radius: 8px;
+  color: #F3F3F3;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.32px;
+}
+
+.air-datepicker-nav {
+  color: #f3f3f3
 }

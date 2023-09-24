@@ -19,9 +19,8 @@ export const StyledDiv = styled.div`
 export const StyledSection = styled.section`
   width: 100%;
   height: 100vh;
-  background-color: #0A0A11;
-  background-image:
-   linear-gradient(
+  background-color: #0a0a11;
+  background-image: linear-gradient(
       0deg,
       rgba(10, 10, 17, 0.2) 0%,
       rgba(10, 10, 17, 0.2) 100%
@@ -31,7 +30,11 @@ export const StyledSection = styled.section`
     url(${welcome});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: calc(50% - 80px) center, calc(1deg - 80px) center, calc(82deg - 80px) center, center;
+  background-position:
+    calc(50% - 80px) center,
+    calc(1deg - 80px) center,
+    calc(82deg - 80px) center,
+    center;
 `;
 
 export const StyledButton = styled(Button)`
@@ -64,27 +67,27 @@ export const StyledTypography = styled(Typography)`
 `;
 
 export const StyledBox = styled(Box)`
-position: absolute;
-top: 84px;
-left: 42px;
-width: 257px;
-height: 247px;
-flex-shrink: 0;
-border-radius: 257px;
-background: rgba(188, 230, 210, 0.40);
-filter: blur(104.8543701171875px);
-z-index: 2;
-`
+  position: absolute;
+  top: 84px;
+  left: 42px;
+  width: 257px;
+  height: 247px;
+  flex-shrink: 0;
+  border-radius: 257px;
+  background: rgba(188, 230, 210, 0.4);
+  filter: blur(104.8543701171875px);
+  z-index: 2;
+`;
 
 export const StyledBoxBig = styled(Box)`
-position: absolute;
-top: 20px;
-left: -399px;
-width: 520px;
-height: 550px;
-flex-shrink: 0;
-border-radius: 550px;
-background: rgba(64, 112, 205, 0.50);
-filter: blur(104.8543701171875px);
-z-index: 1;
-`
+  position: absolute;
+  top: 20px;
+  left: -399px;
+  width: 520px;
+  height: 550px;
+  flex-shrink: 0;
+  border-radius: 550px;
+  background: rgba(64, 112, 205, 0.5);
+  filter: blur(104.8543701171875px);
+  z-index: 1;
+`;

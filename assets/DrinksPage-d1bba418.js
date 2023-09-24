@@ -1,0 +1,1 @@
+import{j as r,L as s}from"./index-ce6bf91c.js";const e=()=>{const n="639b6de9ff77d221f190c51e";return r.jsxs(r.Fragment,{children:[r.jsx("div",{children:"DrinksPage"}),r.jsx(s,{to:`/drink/${n}`,children:"Current"})]})},i=()=>r.jsx(e,{});export{i as default};

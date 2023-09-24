@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchOwn, addOwn, deleteOwn } from './drinksOperations';
+import * as own from './ownOperations';
 
 const ownSlice = createSlice({
   name: 'own',
@@ -10,42 +10,43 @@ const ownSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
-      .addCase(fetchOwn.pending, (state, action) => {
+      .addCase(own.allOwn.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(fetchOwn.fulfilled, (state, action) => {
+      .addCase(own.allOwn.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
       })
-      .addCase(fetchOwn.rejected, (state, action) => {
+      .addCase(own.allOwn.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
 
-      .addCase(addOwn.pending, (state, action) => {
+      .addCase(own.addOwn.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(addOwn.fulfilled, (state, action) => {
+      .addCase(own.addOwn.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items.push(action.payload);
       })
-      .addCase(addOwn.rejected, (state, action) => {
+      .addCase(own.addOwn.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
-      .addCase(deleteOwn.pending, (state, action) => {
+      .addCase(own.deleteOwn.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(deleteOwn.fulfilled, (state, action) => {
+      .addCase(own.deleteOwn.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.error = null;
-        state.items = state.items.filter(
-          (drink) => drink.id !== action.payload.id,
+        state.error = false;
+        const indexDelete = state.items.findIndex(
+          (own) => own === action.payload.id,
         );
+        state.items.splice(indexDelete, 1);
       })
-      .addCase(deleteOwn.rejected, (state, action) => {
+      .addCase(own.deleteOwn.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       }),

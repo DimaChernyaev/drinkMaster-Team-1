@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// отримання конкретного коктеля по id для сторінки Дрінк
 export async function getCurrentCoctail(id) {
   try {
     console.log(id);
@@ -13,6 +14,7 @@ export async function getCurrentCoctail(id) {
   }
 }
 
+// отримання коктелів за категорією для домашньої сторінки
 export async function getCoctailsByCategories() {
   try {
     const { data } = await axios.get(`/drinks/mainpage`);
@@ -23,6 +25,7 @@ export async function getCoctailsByCategories() {
   }
 }
 
+// отримання популярних коктелів
 export async function getPopularCoctails() {
   try {
     const { data } = await axios.get(`/drinks/popular`);
@@ -33,6 +36,7 @@ export async function getPopularCoctails() {
   }
 }
 
+// отримання коктелів по фільтру
 export async function getCoctailsByFilter({ category, ingredient }) {
   try {
     const { data } = await axios.get(

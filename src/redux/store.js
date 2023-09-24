@@ -11,8 +11,8 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { configureStore } from '@reduxjs/toolkit';
 import { authReducer } from './auth/authSlice';
-import { ownReducer } from './drinks/ownSlice';
-import { favoritesReducer } from './drinks/favoriteSlice';
+import { ownReducer } from './drinks/own/ownSlice';
+import { favoritesReducer } from './drinks/favorites/favoritesSlice';
 
 const authPersistConfig = {
   key: 'auth',

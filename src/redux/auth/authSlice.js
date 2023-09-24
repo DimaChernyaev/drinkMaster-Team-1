@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import * as auth from './authOperations';
 import * as reducer from './authFunction';
+import * as user from './user/userOperations';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -42,6 +43,16 @@ const authSlice = createSlice({
       .addCase(auth.refresh.rejected, (state, action) => {
         state.error = action.payload;
         state.isRefreshing = false;
+      })
+      .addCase(user.updateUser.pending, (state) => {
+        state.error = null;
+      })
+      .addCase(user.updateUser.fulfilled, (state, action) => {
+        state.error = null;
+        state.user = action.payload.user;
+      })
+      .addCase(user.updateUser.rejected, (state, action) => {
+        state.error = action.payload;
       });
   },
 });

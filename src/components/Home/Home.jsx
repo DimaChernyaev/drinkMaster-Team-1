@@ -1,75 +1,60 @@
+
 import hcss from '../Home/home.module.css';
-// import desktopImg from '../../assets/Homepageimg/asrblueicedtea.jpg'
-// import { Image } from "./HomePageImg/HomePageImg.style";
+import { useEffect, useState } from 'react';
+import { getCoctailsByCategories } from '../../helpers/API/operationsDrinks';
 
 const Home = () => {
+  const [drinks, setDrinks] = useState([]);
+
+  useEffect(() => {
+    const fetchDrinks = async () => {
+      try {
+        const data = await getCoctailsByCategories();
+        setDrinks(data);
+      } catch (error) {
+        console.error('Error fetching drinks:', error);
+      }
+    };
+
+    fetchDrinks();
+  }, []);
+
   return (
     <div className={hcss.container}>
-      <div className={hcss.cont}>
-        <div className={hcss.boxfour}></div>
-        <div className={hcss.box}>
-          <h1 className={hcss.title}>
-            Craft Your Perfect <b /> Drink with Drink Master
-          </h1>
-          <p className={hcss.text}>
-            Unlock your inner mixologist with Drink Master, your one-stop
-            destination for exploring, crafting, and mastering the world´s
-            finest beverages.
-          </p>
-          <button className={hcss.btnAddDrinks}>Add drink</button>
-        </div>
-
-        <div className={hcss.boxtwo}></div>
-        <div className={hcss.boxtree}></div>
-        <div>
-          <img src="" alt="" />
-        </div>
-
-        {/* <div> <picture>
-        <source
-          media="(min-width: 1440px)"
-          srcSet={`${desktopImg}`}
-          type="image/jpg"
-        />
-
-    <Image src={desktopImg} alt="Drinks" />
-      </picture></div> */}
-      </div>
-      {/* <div className={hcss.boxfour}></div> */}
-      {/* <div className={hcss.boxtwo}>
-       </div>
-       <div className={hcss.boxtree}></div> */}
-
+      
       <div className={hcss.conttwo}>
         <div className={hcss.box}>
           <h2 className={hcss.titleOrdinary}>Ordinary Drink</h2>
-          <ul className={hcss.list}>
-            <li className={hcss.item}>
-              <div className={hcss.itemContent}></div>
-            </li>
-            <li className={hcss.item}>
-              <div className={hcss.itemContent}></div>
-            </li>
-
-            <li className={hcss.item}>
-              <div className={hcss.itemContent}></div>
-            </li>
-          </ul>
-
+          
           <ul className={hcss.namecoktail}>
-            <li className={hcss.nameCoktailLi}>
-              <h3 className={hcss.nameCoktail}>Name cocktail</h3>
-              <a href="">See More</a>
-            </li>
-            <li className={hcss.nameCoktailLi}>
-              <h3 className={hcss.nameCoktail}>Name cocktail</h3>
-              <a href="">See More</a>
-            </li>
-            <li className={hcss.nameCoktailLi}>
-              <h3 className={hcss.nameCoktail}>Name cocktail</h3>
-              <a href="">See More</a>
-            </li>
-          </ul>
+      {drinks.map((drink, id) => (
+        <li className={hcss.nameCoktailLi} key={id}>
+          {drink.drinkThumb ?(
+      <img src={drink.drinkThumb} alt={drinks} />
+      ):(
+        <img src=''/>
+      )}
+          <h3 className={hcss.nameCoktail}>{drink.name}</h3> 
+          <a href="">See More</a>
+        </li>
+      ))}
+    </ul>
+
+
+<ul className={hcss.namecoktail}>
+      {drinks.map((drink, id) => (
+        <li className={hcss.nameCoktailLi} key={id}>
+          {drink.drinkThumb ?(
+      <img src={drink.drinkThumb} alt={drinks} />
+      ):(
+        <img src=''/>
+      )}
+          <h3 className={hcss.nameCoktail}>{drink.name}</h3> {/* Замініть drink.name на відповідне поле */}
+          <a href="">See More</a>
+        </li>
+      ))}
+    </ul>
+    
         </div>
         <div className={hcss.box}>
           <h2 className={hcss.titleCocktail}>Cocktail</h2>

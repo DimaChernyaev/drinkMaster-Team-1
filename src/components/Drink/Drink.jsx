@@ -1,9 +1,7 @@
-// import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { DrinkIngredientsList } from './DrinkIngredientsList/DrinkIngredientsList';
 import { DrinkPageHero } from './DrinkPageHero/DrinkPageHero';
 import { RecipePreparation } from './RecipePreparation/RecipePreparation';
-// import { getCoctailById } from './service';
 import { useEffect, useState } from 'react';
 import { getCurrentCoctail } from '../../helpers/API/operationsDrinks';
 

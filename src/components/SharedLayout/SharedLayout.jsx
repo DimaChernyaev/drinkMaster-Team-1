@@ -5,21 +5,20 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 const SharedLayout = () => {
-
   return (
     <>
-          <Header />
+      <Header />
 
-          <main>
-            <StyledBlock></StyledBlock>
-            <Container>
-              <Suspense fallback={null}>
-                <Outlet />
-              </Suspense>
-            </Container>
-          </main>
+      <main>
+        <StyledBlock></StyledBlock>
+        <Container>
+          <Suspense fallback={<div>...Loading</div>}>
+            <Outlet />
+          </Suspense>
+        </Container>
+      </main>
 
-          <Footer />
+      <Footer />
     </>
   );
 };

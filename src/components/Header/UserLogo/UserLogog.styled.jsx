@@ -5,6 +5,7 @@ export const UserLogoWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 24px;
+  position: relative;
 `;
 
 export const UserLogoBtn = styled.button`

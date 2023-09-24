@@ -15,13 +15,11 @@ export async function getCategories() {
 export async function getIngredients() {
   try {
     const { data } = await axios.get(`/filters/ingredients`);
-// console.log(data)
     return data;
   } catch (error) {
     console.log(error.message);
   }
 }
-
 
 // отримання списку бокалів
 export async function getGlasses() {

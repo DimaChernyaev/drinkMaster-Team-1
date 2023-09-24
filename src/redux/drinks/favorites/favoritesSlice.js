@@ -1,9 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-  fetchFavorites,
-  addFavorite,
-  deleteFavorite,
-} from './drinksOperations';
+import * as favorite from './favoritesOperations';
 
 const favoritesSlice = createSlice({
   name: 'favorites',
@@ -12,47 +8,49 @@ const favoritesSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  extraReducers: (builder) =>
+  extraReducers: (builder) => {
     builder
-      .addCase(fetchFavorites.pending, (state, action) => {
+      .addCase(favorite.allFavorites.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(fetchFavorites.fulfilled, (state, action) => {
+      .addCase(favorite.allFavorites.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
       })
-      .addCase(fetchFavorites.rejected, (state, action) => {
+      .addCase(favorite.allFavorites.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
 
-      .addCase(addFavorite.pending, (state, action) => {
+      .addCase(favorite.addFavorites.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(addFavorite.fulfilled, (state, action) => {
+      .addCase(favorite.addFavorites.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items.push(action.payload);
       })
-      .addCase(addFavorite.rejected, (state, action) => {
+      .addCase(favorite.addFavorites.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
-      .addCase(deleteFavorite.pending, (state, action) => {
+      .addCase(favorite.deleteFavorites.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(deleteFavorite.fulfilled, (state, action) => {
+      .addCase(favorite.deleteFavorites.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.error = null;
-        state.items = state.items.filter(
-          (drink) => drink.id !== action.payload.id,
+        state.error = false;
+        const indexDelete = state.items.findIndex(
+          (favorite) => favorite === action.payload.id,
         );
+        state.items.splice(indexDelete, 1);
       })
-      .addCase(deleteFavorite.rejected, (state, action) => {
+      .addCase(favorite.deleteFavorites.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-      }),
+      });
+  },
 });
 
 export const favoritesReducer = favoritesSlice.reducer;

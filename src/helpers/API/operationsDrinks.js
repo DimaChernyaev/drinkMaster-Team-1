@@ -3,7 +3,7 @@ import axios from 'axios';
 // отримання конкретного коктеля по id для сторінки Дрінк
 export async function getCurrentCoctail(id) {
   try {
-    console.log(id);
+    // console.log(id);
 
     const { data } = await axios.get(`/drinks/${id}`);
     console.log(data);

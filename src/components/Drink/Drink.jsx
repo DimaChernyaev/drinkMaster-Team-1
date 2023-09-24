@@ -8,15 +8,15 @@ import { getCurrentCoctail } from '../../helpers/API/operationsDrinks';
 const Drink = () => {
   const [coctailData, setCoctailData] = useState(null);
   const { drinkId } = useParams();
-  console.log(drinkId);
+  // console.log(drinkId);
+  // console.log(coctailData)
 
   useEffect(() => {
-    const currentCocteil = async () => {
+    const currentCoctail = async () => {
       const data = await getCurrentCoctail(drinkId);
-      console.log(data);
       setCoctailData(data);
     };
-    currentCocteil();
+    currentCoctail();
   }, []);
 
   return (

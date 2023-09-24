@@ -1,4 +1,4 @@
-import{n as Nr,j as Ct,o as rt,r as or,g as Or}from"./index-3344e3f6.js";const Tr=Nr.h2`
+import{n as Nr,j as Ct,o as rt,r as or,g as Or}from"./index-b0f5f55c.js";const Tr=Nr.h2`
   font-size: 32px;
   font-weight: 600;
   line-height: 1.1875;

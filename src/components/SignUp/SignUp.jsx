@@ -2,9 +2,10 @@ import { Formik, Form } from 'formik';
 import { Notify } from 'notiflix';
 import { Box, IconButton } from '@mui/material';
 import { useState } from 'react';
-
-
-
+import AirDatepicker from 'air-datepicker';
+import localeEn from 'air-datepicker/locale/en';
+import 'air-datepicker/air-datepicker.css';
+import '../../index.css';
 import {
   StyledButton,
   StyledDialogTitle,
@@ -25,7 +26,6 @@ import { SignupSchema } from '../../helpers/validateForm/validate-register';
 import { signup } from '../../redux/auth/authOperations';
 import { useDispatch } from 'react-redux';
 import { SkeletonAuth } from '../Skeletons/SkeletonAuth';
-import { openCalendar } from '../../helpers/openCalendar';
 
 const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -33,34 +33,34 @@ const SignUp = () => {
   const dispatch = useDispatch();
 
   const handleClickDate = () => {
-    openCalendar()
-  };
+    const dateInput = document.getElementById('date');
 
+    if (dateInput) {
+      const calendar = new AirDatepicker(dateInput, {
+        isMobile: true,
+        autoClose: true,
+        selectedDates: [new Date()],
+        locale: localeEn,
+        onSelect: (formattedDate, date, inst) => {
+          setBirthdate(formattedDate);
+           calendar.hide();
+        },
+        buttons: ['today', 'clear'],
+      });
+      calendar.show()
+    }
+  }
   const handleSubmit = async (values, { resetForm }) => {
     const { date } = birthdate;
     const newUser = { ...values, birthdate: date };
     try {
       setIsLoading(true);
       const response = await dispatch(signup(newUser));
-      console.log('response-->', response)
       setIsLoading(false);
-      if (response.status === 204) {
-        Notify.success('Registration success!', {
-          position: 'center-top',
-          distance: '10px',
-        });
-        resetForm();
-        return;
-      }
-      Notify.failure(`${response.message}`, {
-        position: 'center-top',
-        distance: '10px',
-      });
+
+      console.log('response-->', response)
+      resetForm();
     } catch (error) {
-      Notify.failure(`${error.message}`, {
-        position: 'center-top',
-        distance: '10px',
-      });
     }
     resetForm();
   };
@@ -107,7 +107,7 @@ const SignUp = () => {
                       <TypographySuccess color="#3CBC81">
                         This is an CORRECT name
                       </TypographySuccess>
-                      ) : null}
+                    ) : null}
 
                     <Box sx={{ position: 'relative', width: '100%' }}>
                       <StyledField

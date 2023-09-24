@@ -8,11 +8,31 @@ export const StyledDiv = styled.div`
   padding-right: 16px;
   padding-top: 304px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 
   @media screen and (min-width: 375px) {
     width: 335px;
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 470px;
+    align-items: start;
+    text-align: left;
+    padding-top: 400px;
+    margin-left: 64px;
+    margin-right: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 273px;
+    width: 485px;
+    margin-left: 100px;
   }
 `;
 
@@ -35,6 +55,14 @@ export const StyledSection = styled.section`
     calc(1deg - 80px) center,
     calc(82deg - 80px) center,
     center;
+
+  @media screen and (min-width: 768px) {
+    background-position:
+      calc(50% - 382px) center,
+      calc(1deg - 382px) center,
+      calc(82deg - 382px) center,
+      center;
+  }
 `;
 
 export const StyledButton = styled(Button)`
@@ -55,15 +83,49 @@ export const StyledButton = styled(Button)`
       transform: scale(1.05);
     }
   }
+
+  @media screen and (min-width: 768px) {
+    width: 140px;
+    height: 54px;
+    gap: 14px;
+  }
+
+  @media screen and (min-width: 1440px){
+    
+  }
+`;
+export const StyledTypographyH2 = styled(Typography)`
+  color: #fafafa;
+  font-feature-settings: 'liga' off;
+  font-family: Manrope;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.56px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: -0.8px;
+  }
 `;
 
 export const StyledTypography = styled(Typography)`
   font-family: inherit;
   font-size: 14px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 18px;
   text-transform: none;
+  color: #fafafa;
+  letter-spacing: -0.28px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.36px;
+  }
 `;
 
 export const StyledBox = styled(Box)`
@@ -91,3 +153,4 @@ export const StyledBoxBig = styled(Box)`
   filter: blur(104.8543701171875px);
   z-index: 1;
 `;
+

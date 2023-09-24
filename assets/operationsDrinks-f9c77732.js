@@ -1,0 +1,1 @@
+import{f as o}from"./index-88d57bed.js";async function r(a){try{const{data:t}=await o.get(`/drinks/${a}`);return console.log(t),t}catch(t){console.log(t.message)}}async function s(){try{const{data:a}=await o.get("/drinks/mainpage");return a}catch(a){console.log(a.message)}}export{r as a,s as g};

@@ -1,7 +1,15 @@
 import Home from '../../components/Home/Home';
+import HomeAdd from '../../components/Home/HomeAddDrinks/HomeAdd';
 
 const HomePage = () => {
-  return <Home />;
+  return (
+  <>
+  <HomeAdd/>
+  <Home />;
+  
+  </>
+
+)
 };
 
 export default HomePage;

@@ -3,7 +3,7 @@
 // import { useDispatch } from 'react-redux';
 // import { deleteContact } from 'redux/contacts/contactOperations';
 // import { selectIsLoading } from 'redux/contacts/contactSelectors';
-import NotFound from '../NotFound/NotFound';
+import NotFound from '../NotFound/NotFound'
 import { Link } from 'react-router-dom';
 import Img from '../DrinksList/Weeks.jpg';
 import icon from '../../assets/images/favoritePage/trash.svg';
@@ -22,7 +22,7 @@ import {
   // Text,
 } from './DrinksList.styled';
 
-const DrinksList = ({ drinks, onDeleteDrinks }) => {
+const DrinksList = ({drinks, onDeleteDrinks} ) => {
   // const contacts = useSelector(selectContacts);
   // const filter = useSelector(selectFilter);
   // const dispatch = useDispatch();

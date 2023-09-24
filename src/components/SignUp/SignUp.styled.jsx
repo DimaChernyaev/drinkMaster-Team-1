@@ -75,7 +75,10 @@ export const StyledField = styled(Field)`
   padding-top: 14px;
   padding-bottom: 14px;
   padding-left: 24px;
-  border: 1px solid rgba(243, 243, 243, 0.2);
+  border: 1px solid
+    ${(props) => (props.error ? '#da1414' : 'rgba(243, 243, 243, 0.5)')};
+  border: 1px solid
+    ${(props) => (props.success ? '#3CBC81' : 'rgba(243, 243, 243, 0.5)')};
   background-color: rgba(243, 243, 243, 0);
   border-radius: 24px;
   color: #f3f3f3;
@@ -97,18 +100,18 @@ export const StyledField = styled(Field)`
     }
   }
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     width: 400px;
   }
 `;
 
 export const StyledTypography = styled(Typography)`
-font-size: 12px;
-font-family: Manrope;
-font-style: normal;
-font-weight: 600;
-line-height: 16px;
-text-transform: none;
+  font-size: 12px;
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  text-transform: none;
 `;
 
 export const StyledButton = styled(Button)`
@@ -118,9 +121,8 @@ export const StyledButton = styled(Button)`
   padding-bottom: 18px;
   background-color: rgba(243, 243, 243, 0);
   border-radius: 42px;
-  color: #F3F3F3;
+  color: #f3f3f3;
   text-decoration-line: underline;
-
 
   && {
     &:hover,
@@ -135,22 +137,22 @@ export const StyledButton = styled(Button)`
 `;
 
 export const TypographyError = styled(Typography)`
-margin-left: 24px;
-margin-bottom: 0;
-color: #DA1414;
-font-family: Manrope;
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: 14px;
-`
+  margin-left: 24px;
+  margin-bottom: 0;
+  color: #da1414;
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+`;
 export const TypographySuccess = styled(Typography)`
-margin-left: 24px;
-margin-bottom: 0;
-color: #3CBC81;
-font-family: Manrope;
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: 14px;
-`
+  margin-left: 24px;
+  margin-bottom: 0;
+  color: #3cbc81;
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+`;

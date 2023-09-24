@@ -15,7 +15,6 @@ export async function getCategories() {
 export async function getIngredients() {
   try {
     const { data } = await axios.get(`/filters/ingredients`);
-
     return data;
   } catch (error) {
     console.log(error.message);
@@ -26,7 +25,7 @@ export async function getIngredients() {
 export async function getGlasses() {
   try {
     const { data } = await axios.get(`/filters/glasses`);
-
+ 
     return data;
   } catch (error) {
     console.log(error.message);

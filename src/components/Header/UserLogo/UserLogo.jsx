@@ -1,5 +1,5 @@
-// import { useSelector } from 'react-redux/es/hooks/useSelector';
-// import { useState } from 'react';
+// import { useSelector } from 'react-redux';
+// import { getUser } from '../../../redux/user/userSelectors';
 
 import {
   UserLogoBtn,
@@ -9,13 +9,15 @@ import {
 } from './UserLogog.styled';
 
 export const UserLogo = () => {
-  // const{name,avatarURL}=useSelector(({user})=>user)
+  // const user = useSelector(getUser);
+  // const { name, avatarURL } = user;
+  // console.log(user);
 
   return (
     <UserLogoWrapper>
       <UserLogoBtn>
         <UserLogoImg src="" alt="user icon" />
-        <UserLogoText>Username</UserLogoText>
+        <UserLogoText>name</UserLogoText>
       </UserLogoBtn>
     </UserLogoWrapper>
   );

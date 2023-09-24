@@ -5,6 +5,11 @@ export const Title = styled.h2`
   font-weight: 600;
   line-height: 1.1875;
 
-  margin-top: 80px;
-  margin-bottom: 40px;
+  @media (min-width: 768px) {
+    font-size: 56px;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 64px;
+  }
 `;

@@ -28,6 +28,6 @@ export const Button = styled.button`
 @media (min-width: 1440px) {
     font-size: 16px;
     padding: 18px 44px;
-    margin-bottom: 216px;
+    margin-bottom: 0;
 }
 `;

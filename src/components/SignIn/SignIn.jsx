@@ -32,28 +32,12 @@ const SignIn = () => {
     try {
       setIsLoading(true);
       const response = await dispatch(signin(values));
-      console.log(response)
       setIsLoading(false);
-      if (response.status === 204) {
-        Notify.success('Login success!', {
-          position: 'center-top',
-          distance: '10px',
-        });
-        resetForm();
-        navigate('/', { replace: true });
-        return;
-      }
-      Notify.failure(`${response.message}`, {
-        position: 'center-top',
-        distance: '10px',
-      });
+      resetForm();
+      navigate('/', { replace: true });
     } catch (error) {
-      Notify.failure(`${error.message}`, {
-        position: 'center-top',
-        distance: '10px',
-      });
+      resetForm();
     }
-    resetForm();
   };
 
   const initialValues = {

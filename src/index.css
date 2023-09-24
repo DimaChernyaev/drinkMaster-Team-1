@@ -60,14 +60,13 @@ img {
 button {
   cursor: pointer;
   font-family: inherit;
-
 }
 /* =============стилі для календаря ======================== */
 .air-datepicker {
-  background-color: #161F37;
+  background-color: #161f37;
   width: 219px;
   border-radius: 8px;
-  color: #F3F3F3;
+  color: #f3f3f3;
   font-family: Manrope;
   font-size: 16px;
   font-style: normal;
@@ -76,8 +75,16 @@ button {
   letter-spacing: -0.32px;
 }
 
-.air-datepicker-nav {
-  color: #f3f3f3
+.air-datepicker-nav,
+.air-datepicker-nav--title,
+.air-datepicker-nav--title.-disabled-,
+.air-datepicker-nav--title.-disabled-:hover {
+  color: #f3f3f3;
+}
+
+.air-datepicker-nav--title:hover,
+.air-datepicker-nav--title:focus {
+  color: #161f37;
 }
 
 .air-datepicker-nav:hover,
@@ -86,8 +93,8 @@ button {
 .air-datepicker-cell:focus,
 .air-datepicker-cell.-day-.-other-month-:hover,
 .air-datepicker-cell.-day-.-other-month-:focus {
-  color: #161f37
+  color: #161f37;
 }
-.air-datepicker-cell.-day-.-other-month-{
-  color: grey
+.air-datepicker-cell.-day-.-other-month- {
+  color: grey;
 }

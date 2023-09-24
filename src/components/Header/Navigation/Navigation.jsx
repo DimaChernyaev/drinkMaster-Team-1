@@ -8,8 +8,6 @@ const Navigation = () => {
       <StyledLink to="/add">Add Drink</StyledLink>
       <StyledLink to="/my">My Drinks</StyledLink>
       <StyledLink to="/favorites">Favorites</StyledLink>
-
-      <StyledLink to="/welcome">Welcome</StyledLink>
     </NavigationList>
   );
 };

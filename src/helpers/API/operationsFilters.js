@@ -12,22 +12,20 @@ export async function getCategories() {
 }
 
 // отримання списку інгрідієнтів
-export async function getIngridients() {
+export async function getIngredients() {
   try {
-    const { data } = await axios.get(`/filters/ingridients`);
-
+    const { data } = await axios.get(`/filters/ingredients`);
     return data;
   } catch (error) {
     console.log(error.message);
   }
 }
 
-
 // отримання списку бокалів
 export async function getGlasses() {
   try {
     const { data } = await axios.get(`/filters/glasses`);
-
+ 
     return data;
   } catch (error) {
     console.log(error.message);

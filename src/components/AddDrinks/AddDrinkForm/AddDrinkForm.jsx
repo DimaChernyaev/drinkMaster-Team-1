@@ -17,6 +17,7 @@ const AddDrinkForm = () => {
     },
     validationSchema: Yup.object({
       name: Yup.string().required('This field is mandatory'),
+      description: Yup.string().required('This field is mandatory'),
       ingredients: Yup.array().of(
         Yup.object().shape({
           name: Yup.string().required('This field is mandatory'),

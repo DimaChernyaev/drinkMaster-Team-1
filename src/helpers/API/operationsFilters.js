@@ -22,7 +22,6 @@ export async function getIngridients() {
   }
 }
 
-
 // отримання списку бокалів
 export async function getGlasses() {
   try {

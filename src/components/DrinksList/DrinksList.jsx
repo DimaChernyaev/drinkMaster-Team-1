@@ -1,11 +1,13 @@
-// import { useSelector } from 'react-redux';
-// import { selectVisibleContacts } from 'redux/contacts/contactSelectors';
-// import { useDispatch } from 'react-redux';
-// import { deleteContact } from 'redux/contacts/contactOperations';
-// import { selectIsLoading } from 'redux/contacts/contactSelectors';
-import NotFound from '../NotFound/NotFound'
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { deleteFavorite } from '../../redux/drinks/favorites/favoritesOperations';
+import {
+  selectFavoriteItems,
+  selectIsLoading,
+} from '../../redux/drinks/favorites/favoriteSelectors';
+import NotFound from '../NotFound/NotFound';
 import { Link } from 'react-router-dom';
-import Img from '../DrinksList/Weeks.jpg';
+// import Img from '../DrinksList/Weeks.jpg';
 import icon from '../../assets/images/favoritePage/trash.svg';
 import {
   DrinksListSet,
@@ -17,74 +19,47 @@ import {
   TitleType,
   TitleDescription,
   ButtonSeeMore,
-  ButtonDell,
+  ButtonDel,
 
   // Text,
 } from './DrinksList.styled';
 
-const DrinksList = ({drinks, onDeleteDrinks} ) => {
+const DrinksList = () => {
   // const contacts = useSelector(selectContacts);
   // const filter = useSelector(selectFilter);
-  // const dispatch = useDispatch();
-  // const contacts = useSelector(selectVisibleContacts);
-  // const isLoading = useSelector(selectIsLoading);
+  const dispatch = useDispatch();
+  const drinks = useSelector(selectFavoriteItems);
+  const isLoading = useSelector(selectIsLoading);
 
   return (
     <>
-      {/* {!isLoading && contacts.length === 0 && (
-        <NotFound />
-      )} */}
+      {!isLoading && drinks.length === 0 && <NotFound />}
 
       <DrinksListSet>
-        <CardWrap>
-          <ImgCard src={Img} alt="drink" />
-          <TitleWrap>
-            <Title>drink</Title>
-            <TitleType>alcoholic</TitleType>
-            <TitleDescription>shortDescription</TitleDescription>
-          </TitleWrap>
+        {drinks.length > 0 &&
+          drinks.map(({ _id, drink, alcoholic, shortDescription }) => (
+            <CardWrap key={_id}>
+              {/* <ImgCard src={drinkThumb} alt="drink" /> */}
+              <TitleWrap>
+                <Title>{drink}</Title>
+                <TitleType>{alcoholic}</TitleType>
+                <TitleDescription>{shortDescription}</TitleDescription>
+              </TitleWrap>
 
-          <BtnWrap>
-            <Link to="/drink/:drinkId">
-              <ButtonSeeMore>See more</ButtonSeeMore>
-            </Link>
-            <ButtonDell type="button">
-              <img src={icon} alt="trash" />
-            </ButtonDell>
-          </BtnWrap>
-        </CardWrap>
-        <CardWrap>
-          <ImgCard src={Img} alt="drink" />
-          <TitleWrap>
-            <Title>drink</Title>
-            <TitleType>alcoholic</TitleType>
-            <TitleDescription>shortDescription</TitleDescription>
-          </TitleWrap>
+              <BtnWrap>
+                <Link to={`/drink/${_Id}`}>
+                  <ButtonSeeMore>See more</ButtonSeeMore>
+                </Link>
 
-          <BtnWrap>
-            <Link to="/drink/:drinkId">
-              <ButtonSeeMore>See more</ButtonSeeMore>
-            </Link>
-            <ButtonDell type="button">
-              <img src={icon} alt="trash" />
-            </ButtonDell>
-          </BtnWrap>
-        </CardWrap>
-        {/* <DrinksItem /> */}
-        {/* {drinks.length > 0 &&
-          drinks.map(({ id, name, number }) => (
-            <DrinksItem key={id}>
-              <DrinksInfo>
-                {name}:<DrinksName>{number}</DrinksName>
-              </DrinksInfo>
-              <ButtonDel
-                type="button"
-                onClick={() => dispatch(deleteDrinks(id))}
-              >
-                <IoClose size={32} fill="teal" />
-              </ButtonDel>
-            </DrinksItem>
-          ))} */}
+                <ButtonDel
+                  type="button"
+                  onClick={() => dispatch(deleteFavorite(_id))}
+                >
+                  <img src={icon} alt="trash" />
+                </ButtonDel>
+              </BtnWrap>
+            </CardWrap>
+          ))}
       </DrinksListSet>
     </>
   );

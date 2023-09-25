@@ -6,7 +6,7 @@ export const SignupSchema = Yup.object().shape({
     .min(2, 'Довжина повинна бути більше двох символів')
     .max(30, 'Дуже багато символів')
     .required("Поле обов'язкове до заповнення"),
-  // date: Yup.string().required("Поле обов'язкове до заповнення"),
+  date: Yup.string(),
   email: Yup.string()
     .max(50, 'Довжина повинна бути більше двох символів')
     .email('Невірний формат email')

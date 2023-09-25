@@ -1,8 +1,8 @@
-import{n as t,j as i,L as n}from"./index-cd633c6a.js";import"./NotFound.styled-e3ef1008.js";const e="/drinkMaster-Team-1/assets/Weeks-47fea261.jpg",r="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",g=t.ul`
+import{n as t,f as x,g as r,j as i,L as l,k as c}from"./index-1bb34d31.js";import{N as g}from"./NotFound-cbe2bcf9.js";const m=e=>e.favorites.items,f=e=>e.favorites.isLoading,E=e=>e.favorites.error,h="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",b=t.ul`
   // display: flex;
   padding: 0;
   margin: 0;
-`,s=t.div`
+`,u=t.div`
   display: block;
   // flex-wrap: wrap;
   padding: 0;
@@ -17,7 +17,7 @@ import{n as t,j as i,L as n}from"./index-cd633c6a.js";import"./NotFound.styled-e
   justify-content: space-between;
   margin-bottom: 10px;
   background-color: #fff;
-`;const o=t.img`
+`;t.img`
   // width: 100%;
   width: 335px;
   display: block;
@@ -32,19 +32,19 @@ import{n as t,j as i,L as n}from"./index-cd633c6a.js";import"./NotFound.styled-e
     rgba(10, 10, 17, 0.02) 51.18%,
     rgba(10, 10, 17, 0.77) 97.66%
   );
-`,a=t.div`
+`;const w=t.div`
   margin-bottom: 18px;
-`,d=t.h5`
+`,k=t.h5`
   font-size: 18px;
   line-height: 1.33;
   margin-bottom: 4px;
-`,p=t.p`
+`,j=t.p`
   color: rgba(243, 243, 243, 0.5);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
   margin-bottom: 24px;
-`,x=t.p`
+`,y=t.p`
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -52,11 +52,11 @@ import{n as t,j as i,L as n}from"./index-cd633c6a.js";import"./NotFound.styled-e
   margin-bottom: 24px;
 `;t.span`
   margin-left: 15px;
-`;const l=t.div`
+`;const v=t.div`
   display: flex;
   align-items: flex-start;
   gap: 8px;
-`,c=t.button`
+`,T=t.button`
   display: flex;
   padding: 14px 40px;
   align-items: flex-start;
@@ -80,7 +80,7 @@ import{n as t,j as i,L as n}from"./index-cd633c6a.js";import"./NotFound.styled-e
     background: #f3f3f3;
     color: #161f37;
   }
-`,h=t.button`
+`,z=t.button`
   display: flex;
   width: 46px;
   padding: 11px 32px;
@@ -106,7 +106,7 @@ import{n as t,j as i,L as n}from"./index-cd633c6a.js";import"./NotFound.styled-e
 
   text-align: center;
   margin-bottom: 20px;
-`;const j=({drinks:m,onDeleteDrinks:f})=>i.jsx(i.Fragment,{children:i.jsxs(g,{children:[i.jsxs(s,{children:[i.jsx(o,{src:e,alt:"drink"}),i.jsxs(a,{children:[i.jsx(d,{children:"drink"}),i.jsx(p,{children:"alcoholic"}),i.jsx(x,{children:"shortDescription"})]}),i.jsxs(l,{children:[i.jsx(n,{to:"/drink/:drinkId",children:i.jsx(c,{children:"See more"})}),i.jsx(h,{type:"button",children:i.jsx("img",{src:r,alt:"trash"})})]})]}),i.jsxs(s,{children:[i.jsx(o,{src:e,alt:"drink"}),i.jsxs(a,{children:[i.jsx(d,{children:"drink"}),i.jsx(p,{children:"alcoholic"}),i.jsx(x,{children:"shortDescription"})]}),i.jsxs(l,{children:[i.jsx(n,{to:"/drink/:drinkId",children:i.jsx(c,{children:"See more"})}),i.jsx(h,{type:"button",children:i.jsx("img",{src:r,alt:"trash"})})]})]})]})}),k=t.div`
+`;const S=()=>{const e=x(),n=r(m),s=r(f);return i.jsxs(i.Fragment,{children:[!s&&n.length===0&&i.jsx(g,{}),i.jsx(b,{children:n.length>0&&n.map(({_id:o,drink:a,alcoholic:p,shortDescription:d})=>i.jsxs(u,{children:[i.jsxs(w,{children:[i.jsx(k,{children:a}),i.jsx(j,{children:p}),i.jsx(y,{children:d})]}),i.jsxs(v,{children:[i.jsx(l,{to:`/drink/${_Id}`,children:i.jsx(T,{children:"See more"})}),i.jsx(z,{type:"button",onClick:()=>e(c(o)),children:i.jsx("img",{src:h,alt:"trash"})})]})]},o))})]})},C=t.div`
   width: 100%;
   // display: flex;
   // flex-direction: row;
@@ -130,11 +130,11 @@ import{n as t,j as i,L as n}from"./index-cd633c6a.js";import"./NotFound.styled-e
   //     padding: 158px 100px;
   //   }
   //
-`,w=t.h1`
+`,F=t.h1`
   margin-bottom: 40px;
   font-size: 32px;
   line-height: 1.18; /* 118.75% */
-`,y=t.div`
+`,B=t.div`
   width: 520px;
   height: 550px;
   flex-shrink: 0;
@@ -157,7 +157,7 @@ import{n as t,j as i,L as n}from"./index-cd633c6a.js";import"./NotFound.styled-e
     height: 849px;
     border-radius: 849px;
   }
-`,v=t.div`
+`,I=t.div`
   @media (min-width: 768px) {
     width: 549px;
     height: 543px;
@@ -176,4 +176,4 @@ import{n as t,j as i,L as n}from"./index-cd633c6a.js";import"./NotFound.styled-e
     top: 458px;
     left: 1181px;
   }
-`;export{k as C,j as D,y as E,w as T,v as a};
+`;export{C,S as D,B as E,F as T,I as a,E as b,f as s};

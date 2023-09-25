@@ -1,10 +1,10 @@
-import{n as t}from"./index-cd633c6a.js";const e=t.div`
+import{n as e,j as t}from"./index-1bb34d31.js";const i="/drinkMaster-Team-1/assets/asr_blue_iced_tea_1-e64cabfc.png",n=e.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 32px;
-`,n=t.img`
+`,a=e.img`
   width: 198px;
   height: 247px;
   margin-top: 51px;
@@ -21,7 +21,7 @@ import{n as t}from"./index-cd633c6a.js";const e=t.div`
   @media (min-width: 1440px) {
     margin-top: 27px;
   }
-`,p=t.p`
+`,p=e.p`
   // margin-top: 32px;
   width: 205px;
   color: #f3f3f3;
@@ -29,4 +29,4 @@ import{n as t}from"./index-cd633c6a.js";const e=t.div`
   font-size: 14px;
   font-weight: 500;
   line-height: 1.28;
-`;export{n as C,p as T,e as W};
+`,o=()=>t.jsxs(n,{children:[t.jsx(a,{src:i,alt:"blue iced tea"}),t.jsx(p,{children:" You haven't added any favorite cocktails yet"})]});export{o as N};

@@ -4,7 +4,6 @@ import axios from 'axios';
 export async function getCategories() {
   try {
     const { data } = await axios.get(`/filters/categories`);
-
     return data;
   } catch (error) {
     console.log(error.message);
@@ -25,7 +24,6 @@ export async function getIngredients() {
 export async function getGlasses() {
   try {
     const { data } = await axios.get(`/filters/glasses`);
- 
     return data;
   } catch (error) {
     console.log(error.message);

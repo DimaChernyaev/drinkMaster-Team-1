@@ -3,13 +3,11 @@ import HomeAdd from '../../components/Home/HomeAddDrinks/HomeAdd';
 
 const HomePage = () => {
   return (
-  <>
-  <HomeAdd/>
-  <Home />;
-  
-  </>
-
-)
+    <>
+      <HomeAdd />
+      <Home />
+    </>
+  );
 };
 
 export default HomePage;

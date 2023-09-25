@@ -1,5 +1,4 @@
 import { Formik, Form } from 'formik';
-import { Notify } from 'notiflix';
 import { Box, IconButton } from '@mui/material';
 import { useState } from 'react';
 import AirDatepicker from 'air-datepicker';
@@ -46,12 +45,11 @@ const SignUp = () => {
         autoClose: true,
         selectedDates: [new Date()],
         locale: localeEn,
+        buttons: ['today', 'clear'],
         onSelect: (formattedDate) => {
           setBirthdate(formattedDate);
-          calendar.hide();
           calendar.destroy();
         },
-        buttons: ['today', 'clear'],
       });
       calendar.show();
     }
@@ -71,7 +69,9 @@ const SignUp = () => {
       setIsLoading(false);
 
       resetForm();
-    } catch (error) {}
+    } catch (error) {
+      console.log('Помилка сабміту при реєстрації', error.message);
+    }
     resetForm();
   };
 
@@ -113,8 +113,10 @@ const SignUp = () => {
                       <StyledField
                         name="name"
                         placeholder="Name"
-                        error={errors.name && touched.name}
-                        success={touched.name && !errors.name}
+                        error={errors.name && touched.name ? 'true' : 'false'}
+                        success={
+                          touched.name && !errors.name ? 'true' : 'false'
+                        }
                       />
                       {errors.name && touched.name && (
                         <ErrorOutlineIcon
@@ -155,7 +157,9 @@ const SignUp = () => {
                         name="date"
                         placeholder="dd/mm/yyyy"
                         id="date"
-                        // error={errors.date && touched.date}
+                        disabled
+                        error={!birthdate  ? 'true' : 'false'}
+                        success={birthdate ? 'true' : 'false'}
                       />
                       <IconButton
                         sx={{
@@ -169,24 +173,33 @@ const SignUp = () => {
                         }}
                         onClick={handleClickDate}
                       >
-                        <CalendarTodayIcon />
+                        <CalendarTodayIcon
+                          sx={{
+                            color:
+                              (!birthdate && '#da1414') ||
+                              (birthdate && '#3CBC81'),
+                          }}
+                        />
                       </IconButton>
                     </Box>
-                    {/* {errors.date && touched.date ? (
+                    {!birthdate ? (
                       <TypographyError>{errors.date}</TypographyError>
                     ) : null}
-                    {touched.date && !errors.date ? (
+                    {birthdate ? (
                       <TypographySuccess color="#3CBC81">
                         This is an CORRECT date
                       </TypographySuccess>
-                    ) : null} */}
+                    ) : null}
+
                     <Box sx={{ position: 'relative' }}>
                       <StyledField
                         name="email"
                         placeholder="Email"
                         type="email"
-                        error={errors.email && touched.email}
-                        success={touched.name && !errors.name}
+                        error={errors.email && touched.email ? 'true' : 'false'}
+                        success={
+                          touched.email && !errors.email ? 'true' : 'false'
+                        }
                       />
                       {errors.email && touched.email && (
                         <ErrorOutlineIcon
@@ -227,8 +240,14 @@ const SignUp = () => {
                         name="password"
                         placeholder="Password"
                         type={showPassword ? 'text' : 'password'}
-                        error={errors.password && touched.password}
-                        success={touched.name && !errors.name}
+                        error={
+                          errors.password && touched.password ? 'true' : 'false'
+                        }
+                        success={
+                          touched.password && !errors.password
+                            ? 'true'
+                            : 'false'
+                        }
                       />
                       <IconButton
                         sx={{
@@ -242,9 +261,29 @@ const SignUp = () => {
                         onClick={handleClickPassword}
                       >
                         {showPassword ? (
-                          <VisibilityIcon />
+                          <VisibilityIcon
+                            sx={{
+                              color:
+                                (errors.password &&
+                                  touched.password &&
+                                  '#da1414') ||
+                                (!errors.password &&
+                                  touched.password &&
+                                  '#3CBC81'),
+                            }}
+                          />
                         ) : (
-                          <VisibilityOffIcon />
+                          <VisibilityOffIcon
+                            sx={{
+                              color:
+                                (errors.password &&
+                                  touched.password &&
+                                  '#da1414') ||
+                                (!errors.password &&
+                                  touched.password &&
+                                  '#3CBC81'),
+                            }}
+                          />
                         )}
                       </IconButton>
                     </Box>

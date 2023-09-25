@@ -70,15 +70,25 @@ export const StyledDialogContent = styled(DialogContent)`
   flex-direction: column;
   gap: 14px;
 `;
+
 export const StyledField = styled(Field)`
   width: 100%;
   padding-top: 14px;
   padding-bottom: 14px;
   padding-left: 24px;
+  // border: 1px solid
+  //   ${(props) =>
+    props.error === 'true' ? '#da1414' : 'rgba(243, 243, 243, 0.5)'};
+  // border: 1px solid
+  //   ${(props) =>
+    props.success === 'true' ? '#3CBC81' : 'rgba(243, 243, 243, 0.5)'};
   border: 1px solid
-    ${(props) => (props.error ? '#da1414' : 'rgba(243, 243, 243, 0.5)')};
-  border: 1px solid
-    ${(props) => (props.success ? '#3CBC81' : 'rgba(243, 243, 243, 0.5)')};
+    ${(props) =>
+      props.error === 'true'
+        ? '#da1414'
+        : props.success === 'true'
+        ? '#3CBC81'
+        : 'rgba(243, 243, 243, 0.5)'};
   background-color: rgba(243, 243, 243, 0);
   border-radius: 24px;
   color: #f3f3f3;

@@ -18,6 +18,7 @@ const favoritesSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchFavorites.fulfilled, (state, action) => {
+        console.log(action);
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
@@ -31,6 +32,7 @@ const favoritesSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(addFavorite.fulfilled, (state, action) => {
+        console.log(action);
         state.isLoading = false;
         state.error = null;
         state.items.push(action.payload);
@@ -46,18 +48,10 @@ const favoritesSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         const indexDelete = state.items.findIndex(
-          (drink) => drink.id === action.payload.id,
+          (drink) => drink._id === action.payload._id,
         );
         state.items.splice(indexDelete, 1);
       })
-
-      // .addCase(deleteContact.fulfilled, (state, action) => {
-      //   state.isLoading = false;
-      //   state.error = null;
-      //   state.items = state.items.filter(
-      //     (drink) => drink.id !== action.payload.id,
-      //   );
-      // })
       .addCase(deleteFavorite.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;

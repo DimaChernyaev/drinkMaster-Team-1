@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://drink-master-server.onrender.com/drinks';
-
 export const fetchFavorites = createAsyncThunk(
   'favorites/fetchAll',
   async (_, thunkAPI) => {
@@ -19,9 +17,9 @@ export const fetchFavorites = createAsyncThunk(
 
 export const addFavorite = createAsyncThunk(
   'favorites/addFavorite',
-  async (dataUser, thunkAPI) => {
+  async (drinkId, thunkAPI) => {
     try {
-      const response = await axios.post('/drinks/favorite/add', dataUser);
+      const response = await axios.post(`/drinks/favorite/add/${drinkId}`);
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

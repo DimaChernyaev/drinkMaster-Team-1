@@ -1,9 +1,11 @@
 import axios from 'axios';
 
+axios.defaults.baseURL = 'https://drink-master-server.onrender.com';
+
 // отримання конкретного коктеля по id для сторінки Дрінк
 export async function getCurrentCoctail(id) {
   try {
-    // console.log(id);
+    console.log("axios",axios);
 
     const { data } = await axios.get(`/drinks/${id}`);
     console.log(data);
@@ -17,12 +19,11 @@ export async function getCurrentCoctail(id) {
 // отримання коктелів за категорією для домашньої сторінки
 export async function getCoctailsByCategories() {
   try {
-    const { data } = await axios.get(`/drinks/mainpage`);
-
-    return data;
-  } catch (error) {
-    console.log(error.message);
-  }
+    console.log("axios.",axios.defaults);
+    const res  = await axios.get('/drinks/mainpage');
+    console.log("res",res);
+    return res.data;
+  } catch (error) { return thunkAPI.rejectWithValue(error.message); }
 }
 
 // отримання популярних коктелів
@@ -31,20 +32,24 @@ export async function getPopularCoctails() {
     const { data } = await axios.get(`/drinks/popular`);
 
     return data;
-  } catch (error) {
-    console.log(error.message);
+  } catch (error) { thunkAPI.rejectWithValue(error.message);
   }
 }
 
 // отримання коктелів по фільтру
-export async function getCoctailsByFilter({ category, ingredient }) {
+export async function getCoctailsByFilter({category="", ingredient="", keyword="", page="1", per_page="10" }) {
+  
+  let paramsObj = {};
+  if (category) paramsObj = {category,};
+  if (ingredient) paramsObj = {...paramsObj, ingredient};
+  if (keyword) paramsObj = {...paramsObj, keyword};
+  paramsObj = {...paramsObj, page, per_page};
+  
+  console.log(paramsObj);
+  const searchParams = new URLSearchParams(paramsObj);
+  
   try {
-    const { data } = await axios.get(
-      `/drinks/search?category=${category}&ingredient=${ingredient}`,
-    );
-
+      const { data } = await axios.get('/drinks/search', searchParams);
     return data;
-  } catch (error) {
-    console.log(error.message);
-  }
+  }  catch (error) { return thunkAPI.rejectWithValue(error.message); }
 }

@@ -1,7 +1,7 @@
-import hcss from '../Home/home.module.css';
 import { useEffect, useState } from 'react';
 import { getCoctailsByCategories } from '../../helpers/API/operationsDrinks';
 import { PrewievDrinks } from './PrewievDrinks/PrewievDrinks';
+import { HomeContainer, LinkDrinks } from './Home.styled';
 
 const Home = () => {
   const [drinks, setDrinks] = useState([]);
@@ -21,9 +21,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <HomeContainer>
       <PrewievDrinks drinks={drinks} />
-    </div>
+      <LinkDrinks to={`/drinks`}>Other Drinks</LinkDrinks>
+    </HomeContainer>
   );
 };
 

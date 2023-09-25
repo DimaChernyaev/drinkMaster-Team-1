@@ -9,6 +9,10 @@ export const NavigationList = styled.nav`
   gap: 16px;
   margin-left: auto;
   margin-right: auto;
+  @media screen and (max-width: 1440px) {
+    flex-direction: column;
+    height: 100%;
+  }
 `;
 
 export const StyledLink = styled(NavLink)`

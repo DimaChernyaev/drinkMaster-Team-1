@@ -6,6 +6,10 @@ export const UserLogoWrapper = styled.div`
   justify-content: center;
   gap: 24px;
   position: relative;
+  @media screen and (max-width: 1440px) {
+    margin-left: auto;
+    margin-right: 24px;
+  }
 `;
 
 export const UserLogoBtn = styled.button`
@@ -35,6 +39,6 @@ export const UserLogoImg = styled.img`
 export const UserLogoText = styled.p`
   font-size: 14px;
   font-weight: 500;
-  line-height: 1.29;
+  line-height: 1.3;
   color: ${colorStyled.colorWhite};
 `;

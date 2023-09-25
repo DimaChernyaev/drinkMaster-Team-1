@@ -1,5 +1,5 @@
 import { CardCoctali } from '../../../helpers/CardCoctail/CardCoctail';
-import { List } from './PrewievDrinks.styled';
+import { List, Title } from './PrewievDrinks.styled';
 
 export const PrewievDrinks = ({ drinks }) => {
   return (
@@ -7,7 +7,7 @@ export const PrewievDrinks = ({ drinks }) => {
       {drinks.map(([title, coctails]) => {
         return (
           <div>
-            <h2>{title}</h2>
+            <Title>{title}</Title>
             <List>
               {coctails.map(({ _id, drink, drinkThumb }) => (
                 <CardCoctali _id={_id} drink={drink} drinkThumb={drinkThumb} />

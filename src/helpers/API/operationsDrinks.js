@@ -5,10 +5,10 @@ axios.defaults.baseURL = 'https://drink-master-server.onrender.com';
 // отримання конкретного коктеля по id для сторінки Дрінк
 export async function getCurrentCoctail(id) {
   try {
-    console.log("axios",axios);
+    // console.log("axios",axios);
 
     const { data } = await axios.get(`/drinks/${id}`);
-    console.log(data);
+    // console.log(data);
 
     return data;
   } catch (error) {
@@ -19,9 +19,9 @@ export async function getCurrentCoctail(id) {
 // отримання коктелів за категорією для домашньої сторінки
 export async function getCoctailsByCategories() {
   try {
-    console.log("axios.",axios.defaults);
+    // console.log("axios.",axios.defaults);
     const res  = await axios.get('/drinks/mainpage');
-    console.log("res",res);
+    // console.log("res",res);
     return res.data;
   } catch (error) { return thunkAPI.rejectWithValue(error.message); }
 }
@@ -45,7 +45,7 @@ export async function getCoctailsByFilter({category="", ingredient="", keyword="
   if (keyword) paramsObj = {...paramsObj, keyword};
   paramsObj = {...paramsObj, page, per_page};
   
-  console.log(paramsObj);
+  // console.log(paramsObj);
   const searchParams = new URLSearchParams(paramsObj);
   
   try {

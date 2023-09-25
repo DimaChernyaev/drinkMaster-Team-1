@@ -25,8 +25,22 @@ export async function getIngredients() {
 export async function getGlasses() {
   try {
     const { data } = await axios.get(`/filters/glasses`);
- 
+
     return data;
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+// отримання інгредієнтів по id
+export async function getIngredientById(arr) {
+  try {
+    const arrayOfPromises = arr.map(async (id) => {
+      const response = await axios.get(`/ingredients/${id}`);
+      return response;
+    });
+
+    return await Promise.all(arrayOfPromises);
   } catch (error) {
     console.log(error.message);
   }

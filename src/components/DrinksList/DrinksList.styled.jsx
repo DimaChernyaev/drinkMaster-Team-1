@@ -104,7 +104,7 @@ export const ButtonSeeMore = styled.button`
   }
 `;
 
-export const ButtonDell = styled.button`
+export const ButtonDel = styled.button`
   display: flex;
   width: 46px;
   padding: 11px 32px;

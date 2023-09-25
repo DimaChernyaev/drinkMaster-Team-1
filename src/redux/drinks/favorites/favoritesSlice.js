@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import * as favorite from './favoritesOperations';
+import {
+  fetchFavorites,
+  addFavorite,
+  deleteFavorite,
+} from './favoritesOperations';
 
 const favoritesSlice = createSlice({
   name: 'favorites',
@@ -10,43 +14,51 @@ const favoritesSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(favorite.allFavorites.pending, (state) => {
+      .addCase(fetchFavorites.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(favorite.allFavorites.fulfilled, (state, action) => {
+      .addCase(fetchFavorites.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
       })
-      .addCase(favorite.allFavorites.rejected, (state, action) => {
+      .addCase(fetchFavorites.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
 
-      .addCase(favorite.addFavorites.pending, (state) => {
+      .addCase(addFavorite.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(favorite.addFavorites.fulfilled, (state, action) => {
+      .addCase(addFavorite.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items.push(action.payload);
       })
-      .addCase(favorite.addFavorites.rejected, (state, action) => {
+      .addCase(addFavorite.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
-      .addCase(favorite.deleteFavorites.pending, (state) => {
+      .addCase(deleteFavorite.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(favorite.deleteFavorites.fulfilled, (state, action) => {
+      .addCase(deleteFavorite.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.error = false;
+        state.error = null;
         const indexDelete = state.items.findIndex(
-          (favorite) => favorite === action.payload.id,
+          (drink) => drink.id === action.payload.id,
         );
         state.items.splice(indexDelete, 1);
       })
-      .addCase(favorite.deleteFavorites.rejected, (state, action) => {
+
+      // .addCase(deleteContact.fulfilled, (state, action) => {
+      //   state.isLoading = false;
+      //   state.error = null;
+      //   state.items = state.items.filter(
+      //     (drink) => drink.id !== action.payload.id,
+      //   );
+      // })
+      .addCase(deleteFavorite.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       });

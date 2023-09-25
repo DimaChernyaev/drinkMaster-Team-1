@@ -1,5 +1,5 @@
 export const selectOwnItems = (state) => state.own.items;
 
-export const selectOwnIsLoading = (state) => state.own.isLoading;
+export const selectIsLoading = (state) => state.own.isLoading;
 
-export const selectOwnError = (state) => state.own.error;
+export const selectError = (state) => state.own.error;

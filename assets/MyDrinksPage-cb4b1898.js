@@ -1,1 +1,0 @@
-import{j as s}from"./index-fa7d53ca.js";import{C as r,T as i,E as t,a as n,D as a}from"./FavoriteDrinksPage.styled-b1e33cea.js";import"./NotFound-55a9dd6f.js";const e=()=>s.jsx("div",{children:s.jsx("title",{children:"Paginator"})}),l=()=>s.jsxs(r,{children:[s.jsx(i,{children:"My drinks"}),s.jsx(t,{}),s.jsx(n,{}),s.jsx(a,{}),s.jsx(e,{})]});export{l as default};

@@ -1,4 +1,4 @@
-import{n as t,w as x,x as r,j as i,L as l,z as c}from"./index-fa7d53ca.js";import{N as g}from"./NotFound-55a9dd6f.js";const m=e=>e.favorites.items,h=e=>e.favorites.isLoading,E=e=>e.favorites.error,f="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",b=t.ul`
+import{n as t,w as x,x as r,j as i,L as l,z as c}from"./index-74ad6d37.js";import{N as g}from"./NotFound-4807be2a.js";const m=e=>e.favorites.items,h=e=>e.favorites.isLoading,E=e=>e.favorites.error,f="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",b=t.ul`
   // display: flex;
   padding: 0;
   margin: 0;

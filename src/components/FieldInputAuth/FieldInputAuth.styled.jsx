@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import { Button, DialogContent, DialogTitle, Typography } from '@mui/material';
-import { Form, Field } from 'formik';
+import { Typography } from '@mui/material';
+import { Field } from 'formik';
 
 export const StyledField = styled(Field)`
-  width: 100%;
+  width: 335px;
   padding-top: 14px;
   padding-bottom: 14px;
   padding-left: 24px;

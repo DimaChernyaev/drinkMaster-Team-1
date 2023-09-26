@@ -67,7 +67,7 @@ const SignIn = () => {
           validationSchema={SignInSchema}
         >
           {({ errors, touched }) => (
-            <Form>
+            <Form style={{zIndex: 3}}>
               <StyledDialogTitle id="login" align="left">
                 Sign In
               </StyledDialogTitle>

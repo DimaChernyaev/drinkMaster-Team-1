@@ -1,4 +1,4 @@
-import{n as Ne,j as Et,o as et,r as oe,D as Oe}from"./index-bfd8167d.js";const Te=Ne.h2`
+import{n as Ne,j as Et,o as et,r as oe,D as Oe}from"./index-b91394bf.js";const Te=Ne.h2`
   font-size: 32px;
   font-weight: 600;
   line-height: 1.1875;

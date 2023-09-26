@@ -27,7 +27,6 @@ import { signup } from '../../redux/auth/authOperations';
 import { SkeletonAuth } from '../Skeletons/SkeletonAuth';
 import { FieldInputAuth } from '../FieldInputAuth/FieldInputAuth';
 import { FieldInputAuthPass } from '../FieldInputAuthPass/FieldInputAuthPass';
-import zIndex from '@mui/material/styles/zIndex';
 
 const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -86,7 +85,7 @@ const SignUp = () => {
           validationSchema={SignupSchema}
         >
           {({ errors, touched }) => (
-            <Form style={{zIndex: 3, minWidth: "335px"}}>
+            <Form style={{ zIndex: 3, minWidth: '335px' }}>
               <StyledDialogTitle id="registration" align="left">
                 Sign Up
               </StyledDialogTitle>
@@ -156,8 +155,7 @@ const SignUp = () => {
                       placeholder="Email"
                     />
 
-                  <FieldInputAuthPass errors={errors} touched={touched} />
-
+                    <FieldInputAuthPass errors={errors} touched={touched} />
                   </Box>
                   <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <StyledButton type="submit">
@@ -169,7 +167,6 @@ const SignUp = () => {
                       </StyledButton>
                     </Link>
                   </Box>
-                  
                 </>
               )}
             </Form>

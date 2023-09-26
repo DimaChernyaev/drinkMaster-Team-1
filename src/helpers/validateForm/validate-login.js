@@ -12,5 +12,6 @@ export const SignInSchema = Yup.object().shape({
   password: Yup.string()
     .min(2, 'Довжина повинна бути більше двох символів')
     .max(30, 'Дуже багато символів')
+    .trim()
     .required("Поле обов'язкове до заповнення"),
 });

@@ -1,20 +1,28 @@
-import { Avatar, Box, Dialog, DialogTitle } from '@mui/material';
+import { Box, Dialog } from '@mui/material';
 import { Notify } from 'notiflix';
 import { Field, Formik } from 'formik';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../redux/auth/authSelectors';
-import { StyledButton, StyledTypography } from '../SignUp/SignUp.styled';
+import {
+  StyledButton,
+  StyledTypography,
+  TypographyError,
+  TypographySuccess,
+} from '../SignUp/SignUp.styled';
 import { SkeletonAuth } from '../Skeletons/SkeletonAuth';
 import {
+  StyledAvatar,
+  StyledBox,
   StyledCloseIcon,
+  StyledEditIcon,
   StyledField,
   StyledForm,
   StyledLabel,
 } from './UserInfoModal.styled';
-import EditIcon from '@mui/icons-material/Edit';
 import addPhoto from '../../assets/images/userInfoModal/addPhoto.svg';
 import { updateUser } from '../../redux/auth/user/userOperations';
+import { ProfileSchema } from '../../helpers/validateForm/validate-profile';
 
 export const UserInfoModal = ({ isOpen, handleClose }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -56,7 +64,9 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
       console.log(formData);
       await dispatch(updateUser(formData));
       setIsLoading(false);
+
       resetForm();
+      handleClose();
     } catch (error) {
       console.log('Помилка сабміту при оновлені профилю', error.message);
     }
@@ -75,7 +85,7 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
         <Formik
           initialValues={initialValues}
           onSubmit={handleSubmit}
-          // validationSchema={SignInSchema}
+          validationSchema={ProfileSchema}
         >
           {({ errors, touched }) => (
             <StyledForm>
@@ -85,27 +95,8 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
                   sx={{ cursor: 'pointer' }}
                 />
                 <Box sx={{ position: 'relative' }}>
-                  <Avatar
-                    id="profile"
-                    alt="avatar"
-                    src={avatar}
-                    sx={{
-                      width: 80,
-                      height: 80,
-                      marginLeft: 'auto',
-                      marginRight: 'auto',
-                      marginBottom: '39px',
-                    }}
-                  />
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      width: '28',
-                      height: '28',
-                      top: '80%',
-                      left: '45%',
-                    }}
-                  >
+                  <StyledAvatar id="profile" alt="avatar" src={avatar} />
+                  <StyledBox>
                     <Field
                       name="file"
                       type="file"
@@ -113,7 +104,7 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
                       hidden
                       onChange={handleChangeAvatar}
                     />
-                    <StyledLabel htmlFor="loadFile" role="button">
+                    <StyledLabel for="loadFile" role="button">
                       <img
                         src={addPhoto}
                         alt="add avatar"
@@ -121,21 +112,24 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
                         height="28"
                       />
                     </StyledLabel>
-                  </Box>
+                  </StyledBox>
                 </Box>
+
                 <Box sx={{ position: 'relative' }}>
                   <StyledField placeholder={initialValues.name} name="name" />
-                  <EditIcon
-                    sx={{
-                      width: '16px',
-                      height: '16px',
-                      color: '#F3F3F3',
-                      position: 'absolute',
-                      top: '19px',
-                      right: '24px',
-                    }}
-                  />
+                  <StyledEditIcon />
                 </Box>
+                {errors.name && touched.name ? (
+                  <TypographyError sx={{ marginTop: 1 }}>
+                    {errors.name}
+                  </TypographyError>
+                ) : null}
+                {touched.name && !errors.name ? (
+                  <TypographySuccess color="#3CBC81" sx={{ marginTop: 1 }}>
+                    This is an CORRECT name
+                  </TypographySuccess>
+                ) : null}
+
                 <StyledButton type="submit" sx={{ marginTop: '18px' }}>
                   <StyledTypography>Save changes</StyledTypography>
                 </StyledButton>

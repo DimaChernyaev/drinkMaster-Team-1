@@ -5,6 +5,7 @@ export const SignupSchema = Yup.object().shape({
     .matches(/^[A-Za-zА-Яа-яІіЇїЄєҐґ']+$/, "Ім'я повинно бути тільки з літер")
     .min(2, 'Довжина повинна бути більше двох символів')
     .max(30, 'Дуже багато символів')
+    .trim()
     .required("Поле обов'язкове до заповнення"),
   date: Yup.string(),
   email: Yup.string()
@@ -18,5 +19,6 @@ export const SignupSchema = Yup.object().shape({
   password: Yup.string()
     .min(2, 'Довжина повинна бути більше двох символів')
     .max(30, 'Дуже багато символів')
+    .trim()
     .required("Поле обов'язкове до заповнення"),
 });

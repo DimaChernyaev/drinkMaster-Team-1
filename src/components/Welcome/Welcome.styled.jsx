@@ -118,7 +118,6 @@ export const StyledTypography = styled(Typography)`
   font-weight: 400;
   line-height: 18px;
   text-transform: none;
-  color: #fafafa;
   letter-spacing: -0.28px;
 
   @media screen and (min-width: 768px) {

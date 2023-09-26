@@ -4,10 +4,6 @@ import { useState } from 'react';
 import AirDatepicker from 'air-datepicker';
 import localeEn from 'air-datepicker/locale/en';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import 'air-datepicker/air-datepicker.css';
@@ -29,11 +25,12 @@ import {
 import { SignupSchema } from '../../helpers/validateForm/validate-register';
 import { signup } from '../../redux/auth/authOperations';
 import { SkeletonAuth } from '../Skeletons/SkeletonAuth';
+import { FieldInputAuth } from '../FieldInputAuth/FieldInputAuth';
+import { FieldInputAuthPass } from '../FieldInputAuthPass/FieldInputAuthPass';
 
 const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [birthdate, setBirthdate] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
 
   const handleClickDate = () => {
@@ -53,10 +50,6 @@ const SignUp = () => {
       });
       calendar.show();
     }
-  };
-
-  const handleClickPassword = () => {
-    setShowPassword(!showPassword);
   };
 
   const handleSubmit = async (values, { resetForm }) => {
@@ -109,48 +102,12 @@ const SignUp = () => {
                       marginBottom: '40px',
                     }}
                   >
-                    <Box sx={{ position: 'relative' }}>
-                      <StyledField
-                        name="name"
-                        placeholder="Name"
-                        error={errors.name && touched.name ? 'true' : 'false'}
-                        success={
-                          touched.name && !errors.name ? 'true' : 'false'
-                        }
-                      />
-                      {errors.name && touched.name && (
-                        <ErrorOutlineIcon
-                          sx={{
-                            position: 'absolute',
-                            color: '#da1414',
-                            top: '12px',
-                            right: '24px',
-                            width: '24px',
-                            height: '24px',
-                          }}
-                        />
-                      )}
-                      {touched.name && !errors.name && (
-                        <CheckCircleOutlineIcon
-                          sx={{
-                            position: 'absolute',
-                            color: '#3CBC81',
-                            top: '12px',
-                            right: '24px',
-                            width: '24px',
-                            height: '24px',
-                          }}
-                        />
-                      )}
-                    </Box>
-                    {errors.name && touched.name ? (
-                      <TypographyError>{errors.name}</TypographyError>
-                    ) : null}
-                    {touched.name && !errors.name ? (
-                      <TypographySuccess color="#3CBC81">
-                        This is an CORRECT name
-                      </TypographySuccess>
-                    ) : null}
+                    <FieldInputAuth
+                      errors={errors}
+                      touched={touched}
+                      name="name"
+                      placeholder="Name"
+                    />
 
                     <Box sx={{ position: 'relative', width: '100%' }}>
                       <StyledField
@@ -158,7 +115,7 @@ const SignUp = () => {
                         placeholder="dd/mm/yyyy"
                         id="date"
                         disabled
-                        error={!birthdate  ? 'true' : 'false'}
+                        error={!birthdate ? 'true' : 'false'}
                         success={birthdate ? 'true' : 'false'}
                       />
                       <IconButton
@@ -191,111 +148,15 @@ const SignUp = () => {
                       </TypographySuccess>
                     ) : null}
 
-                    <Box sx={{ position: 'relative' }}>
-                      <StyledField
-                        name="email"
-                        placeholder="Email"
-                        type="email"
-                        error={errors.email && touched.email ? 'true' : 'false'}
-                        success={
-                          touched.email && !errors.email ? 'true' : 'false'
-                        }
-                      />
-                      {errors.email && touched.email && (
-                        <ErrorOutlineIcon
-                          sx={{
-                            position: 'absolute',
-                            color: '#da1414',
-                            top: '12px',
-                            right: '24px',
-                            width: '24px',
-                            height: '24px',
-                          }}
-                        />
-                      )}
-                      {touched.email && !errors.email && (
-                        <CheckCircleOutlineIcon
-                          sx={{
-                            position: 'absolute',
-                            color: '#3CBC81',
-                            top: '12px',
-                            right: '24px',
-                            width: '24px',
-                            height: '24px',
-                          }}
-                        />
-                      )}
-                    </Box>
-                    {errors.email && touched.email ? (
-                      <TypographyError>{errors.email}</TypographyError>
-                    ) : null}
-                    {touched.email && !errors.email ? (
-                      <TypographySuccess color="#3CBC81">
-                        This is an CORRECT email
-                      </TypographySuccess>
-                    ) : null}
+                    <FieldInputAuth
+                      errors={errors}
+                      touched={touched}
+                      name="email"
+                      placeholder="Email"
+                    />
 
-                    <Box sx={{ position: 'relative' }}>
-                      <StyledField
-                        name="password"
-                        placeholder="Password"
-                        type={showPassword ? 'text' : 'password'}
-                        error={
-                          errors.password && touched.password ? 'true' : 'false'
-                        }
-                        success={
-                          touched.password && !errors.password
-                            ? 'true'
-                            : 'false'
-                        }
-                      />
-                      <IconButton
-                        sx={{
-                          position: 'absolute',
-                          color: '#F3F3F3',
-                          top: '12px',
-                          right: '24px',
-                          width: '20px',
-                          height: '20px',
-                        }}
-                        onClick={handleClickPassword}
-                      >
-                        {showPassword ? (
-                          <VisibilityIcon
-                            sx={{
-                              color:
-                                (errors.password &&
-                                  touched.password &&
-                                  '#da1414') ||
-                                (!errors.password &&
-                                  touched.password &&
-                                  '#3CBC81'),
-                            }}
-                          />
-                        ) : (
-                          <VisibilityOffIcon
-                            sx={{
-                              color:
-                                (errors.password &&
-                                  touched.password &&
-                                  '#da1414') ||
-                                (!errors.password &&
-                                  touched.password &&
-                                  '#3CBC81'),
-                            }}
-                          />
-                        )}
-                      </IconButton>
-                    </Box>
+                  <FieldInputAuthPass errors={errors} touched={touched} />
 
-                    {errors.password && touched.password ? (
-                      <TypographyError>{errors.password}</TypographyError>
-                    ) : null}
-                    {touched.password && !errors.password ? (
-                      <TypographySuccess color="#3CBC81">
-                        This is an CORRECT password
-                      </TypographySuccess>
-                    ) : null}
                   </Box>
                   <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <StyledButton type="submit">
@@ -307,6 +168,7 @@ const SignUp = () => {
                       </StyledButton>
                     </Link>
                   </Box>
+                  
                 </>
               )}
             </Form>

@@ -4,7 +4,7 @@ import { AddToFavoriteBtn } from '../AddToFavoriteBtn/AddToFavoriteBtn';
 import { Container, ShortDescr, SubTitle } from './DrinkPageHero.style';
 import { CoctailImg } from '../CoctailImg/CoctailImg';
 import { useDispatch } from 'react-redux';
-import { addFavorites } from '../../../redux/drinks/favorites/favoritesOperations';
+import { addFavorite } from '../../../redux/drinks/favorites/favoritesOperations';
 
 export const DrinkPageHero = ({ coctailInfo }) => {
   const title = coctailInfo !== null ? coctailInfo.drink : '';
@@ -19,7 +19,7 @@ export const DrinkPageHero = ({ coctailInfo }) => {
 
   const handleOnClick = () => {
     setAddedDrink((prev) => !prev);
-    dispatch(addFavorites(coctailInfo));
+    dispatch(addFavorite(coctailInfo));
   };
 
   return (

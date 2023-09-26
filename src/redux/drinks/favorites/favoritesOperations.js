@@ -6,8 +6,6 @@ export const fetchFavorites = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/drinks/favorite');
-      // const response = await axios.get('/drinks/popular');
-      // При успішному запиті повертаємо проміс із даними
       return response.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);

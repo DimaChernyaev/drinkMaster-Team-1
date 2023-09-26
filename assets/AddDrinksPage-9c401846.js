@@ -1,4 +1,4 @@
-import{c as l,r as g,j as o,u as A,a as v,b as p,d as S}from"./index-8ad2a130.js";import{s as i,P as W}from"./styled-components.browser.esm-e515440c.js";const x=i.div`
+import{c as l,r as g,j as o,u as A,a as v,b as p,d as S}from"./index-09101ffb.js";import{s as i,P as W}from"./styled-components.browser.esm-2af39d41.js";const x=i.div`
   font-size: 12px;
   color: #da1414;
   line-height: 14px;

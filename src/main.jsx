@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import './index.css';
 import GlobalStyle from './GlobalStyled.js';
 import { store, persistor } from '../src/redux/store.js';
 import { PersistGate } from 'redux-persist/integration/react';

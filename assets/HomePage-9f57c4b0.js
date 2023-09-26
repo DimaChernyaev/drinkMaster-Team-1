@@ -1,4 +1,4 @@
-import{n as i,L as l,c,j as t,r as d}from"./index-be98f74d.js";import{g as k}from"./operationsDrinks-24d5c6e9.js";const m=i.li``,h=i.img`
+import{n as i,L as l,c,j as t,r as d}from"./index-bfd8167d.js";import{g as k}from"./operationsDrinks-badb9298.js";const m=i.li``,h=i.img`
   display: block;
   border-radius: 8px;
 

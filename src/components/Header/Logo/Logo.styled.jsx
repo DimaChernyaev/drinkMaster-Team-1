@@ -9,6 +9,10 @@ export const LogoLink = styled(Link)`
   align-items: center;
   color: ${colorStyled.colorWhite};
   gap: 8px;
+  /* transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.1);
+  } */
 `;
 
 export const LogoText = styled.p`
@@ -18,7 +22,7 @@ export const LogoText = styled.p`
 `;
 
 export const LogoSVG = styled(LogoImg)`
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
   fill: currentColor;
 `;

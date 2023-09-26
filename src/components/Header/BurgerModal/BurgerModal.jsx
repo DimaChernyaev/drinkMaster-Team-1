@@ -1,7 +1,7 @@
 import Navigation from '../Navigation/Navigation';
 import { BurgerModalWrapper } from './BurgerModal.styled';
 
-export const BurgerModal = ({ isOpen, onClose }) => {
+export const aBurgerModal = ({ isOpen, onClose }) => {
   return (
     <>
       {isOpen && (
@@ -10,5 +10,24 @@ export const BurgerModal = ({ isOpen, onClose }) => {
         </BurgerModalWrapper>
       )}
     </>
+  );
+};
+
+import ReactDOM from 'react-dom';
+
+const modalRoot = document.getElementById('root');
+
+export const BurgerModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return ReactDOM.createPortal(
+    <>
+      {isOpen && (
+        <BurgerModalWrapper isOpen={isOpen}>
+          <Navigation onClose={onClose} />
+        </BurgerModalWrapper>
+      )}
+    </>,
+    modalRoot,
   );
 };

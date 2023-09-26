@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Typography } from '@mui/material';
 import { colorStyled } from '../../../helpers/colorStyled';
 
 export const StyledModalWindow = styled.div`
@@ -41,3 +42,12 @@ export const LogOutBtn = styled.button`
     border-color: ${colorStyled.colorWhiteFifty};
   }
 `;
+
+export const StyledTypography = styled(Typography)`
+color: #F3F3F3;
+font-family: Manrope;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 18px; 
+`

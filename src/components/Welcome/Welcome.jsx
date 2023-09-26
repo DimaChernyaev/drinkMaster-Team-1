@@ -37,12 +37,12 @@ const Welcome = () => {
 
         <Box sx={{ display: 'flex', gap: '14px', justifyContent: 'center' }}>
           <Link to="/signup">
-            <StyledButton>
+            <StyledButton type="button">
               <StyledTypography>Sign Up</StyledTypography>
             </StyledButton>
           </Link>
           <Link to="/signin">
-            <StyledButton>
+            <StyledButton type="button">
               <StyledTypography>Sign In</StyledTypography>
             </StyledButton>
           </Link>

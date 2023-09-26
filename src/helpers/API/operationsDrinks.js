@@ -41,19 +41,18 @@ export async function getPopularCoctails() {
 
 // отримання коктелів по фільтру
 export async function getCoctailsByFilter({
-  category = '',
-  ingredient = '',
-  keyword = '',
+  category ,
+  ingredient,
+  keyword,
   page = '1',
   per_page = '10',
 }) {
   let paramsObj = {};
-  if (category) paramsObj = { category };
-  if (ingredient) paramsObj = { ...paramsObj, ingredient };
-  if (keyword) paramsObj = { ...paramsObj, keyword };
-  paramsObj = { ...paramsObj, page, per_page };
-
-  console.log(paramsObj);
+  if (category) paramsObj = {category,};
+  if (ingredient) paramsObj = {...paramsObj, ingredient};
+  if (keyword) paramsObj = {...paramsObj, keyword};
+  paramsObj = {...paramsObj, page, per_page};
+  console.log("paramsObj =",paramsObj);
   const searchParams = new URLSearchParams(paramsObj);
 
   try {

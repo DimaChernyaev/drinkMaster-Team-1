@@ -1,8 +1,5 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import { colorStyled } from '../colorStyled';
-
-export const Card = styled.li``;
 
 export const ImageCard = styled.img`
   display: block;
@@ -39,12 +36,17 @@ export const CocktailName = styled.p`
 `;
 
 export const CocktailLink = styled(Link)`
-  color: ${colorStyled.colorWhiteFifty};
   font-size: 16px;
   font-size: 500;
   line-height: 1.2;
   word-wrap: break-word;
   align-self: flex-start;
+  color: var(--whitefifty-color);
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--white-color);
+  }
 
   @media (min-width: 375px) {
     font-size: 14px;

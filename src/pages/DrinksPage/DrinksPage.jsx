@@ -29,8 +29,8 @@ const DrinksPage = () => {
                 const getIngredientList = async()=>{
                         try{
                                 const data = await getIngredients();
-                                setIngredientList(data);
-                                console.log("ingredientList = ",ingredientList);
+                                const titles = data.map(item => item.title);
+                                setIngredientList(titles);
                         } catch(error){
                                 if (error.code !== 'ERR_CANCELED') {
                                         console.log(error);

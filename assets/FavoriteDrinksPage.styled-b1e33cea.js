@@ -1,4 +1,4 @@
-import{n as t,f as x,g as r,j as i,L as l,k as c}from"./index-09101ffb.js";import{N as g}from"./NotFound-2d387e78.js";const m=e=>e.favorites.items,f=e=>e.favorites.isLoading,E=e=>e.favorites.error,h="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",b=t.ul`
+import{n as t,w as x,x as r,j as i,L as l,z as c}from"./index-fa7d53ca.js";import{N as g}from"./NotFound-55a9dd6f.js";const m=e=>e.favorites.items,h=e=>e.favorites.isLoading,E=e=>e.favorites.error,f="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",b=t.ul`
   // display: flex;
   padding: 0;
   margin: 0;
@@ -106,7 +106,7 @@ import{n as t,f as x,g as r,j as i,L as l,k as c}from"./index-09101ffb.js";impor
 
   text-align: center;
   margin-bottom: 20px;
-`;const S=()=>{const e=x(),n=r(m),s=r(f);return i.jsxs(i.Fragment,{children:[!s&&n.length===0&&i.jsx(g,{}),i.jsx(b,{children:n.length>0&&n.map(({_id:o,drink:a,alcoholic:p,shortDescription:d})=>i.jsxs(u,{children:[i.jsxs(w,{children:[i.jsx(k,{children:a}),i.jsx(j,{children:p}),i.jsx(y,{children:d})]}),i.jsxs(v,{children:[i.jsx(l,{to:`/drink/${_Id}`,children:i.jsx(T,{children:"See more"})}),i.jsx(z,{type:"button",onClick:()=>e(c(o)),children:i.jsx("img",{src:h,alt:"trash"})})]})]},o))})]})},C=t.div`
+`;const S=()=>{const e=x(),n=r(m),s=r(h);return i.jsxs(i.Fragment,{children:[!s&&n.length===0&&i.jsx(g,{}),i.jsx(b,{children:n.length>0&&n.map(({_id:o,drink:a,alcoholic:p,shortDescription:d})=>i.jsxs(u,{children:[i.jsxs(w,{children:[i.jsx(k,{children:a}),i.jsx(j,{children:p}),i.jsx(y,{children:d})]}),i.jsxs(v,{children:[i.jsx(l,{to:`/drink/${_Id}`,children:i.jsx(T,{children:"See more"})}),i.jsx(z,{type:"button",onClick:()=>e(c(o)),children:i.jsx("img",{src:f,alt:"trash"})})]})]},o))})]})},C=t.div`
   width: 100%;
   // display: flex;
   // flex-direction: row;
@@ -176,4 +176,4 @@ import{n as t,f as x,g as r,j as i,L as l,k as c}from"./index-09101ffb.js";impor
     top: 458px;
     left: 1181px;
   }
-`;export{C,S as D,B as E,F as T,I as a,E as b,f as s};
+`;export{C,S as D,B as E,F as T,I as a,E as b,h as s};

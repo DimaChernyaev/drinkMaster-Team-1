@@ -11,6 +11,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { selectIsRefreshing } from './redux/auth/authSelectors';
 import { refresh } from './redux/auth/authOperations';
+import { Loader } from './components/Loader/Loader.styled';
+import { ThreeDots } from 'react-loader-spinner';
 
 const HomePage = lazy(() => import('../src/pages/HomePage/HomePage'));
 const DrinksPage = lazy(() => import('../src/pages/DrinksPage/DrinksPage'));
@@ -33,31 +35,24 @@ function App() {
     dispatch(refresh());
   }, [dispatch]);
 
-  return (
-    <>
-      {isRefreshing ? (
-        <div>...Loading</div>
-      ) : (
-        <Routes>
-          <Route
-            path="/welcome"
-            element={
-              <RestrictedRoute redirectTo="/" component={<WelcomePage />} />
-            }
-          />
-          <Route
-            path="/signup"
-            element={
-              <RestrictedRoute redirectTo="/" component={<SignUpPage />} />
-            }
-          />
-          <Route
-            path="/signin"
-            element={
-              <RestrictedRoute redirectTo="/" component={<SignInPage />} />
-            }
-          />
-
+  return isRefreshing ? (
+    <Loader>
+      <ThreeDots color="#f3f3f3" width="80" />
+    </Loader>
+  ) : (
+    <Routes>
+      <Route
+        path="/welcome"
+        element={<RestrictedRoute redirectTo="/" component={<WelcomePage />} />}
+      />
+      <Route
+        path="/signup"
+        element={<RestrictedRoute redirectTo="/" component={<SignUpPage />} />}
+      />
+      <Route
+        path="/signin"
+        element={<RestrictedRoute redirectTo="/" component={<SignInPage />} />}
+      />
           <Route
             path="/"
             element={
@@ -122,4 +117,5 @@ function App() {
     </>
   );
 }
+
 export default App;

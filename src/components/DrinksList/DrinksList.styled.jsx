@@ -4,6 +4,16 @@ export const DrinksListSet = styled.ul`
   // display: flex;
   padding: 0;
   margin: 0;
+
+  @media (min-width: 768px) {
+  // display: grid;
+  // grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  // grid-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  // }
 `;
 
 export const CardWrap = styled.div`
@@ -12,17 +22,37 @@ export const CardWrap = styled.div`
   padding: 0;
   margin: 0;
   margin-bottom: 40px;
+
+  @media (min-width: 375px) {
+    width: 335px;
+  }
+
+  @media (min-width: 768px) {
+    width: 342px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 400px;
+  }
 `;
 
 export const DrinksItem = styled.li`
   width: 100%;
   max-width: 380px;
   padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
   margin-bottom: 10px;
   background-color: #fff;
+
+  @media (min-width: 768px) {
+    flex-basis: calc((100% - 2 * 20px) / 3);
+  }
+
+  @media (min-width: 1280px) {
+    flex-basis: calc((100% - 3 * 20px) / 4);
+  }
 `;
 
 export const ImgCard = styled.img`
@@ -40,6 +70,21 @@ export const ImgCard = styled.img`
     rgba(10, 10, 17, 0.02) 51.18%,
     rgba(10, 10, 17, 0.77) 97.66%
   );
+
+  @media (min-width: 375px) {
+    width: 335px;
+    height: 360px;
+  }
+
+  @media (min-width: 768px) {
+    width: 342px;
+    height: 360px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 400px;
+    height: 400px;
+  }
 `;
 
 export const TitleWrap = styled.div`

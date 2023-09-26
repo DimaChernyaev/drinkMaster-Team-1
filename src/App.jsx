@@ -35,24 +35,33 @@ function App() {
     dispatch(refresh());
   }, [dispatch]);
 
-  return isRefreshing ? (
-    <Loader>
-      <ThreeDots color="#f3f3f3" width="80" />
-    </Loader>
-  ) : (
-    <Routes>
-      <Route
-        path="/welcome"
-        element={<RestrictedRoute redirectTo="/" component={<WelcomePage />} />}
-      />
-      <Route
-        path="/signup"
-        element={<RestrictedRoute redirectTo="/" component={<SignUpPage />} />}
-      />
-      <Route
-        path="/signin"
-        element={<RestrictedRoute redirectTo="/" component={<SignInPage />} />}
-      />
+  return (
+    <>
+      {isRefreshing ? (
+        <Loader>
+          <ThreeDots />
+        </Loader>
+      ) : (
+        <Routes>
+          <Route
+            path="/welcome"
+            element={
+              <RestrictedRoute redirectTo="/" component={<WelcomePage />} />
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <RestrictedRoute redirectTo="/" component={<SignUpPage />} />
+            }
+          />
+          <Route
+            path="/signin"
+            element={
+              <RestrictedRoute redirectTo="/" component={<SignInPage />} />
+            }
+          />
+
           <Route
             path="/"
             element={

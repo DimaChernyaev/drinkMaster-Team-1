@@ -27,6 +27,7 @@ import { signup } from '../../redux/auth/authOperations';
 import { SkeletonAuth } from '../Skeletons/SkeletonAuth';
 import { FieldInputAuth } from '../FieldInputAuth/FieldInputAuth';
 import { FieldInputAuthPass } from '../FieldInputAuthPass/FieldInputAuthPass';
+import zIndex from '@mui/material/styles/zIndex';
 
 const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +43,7 @@ const SignUp = () => {
         autoClose: true,
         selectedDates: [new Date()],
         locale: localeEn,
-        buttons: ['today', 'clear'],
+        // buttons: ['today', 'clear'],
         onSelect: (formattedDate) => {
           setBirthdate(formattedDate);
           calendar.destroy();
@@ -85,7 +86,7 @@ const SignUp = () => {
           validationSchema={SignupSchema}
         >
           {({ errors, touched }) => (
-            <Form>
+            <Form style={{zIndex: 3, minWidth: "335px"}}>
               <StyledDialogTitle id="registration" align="left">
                 Sign Up
               </StyledDialogTitle>

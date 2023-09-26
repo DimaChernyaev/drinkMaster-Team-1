@@ -44,7 +44,7 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
     const formData = new FormData();
 
     formData.append('avatar', fileAvatar);
-    formData.append('name', values);
+    formData.append('name', JSON.stringify(values.name));
 
     try {
       setIsLoading(true);
@@ -77,9 +77,7 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
 
           {({ errors, touched }) => (
             <StyledForm >
-              {isLoading ? (
-                <SkeletonAuth totalRow={3} />
-              ) : (
+ 
                 <>
                 <StyledCloseIcon onClick={handleClose} sx={{cursor:"pointer"}}/>
                 <Box sx={{position:"relative"}}>
@@ -108,7 +106,7 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
                       <StyledTypography>Save changes</StyledTypography>
                     </StyledButton>
                 </>
-              )}
+             
             </StyledForm>
           )}
         </Formik>

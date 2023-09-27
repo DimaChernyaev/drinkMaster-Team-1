@@ -26,7 +26,6 @@ export const StyledField = styled(Field)`
 
   ::placeholder {
     color: rgba(243, 243, 243, 0.5);
-    font-family: Manrope;
     font-size: 17px;
     font-style: normal;
     font-weight: 400;
@@ -50,7 +49,6 @@ export const TypographyError = styled(Typography)`
   margin-left: 24px;
   margin-bottom: 0;
   color: #da1414;
-  font-family: Manrope;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -60,7 +58,6 @@ export const TypographySuccess = styled(Typography)`
   margin-left: 24px;
   margin-bottom: 0;
   color: #3cbc81;
-  font-family: Manrope;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;

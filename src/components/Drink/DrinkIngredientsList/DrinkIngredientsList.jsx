@@ -1,26 +1,29 @@
-import { useEffect, useMemo, useState } from 'react';
-import { getIngredientById } from '../../../helpers/API/operationsFilters';
+import { useEffect, useState } from 'react';
+import {
+  // getIngredientById,
+  getIngredients,
+} from '../../../helpers/API/operationsFilters';
 import { Ingredient } from '../Ingredient/Ingredient';
 import { Title, IngredientList } from './DrinkIngredientsList.style';
-import { IngredientPhoto } from '../IngredientPhoto/IngredientPhoto';
+// import { IngredientPhoto } from '../IngredientPhoto/IngredientPhoto';
 
 export const DrinkIngredientsList = ({ coctailInfo }) => {
   const [ingredientsData, setIngredientsData] = useState([]);
-  const ingredients = useMemo(
-    () => (coctailInfo !== null ? coctailInfo.ingredients : []),
-    [coctailInfo],
+  const ingredients = coctailInfo !== null ? coctailInfo.ingredients : [];
+
+  const ingredientsIdArr = ingredients.map(
+    (ingredient) => ingredient.ingredientId,
   );
 
   useEffect(() => {
     const fetchData = async () => {
-      const ingredientArr = ingredients.map(
-        (ingredient) => ingredient.ingredientId,
-      );
       try {
-        const data = await getIngredientById(ingredientArr);
+        const data = await getIngredients();
         if (data.length !== 0) {
-          const responseData = data.map((item) => item.data);
-          setIngredientsData(responseData);
+          const ingredientsImages = data.filter((item) =>
+            ingredientsIdArr.includes(item._id),
+          );
+          setIngredientsData(ingredientsImages);
         }
       } catch (error) {
         console.log(error.message);
@@ -28,11 +31,9 @@ export const DrinkIngredientsList = ({ coctailInfo }) => {
     };
 
     fetchData();
-  }, [ingredients]);
+  }, [coctailInfo]);
 
-
-
-  // console.log(ingredientsData);
+  console.log(ingredientsData);
 
   return (
     <>
@@ -44,31 +45,32 @@ export const DrinkIngredientsList = ({ coctailInfo }) => {
           );
         })}
       </IngredientList>
-      {ingredientsData.map(({ ingredientThumb, _id}) => {
-          return (
-            <IngredientPhoto photo={ingredientThumb} key={_id}/>
-          );
-        })}
+      {ingredientsData.map(({ ingredientThumb, _id }) => {
+        return (
+          <li key={_id}>
+            {' '}
+            <img src={ingredientThumb} width={70} />{' '}
+          </li>
+        );
+      })}
     </>
   );
 };
 
-
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const ingredientArr = ingredients.map(
-  //       (ingredient) => ingredient.ingredientId,
-  //     );
-  //     try {
-  //       const data = await getIngredientById(ingredientArr);
-  //       if (data.length !== 0) {
-  //         const responseData = data.map((item) => item.data);
-  //         setIngredientsData(responseData);
-  //       }
-  //     } catch (error) {
-  //       console.log(error.message);
-  //     }
-  //   };
-  //   fetchData();
-  // }, [ingredients]);
+// useEffect(() => {
+//   const fetchData = async () => {
+//     const ingredientArr = ingredients.map(
+//       (ingredient) => ingredient.ingredientId,
+//     );
+//     try {
+//       const data = await getIngredientById(ingredientArr);
+//       if (data.length !== 0) {
+//         const responseData = data.map((item) => item.data);
+//         setIngredientsData(responseData);
+//       }
+//     } catch (error) {
+//       console.log(error.message);
+//     }
+//   };
+//   fetchData();
+// }, [ingredients]);

@@ -3,6 +3,8 @@ import PageTitle from '../../DefaultComponents/PageTitle/PageTitle';
 import { AddToFavoriteBtn } from '../AddToFavoriteBtn/AddToFavoriteBtn';
 import { Container, ShortDescr, SubTitle } from './DrinkPageHero.style';
 import { CoctailImg } from '../CoctailImg/CoctailImg';
+import { useDispatch } from 'react-redux';
+import { addFavorite } from '../../../redux/drinks/favorites/favoritesOperations';
 
 export const DrinkPageHero = ({ coctailInfo }) => {
   const title = coctailInfo !== null ? coctailInfo.drink : '';
@@ -13,8 +15,11 @@ export const DrinkPageHero = ({ coctailInfo }) => {
 
   const [addedDrink, setAddedDrink] = useState(true);
 
+  const dispatch = useDispatch();
+
   const handleOnClick = () => {
     setAddedDrink((prev) => !prev);
+    dispatch(addFavorite(coctailInfo));
   };
 
   return (

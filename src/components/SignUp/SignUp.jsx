@@ -7,7 +7,7 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import 'air-datepicker/air-datepicker.css';
-import '../../index.css';
+import './signUp.css';
 import {
   StyledButton,
   StyledDialogTitle,

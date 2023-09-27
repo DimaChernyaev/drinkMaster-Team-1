@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import {
-  // getIngredientById,
   getIngredients,
 } from '../../../helpers/API/operationsFilters';
 import { Ingredient } from '../Ingredient/Ingredient';
 import { Title, IngredientList } from './DrinkIngredientsList.style';
-// import { IngredientPhoto } from '../IngredientPhoto/IngredientPhoto';
+
 
 export const DrinkIngredientsList = ({ coctailInfo }) => {
   const [ingredientsData, setIngredientsData] = useState([]);
@@ -33,28 +32,27 @@ export const DrinkIngredientsList = ({ coctailInfo }) => {
     fetchData();
   }, [coctailInfo]);
 
-
+  const combinedIngredients = ingredients.map((ingredient) => {
+    const ingredientData = ingredientsData.find(
+      (data) => data._id === ingredient.ingredientId
+    );
+    return {
+      ...ingredient,
+      ingredientThumb: ingredientData ? ingredientData.ingredientThumb : null,
+    };
+  });
 
   return (
     <>
       <Title>Ingredients</Title>
       <IngredientList>
-        {ingredients.map(({ title, measure, ingredientId }) => {
-          return (
-            <Ingredient name={title} number={measure} key={ingredientId} />
-          );
-        })}
+        {combinedIngredients.map(({ title, measure, ingredientId, ingredientThumb }) => (
+          <Ingredient title={title} measure={measure} key={ingredientId} photo={ingredientThumb} />
+        ))}
       </IngredientList>
-      {ingredientsData.map(({ ingredientThumb, _id }) => {
-        return (
-          <li key={_id}>
-            {' '}
-            <img src={ingredientThumb} width={70} />{' '}
-          </li>
-        );
-      })}
     </>
   );
+
 };
 
 // useEffect(() => {

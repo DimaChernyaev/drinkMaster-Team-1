@@ -1,11 +1,18 @@
 import { IngredientItem } from './Ingredient.style.js';
+import coctailPlaceholder from '../../../assets/images/drinkPageImg/coctailPlaceholder.png';
 
-export const Ingredient = ({ number, name }) => {
 
+
+export const Ingredient = ({ photo, title, measure }) => {
+  console.log(photo)
   return (
     <IngredientItem>
-      <p>{name}</p>
-      <span>{number}</span>
+       <img src={photo ? photo : coctailPlaceholder}/>
+       <div>
+       <p>{title}</p>
+      <span>{measure}</span>
+       </div>
+ 
     </IngredientItem>
   );
 

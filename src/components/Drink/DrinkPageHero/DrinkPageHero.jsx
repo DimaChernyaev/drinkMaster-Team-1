@@ -8,7 +8,11 @@ import {
   addFavorite,
   deleteFavorite,
 } from '../../../redux/drinks/favorites/favoritesOperations';
-import { selectFavoriteItems } from '../../../redux/drinks/favorites/favoriteSelectors';
+import {
+  selectFavoriteItems,
+
+} from '../../../redux/drinks/favorites/favoriteSelectors';
+
 
 export const DrinkPageHero = ({ coctailInfo }) => {
   const favorits = useSelector(selectFavoriteItems);
@@ -21,6 +25,7 @@ export const DrinkPageHero = ({ coctailInfo }) => {
   const id = coctailInfo !== null ? coctailInfo._id : '';
   const dispatch = useDispatch();
   const [addedDrink, setAddedDrink] = useState(false);
+
 
   useEffect(() => {
     if (favorits.find((item) => item._id === id)) {
@@ -38,8 +43,7 @@ export const DrinkPageHero = ({ coctailInfo }) => {
     setAddedDrink(!addedDrink);
   };
 
-  return (
-    <Container>
+  return    <Container>
       <div>
         <PageTitle title={title} style={{ marginBottom: '10px' }} />
         <SubTitle>
@@ -47,12 +51,12 @@ export const DrinkPageHero = ({ coctailInfo }) => {
         </SubTitle>
         <ShortDescr>{description} </ShortDescr>
         <AddToFavoriteBtn
-          text={addedDrink ? '✔ Added to favorites' : 'Add to favorite drinks'}
+          text={addedDrink ? 'Remove from favorites' : 'Add to favorite drinks'}
           onClick={handleOnClick}
         />
       </div>
 
       <CoctailImg photo={image} />
     </Container>
-  );
+
 };

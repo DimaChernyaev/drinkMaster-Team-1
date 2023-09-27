@@ -3,28 +3,28 @@ import { Link } from 'react-router-dom';
 
 export const Card = styled.li`
   @media (min-width: 375px) {
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       display: none;
     }
-    &:nth-child(3) {
+    &:nth-of-type(3) {
       display: none;
     }
   }
 
   @media (min-width: 768px) {
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       display: block;
     }
-    &:nth-child(3) {
+    &:nth-of-type(3) {
       display: none;
     }
   }
 
   @media (min-width: 1280px) {
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       display: block;
     }
-    &:nth-child(3) {
+    &:nth-of-type(3) {
       display: block;
     }
   }

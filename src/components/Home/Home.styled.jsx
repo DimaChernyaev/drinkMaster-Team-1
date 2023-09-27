@@ -19,4 +19,16 @@ export const LinkDrinks = styled(Link)`
   word-wrap: break-word;
   border-radius: 42px;
   cursor: pointer;
+
+   &:hover {
+    background-color: ${colorStyled.colorBlue};
+    color: ${colorStyled.colorWhite};
+  }
+
+  
+  &:focus {
+    background-color: ${colorStyled.colorBlue};
+    color: ${colorStyled.colorWhite};
+  }
+
 `;

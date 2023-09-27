@@ -33,7 +33,7 @@ export const DrinkIngredientsList = ({ coctailInfo }) => {
     fetchData();
   }, [coctailInfo]);
 
-  console.log(ingredientsData);
+
 
   return (
     <>

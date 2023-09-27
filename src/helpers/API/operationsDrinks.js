@@ -8,7 +8,7 @@ export async function getCurrentCoctail(id) {
     console.log('axios', axios);
 
     const { data } = await axios.get(`/drinks/${id}`);
-    console.log(data);
+    // console.log(data);
 
     return data;
   } catch (error) {
@@ -21,7 +21,7 @@ export async function getCoctailsByCategories() {
   try {
     console.log('axios.', axios.defaults);
     const res = await axios.get('/drinks/mainpage');
-    console.log('res', res);
+    // console.log('res', res);
     return res.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);

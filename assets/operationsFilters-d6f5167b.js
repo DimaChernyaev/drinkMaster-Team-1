@@ -1,0 +1,1 @@
+import{C as t}from"./index-c2bce4f0.js";async function a(){console.log("я в getCategories");try{const{data:e}=await t.get("/filters/categories");return console.log("data = ",e),e}catch(e){console.log(e.message)}}async function s(){try{const{data:e}=await t.get("/filters/ingredients");return e}catch(e){console.log(e.message)}}export{s as a,a as g};

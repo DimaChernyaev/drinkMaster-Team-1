@@ -6,7 +6,7 @@ const HomeAdd = () => {
 return (
     <div className={hcss.container}>
      <div className={hcss.cont}>
-        <div className={hcss.boxfour}></div>
+        {/* <div className={hcss.boxfour}></div> */}
         <div className={hcss.box}>
           <h1 className={hcss.title}>
             Craft Your Perfect <b /> Drink with Drink Master
@@ -22,6 +22,7 @@ return (
         <img className={hcss.imgmain} src={img} alt='main-coctail'/>
         <div className={hcss.boxtwo}></div>
         <div className={hcss.boxtree}></div>
+        <div className={hcss.boxfour}></div>
         <div>
           
         </div>

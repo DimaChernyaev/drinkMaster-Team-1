@@ -1,25 +1,41 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PageTitle from '../../DefaultComponents/PageTitle/PageTitle';
 import { AddToFavoriteBtn } from '../AddToFavoriteBtn/AddToFavoriteBtn';
 import { Container, ShortDescr, SubTitle } from './DrinkPageHero.style';
 import { CoctailImg } from '../CoctailImg/CoctailImg';
-import { useDispatch } from 'react-redux';
-import { addFavorite } from '../../../redux/drinks/favorites/favoritesOperations';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  addFavorite,
+  deleteFavorite,
+} from '../../../redux/drinks/favorites/favoritesOperations';
+import { selectFavoriteItems } from '../../../redux/drinks/favorites/favoriteSelectors';
 
 export const DrinkPageHero = ({ coctailInfo }) => {
+  const favorits = useSelector(selectFavoriteItems);
+
   const title = coctailInfo !== null ? coctailInfo.drink : '';
   const glass = coctailInfo !== null ? coctailInfo.glass : '';
   const alcoholic = coctailInfo !== null ? coctailInfo.alcoholic : '';
   const description = coctailInfo !== null ? coctailInfo.shortDescription : '';
   const image = coctailInfo !== null ? coctailInfo.drinkThumb : 'image';
-
-  const [addedDrink, setAddedDrink] = useState(true);
-
+  const id = coctailInfo !== null ? coctailInfo._id : '';
   const dispatch = useDispatch();
+  const [addedDrink, setAddedDrink] = useState(false);
+
+  useEffect(() => {
+    if (favorits.find((item) => item._id === id)) {
+      setAddedDrink(true);
+    }
+  }, [favorits, id]);
 
   const handleOnClick = () => {
-    setAddedDrink((prev) => !prev);
-    dispatch(addFavorite(coctailInfo));
+    if (addedDrink) {
+      dispatch(deleteFavorite(id));
+    } else {
+      dispatch(addFavorite(id));
+    }
+
+    setAddedDrink(!addedDrink);
   };
 
   return (
@@ -31,7 +47,7 @@ export const DrinkPageHero = ({ coctailInfo }) => {
         </SubTitle>
         <ShortDescr>{description} </ShortDescr>
         <AddToFavoriteBtn
-          text={addedDrink ? 'Add to favorite drinks' : 'Remove from favorites'}
+          text={addedDrink ? '✔ Added to favorites' : 'Add to favorite drinks'}
           onClick={handleOnClick}
         />
       </div>

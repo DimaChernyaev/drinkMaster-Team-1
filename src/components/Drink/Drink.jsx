@@ -5,9 +5,11 @@ import { RecipePreparation } from './RecipePreparation/RecipePreparation';
 import { useEffect, useState } from 'react';
 import { getCurrentCoctail } from '../../helpers/API/operationsDrinks';
 
+
 const Drink = () => {
   const [coctailData, setCoctailData] = useState(null);
   const { drinkId } = useParams();
+
   // console.log(drinkId);
   // console.log(coctailData)
 
@@ -22,7 +24,7 @@ const Drink = () => {
   return (
     <>
       <DrinkPageHero coctailInfo={coctailData} />
-      <DrinkIngredientsList coctailInfo={coctailData} />
+      <DrinkIngredientsList coctailInfo={coctailData} />{' '}
       <RecipePreparation coctailInfo={coctailData} />
     </>
   );

@@ -8,7 +8,16 @@
 
 .cont{
     /* display: flex; */
-    margin-top: 80px;   
+    margin-top: 80px; 
+    margin-bottom: 112px;
+}
+
+@media screen and (min-width: 768px) {
+    .cont {
+        /* display: flex; */
+        margin-top: 185px;
+        margin-bottom: 123px;
+    }
 }
 
 @media screen and (min-width: 1440px) {
@@ -49,6 +58,22 @@ margin-bottom: 16px;
 ;
 }
 
+
+@media screen and (min-width: 785px) {
+    .title {
+        width: 641px;
+        color: #F3F3F3;
+        font-family: Manrope;
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 68px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 28px;
+    }
+}
+
 @media screen and (min-width: 1440px) {
 .title{
 width: 715px;
@@ -75,6 +100,21 @@ line-height: 20px;
 padding-bottom: 32px;
 }
 
+
+@media screen and (min-width: 785px) {
+    .text {
+        width: 619px;
+        color: #F3F3F3;
+        font-family: Manrope;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        padding-bottom: 48px;
+    }
+}
+
+
 @media screen and (min-width: 1440px) {
 .text{
 width: 500px;
@@ -95,7 +135,39 @@ padding-bottom: 40px;
         color: #161F37;
         padding: 18px 44px;
         cursor: pointer;
+        margin-bottom: 47px;
 }
+
+.btnAddDrinks:hover,
+.btnAddDrinks:focus{
+    background: #161F37;;
+    color: #F3F3F3;
+}
+
+
+@media screen and (min-width: 785px) {
+    .btnAddDrinks {
+        border-radius: 42px;
+        background: #F3F3F3;
+        color: #161F37;
+        padding: 18px 44px;
+        cursor: pointer;
+        margin-bottom: 58px;
+    }
+}
+
+
+@media screen and (min-width: 1440px) {
+    .btnAddDrinks {
+        border-radius: 42px;
+            background: #F3F3F3;
+            color: #161F37;
+            padding: 18px 44px;
+            cursor: pointer;
+    }
+}
+
+
 
 .box{
     display: inline-flex;
@@ -255,6 +327,12 @@ margin-bottom: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btnOtherDrinks:hover,
+.btnOtherDrinks:focus {
+    background: #161F37;
+    color: #F3F3F3;
 }
 
 .otherDrinks{

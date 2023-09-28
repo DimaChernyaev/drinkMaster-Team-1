@@ -12,6 +12,7 @@ import { UserModal } from '../UserModal/UserModal';
 
 export const UserLogo = () => {
   const { name, avatarURL } = useSelector(selectUser);
+  const user = useSelector(selectUser);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModal = () => {

@@ -1,22 +1,42 @@
 import styled from '@emotion/styled';
-import { Typography } from '@mui/material';
 import { colorStyled } from '../../../helpers/colorStyled';
 
-export const StyledModalWindow = styled.div`
+export const StyledLogOutWrapper = styled.div`
   display: block;
-  width: 177px;
-  position: absolute;
-  z-index: 101;
-  top: 45px;
+  text-align: center;
+  width: 500px;
+  padding: 50px;
+  position: fixed;
+  top: 50%;
   left: 50%;
-  padding: 18px;
   background-color: ${colorStyled.colorBlue};
-  border-radius: 8px;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
+  z-index: 200;
+  color: white;
+  border-radius: 15px;
+  @media screen and (max-width: 768px) {
+    width: 400px;
+    padding: 30px;
+  }
+  @media screen and (max-width: 420px) {
+    width: 350px;
+    padding: 15px;
+  }
 `;
 
-export const LogOutBtn = styled.button`
-  width: 143px;
+export const StyledButtonsWrapper = styled.div`
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+`;
+
+export const StyledPar = styled.p`
+  color: ${colorStyled.colorWhite};
+`;
+
+export const LogOutModalBtn = styled.button`
+  width: 190px;
   height: 44px;
   padding-left: 45px;
   padding-right: 45px;
@@ -41,13 +61,7 @@ export const LogOutBtn = styled.button`
   &:active {
     border-color: ${colorStyled.colorWhiteFifty};
   }
-`;
-
-export const StyledTypography = styled(Typography)`
-  color: #f3f3f3;
-  font-family: Manrope;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 18px;
+  @media screen and (max-width: 768px) {
+    gap: 5px;
+  }
 `;

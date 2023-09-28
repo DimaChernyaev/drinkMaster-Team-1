@@ -32,8 +32,8 @@ export const UserLogoBtn = styled.button`
 export const UserLogoImg = styled.img`
   object-fit: cover;
   border-radius: 50%;
-  height: 32px;
-  width: 32px;
+  height: 38px;
+  width: 38px;
 `;
 
 export const UserLogoText = styled.p`

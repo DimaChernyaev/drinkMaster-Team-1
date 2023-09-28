@@ -11,6 +11,7 @@ export const NavList = styled.ul`
   }
   @media screen and (max-width: 768px) {
     align-items: center;
+    margin-top: 0;
   }
 `;
 

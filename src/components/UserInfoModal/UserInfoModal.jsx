@@ -39,6 +39,7 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
 
   const handleChangeAvatar = ({ target }) => {
     const file = target.files[0];
+    console.log(file);
     const maxSizeFile = 5 * 1024 * 1024;
     if (file.size > maxSizeFile) {
       Notify.failure('Файл повинен бути менше 5Mb', {
@@ -56,12 +57,11 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   const handleSubmit = async (values, { resetForm }) => {
     const formData = new FormData();
 
-    formData.append('avatar', fileAvatar);
+    formData.append('avatar', new Blob([fileAvatar]));
     formData.append('name', values.name);
 
     try {
       setIsLoading(true);
-      console.log(formData);
       await dispatch(updateUser(formData));
       setIsLoading(false);
 
@@ -104,7 +104,7 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
                       hidden
                       onChange={handleChangeAvatar}
                     />
-                    <StyledLabel for="loadFile" role="button">
+                    <StyledLabel htmlFor="loadFile" role="button">
                       <img
                         src={addPhoto}
                         alt="add avatar"

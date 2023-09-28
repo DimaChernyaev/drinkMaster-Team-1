@@ -40,25 +40,28 @@ export async function getPopularCoctails() {
 }
 
 // отримання коктелів по фільтру
-export async function getCoctailsByFilter({
+export async function getCoctailsByFilter(
+  inputKeyword,
   category ,
   ingredient,
-  keyword,
   page = '1',
   per_page = '10',
-}) {
-  let paramsObj = {};
-  if (category) paramsObj = {category,};
-  if (ingredient) paramsObj = {...paramsObj, ingredient};
-  if (keyword) paramsObj = {...paramsObj, keyword};
-  paramsObj = {...paramsObj, page, per_page};
-  console.log("paramsObj =",paramsObj);
-  const searchParams = new URLSearchParams(paramsObj);
+) {
+
+  let url = '/drinks/search?' 
+  if (inputKeyword)  url = url + 'keyword=' + inputKeyword + "&";
+  if (category)  url = url + 'category=' + category + "&" ;
+  if (ingredient)  url = url + 'ingredient=' + ingredient + '&';
+    if (page)  url = url + 'page=' + page + '&';
+  if (per_page)  url = url + 'per_page=' + per_page;
+
+  console.log(url);
 
   try {
-    const { data } = await axios.get('/drinks/search', searchParams);
+    axios.defaults.params
+    const { data } = await axios.get(url);
     return data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(error.message); 
   }
 }

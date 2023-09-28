@@ -57,7 +57,7 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   const handleSubmit = async (values, { resetForm }) => {
     const formData = new FormData();
 
-    formData.append('avatar', new Blob([fileAvatar]));
+    formData.append('avatar', fileAvatar);
     formData.append('name', values.name);
 
     try {

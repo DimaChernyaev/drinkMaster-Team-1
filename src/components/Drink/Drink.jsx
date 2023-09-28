@@ -5,7 +5,6 @@ import { RecipePreparation } from './RecipePreparation/RecipePreparation';
 import { useEffect, useState } from 'react';
 import { getCurrentCoctail } from '../../helpers/API/operationsDrinks';
 
-
 const Drink = () => {
   const [coctailData, setCoctailData] = useState(null);
   const { drinkId } = useParams();
@@ -31,3 +30,12 @@ const Drink = () => {
 };
 
 export default Drink;
+
+// useEffect(() => {
+
+//   const currentCoctail = async () => {
+//     const data = await getCurrentCoctail(drinkId);
+//     setCoctailData(data);
+//   };
+//   currentCoctail();
+// }, []);

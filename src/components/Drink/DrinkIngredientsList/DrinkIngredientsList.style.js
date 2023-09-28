@@ -17,7 +17,12 @@ export const IngredientList = styled.ul`
   gap: 21px;
   margin-bottom: 80px;
 
+  @media (min-width: 768px) {
+    gap: 22px;
+  }
+
   @media (min-width: 1440px) {
     margin-bottom: 100px;
+    gap: 35px;
   }
 `;

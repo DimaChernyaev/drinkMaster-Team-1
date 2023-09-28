@@ -10,23 +10,18 @@ export const getUser = createAsyncThunk('auth/getUser', async (_, thunkAPI) => {
   }
 });
 
-  const updateUser  = async(req, res) => {
-    console.log("---- updateUser function ---- ");
-    let newAvatarURL;
-
-    const {_id, currentAvatarURL, name: currentUserName} = req.user;              // забираємо id поточного юзера
-    const {name = currentUserName} = req.body;                                    // забираємо нове ім'я поточного юзера з http-запиту
-  
-    if (req.file) { 
-      newAvatarURL = req.file.path;  
+export const updateUser = createAsyncThunk(
+  'auth/updateUser',
+  async (newUser, thunkAPI) => {
+    try {
+      console.log(newUser);
+      const { data } = await axios.patch(`/users/update`, newUser);
+      return data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
     }
-    else { 
-      console.log("req.file = ", req.file);
-      newAvatarURL = currentAvatarURL; 
-    }
-    const usr = await User.findByIdAndUpdate(_id, {name, avatarURL: newAvatarURL}, {new: true}); // оновлюємо поле avatarURL для поточного юзера
-    res.json({name: usr.name, avatarURL: usr.avatarURL });
-  }
+  },
+);
 
 export const subscribeUser = createAsyncThunk(
   'auth/subscribeUser',

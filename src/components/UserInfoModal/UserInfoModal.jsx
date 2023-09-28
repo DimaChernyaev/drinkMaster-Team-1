@@ -97,13 +97,13 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
                 <Box sx={{ position: 'relative' }}>
                   <StyledAvatar id="profile" alt="avatar" src={avatar} />
                   <StyledBox>
-                    <Field
+                    <input
                       name="file"
                       type="file"
                       id="loadFile"
                       hidden
                       onChange={handleChangeAvatar}
-                    />
+                    ></input>
                     <StyledLabel htmlFor="loadFile" role="button">
                       <img
                         src={addPhoto}

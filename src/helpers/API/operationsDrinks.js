@@ -19,9 +19,9 @@ export async function getCurrentCoctail(id) {
 // отримання коктелів за категорією для домашньої сторінки
 export async function getCoctailsByCategories() {
   try {
-    console.log("axios.",axios.defaults);
+
     const res  = await axios.get('/drinks/mainpage');
-    console.log("res",res);
+
     return res.data;
   } catch (error) { return thunkAPI.rejectWithValue(error.message); }
 }

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colorStyled } from '../../../../helpers/colorStyled';
-
+import { ReactComponent as MySvg } from '../../../../assets/AddDrink/plus.svg';
+import Select from 'react-select';
 // export const colorStyled = {
 //   colorStyled.colorWhite: '#F3F3F3',
 //   colorStyled.colorWhiteFifty: 'rgba(243, 243, 243, 0.5)',
@@ -44,9 +45,16 @@ export const ImageWrapper = styled.div`
   }
 `;
 
+export const ImageDrink = styled.img`
+  width: 100%; /* Максимальная ширина изображения равна ширине родителя */
+  height: auto; /* Автоматическая высота, чтобы сохранить соотношение сторон */
+  display: block;
+`;
+
 export const ImageInputWrapper = styled.div`
   font-size: 16px;
   text-align: center;
+  margin-bottom: 18px;
 `;
 
 export const ImageInput = styled.input`
@@ -66,29 +74,23 @@ export const ImageInput = styled.input`
 
 export const ImageLabel = styled.label`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 6px;
+
   cursor: pointer;
-
-  & span {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    width: 40px;
-    height: 40px;
-
-    margin-bottom: 18px;
-
-    background: ${colorStyled.colorWhite};
-    color: ${colorStyled.colorBlue};
-
-    border-radius: 6px;
-    transition: background-color 0.3s ease-in-out;
-  }
 `;
+export const PlusSVG = styled(MySvg)`
+  width: 28px;
+  height: 28px;
+  color: green;
+  fill: red;
+  stroke: ${colorStyled.colorBlue};
+`;
+
 export const NameWrapper = styled.div`
   /* width: 100%;
   display: inline-flex;
@@ -198,6 +200,9 @@ export const RecipeTextarea = styled.textarea`
 `;
 
 export const CategoryWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   color: #f3f3f380;
   padding: 8px;
@@ -207,7 +212,6 @@ export const CategoryWrapper = styled.div`
   transition: border-color 250ms;
   width: 100%;
   font-size: 14px;
-  margin-top: 20px;
 `;
 
 export const CategoryLabel = styled.label`
@@ -229,33 +233,86 @@ export const CategoryLabel = styled.label`
       : '14px'};
 `;
 
-export const CategorySelect = styled.select`
-  position: absolute;
-  right: 10px;
-  bottom: 50%;
+export const CategorySelect = ({ options, ...props }) => {
+  return (
+    <Select
+      {...props}
+      options={options}
+      styles={{
+        container: (provided) => ({
+          ...provided,
+          width: '240px',
+        }),
+        control: (provided, state ) => ({
+          ...provided,
 
-  font-size: 14px;
-  color: #f3f3f3;
-  border: transparent;
-  background-color: transparent;
-  width: 80px;
-  font-size: 14px;
-  &::-webkit-scrollbar {
-    width: 8px; /* ширина для вертикального скролла */
-    height: 8px; /* высота для горизонтального скролла */
-    background-color: rgba(22, 31, 55, 0.5);
-    border-radius: 9em;
-  }
+          backgroundColor: 'transparent',
+          border: state.isFocused ? 'none': 'none',
 
-  &::-webkit-scrollbar-thumb {
-    background-color: ${colorStyled.colorWhite};
-    border-radius: 9em;
-    box-shadow: inset 1px 1px 10px #f3faf7;
-  }
-`;
+
+        }),
+        placeholder: (provided, state) => ({
+          ...provided,
+          margin: 0,
+          color: state.isFocused
+            ? `${colorStyled.colorWhite}`
+            : `${colorStyled.colorWhiteFifty}`,
+        }),
+        option: (provided) => ({
+          ...provided,
+          padding: '14px',
+          color: `${colorStyled.colorWhiteFifty}`,
+          background: '#161F37',
+          borderRadius: '20px',
+          overflow: 'hidden',
+          cursor: 'pointer',
+          '&:hover': {
+            color: `${colorStyled.colorWhite}`, // Измените цвет рамки при наведении
+          },
+        }),
+        input: (provided) => ({
+          ...provided,
+          padding: 0,
+          margin: 0,
+          border: 'none',
+          color: `${colorStyled.colorWhite}`,
+        }),
+        menu: (provided) => ({
+          ...provided,
+          padding: '14px',
+          background: '#161F37',
+          borderRadius: '20px',
+          overflow: 'hidden',
+        }),
+        indicatorSeparator: (provided) => ({
+          ...provided,
+          display: 'none',
+        }),
+        singleValue: (provided, state) => ({
+          ...provided,
+          textAlign: 'right',
+          color: state.isFocused
+            ? `${colorStyled.colorWhiteFifty}`
+            : `${colorStyled.colorWhite}`, // Установите цвет текста элемента списка здесь
+        }),
+        valueContainer: (provided) => ({
+          ...provided,
+          padding: 0, // Установите цвет текста элемента списка здесь
+        }),
+        dropdownIndicator: (provided, state) => ({
+          ...provided,
+          transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0deg)', // Поворачиваем стрелку вверх при открытии меню
+        }),
+      }}
+    />
+  );
+};
 
 export const ServingWrapper = styled.div`
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: #f3f3f380;
   padding: 8px;
   border: 2px solid transparent;
@@ -286,30 +343,78 @@ export const ServingLabel = styled.label`
       : '14px'};
 `;
 
-export const ServingSelect = styled.select`
-  position: absolute;
-  right: 10px;
-  bottom: 50%;
+export const ServingSelect = ({ options, ...props }) => {
+  return (
+    <Select
+      {...props}
+      options={options}
+      styles={{
+        container: (provided) => ({
+          ...provided,
+          width: '240px',
+        }),
+        control: (provided, state) => ({
+          ...provided,
 
-  font-size: 14px;
-  color: #f3f3f3;
-  border: transparent;
-  background-color: transparent;
-  width: 80px;
-  font-size: 14px;
-  &::-webkit-scrollbar {
-    width: 8px; /* ширина для вертикального скролла */
-    height: 8px; /* высота для горизонтального скролла */
-    background-color: rgba(22, 31, 55, 0.5);
-    border-radius: 9em;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: ${colorStyled.colorWhite};
-    border-radius: 9em;
-    /* box-shadow: inset 1px 1px 10px #f3faf7; */
-  }
-`;
+          backgroundColor: 'transparent',
+          border: state.isFocused ? 'none' : 'none',
+        }),
+        placeholder: (provided, state) => ({
+          ...provided,
+          margin: 0,
+          color: state.isFocused
+            ? `${colorStyled.colorWhite}`
+            : `${colorStyled.colorWhiteFifty}`,
+        }),
+        option: (provided) => ({
+          ...provided,
+          padding: '14px',
+          color: `${colorStyled.colorWhiteFifty}`,
+          background: '#161F37',
+          borderRadius: '20px',
+          overflow: 'hidden',
+          cursor: 'pointer',
+          '&:hover': {
+            color: `${colorStyled.colorWhite}`, // Измените цвет рамки при наведении
+          },
+        }),
+        input: (provided) => ({
+          ...provided,
+          padding: 0,
+          margin: 0,
+          border: 'none',
+          color: `${colorStyled.colorWhite}`,
+        }),
+        menu: (provided) => ({
+          ...provided,
+          padding: '14px',
+          background: '#161F37',
+          borderRadius: '20px',
+          overflow: 'hidden',
+        }),
+        indicatorSeparator: (provided) => ({
+          ...provided,
+          display: 'none',
+        }),
+        singleValue: (provided, state) => ({
+          ...provided,
+          textAlign: 'right',
+          color: state.isFocused
+            ? `${colorStyled.colorWhiteFifty}`
+            : `${colorStyled.colorWhite}`, // Установите цвет текста элемента списка здесь
+        }),
+        valueContainer: (provided) => ({
+          ...provided,
+          padding: 0, // Установите цвет текста элемента списка здесь
+        }),
+        dropdownIndicator: (provided, state) => ({
+          ...provided,
+          transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0deg)', // Поворачиваем стрелку вверх при открытии меню
+        }),
+      }}
+    />
+  );
+};
 
 export const Wrapper = styled.div`
   font-family: Arial, sans-serif;
@@ -359,7 +464,6 @@ export const RadioInput = styled.input`
     clip: rect(0 0 0 0);
     overflow: hidden;
   }
-
 `;
 
 //checked-style
@@ -371,7 +475,6 @@ export const RadioSpan = styled.span`
   border: 1.3px solid ${colorStyled.colorWhiteFifty};
   border-radius: 50%;
   box-sizing: border-box;
-
 
   ${RadioInput}:checked + & {
     border-color: ${colorStyled.colorWhite};

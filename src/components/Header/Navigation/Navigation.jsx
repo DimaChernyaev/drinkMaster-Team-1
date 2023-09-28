@@ -1,13 +1,28 @@
 import { NavigationList, StyledLink } from './Navigation.styled';
 
-const Navigation = () => {
+const Navigation = ({ onClose }) => {
+  const handleLinkClick = () => {
+    if (onClose) {
+      onClose();
+    }
+  };
   return (
     <NavigationList>
-      <StyledLink to="/">Home</StyledLink>
-      <StyledLink to="/drinks">Drinks</StyledLink>
-      <StyledLink to="/add">Add Drink</StyledLink>
-      <StyledLink to="/my">My Drinks</StyledLink>
-      <StyledLink to="/favorites">Favorites</StyledLink>
+      <StyledLink to="/" onClick={handleLinkClick}>
+        Home
+      </StyledLink>
+      <StyledLink to="/drinks" onClick={handleLinkClick}>
+        Drinks
+      </StyledLink>
+      <StyledLink to="/add" onClick={handleLinkClick}>
+        Add Drink
+      </StyledLink>
+      <StyledLink to="/my" onClick={handleLinkClick}>
+        My Drinks
+      </StyledLink>
+      <StyledLink to="/favorites" onClick={handleLinkClick}>
+        Favorites
+      </StyledLink>
     </NavigationList>
   );
 };

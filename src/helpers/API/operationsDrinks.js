@@ -5,10 +5,10 @@ axios.defaults.baseURL = 'https://drink-master-server.onrender.com';
 // отримання конкретного коктеля по id для сторінки Дрінк
 export async function getCurrentCoctail(id) {
   try {
-    console.log("axios",axios);
+    console.log('axios', axios);
 
     const { data } = await axios.get(`/drinks/${id}`);
-    console.log(data);
+    // console.log(data);
 
     return data;
   } catch (error) {
@@ -19,11 +19,11 @@ export async function getCurrentCoctail(id) {
 // отримання коктелів за категорією для домашньої сторінки
 export async function getCoctailsByCategories() {
   try {
-
-    const res  = await axios.get('/drinks/mainpage');
-
+    const res = await axios.get('/drinks/mainpage');
     return res.data;
-  } catch (error) { return thunkAPI.rejectWithValue(error.message); }
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
 }
 
 // отримання популярних коктелів
@@ -32,24 +32,34 @@ export async function getPopularCoctails() {
     const { data } = await axios.get(`/drinks/popular`);
 
     return data;
-  } catch (error) { thunkAPI.rejectWithValue(error.message);
+  } catch (error) {
+    thunkAPI.rejectWithValue(error.message);
   }
 }
 
 // отримання коктелів по фільтру
-export async function getCoctailsByFilter({category="", ingredient="", keyword="", page="1", per_page="10" }) {
-  
-  let paramsObj = {};
-  if (category) paramsObj = {category,};
-  if (ingredient) paramsObj = {...paramsObj, ingredient};
-  if (keyword) paramsObj = {...paramsObj, keyword};
-  paramsObj = {...paramsObj, page, per_page};
-  
-  console.log(paramsObj);
-  const searchParams = new URLSearchParams(paramsObj);
-  
+export async function getCoctailsByFilter(
+  inputKeyword,
+  category ,
+  ingredient,
+  page = '1',
+  per_page = '10',
+) {
+
+  let url = '/drinks/search?' 
+  if (inputKeyword)  url = url + 'keyword=' + inputKeyword + "&";
+  if (category)  url = url + 'category=' + category + "&" ;
+  if (ingredient)  url = url + 'ingredient=' + ingredient + '&';
+    if (page)  url = url + 'page=' + page + '&';
+  if (per_page)  url = url + 'per_page=' + per_page;
+
+  console.log(url);
+
   try {
-      const { data } = await axios.get('/drinks/search', searchParams);
+    axios.defaults.params
+    const { data } = await axios.get(url);
     return data;
-  }  catch (error) { return thunkAPI.rejectWithValue(error.message); }
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message); 
+  }
 }

@@ -97,7 +97,6 @@ export const StyledButton = styled(Button)`
 export const StyledTypographyH2 = styled(Typography)`
   color: #fafafa;
   font-feature-settings: 'liga' off;
-  font-family: Manrope;
   font-size: 28px;
   font-style: normal;
   font-weight: 600;
@@ -112,13 +111,11 @@ export const StyledTypographyH2 = styled(Typography)`
 `;
 
 export const StyledTypography = styled(Typography)`
-  font-family: inherit;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
   text-transform: none;
-  color: #fafafa;
   letter-spacing: -0.28px;
 
   @media screen and (min-width: 768px) {

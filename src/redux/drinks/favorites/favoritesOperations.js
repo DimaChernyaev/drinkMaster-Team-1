@@ -1,39 +1,38 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const allFavorites = createAsyncThunk(
+export const fetchFavorites = createAsyncThunk(
   'favorites/fetchAll',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/favorite');
-      // При успішному запиті повертаємо проміс із даними
+      const response = await axios.get('/drinks/favorite');
       return response.data;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.message);
     }
   },
 );
 
-export const addFavorites = createAsyncThunk(
+export const addFavorite = createAsyncThunk(
   'favorites/addFavorite',
-  async (dataUser, thunkAPI) => {
+  async (drinkId, thunkAPI) => {
     try {
-      const response = await axios.post('/favorite/add', dataUser);
+      const response = await axios.post(`/drinks/favorite/add/${drinkId}`);
       return response.data;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.message);
     }
   },
 );
 
-export const deleteFavorites = createAsyncThunk(
+export const deleteFavorite = createAsyncThunk(
   'favorites/deleteFavorite',
   async (drinkId, thunkAPI) => {
     try {
-      const response = await axios.delete(`/favorite/remove/${drinkId}`);
+      const response = await axios.delete(`/drinks/favorite/remove/${drinkId}`);
       return response.data;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.message);
     }
   },
 );

@@ -6,7 +6,7 @@ import * as user from './user/userOperations';
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    user: { name: '', email: '', avatarURL: '' },
+    user: { name: '', email: '', avatarURL: '', id: '' },
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
@@ -48,8 +48,15 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(user.updateUser.fulfilled, (state, action) => {
+        console.log(action);
+        console.log(state.user);
         state.error = null;
-        state.user = action.payload.user;
+        state.user = {
+          email: state.user.email,
+          id: state.user.id,
+          name: action.payload.name,
+          avatarURL: action.payload.avatarURL,
+        };
       })
       .addCase(user.updateUser.rejected, (state, action) => {
         state.error = action.payload;

@@ -1,10 +1,6 @@
 import { Formik, Form } from 'formik';
 import { Notify } from 'notiflix';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { Box, IconButton } from '@mui/material';
+import { Box } from '@mui/material';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -13,10 +9,7 @@ import {
   StyledButton,
   StyledDialogTitle,
   StyledDiv,
-  StyledField,
   StyledTypography,
-  TypographyError,
-  TypographySuccess,
 } from '../SignUp/SignUp.styled';
 import {
   StyledBox,
@@ -26,16 +19,13 @@ import {
 import { SkeletonAuth } from '../Skeletons/SkeletonAuth';
 import { signin } from '../../redux/auth/authOperations';
 import { SignInSchema } from '../../helpers/validateForm/validate-login';
+import { FieldInputAuth } from '../FieldInputAuth/FieldInputAuth';
+import { FieldInputAuthPass } from '../FieldInputAuthPass/FieldInputAuthPass';
 
 const SignIn = () => {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
-
-  const handleClickPassword = () => {
-    setShowPassword(!showPassword);
-  };
 
   const handleSubmit = async (values, { resetForm }) => {
     try {
@@ -44,10 +34,10 @@ const SignIn = () => {
       setIsLoading(false);
 
       if (response.payload.token) {
-        Notify.success('Welcome!', {
-          position: 'center-top',
-          distance: '10px',
-        });
+        // Notify.success('Welcome!', {
+        //   position: 'center-top',
+        //   distance: '10px',
+        // });
         resetForm();
         navigate('/', { replace: true });
       } else {
@@ -56,7 +46,6 @@ const SignIn = () => {
           distance: '10px',
         });
       }
-
     } catch (error) {
       resetForm();
     }
@@ -78,7 +67,7 @@ const SignIn = () => {
           validationSchema={SignInSchema}
         >
           {({ errors, touched }) => (
-            <Form>
+            <Form style={{ zIndex: 3 }}>
               <StyledDialogTitle id="login" align="left">
                 Sign In
               </StyledDialogTitle>
@@ -95,111 +84,15 @@ const SignIn = () => {
                       marginBottom: '28px',
                     }}
                   >
-                    <Box sx={{ position: 'relative' }}>
-                    <StyledField
+                    <FieldInputAuth
+                      errors={errors}
+                      touched={touched}
                       name="email"
                       placeholder="Email"
-                      type="email"
-                      error={errors.email && touched.email ? 'true' : 'false'}
-                      success={
-                        touched.email && !errors.email ? 'true' : 'false'
-                      }
                     />
-                    {errors.email && touched.email && (
-                      <ErrorOutlineIcon
-                        sx={{
-                          position: 'absolute',
-                          color: '#da1414',
-                          top: '12px',
-                          right: '24px',
-                          width: '24px',
-                          height: '24px',
-                        }}
-                      />
-                    )}
-                    {touched.email && !errors.email && (
-                      <CheckCircleOutlineIcon
-                        sx={{
-                          position: 'absolute',
-                          color: '#3CBC81',
-                          top: '12px',
-                          right: '24px',
-                          width: '24px',
-                          height: '24px',
-                        }}
-                      />
-                    )}
-                    </Box>
-                    {errors.email && touched.email ? (
-                      <TypographyError>{errors.email}</TypographyError>
-                    ) : null}
-                    {touched.email && !errors.email ? (
-                      <TypographySuccess color="#3CBC81">
-                        This is an CORRECT email
-                      </TypographySuccess>
-                    ) : null}
-
-<Box sx={{ position: 'relative' }}>
-                      <StyledField
-                        name="password"
-                        placeholder="Password"
-                        type={showPassword ? 'text' : 'password'}
-                        error={
-                          errors.password && touched.password ? 'true' : 'false'
-                        }
-                        success={
-                          touched.password && !errors.password
-                            ? 'true'
-                            : 'false'
-                        }
-                      />
-                      <IconButton
-                        sx={{
-                          position: 'absolute',
-                          color: '#F3F3F3',
-                          top: '12px',
-                          right: '24px',
-                          width: '20px',
-                          height: '20px',
-                        }}
-                        onClick={handleClickPassword}
-                      >
-                        {showPassword ? (
-                          <VisibilityIcon
-                            sx={{
-                              color:
-                                (errors.password &&
-                                  touched.password &&
-                                  '#da1414') ||
-                                (!errors.password &&
-                                  touched.password &&
-                                  '#3CBC81'),
-                            }}
-                          />
-                        ) : (
-                          <VisibilityOffIcon
-                            sx={{
-                              color:
-                                (errors.password &&
-                                  touched.password &&
-                                  '#da1414') ||
-                                (!errors.password &&
-                                  touched.password &&
-                                  '#3CBC81'),
-                            }}
-                          />
-                        )}
-                      </IconButton>
-                    </Box>
-                    {errors.password && touched.password ? (
-                      <TypographyError>{errors.password}</TypographyError>
-                    ) : null}
-                    {touched.password && !errors.password ? (
-                      <TypographySuccess color="#3CBC81">
-                        This is an CORRECT password
-                      </TypographySuccess>
-                    ) : null}
+                    <FieldInputAuthPass errors={errors} touched={touched} />
                   </Box>
+
                   <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <StyledButton type="submit">
                       <StyledTypography>Sign In</StyledTypography>

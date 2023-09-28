@@ -1,4 +1,4 @@
-import{s as i,c as l,r as g,j as o,u as A,o as v,p,q as S}from"./index-c2bce4f0.js";import{P as W}from"./PageTitle-1f0a9c9b.js";const x=i.div`
+import{s as i,c as l,r as g,j as o,u as A,o as v,p,q as S}from"./index-5d4b85d7.js";import{P as W}from"./PageTitle-e4fd7ca6.js";const x=i.div`
   font-size: 12px;
   color: #da1414;
   line-height: 14px;

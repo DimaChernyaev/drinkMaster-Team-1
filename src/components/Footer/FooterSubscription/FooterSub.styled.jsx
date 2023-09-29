@@ -17,7 +17,12 @@ export const SubFormContenWrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-top: 20px;
+  @media screen and (min-width: 767px) {
+    margin-top: 30px;
+  }
 `;
+
 export const StyledSubLabel = styled.label`
   display: none;
 `;
@@ -60,9 +65,8 @@ export const StyledSubBtn = styled.button`
   padding: 10px;
   text-align: center;
   margin-top: 20px;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+
+  transition: all 450ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     background-color: ${colorStyled.colorWhite};
     color: ${colorStyled.colorBlue};

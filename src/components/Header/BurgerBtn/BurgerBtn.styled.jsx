@@ -15,11 +15,6 @@ export const StyledBurgerBtn = styled.button`
   font-family: inherit;
   color: ${colorStyled.colorWhite};
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover,
-  &:focus {
-    background-color: ${colorStyled.colorBlue};
-  }
   &:active {
     border: 1px solid ${colorStyled.colorBlueFifty};
   }
@@ -32,7 +27,8 @@ export const BurgerSVG = styled(BurgerIMG)`
 `;
 
 export const CloseBurgerSVG = styled(BurgerCloseIMG)`
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 30px;
   fill: currentColor;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;

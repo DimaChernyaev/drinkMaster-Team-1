@@ -4,16 +4,19 @@ export const ContainerError = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 196px;
+  margin-top: 188px;
+  margin-bottom: 260px;
   margin-right: auto;
   margin-left: auto;
 
   @media (min-width: 768px) {
     margin-top: 175px;
+    margin-bottom: 195px;
   }
 
   @media (min-width: 1440px) {
-    margin-top: 223px;
+    margin-top: 200px;
+    margin-bottom: 140px;
   }
 `;
 
@@ -36,17 +39,18 @@ export const Image = styled.img`
 
 export const Title = styled.p`
   color: rgba(243, 243, 243, 0.1);
-  // font-family: Manrope;
   font-size: 120px;
   font-weight: 600;
   line-height: 1.02;
 
   @media (min-width: 768px) {
     font-size: 150px;
+    line-height: 0.82;
   }
 
   @media (min-width: 1440px) {
     font-size: 200px;
+    line-height: 1;
   }
 `;
 

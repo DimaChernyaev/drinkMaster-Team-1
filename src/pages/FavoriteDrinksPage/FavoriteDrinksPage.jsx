@@ -1,44 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import ReactPaginate from 'react-paginate';
 import { useDispatch, useSelector } from 'react-redux';
+import useItemsPerPage from '../../hooks/useItemsPerPage';
 import { fetchFavorites } from '../../redux/drinks/favorites/favoritesOperations';
 import {
   selectError,
   selectFavoriteItems,
   selectIsLoading,
-  // selectPerPage,
-  // selectCurrentPage,
-  // setCurrentPage,
 } from '../../redux/drinks/favorites/favoriteSelectors';
 import ErrorPage from '../../pages/ErrorPage/ErrorPage';
 import DrinksList from '../../components/DrinksList/DrinksList';
-// import Paginator from '../../components/Paginator/Paginator';
+import Paginator from '../../components/Paginator/Paginator';
 import { ThreeDots } from 'react-loader-spinner';
 import { Loader } from '../../components/Loader/Loader.styled';
-import {
-  Container,
-  Title,
-  Elipse,
-  ElipseTwo,
-} from './FavoriteDrinksPage.styled';
-import { StyledReactPaginate } from '../../components/Paginator/Paginator.styled';
-import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
-
-const PER_PAGE = 4;
+import { Container, Elipse, ElipseTwo } from './FavoriteDrinksPage.styled';
+import PageTitle from '../../components/DefaultComponents/PageTitle/PageTitle';
 
 const FavoriteDrinksPage = () => {
   const dispatch = useDispatch();
   const drinks = useSelector(selectFavoriteItems);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
-  // const perPage = useSelector(selectPerPage);
-  // const currentPage = useSelector(selectCurrentPage);
 
-  //Pagination
+  // Pagination
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = PER_PAGE;
+  const itemsPerPage = useItemsPerPage();
 
   useEffect(() => {
     dispatch(fetchFavorites());
@@ -60,7 +47,7 @@ const FavoriteDrinksPage = () => {
 
   return (
     <Container>
-      <Title>Favorites</Title>
+      <PageTitle title="Favorites" />
       <Elipse />
       <ElipseTwo />
       {isLoading && !error && (
@@ -69,22 +56,7 @@ const FavoriteDrinksPage = () => {
         </Loader>
       )}
       <DrinksList drinks={currentItems} />
-      {/* <Paginator onClick={handlePageClick} pageCount={pageCount} /> */}
-      {!!(pageCount - 1) && (
-        <StyledReactPaginate
-          breakLabel="..."
-          nextLabel={<MdArrowForwardIos fill="rgba(243, 243, 243, 0.30)" />}
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={3}
-          pageCount={pageCount}
-          previousLabel={<MdArrowBackIosNew fill="rgba(243, 243, 243, 0.30)" />}
-          renderOnZeroPageCount={null}
-          onPageActive={window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-          })}
-        />
-      )}
+      <Paginator handlePageClick={handlePageClick} pageCount={pageCount} />
       {error && <ErrorPage />}
     </Container>
   );

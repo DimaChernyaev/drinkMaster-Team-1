@@ -1,12 +1,43 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import { colorStyled } from '../colorStyled';
 
-export const Card = styled.li``;
+export const Card = styled.li`
+  @media (min-width: 375px) {
+    &:nth-of-type(2) {
+      display: none;
+    }
+    &:nth-of-type(3) {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &:nth-of-type(2) {
+      display: block;
+    }
+    &:nth-of-type(3) {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    &:nth-of-type(2) {
+      display: block;
+    }
+    &:nth-of-type(3) {
+      display: block;
+    }
+  }
+`;
 
 export const ImageCard = styled.img`
   display: block;
   border-radius: 8px;
+  display: flex;
+  width: 335px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
 
   @media (min-width: 375px) {
     width: 335px;
@@ -39,12 +70,17 @@ export const CocktailName = styled.p`
 `;
 
 export const CocktailLink = styled(Link)`
-  color: ${colorStyled.colorWhiteFifty};
   font-size: 16px;
   font-size: 500;
   line-height: 1.2;
   word-wrap: break-word;
   align-self: flex-start;
+  color: var(--whitefifty-color);
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--white-color);
+  }
 
   @media (min-width: 375px) {
     font-size: 14px;

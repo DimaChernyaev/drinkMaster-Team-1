@@ -5,15 +5,7 @@ export const fetchFavorites = createAsyncThunk(
   'favorites/fetchAll',
   async (page, thunkAPI) => {
     try {
-      // const response = await axios.get('/drinks/popular');
-      const response = await axios.get(
-        '/drinks/favorite',
-        // { params: {
-        //   page: 1,
-        //   per_page: 4,},
-        //  }
-      );
-
+      const response = await axios.get('/drinks/favorite');
       return response.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);

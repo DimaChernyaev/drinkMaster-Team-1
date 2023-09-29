@@ -6,11 +6,16 @@ export const PrewievDrinks = ({ drinks }) => {
     <>
       {drinks.map(([title, coctails]) => {
         return (
-          <div>
+          <div key={title}>
             <Title>{title}</Title>
             <List>
               {coctails.map(({ _id, drink, drinkThumb }) => (
-                <CardCoctali _id={_id} drink={drink} drinkThumb={drinkThumb} />
+                <CardCoctali
+                  _id={_id}
+                  drink={drink}
+                  drinkThumb={drinkThumb}
+                  key={_id}
+                />
               ))}
             </List>
           </div>

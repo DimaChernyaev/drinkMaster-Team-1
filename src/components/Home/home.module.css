@@ -1,26 +1,80 @@
 .container{
     background-color: #0A0A11;
-    /* padding-left: 100px;
-    padding-right: 100px; */
-    /* padding: 150px 100px; */
-    /* overflow: hidden; */
+   
+
+    width: 335px;
+    
 }
 
+.cont{
+    /* display: flex; */
+    margin-top: 80px; 
+    margin-bottom: 112px;
+}
+
+@media screen and (min-width: 768px) {
+    .cont {
+        /* display: flex; */
+        margin-top: 185px;
+        margin-bottom: 123px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
 .cont{
     display: flex;
     margin-top: 185px;
 }
+}
 
-/* .conttwo{
-margin-top: -150px;    
-} */
+.imgmain{
+    width: 335px;
+    color: #F3F3F3;
+font-family: Manrope;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px;    
+}
+
+@media screen and (min-width: 1440px) {
 .imgmain{
     width: 359px;
     height: 445px;
     flex-shrink: 0;
-    /* background: url(./HomePageImg//desktop1x.jpg), lightgray -40.378px -23px / 133.644% 107.865% no-repeat;    */
+}  
 }
 
+.title{
+    width: 335px;
+    color: #F3F3F3;
+font-family: Manrope;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: 38px;
+margin-bottom: 16px;
+
+;
+}
+
+
+@media screen and (min-width: 785px) {
+    .title {
+        width: 641px;
+        color: #F3F3F3;
+        font-family: Manrope;
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 68px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 28px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
 .title{
 width: 715px;
 color: #F3F3F3;
@@ -33,7 +87,35 @@ line-height: 68px;
     flex-direction: column;
     margin-bottom: 28px;
 }
+}
 
+.text{
+ width: 335px; 
+ color: #F3F3F3;
+font-family: Manrope;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px;
+padding-bottom: 32px;
+}
+
+
+@media screen and (min-width: 785px) {
+    .text {
+        width: 619px;
+        color: #F3F3F3;
+        font-family: Manrope;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        padding-bottom: 48px;
+    }
+}
+
+
+@media screen and (min-width: 1440px) {
 .text{
 width: 500px;
 color: #F3F3F3;
@@ -44,7 +126,7 @@ font-weight: 400;
 line-height: 24px;
 margin: 0;
 padding-bottom: 40px;
-
+}
 }
 
 .btnAddDrinks{
@@ -53,7 +135,39 @@ padding-bottom: 40px;
         color: #161F37;
         padding: 18px 44px;
         cursor: pointer;
+        margin-bottom: 47px;
 }
+
+.btnAddDrinks:hover,
+.btnAddDrinks:focus{
+    background: #161F37;;
+    color: #F3F3F3;
+}
+
+
+@media screen and (min-width: 785px) {
+    .btnAddDrinks {
+        border-radius: 42px;
+        background: #F3F3F3;
+        color: #161F37;
+        padding: 18px 44px;
+        cursor: pointer;
+        margin-bottom: 58px;
+    }
+}
+
+
+@media screen and (min-width: 1440px) {
+    .btnAddDrinks {
+        border-radius: 42px;
+            background: #F3F3F3;
+            color: #161F37;
+            padding: 18px 44px;
+            cursor: pointer;
+    }
+}
+
+
 
 .box{
     display: inline-flex;
@@ -63,7 +177,12 @@ padding-bottom: 40px;
 }
 
 .boxtwo{
-    /* position: relative; */
+    display: none;
+}
+
+@media screen and (min-width: 1440px) {
+.boxtwo{
+display: inline;
     width: 387px;
     height: 381px;
     margin-top: 180px;
@@ -73,26 +192,60 @@ padding-bottom: 40px;
 background: rgba(188, 230, 210, 0.30);
 filter: blur(104.8543701171875px);
 }
+}
 
 .boxtree{
+    position: absolute;
+    top: 498px;
+    left: 331px;
+    width: 549px;
+    height: 543px;
+    flex-shrink: 0; 
+    border-radius: 549px;
+background: rgba(64, 112, 205, 0.50);
+filter: blur(104.8543701171875px); 
+transform: translateX(30px); 
+transform: translateY(20px);
+}
+
+@media screen and (min-width: 1440px) {
+.boxtree{
 /* position: relative; */
+
 width: 549px;
 height: 543px;
 flex-shrink: 0;
-/* top: 458px;
-left: 1181px; */
-margin-top: 167px;
-
+top: 458px;
+left: 1146px;
+/* margin-top: 167px; */
 border-radius: 549px;
 background: rgba(64, 112, 205, 0.50);
 filter: blur(104.8543701171875px);
 transform: translateY(50%);
 }
+}
 
 .boxfour{
     position: absolute;
     top: 20px;
-    left:-623px;
+    left: -750px;
+    width: 520px;
+    height: 550px;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    border-radius: 550px;
+    background: rgba(64, 112, 205, 0.5);
+    -webkit-filter: blur(104.8543701171875px);
+    filter: blur(104.8543701171875px);
+    z-index: 2; 
+}
+
+@media screen and (min-width: 1440px) {
+.boxfour{
+    position: absolute;
+    top: 20px;
+    left: -624px;
     width: 784px;
     height: 849px;
     flex-shrink: 0;
@@ -100,6 +253,7 @@ transform: translateY(50%);
     background: rgba(64, 112, 205, 0.5);
     filter: blur(104.854px);
     z-index: 1;
+}
 }
 
 .titleOrdinary{
@@ -173,6 +327,12 @@ margin-bottom: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btnOtherDrinks:hover,
+.btnOtherDrinks:focus {
+    background: #161F37;
+    color: #F3F3F3;
 }
 
 .otherDrinks{

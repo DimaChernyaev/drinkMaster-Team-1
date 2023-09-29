@@ -7,7 +7,7 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import 'air-datepicker/air-datepicker.css';
-import '../../index.css';
+import './signUp.css';
 import {
   StyledButton,
   StyledDialogTitle,
@@ -42,7 +42,7 @@ const SignUp = () => {
         autoClose: true,
         selectedDates: [new Date()],
         locale: localeEn,
-        buttons: ['today', 'clear'],
+        // buttons: ['today', 'clear'],
         onSelect: (formattedDate) => {
           setBirthdate(formattedDate);
           calendar.destroy();
@@ -85,7 +85,7 @@ const SignUp = () => {
           validationSchema={SignupSchema}
         >
           {({ errors, touched }) => (
-            <Form>
+            <Form style={{ zIndex: 3, minWidth: '335px' }}>
               <StyledDialogTitle id="registration" align="left">
                 Sign Up
               </StyledDialogTitle>
@@ -155,8 +155,7 @@ const SignUp = () => {
                       placeholder="Email"
                     />
 
-                  <FieldInputAuthPass errors={errors} touched={touched} />
-
+                    <FieldInputAuthPass errors={errors} touched={touched} />
                   </Box>
                   <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <StyledButton type="submit">
@@ -168,7 +167,6 @@ const SignUp = () => {
                       </StyledButton>
                     </Link>
                   </Box>
-                  
                 </>
               )}
             </Form>

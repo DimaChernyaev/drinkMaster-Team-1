@@ -34,10 +34,10 @@ const SignIn = () => {
       setIsLoading(false);
 
       if (response.payload.token) {
-        Notify.success('Welcome!', {
-          position: 'center-top',
-          distance: '10px',
-        });
+        // Notify.success('Welcome!', {
+        //   position: 'center-top',
+        //   distance: '10px',
+        // });
         resetForm();
         navigate('/', { replace: true });
       } else {
@@ -67,7 +67,7 @@ const SignIn = () => {
           validationSchema={SignInSchema}
         >
           {({ errors, touched }) => (
-            <Form>
+            <Form style={{ zIndex: 3 }}>
               <StyledDialogTitle id="login" align="left">
                 Sign In
               </StyledDialogTitle>
@@ -103,7 +103,6 @@ const SignIn = () => {
                       </StyledButton>
                     </Link>
                   </Box>
-                  
                 </>
               )}
             </Form>

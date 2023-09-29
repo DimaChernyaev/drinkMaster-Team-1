@@ -8,6 +8,7 @@ import { getCurrentCoctail } from '../../helpers/API/operationsDrinks';
 const Drink = () => {
   const [coctailData, setCoctailData] = useState(null);
   const { drinkId } = useParams();
+
   // console.log(drinkId);
   // console.log(coctailData)
 
@@ -22,10 +23,19 @@ const Drink = () => {
   return (
     <>
       <DrinkPageHero coctailInfo={coctailData} />
-      <DrinkIngredientsList coctailInfo={coctailData} />
+      <DrinkIngredientsList coctailInfo={coctailData} />{' '}
       <RecipePreparation coctailInfo={coctailData} />
     </>
   );
 };
 
 export default Drink;
+
+// useEffect(() => {
+
+//   const currentCoctail = async () => {
+//     const data = await getCurrentCoctail(drinkId);
+//     setCoctailData(data);
+//   };
+//   currentCoctail();
+// }, []);

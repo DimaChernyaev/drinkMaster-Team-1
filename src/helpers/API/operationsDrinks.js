@@ -8,7 +8,7 @@ export async function getCurrentCoctail(id) {
     console.log('axios', axios);
 
     const { data } = await axios.get(`/drinks/${id}`);
-    console.log(data);
+    // console.log(data);
 
     return data;
   } catch (error) {
@@ -19,9 +19,7 @@ export async function getCurrentCoctail(id) {
 // отримання коктелів за категорією для домашньої сторінки
 export async function getCoctailsByCategories() {
   try {
-    console.log('axios.', axios.defaults);
     const res = await axios.get('/drinks/mainpage');
-    console.log('res', res);
     return res.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
@@ -40,25 +38,28 @@ export async function getPopularCoctails() {
 }
 
 // отримання коктелів по фільтру
-export async function getCoctailsByFilter({
+export async function getCoctailsByFilter(
+  inputKeyword,
   category ,
   ingredient,
-  keyword,
-  page = '1',
-  per_page = '10',
-}) {
-  let paramsObj = {};
-  if (category) paramsObj = {category,};
-  if (ingredient) paramsObj = {...paramsObj, ingredient};
-  if (keyword) paramsObj = {...paramsObj, keyword};
-  paramsObj = {...paramsObj, page, per_page};
-  console.log("paramsObj =",paramsObj);
-  const searchParams = new URLSearchParams(paramsObj);
+  page,
+  per_page,
+) {
+
+  let url = '/drinks/search?' 
+  if (inputKeyword)  url = url + 'keyword=' + inputKeyword + "&";
+  if (category)  url = url + 'category=' + category + "&" ;
+  if (ingredient)  url = url + 'ingredient=' + ingredient + '&';
+    if (page)  url = url + 'page=' + page + '&';
+  if (per_page)  url = url + 'per_page=' + per_page;
+
+  console.log(url);
 
   try {
-    const { data } = await axios.get('/drinks/search', searchParams);
+    axios.defaults.params
+    const { data } = await axios.get(url);
     return data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(error.message); 
   }
 }

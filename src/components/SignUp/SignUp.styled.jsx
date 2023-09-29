@@ -51,7 +51,6 @@ export const StyledDialogTitle = styled(DialogTitle)`
   margin-bottom: 28px;
   color: #f3f3f3;
   font-feature-settings: 'liga' off;
-  font-family: Manrope;
   font-size: 28px;
   font-style: normal;
   font-weight: 600;
@@ -93,17 +92,16 @@ export const StyledField = styled(Field)`
   border-radius: 24px;
   color: #f3f3f3;
 
-  ::placeholder {
+  &::placeholder {
     color: rgba(243, 243, 243, 0.5);
-    font-family: Manrope;
     font-size: 17px;
     font-style: normal;
     font-weight: 400;
     line-height: 156%;
   }
 
-  :hover,
-  :focus {
+  &:hover,
+  &:focus {
     border: 1px solid rgba(243, 243, 243, 0.5);
     ::placeholder {
       color: rgba(243, 243, 243);
@@ -117,7 +115,6 @@ export const StyledField = styled(Field)`
 
 export const StyledTypography = styled(Typography)`
   font-size: 12px;
-  font-family: Manrope;
   font-style: normal;
   font-weight: 600;
   line-height: 16px;
@@ -150,7 +147,6 @@ export const TypographyError = styled(Typography)`
   margin-left: 24px;
   margin-bottom: 0;
   color: #da1414;
-  font-family: Manrope;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -160,7 +156,6 @@ export const TypographySuccess = styled(Typography)`
   margin-left: 24px;
   margin-bottom: 0;
   color: #3cbc81;
-  font-family: Manrope;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;

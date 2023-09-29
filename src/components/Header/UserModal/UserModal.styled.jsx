@@ -44,10 +44,10 @@ export const LogOutBtn = styled.button`
 `;
 
 export const StyledTypography = styled(Typography)`
-color: #F3F3F3;
-font-family: Manrope;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 18px; 
-`
+  color: #f3f3f3;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+`;

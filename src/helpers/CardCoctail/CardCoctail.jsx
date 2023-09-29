@@ -1,9 +1,9 @@
 import {
-  Card,
   ImageCard,
   CocktailName,
   Wrapper,
   CocktailLink,
+  Card,
 } from './CardCoctail.styled';
 
 export const CardCoctali = ({ _id, drink, drinkThumb }) => {

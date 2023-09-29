@@ -4,7 +4,8 @@ import { ReactComponent as BurgerIMG } from '../../../assets/images/burgermenu/b
 import { ReactComponent as BurgerCloseIMG } from '../../../assets/images/burgermenu/burgerclose.svg';
 
 export const StyledBurgerBtn = styled.button`
-  width: 32px;
+  width: 38px;
+  height: 38px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,8 +26,8 @@ export const StyledBurgerBtn = styled.button`
 `;
 
 export const BurgerSVG = styled(BurgerIMG)`
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 30px;
   fill: currentColor;
 `;
 

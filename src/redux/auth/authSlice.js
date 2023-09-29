@@ -45,6 +45,7 @@ const authSlice = createSlice({
         state.isRefreshing = false;
       })
       .addCase(user.updateUser.pending, (state) => {
+        console.log(state);
         state.error = null;
       })
       .addCase(user.updateUser.fulfilled, (state, action) => {

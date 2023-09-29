@@ -1,4 +1,4 @@
-import{n as i,o as c,p as o,j as t,L as m,y as g}from"./index-8fe4e6ed.js";import{a as h,b as f}from"./favoriteSelectors-b4361c0f.js";import{N as b}from"./FavoriteDrinksPage.styled-9ab55c9d.js";const w="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",u=i.ul`
+import{n as i,x as c,y as r,j as t,L as m,G as g}from"./index-199e55c2.js";import{a as h,b as f}from"./favoriteSelectors-b4361c0f.js";import{N as b}from"./FavoriteDrinksPage.styled-a4022c93.js";const w="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",u=i.ul`
   // display: flex;
   padding: 0;
   margin: 0;
@@ -150,4 +150,4 @@ import{n as i,o as c,p as o,j as t,L as m,y as g}from"./index-8fe4e6ed.js";impor
 
   text-align: center;
   margin-bottom: 20px;
-`;const W=({drinks:e})=>{const r=c(),s=o(h),p=o(f);return t.jsxs(t.Fragment,{children:[!p&&!s&&e.length===0&&t.jsx(b,{}),t.jsx(u,{children:e.length>0&&e.map(({_id:n,drink:a,alcoholic:d,shortDescription:x,drinkThumb:l})=>t.jsxs(j,{children:[t.jsx(y,{src:l,alt:a}),t.jsxs(k,{children:[t.jsx(v,{children:a}),t.jsx(D,{children:d}),t.jsx(L,{children:x})]}),t.jsxs(T,{children:[t.jsx(m,{to:`/drink/${n}`,children:t.jsx(z,{children:"See more"})}),t.jsx(S,{type:"button",onClick:()=>r(g(n)),children:t.jsx("img",{src:w,alt:"trash"})})]})]},n))})]})};export{W as D};
+`;const W=({drinks:e})=>{const o=c(),s=r(h),p=r(f);return t.jsxs(t.Fragment,{children:[!p&&!s&&e.length===0&&t.jsx(b,{}),t.jsx(u,{children:e.length>0&&e.map(({_id:n,drink:a,alcoholic:d,shortDescription:x,drinkThumb:l})=>t.jsxs(j,{children:[t.jsx(y,{src:l,alt:a}),t.jsxs(k,{children:[t.jsx(v,{children:a}),t.jsx(D,{children:d}),t.jsx(L,{children:x})]}),t.jsxs(T,{children:[t.jsx(m,{to:`/drink/${n}`,children:t.jsx(z,{children:"See more"})}),t.jsx(S,{type:"button",onClick:()=>o(g(n)),children:t.jsx("img",{src:w,alt:"trash"})})]})]},n))})]})};export{W as D};

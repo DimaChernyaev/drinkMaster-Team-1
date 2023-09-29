@@ -1,4 +1,4 @@
-import { Box, Dialog } from '@mui/material';
+import { Box } from '@mui/material';
 import { Notify } from 'notiflix';
 import { Field, Formik } from 'formik';
 import { useEffect, useState } from 'react';
@@ -19,6 +19,7 @@ import {
   StyledField,
   StyledForm,
   StyledLabel,
+  StyledDialog
 } from './UserInfoModal.styled';
 import addPhoto from '../../assets/images/userInfoModal/addPhoto.svg';
 import { updateUser } from '../../redux/auth/user/userOperations';
@@ -78,9 +79,9 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   };
 
   return (
-    <Dialog open={isOpen} onClose={handleClose} aria-labelledby="profile">
+    <StyledDialog open={isOpen} onClose={handleClose} aria-labelledby="profile" sx={{backgroundColor: "rgba(0, 0, 0, 0)"}}>
       {isLoading ? (
-        <SkeletonAuth totalRow={4} />
+        <SkeletonAuth totalRow={4}/>
       ) : (
         <Formik
           initialValues={initialValues}
@@ -138,6 +139,6 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
           )}
         </Formik>
       )}
-    </Dialog>
+    </StyledDialog>
   );
 };

@@ -26,16 +26,13 @@ const SubscriptionForm = () => {
 
   const handleSubmit = async (values, { resetForm }) => {
     const formData = new FormData();
-
     formData.append('email', values.email);
     try {
       await dispatch(subscribeUser(formData));
       Notify.success('Subscription email sent!');
-      console.log('success');
     } catch (error) {
-      console.log(error.message);
+      Notify.failure(error.message);
     }
-
     resetForm();
   };
 

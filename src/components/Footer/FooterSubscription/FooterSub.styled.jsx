@@ -71,10 +71,16 @@ export const StyledSubBtn = styled.button`
 
 export const StyledSubText = styled.p`
   width: 309px;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 export const StyledSubForm = styled(Form)`
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  @media screen and (max-width: 767px) {
+    align-items: center;
+  }
 `;

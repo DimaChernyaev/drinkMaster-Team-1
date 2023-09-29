@@ -11,9 +11,8 @@ export const IngredientItem = styled.li`
   }
 
   img {
-    width: 157px;
-    height: 157px;
-    margin-bottom: 8px;
+    width: 107px;
+    height: 107px;
   }
 
   p {
@@ -31,9 +30,8 @@ export const IngredientItem = styled.li`
       width: 220px;
     }
     img {
-      width: 220px;
-      height: 220px;
-      margin-bottom: 14px;
+      width: 175px;
+      height: 175px;
     }
     p {
       font-size: 18px;
@@ -42,5 +40,20 @@ export const IngredientItem = styled.li`
     span {
       font-size: 16px;
     }
+  }
+`;
+
+export const ImageThumb = styled.div`
+  margin-bottom: 8px;
+border-radius:8px;
+  width: 157px;
+  height: 157px;
+  padding: 25px;
+  background-color: ${colorStyled.colorBlue};
+
+  @media (min-width: 768px) {
+    width: 220px;
+    height: 220px;
+    padding: 22px;
   }
 `;

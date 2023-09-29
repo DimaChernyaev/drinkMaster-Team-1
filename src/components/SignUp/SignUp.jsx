@@ -1,6 +1,6 @@
 import { Formik, Form } from 'formik';
 import { Box, IconButton } from '@mui/material';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import AirDatepicker from 'air-datepicker';
 import localeEn from 'air-datepicker/locale/en';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
@@ -30,11 +30,11 @@ import { FieldInputAuthPass } from '../FieldInputAuthPass/FieldInputAuthPass';
 
 const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [birthdate, setBirthdate] = useState('');
+  // const [birthdate, setBirthdate] = useState('');
   const dispatch = useDispatch();
 
-  const handleClickDate = () => {
-    const dateInput = document.getElementById('date');
+  const handleClickDate = (setFieldValue) => {
+    const dateInput = document.getElementById('birthdate');
 
     if (dateInput) {
       const calendar = new AirDatepicker(dateInput, {
@@ -44,7 +44,7 @@ const SignUp = () => {
         locale: localeEn,
         // buttons: ['today', 'clear'],
         onSelect: (formattedDate) => {
-          setBirthdate(formattedDate);
+          setFieldValue('birthdate', formattedDate.formattedDate);
           calendar.destroy();
         },
       });
@@ -53,8 +53,8 @@ const SignUp = () => {
   };
 
   const handleSubmit = async (values, { resetForm }) => {
-    const { date } = birthdate;
-    const newUser = { ...values, birthdate: date };
+    console.log('values-->', values);
+    const newUser = { ...values};
 
     try {
       setIsLoading(true);
@@ -70,6 +70,7 @@ const SignUp = () => {
 
   const initialValues = {
     name: '',
+    birthdate: '',
     email: '',
     password: '',
   };
@@ -84,7 +85,7 @@ const SignUp = () => {
           onSubmit={handleSubmit}
           validationSchema={SignupSchema}
         >
-          {({ errors, touched }) => (
+          {({ errors, touched, setFieldValue }) => (
             <Form style={{ zIndex: 3, minWidth: '335px' }}>
               <StyledDialogTitle id="registration" align="left">
                 Sign Up
@@ -111,12 +112,11 @@ const SignUp = () => {
 
                     <Box sx={{ position: 'relative', width: '100%' }}>
                       <StyledField
-                        name="date"
+                        name="birthdate"
                         placeholder="dd/mm/yyyy"
-                        id="date"
-                        disabled
-                        error={!birthdate ? 'true' : 'false'}
-                        success={birthdate ? 'true' : 'false'}
+                        id="birthdate"
+                        error={errors.birthdate && touched.birthdate ? 'true' : 'false'}
+                        success={touched.birthdate && !errors.birthdate  ? 'true' : 'false'}
                       />
                       <IconButton
                         sx={{
@@ -128,21 +128,21 @@ const SignUp = () => {
                           flexShrink: 0,
                           color: '#F3F3F3',
                         }}
-                        onClick={handleClickDate}
+                        onClick={()=>handleClickDate(setFieldValue)}
                       >
                         <CalendarTodayIcon
                           sx={{
                             color:
-                              (!birthdate && '#da1414') ||
-                              (birthdate && '#3CBC81'),
+                              (errors.birthdate && touched.birthdate && '#da1414') ||
+                              (touched.birthdate && !errors.birthdate && '#3CBC81'),
                           }}
                         />
                       </IconButton>
                     </Box>
-                    {!birthdate ? (
-                      <TypographyError>{errors.date}</TypographyError>
+                    {errors.birthdate && touched.birthdate ? (
+                      <TypographyError>{errors.birthdate}</TypographyError>
                     ) : null}
-                    {birthdate ? (
+                    {touched.birthdate && !errors.birthdate ? (
                       <TypographySuccess color="#3CBC81">
                         This is an CORRECT date
                       </TypographySuccess>

@@ -48,8 +48,6 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(user.updateUser.fulfilled, (state, action) => {
-        console.log(action);
-        console.log(state.user);
         state.error = null;
         state.user = {
           email: state.user.email,

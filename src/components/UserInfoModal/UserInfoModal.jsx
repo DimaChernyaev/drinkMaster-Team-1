@@ -1,4 +1,4 @@
-import { Box, Dialog } from '@mui/material';
+import { Box } from '@mui/material';
 import { Notify } from 'notiflix';
 import { Field, Formik } from 'formik';
 import { useEffect, useState } from 'react';
@@ -19,6 +19,7 @@ import {
   StyledField,
   StyledForm,
   StyledLabel,
+  StyledDialog
 } from './UserInfoModal.styled';
 import addPhoto from '../../assets/images/userInfoModal/addPhoto.svg';
 import { updateUser } from '../../redux/auth/user/userOperations';
@@ -39,6 +40,7 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
 
   const handleChangeAvatar = ({ target }) => {
     const file = target.files[0];
+    console.log(file);
     const maxSizeFile = 5 * 1024 * 1024;
     if (file.size > maxSizeFile) {
       Notify.failure('Файл повинен бути менше 5Mb', {
@@ -61,7 +63,6 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
 
     try {
       setIsLoading(true);
-      console.log(formData);
       await dispatch(updateUser(formData));
       setIsLoading(false);
 
@@ -78,9 +79,9 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   };
 
   return (
-    <Dialog open={isOpen} onClose={handleClose} aria-labelledby="profile">
+    <StyledDialog open={isOpen} onClose={handleClose} aria-labelledby="profile" sx={{backgroundColor: "rgba(0, 0, 0, 0)"}}>
       {isLoading ? (
-        <SkeletonAuth totalRow={4} />
+        <SkeletonAuth totalRow={4}/>
       ) : (
         <Formik
           initialValues={initialValues}
@@ -97,14 +98,14 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
                 <Box sx={{ position: 'relative' }}>
                   <StyledAvatar id="profile" alt="avatar" src={avatar} />
                   <StyledBox>
-                    <Field
+                    <input
                       name="file"
                       type="file"
                       id="loadFile"
                       hidden
                       onChange={handleChangeAvatar}
-                    />
-                    <StyledLabel for="loadFile" role="button">
+                    ></input>
+                    <StyledLabel htmlFor="loadFile" role="button">
                       <img
                         src={addPhoto}
                         alt="add avatar"
@@ -138,6 +139,6 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
           )}
         </Formik>
       )}
-    </Dialog>
+    </StyledDialog>
   );
 };

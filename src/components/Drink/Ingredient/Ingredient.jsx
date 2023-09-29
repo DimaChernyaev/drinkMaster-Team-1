@@ -1,13 +1,16 @@
-import { IngredientItem } from './Ingredient.style.js';
+import { ImageThumb, IngredientItem } from './Ingredient.style.js';
 import coctailPlaceholder from '../../../assets/images/drinkPageImg/coctailPlaceholder.png';
 
 
 
 export const Ingredient = ({ photo, title, measure }) => {
-  console.log(photo)
+  // console.log(photo)
   return (
     <IngredientItem>
-       <img src={photo ? photo : coctailPlaceholder}/>
+      <ImageThumb>
+      <img src={photo ? photo : coctailPlaceholder}/>
+      </ImageThumb>
+
        <div>
        <p>{title}</p>
       <span>{measure}</span>
@@ -16,25 +19,4 @@ export const Ingredient = ({ photo, title, measure }) => {
     </IngredientItem>
   );
 
-  // const [isPhotoLoaded, setIsPhotoLoaded] = useState(false);
-
-  //   useEffect(() => {
-  //     if (photo) {
-  //       setIsPhotoLoaded(true);
-  //     }
-  //   }, [photo]);
-
-  //   if (!isPhotoLoaded) {
-  //     return null;
-  //   }
-
-  //   return (
-  //     isPhotoLoaded && (
-  //       <IngredientItem>
-  //         <img src={photo} alt={name} />
-  //         <p>{name}</p>
-  //         <span>{number}</span>
-  //       </IngredientItem>
-  //     )
-  //   );
 };

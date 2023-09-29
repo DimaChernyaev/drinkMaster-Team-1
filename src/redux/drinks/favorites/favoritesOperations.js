@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchFavorites = createAsyncThunk(
   'favorites/fetchAll',
-  async (_, thunkAPI) => {
+  async (page, thunkAPI) => {
     try {
       const response = await axios.get('/drinks/favorite');
       return response.data;

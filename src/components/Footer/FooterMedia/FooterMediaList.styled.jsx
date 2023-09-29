@@ -21,21 +21,45 @@ export const FooterStyledLink = styled(Link)`
   height: 44px;
   border: solid 1px ${colorStyled.colorWhiteFourty};
   border-radius: 10px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    border: solid 1px ${colorStyled.colorWhite};
+  }
 `;
 export const StyledFacebookSVG = styled(FacebookIMG)`
   height: 24px;
   width: 24px;
   fill: ${colorStyled.colorWhiteFourty};
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    fill: ${colorStyled.colorWhite};
+  }
 `;
 
 export const StyledInstagramSVG = styled(InstagramIMG)`
   height: 24px;
   width: 24px;
   fill: ${colorStyled.colorWhiteFourty};
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    fill: ${colorStyled.colorWhite};
+  }
 `;
 
 export const StyledYoutubeSVG = styled(YouTubeIMG)`
   height: 24px;
   width: 24px;
   fill: ${colorStyled.colorWhiteFourty};
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    fill: ${colorStyled.colorWhite};
+  }
 `;

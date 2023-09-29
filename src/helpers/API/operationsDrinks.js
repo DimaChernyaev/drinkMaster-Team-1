@@ -22,7 +22,7 @@ export async function getCoctailsByCategories() {
     const res = await axios.get('/drinks/mainpage');
     return res.data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    console.log(error.message);
   }
 }
 
@@ -33,33 +33,32 @@ export async function getPopularCoctails() {
 
     return data;
   } catch (error) {
-    thunkAPI.rejectWithValue(error.message);
+    console.log(error.message);
   }
 }
 
 // отримання коктелів по фільтру
 export async function getCoctailsByFilter(
   inputKeyword,
-  category ,
+  category,
   ingredient,
-  page = '1',
-  per_page = '10',
+  page,
+  per_page,
 ) {
-
-  let url = '/drinks/search?' 
-  if (inputKeyword)  url = url + 'keyword=' + inputKeyword + "&";
-  if (category)  url = url + 'category=' + category + "&" ;
-  if (ingredient)  url = url + 'ingredient=' + ingredient + '&';
-    if (page)  url = url + 'page=' + page + '&';
-  if (per_page)  url = url + 'per_page=' + per_page;
+  let url = '/drinks/search?';
+  if (inputKeyword) url = url + 'keyword=' + inputKeyword + '&';
+  if (category) url = url + 'category=' + category + '&';
+  if (ingredient) url = url + 'ingredient=' + ingredient + '&';
+  if (page) url = url + 'page=' + page + '&';
+  if (per_page) url = url + 'per_page=' + per_page;
 
   console.log(url);
 
   try {
-    axios.defaults.params
+    axios.defaults.params;
     const { data } = await axios.get(url);
     return data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message); 
+    return thunkAPI.rejectWithValue(error.message);
   }
 }

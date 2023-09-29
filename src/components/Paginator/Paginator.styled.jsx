@@ -9,12 +9,12 @@ export const StyledReactPaginate = styled(ReactPaginate)`
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-  gap: 49px;
+  gap: 24px;
 
   @media (min-width: 768px) {
     width: 436px;
     padding: 14px 24px;
-    gap: 40px;
+    // gap: 40px;
   }
 
   li {
@@ -35,6 +35,11 @@ export const StyledReactPaginate = styled(ReactPaginate)`
       background-color: rgba(64, 112, 205, 0.5);
       border-radius: 50%;
     }
+
+    &.selected {
+      background-color: rgba(64, 112, 205, 0.5);
+      border-radius: 50%;
+    }
   }
 
   a {
@@ -46,5 +51,21 @@ export const StyledReactPaginate = styled(ReactPaginate)`
     font-size: 12px;
     // width: 27px;
     // height: 27px;
+  }
+
+  .previous {
+    margin-right: 40px;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .next {
+    margin-left: 40px;
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 `;

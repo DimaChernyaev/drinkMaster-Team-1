@@ -6,6 +6,7 @@ export const fetchOwn = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/drinks/own');
+      // const response = await axios.get('/drinks/favorite');
       // При успішному запиті повертаємо проміс із даними
       return response.data;
     } catch (err) {

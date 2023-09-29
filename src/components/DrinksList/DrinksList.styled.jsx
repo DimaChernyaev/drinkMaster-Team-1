@@ -1,19 +1,24 @@
 import styled from '@emotion/styled';
 
 export const DrinksListSet = styled.ul`
-  // display: flex;
   padding: 0;
   margin: 0;
+  margin-top: 40px;
 
   @media (min-width: 768px) {
-  // display: grid;
-  // grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  // grid-gap: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 80px;
+    column-gap: 20px;
+    margin-top: 60px;
+  }
 
-  // }
+  @media (min-width: 1280px) {
+    margin-top: 62px;
+  }
+
+  // column-gap: <line-size>;
+  // row-gap: <line-size>;
 `;
 
 export const CardWrap = styled.div`
@@ -29,6 +34,7 @@ export const CardWrap = styled.div`
 
   @media (min-width: 768px) {
     width: 342px;
+    margin-bottom: 0;
   }
 
   @media (min-width: 1280px) {
@@ -100,17 +106,14 @@ export const Title = styled.h5`
 export const TitleType = styled.p`
   color: rgba(243, 243, 243, 0.5);
   font-size: 14px;
-  font-weight: 400;
   line-height: 1.28;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 `;
 
 export const TitleDescription = styled.p`
   font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 1.28;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 `;
 
 export const DrinksName = styled.span`
@@ -131,6 +134,7 @@ export const ButtonSeeMore = styled.button`
 
   font-weight: 600;
   font-size: 14px;
+  line-height: 1.28;
   border: none;
   outline: none;
   border-radius: 42px;
@@ -138,11 +142,11 @@ export const ButtonSeeMore = styled.button`
   color: #f3f3f3;
 
   transform: scale(1);
-  transition: transform 200ms;
+  transition: transform 800ms;
 
   &:hover,
   &:focus {
-    // transform: scale(1.1);
+    transform: scale(1.1);
     background: #f3f3f3;
     color: #161f37;
   }
@@ -162,11 +166,12 @@ export const ButtonDel = styled.button`
   background: #161f37;
 
   transform: scale(1);
-  transition: transform 500ms;
+  transition: transform 800ms;
 
   &:hover,
   &:focus {
     background: #434d67;
+    transform: scale(1.1);
   }
 `;
 

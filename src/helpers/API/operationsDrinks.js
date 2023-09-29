@@ -42,8 +42,8 @@ export async function getCoctailsByFilter(
   inputKeyword,
   category ,
   ingredient,
-  page = '1',
-  per_page = '10',
+  page,
+  per_page,
 ) {
 
   let url = '/drinks/search?' 

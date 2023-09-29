@@ -1,4 +1,4 @@
-import{n as i,o as m,p as o,j as t,L as h,w as c}from"./index-08481174.js";import{a as g,b as f}from"./favoriteSelectors-b4361c0f.js";import{N as b}from"./NotFound-fc51af23.js";const w="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",u=i.ul`
+import{n as i,o as c,p as r,j as t,L as m,w as g}from"./index-f1e31429.js";import{a as h,b as f}from"./favoriteSelectors-b4361c0f.js";import{N as b}from"./FavoriteDrinksPage.styled-148f4dd0.js";const w="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",u=i.ul`
   // display: flex;
   padding: 0;
   margin: 0;
@@ -83,13 +83,13 @@ import{n as i,o as m,p as o,j as t,L as h,w as c}from"./index-08481174.js";impor
   font-size: 18px;
   line-height: 1.33;
   margin-bottom: 4px;
-`,T=i.p`
+`,D=i.p`
   color: rgba(243, 243, 243, 0.5);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
   margin-bottom: 24px;
-`,z=i.p`
+`,L=i.p`
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -97,11 +97,11 @@ import{n as i,o as m,p as o,j as t,L as h,w as c}from"./index-08481174.js";impor
   margin-bottom: 24px;
 `;i.span`
   margin-left: 15px;
-`;const D=i.div`
+`;const T=i.div`
   display: flex;
   align-items: flex-start;
   gap: 8px;
-`,L=i.button`
+`,S=i.button`
   display: flex;
   padding: 14px 40px;
   align-items: flex-start;
@@ -125,7 +125,7 @@ import{n as i,o as m,p as o,j as t,L as h,w as c}from"./index-08481174.js";impor
     background: #f3f3f3;
     color: #161f37;
   }
-`,C=i.button`
+`,z=i.button`
   display: flex;
   width: 46px;
   padding: 11px 32px;
@@ -151,74 +151,4 @@ import{n as i,o as m,p as o,j as t,L as h,w as c}from"./index-08481174.js";impor
 
   text-align: center;
   margin-bottom: 20px;
-`;const F=({drinks:e})=>{const p=m(),r=o(g),s=o(f);return t.jsxs(t.Fragment,{children:[!s&&!r&&e.length===0&&t.jsx(b,{}),t.jsx(u,{children:e.length>0&&e.map(({_id:n,drink:a,alcoholic:d,shortDescription:x,drinkThumb:l})=>t.jsxs(j,{children:[t.jsx(y,{src:l,alt:a}),t.jsxs(k,{children:[t.jsx(v,{children:a}),t.jsx(T,{children:d}),t.jsx(z,{children:x})]}),t.jsxs(D,{children:[t.jsx(h,{to:`/drink/${n}`,children:t.jsx(L,{children:"See more"})}),t.jsx(C,{type:"button",onClick:()=>p(c(n)),children:t.jsx("img",{src:w,alt:"trash"})})]})]},n))})]})},W=i.div`
-  width: 100%;
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: center;
-  // align-items: center;
-  // padding: 80px 20px;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-
-  // @media (min-width: 768px) {
-  //   display: flex;
-  //   width: 768px;
-  //   padding: 140px 32px;
-  // }
-
-  //   @media (min-width: 768px) {
-  //     max-width: 700px;
-  //     padding: 158px 100px;
-  //   }
-  //
-`,I=i.h1`
-  margin-bottom: 40px;
-  font-size: 32px;
-  line-height: 1.18; /* 118.75% */
-`,M=i.div`
-  width: 520px;
-  height: 550px;
-  flex-shrink: 0;
-
-  border-radius: 550px;
-  background: rgba(64, 112, 205, 0.5);
-  filter: blur(104.8543701171875px);
-  z-index: -1;
-  position: absolute;
-  top: 20px;
-  left: -399px;
-
-  @media (min-width: 768px) {
-    width: 784px;
-    height: 829.931px;
-    border-radius: 830px;
-  }
-
-  @media (min-width: 1440px) {
-    height: 849px;
-    border-radius: 849px;
-  }
-`,N=i.div`
-  @media (min-width: 768px) {
-    width: 549px;
-    height: 543px;
-    flex-shrink: 0;
-
-    border-radius: 549px;
-    background: rgba(64, 112, 205, 0.5);
-    filter: blur(104.8543701171875px);
-    z-index: -1;
-    position: absolute;
-    top: 498px;
-    left: 651px;
-  }
-
-  @media (min-width: 1440px) {
-    top: 458px;
-    left: 1181px;
-  }
-`;export{W as C,F as D,M as E,I as T,N as a};
+`;const W=({drinks:e})=>{const o=c(),s=r(h),p=r(f);return t.jsxs(t.Fragment,{children:[!p&&!s&&e.length===0&&t.jsx(b,{}),t.jsx(u,{children:e.length>0&&e.map(({_id:n,drink:a,alcoholic:d,shortDescription:x,drinkThumb:l})=>t.jsxs(j,{children:[t.jsx(y,{src:l,alt:a}),t.jsxs(k,{children:[t.jsx(v,{children:a}),t.jsx(D,{children:d}),t.jsx(L,{children:x})]}),t.jsxs(T,{children:[t.jsx(m,{to:`/drink/${n}`,children:t.jsx(S,{children:"See more"})}),t.jsx(z,{type:"button",onClick:()=>o(g(n)),children:t.jsx("img",{src:w,alt:"trash"})})]})]},n))})]})};export{W as D};

@@ -9,6 +9,8 @@ const favoritesSlice = createSlice({
   name: 'favorites',
   initialState: {
     items: [],
+    currentPage: 1,
+    perPage: 2,
     isLoading: false,
     error: null,
   },
@@ -18,10 +20,12 @@ const favoritesSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchFavorites.fulfilled, (state, action) => {
-        console.log(action);
+        // console.log(action);
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
+        // state.currentPage = action.payload.currentPage;
+        // state.perPage = action.payload.perPage;
       })
       .addCase(fetchFavorites.rejected, (state, action) => {
         state.isLoading = false;
@@ -32,7 +36,7 @@ const favoritesSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(addFavorite.fulfilled, (state, action) => {
-        console.log(action);
+        // console.log(action);
         state.isLoading = false;
         state.error = null;
         state.items.push(action.payload);

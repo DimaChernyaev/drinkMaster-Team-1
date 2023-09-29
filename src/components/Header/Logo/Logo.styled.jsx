@@ -9,10 +9,11 @@ export const LogoLink = styled(Link)`
   align-items: center;
   color: ${colorStyled.colorWhite};
   gap: 8px;
-  /* transition: transform 0.2s;
-  &:hover {
+  transition: transform 0.2s;
+  &:hover,
+  &:focus {
     transform: scale(1.1);
-  } */
+  }
 `;
 
 export const LogoText = styled.p`

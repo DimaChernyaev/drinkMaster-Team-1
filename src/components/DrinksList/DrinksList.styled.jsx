@@ -130,8 +130,7 @@ export const ButtonSeeMore = styled.button`
   gap: 10px;
 
   font-weight: 600;
-  line-height: 1.12;
-
+  font-size: 14px;
   border: none;
   outline: none;
   border-radius: 42px;

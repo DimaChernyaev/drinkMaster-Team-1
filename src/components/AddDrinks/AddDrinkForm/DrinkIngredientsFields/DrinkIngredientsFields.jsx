@@ -33,7 +33,7 @@ const DrinkIngredientsFields = ({
       try {
         const ingredients = await getIngredients();
         const ingredientOptions = ingredients.map((ingredient) => ({
-          label: ingredient.title, // Используйте свойство _id из ингредиента как значение
+          label: ingredient.title,
           value: ingredient.title,
         }));
         setOptions(ingredientOptions);
@@ -42,30 +42,35 @@ const DrinkIngredientsFields = ({
       }
     }
 
- 
-
     fetchIngredients();
   }, []);
 
-const handleSelectChange = (selectedOption, index) => {
-  const { value } = selectedOption;
-  setFieldValue(`ingredients[${index}].name`, value);
-};
+  const handleSelectChange = (selectedOption, index) => {
+    const { value } = selectedOption;
+    setFieldValue(`ingredients[${index}].name`, value);
+    setSelectedOptions((prevOptions) => {
+      const newOptions = [...prevOptions];
+      newOptions[index] = selectedOption;
+      return newOptions;
+    });
+  };
 
   const handleAddIngredient = () => {
     const newIngredient = { name: '' };
-    setFieldValue('ingredients', [
-      ...values.ingredients,
-      newIngredient,
-    ]);
+    setFieldValue('ingredients', [...values.ingredients, newIngredient]);
+    setSelectedOptions((prevOptions) => [...prevOptions, null]);
   };
 
-const handleRemoveIngredient = (index) => {
-  const newIngredients = [...values.ingredients];
-  newIngredients.splice(index, 1);
-  // Обновляем ингредиенты в формик форме с помощью setFieldValue
-  setFieldValue('ingredients', newIngredients);
-};
+  const handleRemoveIngredient = (index) => {
+    const newIngredients = [...values.ingredients];
+    newIngredients.splice(index, 1);
+    setFieldValue('ingredients', newIngredients);
+    setSelectedOptions((prevOptions) => {
+      const newOptions = [...prevOptions];
+      newOptions.splice(index, 1);
+      return newOptions;
+    });
+  };
 
   const isRemoveButtonDisabled = values.ingredients.length === 1;
 
@@ -83,9 +88,7 @@ const handleRemoveIngredient = (index) => {
           >
             <ControlMinuse></ControlMinuse>
           </ControlsButton>
-
           <div>{values.ingredients.length}</div>
-
           <ControlsButton type="button" onClick={handleAddIngredient}>
             <ControlPluse></ControlPluse>
           </ControlsButton>
@@ -102,10 +105,7 @@ const handleRemoveIngredient = (index) => {
               handleSelectChange(selectedOption, index)
             }
             onBlur={handleBlur}
-          >
-            <option value="">Выберите ингредиент</option>
-            {/* Ваши варианты ингредиентов */}
-          </IngredientsSelect>
+          ></IngredientsSelect>
 
           <IngredientsInput
             type="text"
@@ -118,13 +118,12 @@ const handleRemoveIngredient = (index) => {
 
           <IngredientsDeleteButton
             type="button"
-            onClick={() => {
-              handleRemoveIngredient(index);
-            }}
+            onClick={() => handleRemoveIngredient(index)}
             disabled={isRemoveButtonDisabled}
           >
             <IngredientsDelete></IngredientsDelete>
           </IngredientsDeleteButton>
+
           {touched.ingredients &&
           errors.ingredients &&
           touched.ingredients[index] &&

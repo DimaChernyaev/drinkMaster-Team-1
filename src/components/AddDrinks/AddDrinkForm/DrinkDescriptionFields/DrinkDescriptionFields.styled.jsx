@@ -106,7 +106,7 @@ export const NameInputWrapper = styled.div`
 
 export const NameLabel = styled.label`
   position: absolute;
-  top: ${(props) => (props.$isFocused || props.$hasValue ? '5px' : '30px')};
+  top: ${(props) => (props.$isFocused || props.$hasValue ? '3px' : '30px')};
   left: 10px;
   transform-origin: left;
   color: ${(props) => (props.$isFocused ? '#F3F3F380' : '#f3f3f3')};
@@ -123,7 +123,7 @@ export const NameLabel = styled.label`
 export const NameInput = styled.input`
   color: #f3f3f3;
   padding: 8px;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-bottom: 1px solid #f3f3f380;
   background-color: transparent;
   transition: border-color 250ms;
@@ -149,7 +149,7 @@ export const RecipeWrapper = styled.div`
 export const RecipeLabel = styled.label`
   position: absolute;
   top: ${(props) =>
-    props.$isFocusedDescription || props.$hasValueDescription ? '5px' : '30px'};
+    props.$isFocusedDescription || props.$hasValueDescription ? '3px' : '30px'};
   left: 10px;
   transform-origin: left;
   color: ${(props) => (props.$isFocusedDescription ? '#F3F3F380' : '#f3f3f3')};
@@ -247,8 +247,7 @@ export const CategorySelect = ({ options, ...props }) => {
           ...provided,
 
           backgroundColor: 'transparent',
-          border: state.isFocused ? 'none': 'none',
-
+          border: state.isFocused ? 'none' : 'none',
 
         }),
         placeholder: (provided, state) => ({

@@ -1,4 +1,4 @@
-import{n as i,o as c,p as r,j as t,L as m,w as g}from"./index-94c53f82.js";import{a as h,b as f}from"./favoriteSelectors-b4361c0f.js";import{N as b}from"./FavoriteDrinksPage.styled-f104fcd0.js";const w="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",u=i.ul`
+import{n as i,o as c,p as o,j as t,L as m,y as g}from"./index-f106aece.js";import{a as h,b as f}from"./favoriteSelectors-b4361c0f.js";import{N as b}from"./FavoriteDrinksPage.styled-bf67244d.js";const w="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",u=i.ul`
   // display: flex;
   padding: 0;
   margin: 0;
@@ -101,15 +101,14 @@ import{n as i,o as c,p as r,j as t,L as m,w as g}from"./index-94c53f82.js";impor
   display: flex;
   align-items: flex-start;
   gap: 8px;
-`,S=i.button`
+`,z=i.button`
   display: flex;
   padding: 14px 40px;
   align-items: flex-start;
   gap: 10px;
 
   font-weight: 600;
-  line-height: 1.12;
-
+  font-size: 14px;
   border: none;
   outline: none;
   border-radius: 42px;
@@ -125,7 +124,7 @@ import{n as i,o as c,p as r,j as t,L as m,w as g}from"./index-94c53f82.js";impor
     background: #f3f3f3;
     color: #161f37;
   }
-`,z=i.button`
+`,S=i.button`
   display: flex;
   width: 46px;
   padding: 11px 32px;
@@ -151,4 +150,4 @@ import{n as i,o as c,p as r,j as t,L as m,w as g}from"./index-94c53f82.js";impor
 
   text-align: center;
   margin-bottom: 20px;
-`;const W=({drinks:e})=>{const o=c(),s=r(h),p=r(f);return t.jsxs(t.Fragment,{children:[!p&&!s&&e.length===0&&t.jsx(b,{}),t.jsx(u,{children:e.length>0&&e.map(({_id:n,drink:a,alcoholic:d,shortDescription:x,drinkThumb:l})=>t.jsxs(j,{children:[t.jsx(y,{src:l,alt:a}),t.jsxs(k,{children:[t.jsx(v,{children:a}),t.jsx(D,{children:d}),t.jsx(L,{children:x})]}),t.jsxs(T,{children:[t.jsx(m,{to:`/drink/${n}`,children:t.jsx(S,{children:"See more"})}),t.jsx(z,{type:"button",onClick:()=>o(g(n)),children:t.jsx("img",{src:w,alt:"trash"})})]})]},n))})]})};export{W as D};
+`;const W=({drinks:e})=>{const r=c(),s=o(h),p=o(f);return t.jsxs(t.Fragment,{children:[!p&&!s&&e.length===0&&t.jsx(b,{}),t.jsx(u,{children:e.length>0&&e.map(({_id:n,drink:a,alcoholic:d,shortDescription:x,drinkThumb:l})=>t.jsxs(j,{children:[t.jsx(y,{src:l,alt:a}),t.jsxs(k,{children:[t.jsx(v,{children:a}),t.jsx(D,{children:d}),t.jsx(L,{children:x})]}),t.jsxs(T,{children:[t.jsx(m,{to:`/drink/${n}`,children:t.jsx(z,{children:"See more"})}),t.jsx(S,{type:"button",onClick:()=>r(g(n)),children:t.jsx("img",{src:w,alt:"trash"})})]})]},n))})]})};export{W as D};

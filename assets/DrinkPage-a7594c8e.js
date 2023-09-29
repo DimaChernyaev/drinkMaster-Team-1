@@ -1,4 +1,4 @@
-import{s,c as i,j as t,r as p,p as f,o as k,w as $,x as y,y as b}from"./index-94c53f82.js";import{a as v}from"./operationsFilters-19c4888e.js";import{P as z}from"./PageTitle-0ff6ac4b.js";import{s as D}from"./favoriteSelectors-b4361c0f.js";import{b as T}from"./operationsDrinks-39ab5977.js";const I=s.li`
+import{s,c as i,j as t,r as p,p as f,o as k,y as $,z as y,A as b}from"./index-f106aece.js";import{a as v}from"./operationsFilters-20ca102c.js";import{P as z}from"./PageTitle-e32fbd34.js";import{s as D}from"./favoriteSelectors-b4361c0f.js";import{b as T}from"./operationsDrinks-615b08a4.js";const I=s.li`
   margin: 0;
 
   div {
@@ -115,7 +115,7 @@ border-radius:8px;
   @media (min-width: 1440px) {
     margin-bottom: 0;
   }
-`,E=({text:e,onClick:o})=>t.jsx(M,{onClick:o,children:e}),R=s.p`
+`,A=({text:e,onClick:o})=>t.jsx(M,{onClick:o,children:e}),E=s.p`
   margin-bottom: 20px;
   margin-top: 8px;
   color: ${i.colorWhiteFifty};
@@ -125,7 +125,7 @@ border-radius:8px;
   @media (min-width: 768px) {
     font-size: 16px;
   }
-`,A=s.p`
+`,R=s.p`
   margin-bottom: 40px;
   width: 335px;
   color: ${i.colorWhite};
@@ -170,7 +170,7 @@ height: 400px;
     height: 400px;
 
 }
-`,H=({photo:e})=>t.jsx(L,{src:e}),O=({coctailInfo:e})=>{const o=f(D),r=e!==null?e.drink:"",x=e!==null?e.glass:"",m=e!==null?e.alcoholic:"",l=e!==null?e.shortDescription:"",d=e!==null?e.drinkThumb:"image",n=e!==null?e._id:"",a=k(),[c,h]=p.useState(!1);p.useEffect(()=>{o.find(j=>j._id===n)&&h(!0)},[o,n]);const w=()=>{a(c?$(n):y(n)),h(!c)};return t.jsxs(_,{children:[t.jsxs("div",{children:[t.jsx(z,{title:r,style:{marginBottom:"10px"}}),t.jsxs(R,{children:[x," / ",m]}),t.jsxs(A,{children:[l," "]}),t.jsx(E,{text:c?"Remove from favorites":"Add to favorite drinks",onClick:w})]}),t.jsx(H,{photo:d})]})},q="/drinkMaster-Team-1/assets/desktop@1x-8eda6905.jpg",G="/drinkMaster-Team-1/assets/desktop@2x-0896e2bb.jpg",J="/drinkMaster-Team-1/assets/tablet@1x-1ce56edb.jpg",K="/drinkMaster-Team-1/assets/tablet@2x-11f63109.jpg",g="/drinkMaster-Team-1/assets/mob@1x-b65eaffd.jpg",N="/drinkMaster-Team-1/assets/mob@2x-d2eb580b.jpg",Q=s.img`
+`,H=({photo:e})=>t.jsx(L,{src:e}),O=({coctailInfo:e})=>{const o=f(D),r=e!==null?e.drink:"",x=e!==null?e.glass:"",m=e!==null?e.alcoholic:"",l=e!==null?e.shortDescription:"",d=e!==null?e.drinkThumb:"image",n=e!==null?e._id:"",a=k(),[c,h]=p.useState(!1);p.useEffect(()=>{o.find(j=>j._id===n)&&h(!0)},[o,n]);const w=()=>{a(c?$(n):y(n)),h(!c)};return t.jsxs(_,{children:[t.jsxs("div",{children:[t.jsx(z,{title:r,style:{marginBottom:"10px"}}),t.jsxs(E,{children:[x," / ",m]}),t.jsxs(R,{children:[l," "]}),t.jsx(A,{text:c?"Remove from favorites":"Add to favorite drinks",onClick:w})]}),t.jsx(H,{photo:d})]})},q="/drinkMaster-Team-1/assets/desktop@1x-8eda6905.jpg",G="/drinkMaster-Team-1/assets/desktop@2x-0896e2bb.jpg",J="/drinkMaster-Team-1/assets/tablet@1x-1ce56edb.jpg",K="/drinkMaster-Team-1/assets/tablet@2x-11f63109.jpg",g="/drinkMaster-Team-1/assets/mob@1x-b65eaffd.jpg",N="/drinkMaster-Team-1/assets/mob@2x-d2eb580b.jpg",Q=s.img`
 @media (min-width: 1440px) {
  width: 631;
 }

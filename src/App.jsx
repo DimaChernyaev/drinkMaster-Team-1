@@ -39,7 +39,7 @@ function App() {
     <>
       {isRefreshing ? (
         <Loader>
-          <ThreeDots />
+          <ThreeDots color="#f3f3f3" width="60" />
         </Loader>
       ) : (
         <Routes>
@@ -114,7 +114,7 @@ function App() {
               path="favorites"
               element={
                 <PrivateRoute
-                  redirectTo="/welcome"
+                  redirectTo="/favorites"
                   component={<FavoriteDrinksPage />}
                 />
               }

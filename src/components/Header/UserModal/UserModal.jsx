@@ -7,13 +7,15 @@ import { Box } from '@mui/system';
 import { IconButton, Typography } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { UserInfoModal } from '../../UserInfoModal/UserInfoModal';
+import { LogOutModal } from '../LogOutModal/LogOutModal';
 
 export const UserModal = ({ isModalOpen, setIsModalOpen }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const modalRef = useRef(null);
 
-  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false)
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const [isLogOutOpen, SetLogOutOpen] = useState(false);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -26,10 +28,13 @@ export const UserModal = ({ isModalOpen, setIsModalOpen }) => {
     } else {
       document.removeEventListener('mousedown', handleClickOutside);
     }
+    if (isProfileModalOpen || isLogOutOpen) {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isModalOpen, setIsModalOpen]);
+  }, [isModalOpen, setIsModalOpen, isProfileModalOpen, isLogOutOpen]);
 
   const handleLogout = async (values) => {
     try {
@@ -40,9 +45,13 @@ export const UserModal = ({ isModalOpen, setIsModalOpen }) => {
     }
   };
 
+  const handleLogOutClick = () => {
+    SetLogOutOpen((prev) => !prev);
+  };
+
   const handleOpenProfile = () => {
-    setIsProfileModalOpen(true)
-  }
+    setIsProfileModalOpen(true);
+  };
 
   const handleClose = () => {
     setIsProfileModalOpen(false);
@@ -50,16 +59,36 @@ export const UserModal = ({ isModalOpen, setIsModalOpen }) => {
 
   return (
     <>
-    {/* <StyledModalWindow ref={modalRef}> */}
-    <StyledModalWindow >
-      <Box sx={{display: 'flex', justifyContent: "space-between", alignItems: "center", marginBottom: '38px'}}>
-        <Typography>Edit profile</Typography>
-        <IconButton onClick={handleOpenProfile}><EditIcon sx={{width: "14px", height: "14px", color: "#F3F3F3"}}/></IconButton>
-      </Box>
-      <LogOutBtn onClick={handleLogout}>Log Out</LogOutBtn>
-    </StyledModalWindow>
+      <StyledModalWindow ref={modalRef}>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '38px',
+          }}
+        >
+          <Typography>Edit profile</Typography>
+          <IconButton onClick={handleOpenProfile}>
+            <EditIcon
+              sx={{ width: '14px', height: '14px', color: '#F3F3F3' }}
+            />
+          </IconButton>
+        </Box>
+        <LogOutBtn onClick={handleLogOutClick}>Log Out</LogOutBtn>
+      </StyledModalWindow>
 
-    {isProfileModalOpen && <UserInfoModal isOpen={isProfileModalOpen} handleClose={handleClose}/>}
+      {isLogOutOpen && (
+        <LogOutModal
+          isOpen={isLogOutOpen}
+          onLogOut={handleLogout}
+          onClose={handleLogOutClick}
+        ></LogOutModal>
+      )}
+
+      {isProfileModalOpen && (
+        <UserInfoModal isOpen={isProfileModalOpen} handleClose={handleClose} />
+      )}
     </>
   );
 };

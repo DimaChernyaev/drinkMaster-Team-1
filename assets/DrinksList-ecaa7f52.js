@@ -1,4 +1,4 @@
-import{n as i,x as c,y as r,j as t,L as m,G as g}from"./index-199e55c2.js";import{a as h,b as f}from"./favoriteSelectors-b4361c0f.js";import{N as b}from"./FavoriteDrinksPage.styled-a4022c93.js";const w="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",u=i.ul`
+import{n as i,x as c,y as r,j as t,L as m,G as g}from"./index-57eb1812.js";import{a as h,b as f}from"./favoriteSelectors-b4361c0f.js";import{N as b}from"./FavoriteDrinksPage.styled-5afb55bc.js";const w="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",u=i.ul`
   // display: flex;
   padding: 0;
   margin: 0;

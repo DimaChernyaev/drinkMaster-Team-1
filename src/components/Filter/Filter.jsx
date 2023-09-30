@@ -1,35 +1,31 @@
 import {useState, useEffect} from 'react';
 import CreatableSelect from 'react-select/creatable';
-import Creatable from 'react-select/creatable';
+import Select from 'react-select';
 import createSelectOptions from '../../helpers/createSelectOptions';
-import {ImSearch} from 'react-icons/im';
 import {getCoctailsByFilter} from '../../helpers/API/operationsDrinks';
 import { 
         FilterStyles, 
         FilterForm,
-        LabelInputStyles, 
-        InputStyles, 
+        Styled_InputLabel, 
+        Styled_Input, 
         LookUpButton, 
-        LookUpButtonSpan, 
+        Styled_Span_for_Input_and_LookUpBtn, 
         LookUpIcon,
-        // IngredientsSelect,
+        CreatableSelectStyles,
       } from './Filter.styled';
-  // CreatableInputStyles, CreatableSelectStyles } from './Filter.styled';
-
+  
 
 //компонент Filter для сторінки Drinks Page ---------------------------------------------------------------------------------
 
   const Filter = ( {categoryList, ingredientList, page, per_page, onChangeFilter} ) => {
       
       //стан
-  //    const [inputKeyword, setInputKeyword] = useState("");
       const [keyword, setKeyword] = useState("");
       const [category, setCategory] = useState("");
       const [ingredient, setIngredient] = useState("");
       
       //Use effect при кожній зміні полів фільтра
       useEffect(()=>{
-        // const abortCtrl = new AbortController();
         const handleChangeFilter = () => { onChangeFilter(keyword, category, ingredient, page="1", per_page="10"); }
         handleChangeFilter();
       },[category, ingredient, page, per_page]);
@@ -61,41 +57,49 @@ import {
             <FilterStyles>
            
               <FilterForm onSubmit={onSubmitForm}>
-                
-                <LabelInputStyles>
-                  <InputStyles
-                    type = "text"
-                    placeholder = "Enter the text"
-                    id={"inputKeyword"}  
-                    value={keyword}
-                    onChange={handleInputChange}
-                  />
-                </LabelInputStyles>
+              
+                  <Styled_InputLabel>
 
-                <LookUpButton type="submit">
-                  <LookUpButtonSpan>
-                    <LookUpIcon/>
-                  </LookUpButtonSpan>
-                </LookUpButton>
+                    <Styled_Span_for_Input_and_LookUpBtn>
+
+                        <Styled_Input
+                          type = "text"
+                          placeholder = "Enter the text"
+                          id={"inputKeyword"}  
+                          value={keyword}
+                          onChange={handleInputChange}
+                        />
+
+                        <LookUpButton type="submit"> 
+                            <LookUpIcon/>
+                        </LookUpButton>
+
+                    </Styled_Span_for_Input_and_LookUpBtn>
+
+                  </Styled_InputLabel>
+                
+                
 
                 {/* caregory select */}
-                  <CreatableSelect
-                      isClearable
+                  <Select
+                      //isClearable
                       placeholder = "All categories"
                       options={createSelectOptions(categoryList)}
                       onChange={handleCategoryChange}
-                      // styles={CreatableSelectStyles}
+                      //menuIsOpen={true}
+                      styles={CreatableSelectStyles('405px','297px')} 
+                      emotion={"any"}
                   />
 
                 {/* ingredient select */}
-                <CreatableSelect
-                    isClearable
+              <Select
+                    //isClearable
                     placeholder = "Ingredients"
                     options={createSelectOptions(ingredientList)}
                     onChange={handleIngredientsChange}
-                    // styles={IngredientsSelect}
+                    styles={CreatableSelectStyles('295px','276px')}
                 />
-
+       
              </FilterForm>
             </FilterStyles>
             

@@ -19,13 +19,19 @@ export const addOwn = createAsyncThunk(
   'own/addOwn',
   async (dataUser, thunkAPI) => {
     try {
-      const response = await axios.post('/drinks/own/add', dataUser);
+      const response = await axios.post('/drinks/own/add', dataUser, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Access-Control-Allow-Origin': '*',
+        },
+      });
       return response.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);
     }
-  },
-);
+  });
+
+
 
 export const deleteOwn = createAsyncThunk(
   'own/deleteOwn',

@@ -1,4 +1,4 @@
-import{n as t,L as a,j as i}from"./index-6e963860.js";const p=t.li`
+import{n as t,L as a,j as i}from"./index-0ba36fd2.js";const p=t.li`
   @media (min-width: 375px) {
     &:nth-of-type(2) {
       display: none;

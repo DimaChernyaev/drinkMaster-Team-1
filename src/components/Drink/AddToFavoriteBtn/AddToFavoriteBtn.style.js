@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const Button = styled.button`
   width: 222px;
-  color: ${colorStyled.colorBlue};
-  background-color: ${colorStyled.colorWhite};
+  color: var(--blue-color);
+  background-color: var(--white-color);
   border-radius: 42px;
   border-color: transparent;
   font-size: 14px;
@@ -13,24 +12,19 @@ export const Button = styled.button`
   padding-top: 14px;
   margin-bottom: 80px;
   transition:
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
 
   &:hover {
-    background-color: ${colorStyled.colorBlue};
-    color: ${colorStyled.colorWhite};
+    background-color: var(--blue-color);
+    color: var(--white-color);
   }
 
-  /* &:focus {
-    background-color: ${colorStyled.colorBlue};
-    color: ${colorStyled.colorWhite};
-  }  */
-
   &:active {
-    background-color: ${colorStyled.colorBlue};
-    color: ${colorStyled.colorWhite};
-    box-shadow: 0 0 10px ${colorStyled.colorWhiteFifty};
+    background-color:  var(--blue-color);
+    color:  var(--white-color);
+    box-shadow: 0 0 10px  var(--whitefifty-color);
   }
 
   @media (min-width: 768px) {
@@ -40,7 +34,7 @@ export const Button = styled.button`
     padding-top: 18px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     margin-bottom: 0;
   }
 `;

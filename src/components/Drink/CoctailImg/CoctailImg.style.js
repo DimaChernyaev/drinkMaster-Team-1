@@ -13,7 +13,7 @@ height: 400px;
     object-position: center top;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1280px) {
     width: 400px;
     height: 400px;
 

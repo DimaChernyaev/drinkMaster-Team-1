@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Image = styled.img`
-@media (min-width: 1440px) {
+@media (min-width: 1280px) {
  width: 631;
 }
 @media (min-width: 768px) {

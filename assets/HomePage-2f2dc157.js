@@ -1,4 +1,4 @@
-import{n as o,j as i,L as x,r as d,s as n}from"./index-2674dab6.js";import{g as l}from"./operationsDrinks-cc60ff28.js";import{C as c}from"./CardCoctail-8976db85.js";const m=o.ul`
+import{n as o,j as i,L as x,r as d,s as n}from"./index-0a375c73.js";import{g as l}from"./operationsDrinks-0c113f9a.js";import{C as c}from"./CardCoctail-1dc1e03b.js";const m=o.ul`
   display: flex;
   align-items: center;
   justifu-content: center;
@@ -60,7 +60,7 @@ import{n as o,j as i,L as x,r as d,s as n}from"./index-2674dab6.js";import{g as 
     margin-bottom: 160px;
   }
 
-`,b=()=>{const[r,e]=d.useState([]);return d.useEffect(()=>{(async()=>{try{const t=await l();console.log(t);const a=Object.entries(t);e([...a])}catch(t){console.error("Error fetching drinks:",t)}})()},[]),i.jsxs(g,{children:[i.jsx(f,{drinks:r}),i.jsx(w,{to:"/drinks",children:"Other Drinks"})]})},u="/drinkMaster-Team-1/assets/desktop2x-93bacedb.png",k=n.div`
+`,b=()=>{const[r,e]=d.useState([]);return d.useEffect(()=>{(async()=>{try{const t=await l(),a=Object.entries(t);e([...a])}catch(t){console.error("Error fetching drinks:",t)}})()},[]),i.jsxs(g,{children:[i.jsx(f,{drinks:r}),i.jsx(w,{to:"/drinks",children:"Other Drinks"})]})},u="/drinkMaster-Team-1/assets/desktop2x-93bacedb.png",k=n.div`
   background-color: #0A0A11;
   max-width: 375px;
 

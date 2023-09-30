@@ -58,30 +58,12 @@ const DrinksPage = () => {
   }, []);
 
   //Запит на сервер щоб отримати список напоїв по фільтрам зі стану. Показник на цю функцію передається як пропс в компонет Filter
-  const getPopularDrinks = async (
-    keyword = '',
-    category = '',
-    ingredient = '',
-    page = 1,
-    per_page = 10,
-  ) => {
-    console.log(
-      'я в getPopularDrinks DrinksPage:',
-      keyword,
-      category,
-      ingredient,
-      page,
-      per_page,
-    );
+  const getPopularDrinks = async (keyword = '', category = '', ingredient = '', page = 1, per_page = 10) => {
+    console.log('я в getPopularDrinks DrinksPage:', keyword, category, ingredient, page, per_page);
+
     try {
       setIsLoading(true);
-      const { drinks } = await getCoctailsByFilter(
-        keyword,
-        category,
-        ingredient,
-        page,
-        per_page,
-      ); //, abortCtrl.signal);
+      const { drinks } = await getCoctailsByFilter(keyword, category, ingredient, page, per_page); 
       setDrinkItems(drinks);
     } catch (error) {
       if (error.code !== 'ERR_CANCELED') {

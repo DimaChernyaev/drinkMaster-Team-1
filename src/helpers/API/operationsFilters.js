@@ -2,10 +2,8 @@ import axios from 'axios';
 
 // отримання списку категорій
 export async function getCategories() {
-  console.log("я в getCategories");
   try {
     const { data } = await axios.get(`/filters/categories`);
-    console.log("data = ", data);
     return data;
   } catch (error) {
     console.log(error.message);

@@ -30,7 +30,6 @@ export async function getCoctailsByCategories() {
 export async function getPopularCoctails() {
   try {
     const { data } = await axios.get(`/drinks/popular`);
-
     return data;
   } catch (error) {
     console.log(error.message);
@@ -52,7 +51,7 @@ export async function getCoctailsByFilter(
   if (page) url = url + 'page=' + page + '&';
   if (per_page) url = url + 'per_page=' + per_page;
 
-  console.log(url);
+  //console.log(url);
 
   try {
     axios.defaults.params;

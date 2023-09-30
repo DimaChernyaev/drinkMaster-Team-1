@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
@@ -28,8 +28,13 @@ const FavoriteDrinksPage = lazy(() =>
 const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 
 function App() {
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     dispatch(refresh());

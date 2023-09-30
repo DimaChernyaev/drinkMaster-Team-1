@@ -5,7 +5,6 @@ export async function getCategories() {
   console.log("я в getCategories");
   try {
     const { data } = await axios.get(`/filters/categories`);
-    console.log("data = ", data);
     return data;
   } catch (error) {
     console.log(error.message);

@@ -10,6 +10,7 @@ const Home = () => {
     const fetchDrinks = async () => {
       try {
         const data = await getCoctailsByCategories();
+        console.log(data);
         const drinksArr = Object.entries(data);
         setDrinks([...drinksArr]);
       } catch (error) {

@@ -12,9 +12,9 @@ import {
   BoxFour} from './HomeAdd.styled'
 
 const HomeAdd = () => {
-return (
+  return (
     <Container>
-     <ContentContainer>  
+      <ContentContainer>
         <Box>
           <Title>
             Craft Your Perfect <b /> Drink with Drink Master
@@ -27,12 +27,13 @@ return (
           
           <BtnAddDrinks to="/add">Add drink</BtnAddDrinks>
         </Box>
-        <ImgMain src={img} alt='main-coctail'/>
+        <ImgMain src={img} alt='main-coctail' />
         <BoxTwo></BoxTwo>
         <BoxTree></BoxTree>
         <BoxFour></BoxFour>
-    </ContentContainer>
-  </Container>
-)
+      </ContentContainer>
+    </Container>
+  )
+}
 
 export default HomeAdd;

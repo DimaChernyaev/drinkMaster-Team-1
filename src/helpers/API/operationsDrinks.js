@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { date } from 'yup';
 
 axios.defaults.baseURL = 'https://drink-master-server.onrender.com';
 
@@ -8,8 +9,6 @@ export async function getCurrentCoctail(id) {
     console.log('axios', axios);
 
     const { data } = await axios.get(`/drinks/${id}`);
-    // console.log(data);
-
     return data;
   } catch (error) {
     console.log(error.message);
@@ -19,8 +18,8 @@ export async function getCurrentCoctail(id) {
 // отримання коктелів за категорією для домашньої сторінки
 export async function getCoctailsByCategories() {
   try {
-    const res = await axios.get('/drinks/mainpage');
-    return res.data;
+    const { data } = await axios.get('/drinks/mainpage');
+    return data;
   } catch (error) {
     console.log(error.message);
   }
@@ -30,7 +29,6 @@ export async function getCoctailsByCategories() {
 export async function getPopularCoctails() {
   try {
     const { data } = await axios.get(`/drinks/popular`);
-
     return data;
   } catch (error) {
     console.log(error.message);

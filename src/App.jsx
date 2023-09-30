@@ -32,6 +32,7 @@ function App() {
   const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
+    console.log(isRefreshing);
     dispatch(refresh());
   }, [dispatch]);
 

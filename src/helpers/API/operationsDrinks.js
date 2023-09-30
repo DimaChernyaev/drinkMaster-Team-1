@@ -1,7 +1,4 @@
 import axios from 'axios';
-import { date } from 'yup';
-
-axios.defaults.baseURL = 'https://drink-master-server.onrender.com';
 
 // отримання конкретного коктеля по id для сторінки Дрінк
 export async function getCurrentCoctail(id) {

@@ -46,9 +46,6 @@ export const DrinksItem = styled.li`
   width: 100%;
   max-width: 380px;
   padding: 5px;
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-between;
   margin-bottom: 10px;
   background-color: #fff;
 
@@ -104,7 +101,7 @@ export const Title = styled.h5`
 `;
 
 export const TitleType = styled.p`
-  color: rgba(243, 243, 243, 0.5);
+  color: var(--whitefifty-color);
   font-size: 14px;
   line-height: 1.28;
   margin-bottom: 18px;
@@ -138,8 +135,8 @@ export const ButtonSeeMore = styled.button`
   border: none;
   outline: none;
   border-radius: 42px;
-  background: #161f37;
-  color: #f3f3f3;
+  background: var(--blue-color);
+  color: var(--white-color);
 
   transform: scale(1);
   transition: transform 800ms;
@@ -147,8 +144,8 @@ export const ButtonSeeMore = styled.button`
   &:hover,
   &:focus {
     transform: scale(1.1);
-    background: #f3f3f3;
-    color: #161f37;
+    background: var(--white-color);
+    color: var(--blue-color);
   }
 `;
 
@@ -163,14 +160,14 @@ export const ButtonDel = styled.button`
   border: none;
   outline: none;
   border-radius: 40px;
-  background: #161f37;
+  background: var(--blue-color);
 
   transform: scale(1);
   transition: transform 800ms;
 
   &:hover,
   &:focus {
-    background: #434d67;
+    background: var(--buttoncancel-color);
     transform: scale(1.1);
   }
 `;

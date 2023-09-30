@@ -37,7 +37,7 @@ export const Card = styled.img`
 
 export const Text = styled.p`
   width: 205px;
-  color: #f3f3f3;
+  color: var(--white-color);
   text-align: center;
   font-size: 14px;
   font-weight: 500;

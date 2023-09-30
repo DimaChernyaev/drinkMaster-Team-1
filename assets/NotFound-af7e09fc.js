@@ -1,5 +1,5 @@
-import{n as i,j as t}from"./index-86e5fa93.js";const a=i.div`
-  width: 100%;  
+import{n as i,j as t}from"./index-c842bfee.js";const a=i.div`
+  width: 100%;
   padding-top: 80px;
   padding-bottom: 80px;
   margin-left: auto;
@@ -23,7 +23,7 @@ import{n as i,j as t}from"./index-86e5fa93.js";const a=i.div`
   flex-shrink: 0;
 
   border-radius: 550px;
-  background: rgba(64, 112, 205, 0.5);
+  background: var(--hovergreen-color);
   filter: blur(104.8543701171875px);
   z-index: -1;
   position: absolute;
@@ -47,7 +47,7 @@ import{n as i,j as t}from"./index-86e5fa93.js";const a=i.div`
     flex-shrink: 0;
 
     border-radius: 549px;
-    background: rgba(64, 112, 205, 0.5);
+    background: var(--hovergreen-color);
     filter: blur(104.8543701171875px);
     z-index: -1;
     position: absolute;
@@ -92,7 +92,7 @@ import{n as i,j as t}from"./index-86e5fa93.js";const a=i.div`
   }
 `,n=i.p`
   width: 205px;
-  color: #f3f3f3;
+  color: var(--white-color);
   text-align: center;
   font-size: 14px;
   font-weight: 500;
@@ -107,4 +107,4 @@ import{n as i,j as t}from"./index-86e5fa93.js";const a=i.div`
   @media (min-width: 1440px) {
     // margin-top: 27px;
   }
-`,s=()=>t.jsxs(p,{children:[t.jsx(d,{src:e,alt:"blue iced tea"}),t.jsx(n,{children:" You haven't added any favorite cocktails yet"})]});export{a as C,o as E,s as N,r as a};
+`,h=()=>t.jsxs(p,{children:[t.jsx(d,{src:e,alt:"blue iced tea"}),t.jsx(n,{children:" You haven't added any favorite cocktails yet"})]});export{a as C,o as E,h as N,r as a};

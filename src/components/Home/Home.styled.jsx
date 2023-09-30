@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { colorStyled } from '../../helpers/colorStyled';
 import { Link } from 'react-router-dom';
 
 export const HomeContainer = styled.div`
@@ -11,8 +10,8 @@ export const HomeContainer = styled.div`
 
 export const LinkDrinks = styled(Link)`
   font-size: 16px;
-  color: ${colorStyled.colorBlue};
-  background-color: ${colorStyled.colorWhite};
+  color: var(--blue-color);
+  background-color: var(--white-color);
   padding: 18px 44px;
   font-weight: 600;
   line-height: 18px;
@@ -20,16 +19,18 @@ export const LinkDrinks = styled(Link)`
   border-radius: 42px;
   cursor: pointer;
   margin-bottom: 80px;
+  transition:
+    color var(--transition),
+    background var(--transition);
 
-   &:hover {
-    background-color: ${colorStyled.colorBlue};
-    color: ${colorStyled.colorWhite};
+  &:hover {
+    background-color: var(--blue-color);
+    color: var(--white-color);
   }
 
-  
   &:focus {
-    background-color: ${colorStyled.colorBlue};
-    color: ${colorStyled.colorWhite};
+    background-color: var(--blue-color);
+    color: var(--white-color);
   }
 
   @media screen and (min-width: 768px){

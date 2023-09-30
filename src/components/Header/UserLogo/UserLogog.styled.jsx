@@ -28,12 +28,16 @@ export const UserLogoBtn = styled.button`
   font-style: normal;
   font-weight: 500;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
 `;
 export const UserLogoImg = styled.img`
   object-fit: cover;
   border-radius: 50%;
-  height: 32px;
-  width: 32px;
+  height: 38px;
+  width: 38px;
 `;
 
 export const UserLogoText = styled.p`

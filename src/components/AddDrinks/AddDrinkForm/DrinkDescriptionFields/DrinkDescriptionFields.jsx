@@ -228,9 +228,6 @@ const DrinkDescriptionFields = ({
           }
           placeholder=""
         >
-          <option value="">Serving</option>
-
-          {/* Опції для вибору типу сервування */}
         </ServingSelect>
       </ServingWrapper>
       {touched.serving && errors.serving ? (

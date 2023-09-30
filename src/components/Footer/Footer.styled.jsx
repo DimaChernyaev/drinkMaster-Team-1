@@ -31,4 +31,9 @@ export const FooterMediaNavWrapper = styled.div`
   @media screen and (max-width: 1440px) {
     display: block;
   }
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+  }
 `;

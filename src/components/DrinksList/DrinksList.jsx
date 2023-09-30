@@ -20,8 +20,6 @@ import {
   TitleDescription,
   ButtonSeeMore,
   ButtonDel,
-
-  // Text,
 } from './DrinksList.styled';
 
 const DrinksList = ({ drinks }) => {

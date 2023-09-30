@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Field, Form } from 'formik';
 import CloseIcon from '@mui/icons-material/Close';
-import { Avatar, Box } from '@mui/material';
+import { Avatar, Box, Dialog } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 
 export const StyledForm = styled(Form)`
@@ -109,3 +109,8 @@ export const StyledEditIcon = styled(EditIcon)`
 export const StyledLabel = styled.label`
   cursor: pointer;
 `;
+
+export const StyledDialog = styled(Dialog)`
+  .css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+    background-color: transparent;
+`

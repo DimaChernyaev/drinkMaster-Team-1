@@ -1,4 +1,3 @@
-
 import img from '../../Home/HomePageImg/desktop2x.png'
 import { 
   Box, 
@@ -35,7 +34,5 @@ return (
     </ContentContainer>
   </Container>
 )
-
-};
 
 export default HomeAdd;

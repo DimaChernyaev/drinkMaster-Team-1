@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colorStyled } from '../../../helpers/colorStyled';
 
 export const IngredientItem = styled.li`
-  margin: 0;
+  /* margin: 0; */
 
   div {
     display: flex;
@@ -28,10 +28,12 @@ export const IngredientItem = styled.li`
   @media (min-width: 768px) {
     div {
       width: 220px;
+      margin-bottom: 14px;
     }
     img {
       width: 175px;
       height: 175px;
+      
     }
     p {
       font-size: 18px;
@@ -55,5 +57,6 @@ border-radius:8px;
     width: 220px;
     height: 220px;
     padding: 22px;
+    
   }
 `;

@@ -7,7 +7,7 @@ function useItemsPerPage() {
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 1438) {
-        setItemsPerPage(6);
+        setItemsPerPage(4);
       } else {
         setItemsPerPage(9);
       }

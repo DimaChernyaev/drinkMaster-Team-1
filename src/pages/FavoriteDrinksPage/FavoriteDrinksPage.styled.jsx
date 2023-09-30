@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  width: 100%;  
+  width: 100%;
   padding-top: 80px;
   padding-bottom: 80px;
   margin-left: auto;
@@ -21,14 +21,13 @@ export const Container = styled.div`
   //
 `;
 
-
 export const Elipse = styled.div`
   width: 520px;
   height: 550px;
   flex-shrink: 0;
 
   border-radius: 550px;
-  background: rgba(64, 112, 205, 0.5);
+  background: var(--hovergreen-color);
   filter: blur(104.8543701171875px);
   z-index: -1;
   position: absolute;
@@ -54,7 +53,7 @@ export const ElipseTwo = styled.div`
     flex-shrink: 0;
 
     border-radius: 549px;
-    background: rgba(64, 112, 205, 0.5);
+    background: var(--hovergreen-color);
     filter: blur(104.8543701171875px);
     z-index: -1;
     position: absolute;

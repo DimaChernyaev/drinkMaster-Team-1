@@ -60,7 +60,7 @@ export const Elipse = styled.div`
   flex-shrink: 0;
 
   border-radius: 550px;
-  background: rgba(64, 112, 205, 0.5);
+  background: var(--hovergreen-color);
   filter: blur(104.8543701171875px);
   z-index: -1;
   position: absolute;
@@ -86,7 +86,7 @@ export const ElipseTwo = styled.div`
     flex-shrink: 0;
 
     border-radius: 549px;
-    background: rgba(64, 112, 205, 0.5);
+    background: var(--hovergreen-color);
     filter: blur(104.8543701171875px);
     z-index: -1;
     position: absolute;

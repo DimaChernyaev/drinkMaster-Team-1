@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 // import ReactPaginate from 'react-paginate';
 import { StyledReactPaginate } from './Paginator.styled';
-import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
+import {
+  MdArrowBackIos,
+  MdArrowForwardIos,
+  MdOutlineArrowBackIos,
+  MdOutlineArrowForwardIos,
+} from 'react-icons/md';
 
 export const Paginator = ({ handlePageClick, pageCount }) => {
   return (
@@ -10,12 +15,15 @@ export const Paginator = ({ handlePageClick, pageCount }) => {
         <StyledReactPaginate
           breakLabel="..."
           nextLabel={
-            <MdArrowForwardIos fill="rgba(243, 243, 243, 0.30)" size={15} />
+            <MdOutlineArrowForwardIos
+              fill="rgba(243, 243, 243, 0.30)"
+              size={15}
+            />
           }
           onPageChange={handlePageClick}
           pageCount={pageCount}
           previousLabel={
-            <MdArrowBackIosNew fill="rgba(243, 243, 243, 0.30)" size={15} />
+            <MdOutlineArrowBackIos fill="rgba(243, 243, 243, 0.30)" size={15} />
           }
           renderOnZeroPageCount={null}
           onPageActive={window.scrollTo({

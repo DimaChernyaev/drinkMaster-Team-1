@@ -19,6 +19,7 @@ export const LinkDrinks = styled(Link)`
   word-wrap: break-word;
   border-radius: 42px;
   cursor: pointer;
+  margin-bottom: 80px;
 
    &:hover {
     background-color: ${colorStyled.colorBlue};
@@ -29,6 +30,13 @@ export const LinkDrinks = styled(Link)`
   &:focus {
     background-color: ${colorStyled.colorBlue};
     color: ${colorStyled.colorWhite};
+  }
+
+  @media screen and (min-width: 768px){
+    margin-bottom: 140px;
+  }
+  @media screen and (min-width: 1440px){
+    margin-bottom: 160px;
   }
 
 `;

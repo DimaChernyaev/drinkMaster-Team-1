@@ -10,5 +10,8 @@ export const Title = styled.h2`
   margin-bottom: 40px;
   font-size: 40px;
   font-weight: 600;
+  @media screen and (min-width: 1440px)  {
+   
+  }
 `;
 

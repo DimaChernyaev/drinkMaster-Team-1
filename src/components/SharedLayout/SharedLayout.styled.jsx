@@ -30,7 +30,7 @@ export const Header = styled.header`
 export const StyledBlock = styled.div`
   position: absolute;
   top: 20px;
-  left: -623px;
+  left: -710px;
   width: 784px;
   height: 849px;
   flex-shrink: 0;

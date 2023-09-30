@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const Title = styled.p`
-  color: ${colorStyled.colorWhiteFifty};
+  color: var(--whitefifty-color);
   font-size: 16px;
   margin-bottom: 42px;
 
@@ -21,7 +20,7 @@ export const IngredientList = styled.ul`
     gap: 22px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     margin-bottom: 100px;
     gap: 35px;
   }

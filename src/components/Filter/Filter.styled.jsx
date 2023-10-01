@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colorStyled } from '../../helpers/colorStyled';
+import { colorStyled, transitionStyled } from '../../helpers/colorStyled';
 import { ReactComponent as lookUpSvg } from '../../assets/images/search.svg';
 
 export const FilterStyles = styled.div`
@@ -51,7 +51,7 @@ export const Styled_InputLabel = styled.label`
 
 `;
 
-export const Styled_Span_for_Input_and_LookUpBtn = styled.span`
+export const Styled_Span_for_Input_and_LookUpIcon = styled.span`
   position: relative;
   display: block;
   width: 100%;
@@ -63,7 +63,7 @@ export const Styled_Input = styled.input`
 // mobile
   font-family: Manrope;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 14px;
   font-height : 1.56;
   width: 100%;
   padding: 14px 24px 14px 24px;
@@ -71,6 +71,11 @@ export const Styled_Input = styled.input`
   background-color: transparent;
   border: 1px solid ${colorStyled.colorWhiteTwenty};
   color: ${colorStyled.colorWhite};
+  transition: border-color ${transitionStyled.trs_600}, background-color ${transitionStyled.trs_600};
+
+  &::placeholder{
+    color: ${colorStyled.colorWhite};
+  }
 
   &:hover{
     border-color:  ${colorStyled.colorWhiteFifty};
@@ -84,12 +89,13 @@ export const Styled_Input = styled.input`
 
   // tablet
     @media (min-width: 768px) {
+      font-size: 17px;
       width: 264px;
     }
 `;
 
 
-export const LookUpButton = styled.button`
+export const LookUpSpan = styled.span`
     position: absolute;
     //transform: translate(30, 0);
     right: 24px;
@@ -97,7 +103,7 @@ export const LookUpButton = styled.button`
     padding:0;
     border: 0;
     background-color: transparent;
-    cursor: pointer;
+    //cursor: pointer;
     outline: none;
 `;
 
@@ -116,25 +122,42 @@ export const LookUpIcon = styled(lookUpSvg)`
 
 `;
 
-export const CreatableSelectStyles = (maxHeight, minHeight) => {
+export const CreatableSelectStyles = (maxHeight, minHeight, controlOption) => {
     return (
       { 
         control: (baseStyles, state) => ({
             ...baseStyles, 
             padding: '10px 16px 10px 22px',
-            
             fontFamily: 'Manrope',
             fontWeight: '400',
-            fontSize: '17px',
+            fontSize: '14px',
             fontHeight : '1.56',
             letterSpacing: '-0.04em',
             
-            width: "199px",
+            width: "100%",
             height: "56px",
 
             border: "none",
             borderRadius: "200px",
             backgroundColor: `${colorStyled.colorBlue}`,
+           // transition: "all 1s ease-in-out",
+            transition: 'borderColor 650ms cubic-bezier(0.4, 0, 0.2, 1)',
+
+            ':hover': {
+              // ...baseStyles[':hover'],
+              border: `1px solid ${colorStyled.colorWhiteTwenty}`,
+              },
+
+            ':focus': {
+               ...baseStyles[':focus'],
+              border: `1px solid ${colorStyled.colorWhiteTwenty}`,
+              },
+
+              "@media only screen and (min-width: 768px)": {
+                ...baseStyles["@media only screen and (min-width: 768px)"],
+                fontSize: '17px',
+                width: "199px",
+              },
           }),
         valueContainer: (baseStyles)=>({
             ...baseStyles,
@@ -145,12 +168,14 @@ export const CreatableSelectStyles = (maxHeight, minHeight) => {
             padding: '0',
             marging: '0',
             color: `${colorStyled.colorWhite}`,
+            transition: `color ${transitionStyled.trs_250}`,
           }),
         singleValue: (baseStyles, state) => ({
           ...baseStyles,
           color: state.isFocused
           ? `${colorStyled.colorWhiteFifty}`
           : `${colorStyled.colorWhite}`,
+          transition: `opacity ${transitionStyled.trs_600}`,
           }),
         placeholder: (baseStyles) => ({
             ...baseStyles,
@@ -163,13 +188,20 @@ export const CreatableSelectStyles = (maxHeight, minHeight) => {
           ...baseStyles,
           padding: '14px 8px 14px 8px',
           fontWeight: '400',
-          fontSize: '17px',
+          fontSize: '14px',
           fontHeight : '1.56',
 
           backgroundColor: `${colorStyled.colorBlue}`,
           border: 'none',
           borderRadius: "20px",
+
+          transition: "all 600ms ease-in-out",
           
+          "@media only screen and (min-width: 768px)": {
+            ...baseStyles["@media only screen and (min-width: 768px)"],
+            fontSize: '17px',
+            width: "199px",
+          },
           }),
         menuList: (baseStyles) => ({
           ...baseStyles,
@@ -195,11 +227,12 @@ export const CreatableSelectStyles = (maxHeight, minHeight) => {
           ...baseStyles,
           padding: '8px 7px  8px 15px',
           backgroundColor: 'transparent',
-          color: isSelected ? `${colorStyled.colorWhite}` : `${colorStyled.colorWhiteFourty}`,
+          color: (controlOption==="") ? `${colorStyled.colorWhite}` : (isSelected ? `${colorStyled.colorWhite}` : `${colorStyled.colorWhiteFourty}`),
           cursor: isDisabled ? 'not-allowed' : 'default',
+          transition: `color ${transitionStyled.trs_250}`,
           ':hover': {
             ...baseStyles[':hover'],
-            color: `${colorStyled.colorWhite}`
+            color: (controlOption==="") ? `${colorStyled.colorWhiteFifty}` : `${colorStyled.colorWhiteFifty}`,
           },
           ':active': {
             ...baseStyles[':active'],
@@ -211,37 +244,14 @@ export const CreatableSelectStyles = (maxHeight, minHeight) => {
         dropdownIndicator: (baseStyles, state) => ({
           ...baseStyles,
           transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0deg)',
+          ':hover': {
+            ...baseStyles[':hover'],
+            color: `${colorStyled.colorWhite}`,
+          },
           }),
-        
+          clearIndicator : (baseStyles)=>({
+          ...baseStyles,
+          display: 'none',          
+        }),
       }
   )};
-
-
-    // const color = chroma(data.color);
-    // return {
-    //   ...styles,
-    //   backgroundColor: isDisabled
-    //     ? undefined
-    //     : isSelected
-    //     ? data.color
-    //     : isFocused
-    //     ? color.alpha(0.1).css()
-    //     : undefined,
-    //   color: isDisabled
-    //     ? '#ccc'
-    //     : isSelected
-    //     ? chroma.contrast(color, 'white') > 2
-    //       ? 'white'
-    //       : 'black'
-    //     : data.color,
-    //   cursor: isDisabled ? 'not-allowed' : 'default',
-
-    //   ':active': {
-    //     ...styles[':active'],
-    //     backgroundColor: !isDisabled
-    //       ? isSelected
-    //         ? data.color
-    //         : color.alpha(0.3).css()
-    //       : undefined,
-    //   },
-    // };

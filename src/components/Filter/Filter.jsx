@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react';
-import CreatableSelect from 'react-select/creatable';
 import Select from 'react-select';
 import createSelectOptions from '../../helpers/createSelectOptions';
 import {getCoctailsByFilter} from '../../helpers/API/operationsDrinks';
@@ -8,8 +7,8 @@ import {
         FilterForm,
         Styled_InputLabel, 
         Styled_Input, 
-        LookUpButton, 
-        Styled_Span_for_Input_and_LookUpBtn, 
+        LookUpSpan, 
+        Styled_Span_for_Input_and_LookUpIcon, 
         LookUpIcon,
         CreatableSelectStyles,
       } from './Filter.styled';
@@ -17,29 +16,26 @@ import {
 
 //компонент Filter для сторінки Drinks Page ---------------------------------------------------------------------------------
 
-  const Filter = ( {categoryList, ingredientList, page, per_page, onChangeFilter} ) => {
+  const Filter = ( {categoryList, ingredientList, onChangeFilter} ) => {
       
       //стан
-      const [keyword, setKeyword] = useState("");
+      const [keyword, setKeyword] = useState([]);
       const [category, setCategory] = useState("");
       const [ingredient, setIngredient] = useState("");
-      
+
       //Use effect при кожній зміні полів фільтра
       useEffect(()=>{
-        const handleChangeFilter = () => { onChangeFilter(keyword, category, ingredient, page="1", per_page="10"); }
+        const handleChangeFilter = () => { onChangeFilter(keyword, category, ingredient); }
         handleChangeFilter();
-      },[category, ingredient, page, per_page]);
+      },[keyword, category, ingredient]);
 
-    
-      //обробка пропсів елементів CreatableSelect
-       // const createOption = label => ({ label,  value: label })
     
         const handleInputChange = (e) => { setKeyword(e.target.value);}
     
         const onSubmitForm = (event) =>{
           event.preventDefault();
           setKeyword("");
-          onChangeFilter(keyword, category, ingredient, page, per_page);
+          onChangeFilter(keyword, category, ingredient);
         }
 
         const handleCategoryChange = (option, action) => { 
@@ -52,55 +48,75 @@ import {
           else {setIngredient("");}
         }
 
+        // const handleKeyDown = (event) => {
+        //   if (!keyword) return;
+        //   switch (event.key) {
+        //     case 'Escape': 
+        //         setKeyword('');  
+        //         break;
+        //     case 'Delete': 
+
+
+        //     case 'Tab':
+        //         setKeyword((prev) => [...prev, createOption(inputKeyword)]);
+        //         setInputKeyword('');
+        //         event.preventDefault();
+        //     default: break;
+        //   }
+        // };
+
+
         return (
             
             <FilterStyles>
            
               <FilterForm onSubmit={onSubmitForm}>
               
-                  <Styled_InputLabel>
+                  {/* keyword input */}
+                    <Styled_InputLabel>
 
-                    <Styled_Span_for_Input_and_LookUpBtn>
+                      <Styled_Span_for_Input_and_LookUpIcon>
 
-                        <Styled_Input
-                          type = "text"
-                          placeholder = "Enter the text"
-                          id={"inputKeyword"}  
-                          value={keyword}
-                          onChange={handleInputChange}
-                        />
+                          <Styled_Input
+                            type = "text"
+                            placeholder = "Enter the text"
+                            id={"inputKeyword"}  
+                            value={keyword}
+                            onChange={handleInputChange}
+                          />
 
-                        <LookUpButton type="submit"> 
-                            <LookUpIcon/>
-                        </LookUpButton>
+                          <LookUpSpan> 
+                              <LookUpIcon/>
+                          </LookUpSpan>
 
-                    </Styled_Span_for_Input_and_LookUpBtn>
+                      </Styled_Span_for_Input_and_LookUpIcon>
 
-                  </Styled_InputLabel>
-                
-                
+                    </Styled_InputLabel>
+                                
 
-                {/* caregory select */}
-                  <Select
-                      //isClearable
+                  {/* caregory select */}
+                    <Select
+                      isClearable
                       placeholder = "All categories"
                       options={createSelectOptions(categoryList)}
                       onChange={handleCategoryChange}
-                      //menuIsOpen={true}
-                      styles={CreatableSelectStyles('405px','297px')} 
-                      emotion={"any"}
-                  />
+                      styles={CreatableSelectStyles('405px','297px', category)} 
+                      name = {"categories"}
+                    />
 
-                {/* ingredient select */}
-              <Select
-                    //isClearable
-                    placeholder = "Ingredients"
-                    options={createSelectOptions(ingredientList)}
-                    onChange={handleIngredientsChange}
-                    styles={CreatableSelectStyles('295px','276px')}
-                />
+                  {/* ingredient select */}
+                    <Select
+                      isClearable
+                      placeholder = "Ingredients"
+                      options={createSelectOptions(ingredientList)}
+                      defaultValue={"Ingredients"}
+                      onChange={handleIngredientsChange}
+                      styles={CreatableSelectStyles('295px','276px', ingredient)}
+                      name = {"ingredients"}
+                    />
        
-             </FilterForm>
+              </FilterForm>
+
             </FilterStyles>
             
         )

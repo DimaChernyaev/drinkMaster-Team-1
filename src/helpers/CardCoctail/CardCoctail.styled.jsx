@@ -39,6 +39,11 @@ export const ImageCard = styled.img`
   align-items: flex-start;
   gap: 14px;
 
+  @media (min-width: 320px) {
+    width: 100%;
+    min-width: 290px;
+  }
+
   @media (min-width: 375px) {
     width: 335px;
     height: 360px;

@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { colorStyled } from '../../helpers/colorStyled';
 
 export const FooterEl = styled.footer`
-  margin-top: 40px;
   padding-top: 40px;
   padding-bottom: 22px;
   border-top: 1px solid ${colorStyled.colorWhiteTwenty};
@@ -13,6 +12,9 @@ export const FooterContentWrapper = styled.div`
   justify-content: space-between;
   @media screen and (max-width: 767px) {
     display: block;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 0 20px;
   }
 `;
 

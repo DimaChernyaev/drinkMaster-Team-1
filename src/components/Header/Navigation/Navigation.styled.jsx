@@ -13,7 +13,7 @@ export const NavigationList = styled.nav`
     flex-direction: column;
     height: 100%;
   }
-  @media screen and (max-width: 1279px) and (max-height: 460px) {
+  @media screen and (max-width: 1279px) and (max-height: 465px) {
     flex-direction: row;
     height: 100%;
   }

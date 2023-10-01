@@ -1,4 +1,4 @@
-import{n as t,L as a,j as i}from"./index-86fd38c3.js";const p=t.li`
+import{n as t,L as p,j as i}from"./index-838c70ea.js";const a=t.li`
   @media (min-width: 375px) {
     &:nth-of-type(2) {
       display: none;
@@ -34,6 +34,11 @@ import{n as t,L as a,j as i}from"./index-86fd38c3.js";const p=t.li`
   align-items: flex-start;
   gap: 14px;
 
+  @media (min-width: 320px) {
+    width: 100%;
+    min-width: 290px;
+  }
+
   @media (min-width: 375px) {
     width: 335px;
     height: 360px;
@@ -60,7 +65,7 @@ import{n as t,L as a,j as i}from"./index-86fd38c3.js";const p=t.li`
   @media (min-width: 768px) {
     font-size: 18px;
   }
-`,r=t(a)`
+`,r=t(p)`
   font-size: 16px;
   font-size: 500;
   line-height: 1.2;
@@ -80,9 +85,9 @@ import{n as t,L as a,j as i}from"./index-86fd38c3.js";const p=t.li`
   @media (min-width: 768px) {
     font-size: 14px;
   }
-`,l=t.div`
+`,h=t.div`
   display: flex;
   margin-top: 14px;
   align-items: center;
   justify-content: space-between;
-`,h=({_id:e,drink:n,drinkThumb:o})=>i.jsxs(p,{children:[i.jsx(d,{src:o,alt:n}),i.jsxs(l,{children:[i.jsx(s,{children:n}),i.jsx(r,{to:`drink/${e}`,children:"See more"})]})]},e);export{h as C};
+`,x=({_id:e,drink:n,drinkThumb:o})=>i.jsxs(a,{children:[i.jsx(d,{src:o,alt:n}),i.jsxs(h,{children:[i.jsx(s,{children:n}),i.jsx(r,{to:`drink/${e}`,children:"See more"})]})]},e);export{x as C};

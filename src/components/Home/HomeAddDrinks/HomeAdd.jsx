@@ -1,21 +1,20 @@
-import img from '../../Home/HomePageImg/desktop2x.png'
-import { 
-  Box, 
-  Container,
-  ContentContainer, 
-  Title, 
-  Text, 
-  ImgMain, 
-  BtnAddDrinks, 
-  BoxTwo, 
-  BoxTree, 
-  BoxFour} from './HomeAdd.styled'
+import img from '../../Home/HomePageImg/desktop2x.png';
+import {
+  Box,
+  ContentContainer,
+  Title,
+  Text,
+  ImgMain,
+  BtnAddDrinks,
+  BoxWrapper,
+  BoxTwo,
+} from './HomeAdd.styled';
 
 const HomeAdd = () => {
   return (
-    <Container>
-      <ContentContainer>
-        <Box>
+    <ContentContainer>
+      <Box>
+        <BoxWrapper>
           <Title>
             Craft Your Perfect <b /> Drink with Drink Master
           </Title>
@@ -24,16 +23,14 @@ const HomeAdd = () => {
             destination for exploring, crafting, and mastering the world´s
             finest beverages.
           </Text>
-          
+
           <BtnAddDrinks to="/add">Add drink</BtnAddDrinks>
-        </Box>
-        <ImgMain src={img} alt='main-coctail' />
-        <BoxTwo></BoxTwo>
-        <BoxTree></BoxTree>
-        <BoxFour></BoxFour>
-      </ContentContainer>
-    </Container>
-  )
-}
+        </BoxWrapper>
+        <ImgMain src={img} alt="main-coctail" />
+        <BoxTwo />
+      </Box>
+    </ContentContainer>
+  );
+};
 
 export default HomeAdd;

@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   max-width: 1440px;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
 
@@ -29,13 +30,26 @@ export const Header = styled.header`
 
 export const StyledBlock = styled.div`
   position: absolute;
-  top: 20px;
-  left: -710px;
+  top: 10px;
+  left: -780px;
   width: 784px;
   height: 849px;
-  flex-shrink: 0;
   border-radius: 550px;
   background: rgba(64, 112, 205, 0.5);
   filter: blur(104.854px);
-  z-index: 1;
+  z-index: -10;
+`;
+
+export const StyledBlockTwo = styled.div`
+  position: absolute;
+  display: flex;
+  z-index: -1;
+  top: 498px;
+  right: -360px;
+  width: 549px;
+  height: 543px;
+  border-radius: 550px;
+  background: rgba(64, 112, 205, 0.5);
+  filter: blur(104.854px);
+  z-index: -10;
 `;

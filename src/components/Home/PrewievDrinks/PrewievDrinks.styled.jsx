@@ -20,6 +20,11 @@ export const Title = styled.h2`
   font-size: 40px;
   font-weight: 600;
 
+  @media (max-width: 320px) {
+    font-size: 26px;
+    text-align: center;
+  }
+
   @media (min-width: 375px) {
     font-size: 28px;
   }

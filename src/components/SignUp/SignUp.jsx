@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import AirDatepicker from 'air-datepicker';
 import localeEn from 'air-datepicker/locale/en';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import 'air-datepicker/air-datepicker.css';
 import './signUp.css';
@@ -32,6 +32,7 @@ const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
   // const [birthdate, setBirthdate] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleClickDate = (setFieldValue) => {
     const dateInput = document.getElementById('birthdate');
@@ -54,14 +55,16 @@ const SignUp = () => {
 
   const handleSubmit = async (values, { resetForm }) => {
     console.log('values-->', values);
-    const newUser = { ...values};
+    const newUser = { ...values };
 
     try {
       setIsLoading(true);
-      await dispatch(signup(newUser));
+      const response = await dispatch(signup(newUser));
       setIsLoading(false);
-
-      resetForm();
+      if (response.payload.token) {
+        navigate('/', { replace: true });
+        resetForm();
+      }
     } catch (error) {
       console.log('Помилка сабміту при реєстрації', error.message);
     }
@@ -115,8 +118,16 @@ const SignUp = () => {
                         name="birthdate"
                         placeholder="dd/mm/yyyy"
                         id="birthdate"
-                        error={errors.birthdate && touched.birthdate ? 'true' : 'false'}
-                        success={touched.birthdate && !errors.birthdate  ? 'true' : 'false'}
+                        error={
+                          errors.birthdate && touched.birthdate
+                            ? 'true'
+                            : 'false'
+                        }
+                        success={
+                          touched.birthdate && !errors.birthdate
+                            ? 'true'
+                            : 'false'
+                        }
                       />
                       <IconButton
                         sx={{
@@ -128,13 +139,17 @@ const SignUp = () => {
                           flexShrink: 0,
                           color: '#F3F3F3',
                         }}
-                        onClick={()=>handleClickDate(setFieldValue)}
+                        onClick={() => handleClickDate(setFieldValue)}
                       >
                         <CalendarTodayIcon
                           sx={{
                             color:
-                              (errors.birthdate && touched.birthdate && '#da1414') ||
-                              (touched.birthdate && !errors.birthdate && '#3CBC81'),
+                              (errors.birthdate &&
+                                touched.birthdate &&
+                                '#da1414') ||
+                              (touched.birthdate &&
+                                !errors.birthdate &&
+                                '#3CBC81'),
                           }}
                         />
                       </IconButton>

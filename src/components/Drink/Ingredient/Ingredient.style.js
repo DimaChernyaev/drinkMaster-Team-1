@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const IngredientItem = styled.li`
-  /* margin: 0; */
+
 
   div {
     display: flex;
@@ -17,12 +16,12 @@ export const IngredientItem = styled.li`
 
   p {
     font-size: 14px;
-    color: ${colorStyled.colorWhite};
+    color:  var(--white-color);
   }
 
   span {
     font-size: 14px;
-    color: ${colorStyled.colorWhiteFifty};
+    color: var(--whitefifty-color);
   }
 
   @media (min-width: 768px) {
@@ -51,7 +50,7 @@ border-radius:8px;
   width: 157px;
   height: 157px;
   padding: 25px;
-  background-color: ${colorStyled.colorBlue};
+  background-color:  var(--blue-color);
 
   @media (min-width: 768px) {
     width: 220px;

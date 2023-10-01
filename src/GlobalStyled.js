@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    src: src: url(../src/assets/fonts/Manrope-SemiBold.ttf) format('ttf');
+   src: url(../src/assets/fonts/Manrope-SemiBold.ttf) format('ttf');
     font-family: 'Manrope', sans-serif;
     font-weight: 600;
     font-display: swap;

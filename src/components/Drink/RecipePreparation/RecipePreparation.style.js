@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const Recipe = styled.div`
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -17,7 +16,7 @@ export const Title = styled.h3`
 export const Preparation = styled.p`
 
     width: 335px;
-    color: ${colorStyled.colorWhite};
+    color:  var(--white-color);
     font-size: 14px;
     margin-bottom: 40px;
 
@@ -25,7 +24,7 @@ export const Preparation = styled.p`
     width: 704px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     width: 549px;
     font-size: 16px;
     margin-bottom: 0;

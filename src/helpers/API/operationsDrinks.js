@@ -47,7 +47,7 @@ export async function getCoctailsByFilter(
   if (page) url = url + 'page=' + page + '&';
   if (per_page) url = url + 'per_page=' + per_page;
 
-  console.log(url);
+  //console.log(url);
 
   try {
     axios.defaults.params;

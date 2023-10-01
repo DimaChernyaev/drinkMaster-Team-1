@@ -2,6 +2,15 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 export const Card = styled.li`
+  @media (max-width: 374px) {
+    &:nth-of-type(2) {
+      display: none;
+    }
+    &:nth-of-type(3) {
+      display: none;
+    }
+  }
+
   @media (min-width: 375px) {
     &:nth-of-type(2) {
       display: none;
@@ -39,7 +48,7 @@ export const ImageCard = styled.img`
   align-items: flex-start;
   gap: 14px;
 
-  @media (min-width: 320px) {
+  @media (max-width: 350px) {
     width: 100%;
     min-width: 290px;
   }

@@ -6,7 +6,7 @@ export const UserLogoWrapper = styled.div`
   gap: 24px;
   position: relative;
   margin-right: 30px;
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1279px) {
     margin-left: auto;
     margin-right: 20px;
   }

@@ -1,4 +1,4 @@
-import{r as p,n as i,j as t,z as m,A as s,L as h,D as g}from"./index-ceeffe0a.js";import{a as w,b as f}from"./favoriteSelectors-b4361c0f.js";function M(){const[e,r]=p.useState();return p.useEffect(()=>{function n(){window.innerWidth<1438?r(4):r(9)}return window.addEventListener("resize",n),n(),()=>{window.removeEventListener("resize",n)}},[]),e}const u="/drinkMaster-Team-1/assets/asr_blue_iced_tea_1-e64cabfc.png",b=i.div`
+import{r as s,n as i,j as t,z as m,A as p,L as h,D as g}from"./index-606e2233.js";import{a as w,b as f}from"./favoriteSelectors-b4361c0f.js";function M(){const[e,a]=s.useState();return s.useEffect(()=>{function n(){window.innerWidth<1438?a(4):a(9)}return window.addEventListener("resize",n),n(),()=>{window.removeEventListener("resize",n)}},[]),e}const u="/drinkMaster-Team-1/assets/asr_blue_iced_tea_1-e64cabfc.png",b=i.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,7 +46,7 @@ import{r as p,n as i,j as t,z as m,A as s,L as h,D as g}from"./index-ceeffe0a.js
   @media (min-width: 1440px) {
     // margin-top: 27px;
   }
-`,k=()=>t.jsxs(b,{children:[t.jsx(v,{src:u,alt:"blue iced tea"}),t.jsx(j,{children:" You haven't added any favorite cocktails yet"})]}),y="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",z=i.ul`
+`,y=()=>t.jsxs(b,{children:[t.jsx(v,{src:u,alt:"blue iced tea"}),t.jsx(j,{children:" You haven't added any favorite cocktails yet"})]}),k="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",z=i.ul`
   padding: 0;
   margin: 0;
   margin-top: 40px;
@@ -65,7 +65,7 @@ import{r as p,n as i,j as t,z as m,A as s,L as h,D as g}from"./index-ceeffe0a.js
 
   // column-gap: <line-size>;
   // row-gap: <line-size>;
-`,E=i.div`
+`,L=i.div`
   display: block;
   // flex-wrap: wrap;
   padding: 0;
@@ -128,13 +128,13 @@ import{r as p,n as i,j as t,z as m,A as s,L as h,D as g}from"./index-ceeffe0a.js
     width: 400px;
     height: 400px;
   }
-`,L=i.div`
+`,D=i.div`
   margin-bottom: 18px;
-`,D=i.h5`
+`,C=i.h5`
   font-size: 18px;
   line-height: 1.33;
   margin-bottom: 4px;
-`,C=i.p`
+`,E=i.p`
   color: var(--whitefifty-color);
   font-size: 14px;
   line-height: 1.28;
@@ -200,7 +200,7 @@ import{r as p,n as i,j as t,z as m,A as s,L as h,D as g}from"./index-ceeffe0a.js
 
   text-align: center;
   margin-bottom: 20px;
-`;const R=({drinks:e})=>{const r=m(),n=s(w),d=s(f);return t.jsxs(t.Fragment,{children:[!d&&!n&&e.length===0&&t.jsx(k,{}),t.jsx(z,{children:e.length>0&&e.map(({_id:a,drink:o,alcoholic:x,shortDescription:l,drinkThumb:c})=>t.jsxs(E,{children:[t.jsx(T,{src:c,alt:o}),t.jsxs(L,{children:[t.jsx(D,{children:o}),t.jsx(C,{children:x}),t.jsx(P,{children:l})]}),t.jsxs(S,{children:[t.jsx(h,{to:`/drink/${a}`,children:t.jsx(I,{children:"See more"})}),t.jsx(W,{type:"button",onClick:()=>r(g(a)),children:t.jsx("img",{src:y,alt:"trash"})})]})]},a))})]})},_=i.div`
+`;const R=({drinks:e})=>{const a=m(),n=p(w),d=p(f);return t.jsxs(t.Fragment,{children:[!d&&!n&&e.length===0&&t.jsx(y,{}),t.jsx(z,{children:e.length>0&&e.map(({_id:r,drink:o,alcoholic:x,shortDescription:c,drinkThumb:l})=>t.jsxs(L,{children:[t.jsx(T,{src:l,alt:o}),t.jsxs(D,{children:[t.jsx(C,{children:o}),t.jsx(E,{children:x}),t.jsx(P,{children:c})]}),t.jsxs(S,{children:[t.jsx(h,{to:`/drink/${r}`,children:t.jsx(I,{children:"See more"})}),t.jsx(W,{type:"button",onClick:()=>a(g(r)),children:t.jsx("img",{src:k,alt:"trash"})})]})]},r))})]})},_=i.div`
   width: 100%;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -219,46 +219,4 @@ import{r as p,n as i,j as t,z as m,A as s,L as h,D as g}from"./index-ceeffe0a.js
   //     padding: 158px 100px;
   //   }
   //
-`,A=i.div`
-  width: 520px;
-  height: 550px;
-  flex-shrink: 0;
-
-  border-radius: 550px;
-  background: var(--hovergreen-color);
-  filter: blur(104.8543701171875px);
-  z-index: -1;
-  position: absolute;
-  top: 20px;
-  left: -399px;
-
-  @media (min-width: 768px) {
-    width: 784px;
-    height: 829.931px;
-    border-radius: 830px;
-  }
-
-  @media (min-width: 1440px) {
-    height: 849px;
-    border-radius: 849px;
-  }
-`,N=i.div`
-  @media (min-width: 768px) {
-    width: 549px;
-    height: 543px;
-    flex-shrink: 0;
-
-    border-radius: 549px;
-    background: var(--hovergreen-color);
-    filter: blur(104.8543701171875px);
-    z-index: -1;
-    position: absolute;
-    top: 498px;
-    left: 651px;
-  }
-
-  @media (min-width: 1440px) {
-    top: 458px;
-    left: 1181px;
-  }
-`;export{_ as C,R as D,A as E,N as a,M as u};
+`;export{_ as C,R as D,M as u};

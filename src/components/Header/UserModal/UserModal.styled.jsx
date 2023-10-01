@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Typography } from '@mui/material';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const StyledModalWindow = styled.div`
   display: block;
@@ -10,7 +9,7 @@ export const StyledModalWindow = styled.div`
   top: 45px;
   left: 50%;
   padding: 18px;
-  background-color: ${colorStyled.colorBlue};
+  background-color: var(--blue-color);
   border-radius: 8px;
   transform: translateX(-50%);
 `;
@@ -21,31 +20,29 @@ export const LogOutBtn = styled.button`
   padding-left: 45px;
   padding-right: 45px;
   text-align: center;
-  color: ${colorStyled.colorBlue};
-  background-color: ${colorStyled.colorWhite};
+  color: var(--blue-color);
+  background-color: var(--white-color);
   text-decoration: none;
-  font-family: inherit;
   font-size: 12px;
   line-height: 1.3;
   font-style: normal;
   font-weight: 600;
-  border: 1px solid ${colorStyled.colorWhite};
+  border: 1px solid var(--white-color);
   border-radius: 22px;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--transition);
 
   &:hover,
   &:focus {
-    color: ${colorStyled.colorWhite};
-    background-color: ${colorStyled.colorBlue};
+    color: var(--white-color);
+    background-color: var(--blue-color);
   }
   &:active {
-    border-color: ${colorStyled.colorWhiteFifty};
+    border-color: var(--whitefifty-color);
   }
 `;
 
 export const StyledTypography = styled(Typography)`
-  color: #f3f3f3;
-  font-family: Manrope;
+  color: var(--white-color);
   font-size: 14px;
   font-style: normal;
   font-weight: 500;

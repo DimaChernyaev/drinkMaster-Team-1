@@ -13,10 +13,10 @@ export const StyledBurgerBtn = styled.button`
   background-color: transparent;
   border: 1px solid transparent;
   font-family: inherit;
-  color: ${colorStyled.colorWhite};
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--white-color: #F3F3F3;);
+  transition: border var(--transition);
   &:active {
-    border: 1px solid ${colorStyled.colorBlueFifty};
+    border: 1px solid var(--bluefifty-color);
   }
 `;
 
@@ -30,5 +30,5 @@ export const CloseBurgerSVG = styled(BurgerCloseIMG)`
   width: 30px;
   height: 30px;
   fill: currentColor;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--transition);
 `;

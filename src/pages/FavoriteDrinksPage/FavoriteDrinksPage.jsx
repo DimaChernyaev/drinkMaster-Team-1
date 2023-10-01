@@ -12,7 +12,7 @@ import DrinksList from '../../components/DrinksList/DrinksList';
 import Paginator from '../../components/Paginator/Paginator';
 import { ThreeDots } from 'react-loader-spinner';
 import { Loader } from '../../components/Loader/Loader.styled';
-import { Container, Elipse, ElipseTwo } from './FavoriteDrinksPage.styled';
+import { Container} from './FavoriteDrinksPage.styled';
 import PageTitle from '../../components/DefaultComponents/PageTitle/PageTitle';
 
 const FavoriteDrinksPage = () => {
@@ -48,8 +48,6 @@ const FavoriteDrinksPage = () => {
   return (
     <Container>
       <PageTitle title="Favorites" />
-      <Elipse />
-      <ElipseTwo />
       {isLoading && !error && (
         <Loader>
           <ThreeDots color="#f3f3f3" width="80" />

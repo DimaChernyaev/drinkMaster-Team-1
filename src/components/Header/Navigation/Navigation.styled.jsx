@@ -9,8 +9,12 @@ export const NavigationList = styled.nav`
   gap: 16px;
   margin-left: auto;
   margin-right: auto;
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1279px) {
     flex-direction: column;
+    height: 100%;
+  }
+  @media screen and (max-width: 1279px) and (max-height: 460px) {
+    flex-direction: row;
     height: 100%;
   }
 `;

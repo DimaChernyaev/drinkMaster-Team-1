@@ -3,7 +3,7 @@ import { Field, ErrorMessage, Form } from 'formik';
 import { colorStyled } from '../../../helpers/colorStyled';
 
 export const SubWrapper = styled.div`
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     margin-top: 30px;
     align-items: center;
 

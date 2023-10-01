@@ -6,9 +6,10 @@ export const UserLogoWrapper = styled.div`
   justify-content: center;
   gap: 24px;
   position: relative;
-  @media screen and (max-width: 1440px) {
+  margin-right: 30px;
+  @media screen and (max-width: 1280px) {
     margin-left: auto;
-    margin-right: 24px;
+    margin-right: 20px;
   }
 `;
 

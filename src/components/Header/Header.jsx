@@ -42,9 +42,9 @@ const Header = () => {
       <Container>
         <HeaderContainer>
           <Logo />
-          {width > 1440 && <Navigation />}
+          {width >= 1280 && <Navigation />}
           <UserLogo />
-          {width < 1440 && <BurgerBtn />}
+          {width < 1280 && <BurgerBtn />}
         </HeaderContainer>
       </Container>
     </HeaderEl>

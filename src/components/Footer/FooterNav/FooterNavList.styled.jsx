@@ -6,11 +6,11 @@ export const NavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1279px) {
     margin-top: 30px;
     gap: 15px;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     align-items: center;
     margin-top: 0;
     gap: 20px;

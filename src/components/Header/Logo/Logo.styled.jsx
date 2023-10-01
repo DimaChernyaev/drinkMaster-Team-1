@@ -1,15 +1,14 @@
 import styled from '@emotion/styled';
 import { ReactComponent as LogoImg } from '../../../assets/images/logo/logo_DM.svg';
 import { Link } from 'react-router-dom';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const LogoLink = styled(Link)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: ${colorStyled.colorWhite};
+  color: var(--white-color);
   gap: 8px;
-  transition: transform 0.2s;
+  transition: transform var(--transition);
   &:hover,
   &:focus {
     transform: scale(1.1);

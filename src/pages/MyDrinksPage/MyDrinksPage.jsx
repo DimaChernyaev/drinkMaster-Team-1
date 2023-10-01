@@ -15,8 +15,6 @@ import { ThreeDots } from 'react-loader-spinner';
 import { Loader } from '../../components/Loader/Loader.styled';
 import {
   Container,
-  Elipse,
-  ElipseTwo,
 } from '../FavoriteDrinksPage/FavoriteDrinksPage.styled';
 import PageTitle from '../../components/DefaultComponents/PageTitle/PageTitle';
 
@@ -53,8 +51,6 @@ const MyDrinksPage = () => {
   return (
     <Container>
       <PageTitle title="My drinks" />
-      <Elipse />
-      <ElipseTwo />
       {isLoading && !error && (
         <Loader>
           <ThreeDots color="#f3f3f3" width="80" />

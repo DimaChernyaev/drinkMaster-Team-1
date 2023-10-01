@@ -19,7 +19,7 @@ import {
   StyledField,
   StyledForm,
   StyledLabel,
-  StyledDialog
+  StyledDialog,
 } from './UserInfoModal.styled';
 import addPhoto from '../../assets/images/userInfoModal/addPhoto.svg';
 import { updateUser } from '../../redux/auth/user/userOperations';
@@ -79,9 +79,14 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
   };
 
   return (
-    <StyledDialog open={isOpen} onClose={handleClose} aria-labelledby="profile" sx={{backgroundColor: "rgba(0, 0, 0, 0)"}}>
+    <StyledDialog
+      open={isOpen}
+      onClose={handleClose}
+      aria-labelledby="profile"
+      sx={{ backgroundColor: 'rgba(0, 0, 0, 0)' }}
+    >
       {isLoading ? (
-        <SkeletonAuth totalRow={4}/>
+        <SkeletonAuth totalRow={4} />
       ) : (
         <Formik
           initialValues={initialValues}
@@ -98,13 +103,13 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
                 <Box sx={{ position: 'relative' }}>
                   <StyledAvatar id="profile" alt="avatar" src={avatar} />
                   <StyledBox>
-                    <input
+                    <Field
                       name="file"
                       type="file"
                       id="loadFile"
                       hidden
                       onChange={handleChangeAvatar}
-                    ></input>
+                    ></Field>
                     <StyledLabel htmlFor="loadFile" role="button">
                       <img
                         src={addPhoto}

@@ -88,8 +88,8 @@ const DrinksPage = () => {
   };
 
   return (
-
-     <Container>
+    <>
+      {/* <Container> */}
     
         <PageTitle title="Drinks" />
 
@@ -119,7 +119,8 @@ const DrinksPage = () => {
 
         <Paginator handlePageClick={handlePageClick} pageCount={page} />
 
-      </Container>
+      {/* </Container> */}
+    </>
   );
 };
 

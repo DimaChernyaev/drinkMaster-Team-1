@@ -42,8 +42,23 @@ export const TermsModal = styled.div`
   height: 90vh;
   background-color: var(--blue-color);
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
   overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: ${colorStyled.colorBlue};
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${colorStyled.colorWhiteFifty};
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 `;
 
 export const StyledModalText = styled.p`

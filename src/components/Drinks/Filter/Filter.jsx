@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react';
 import Select from 'react-select';
-import createSelectOptions from '../../helpers/createSelectOptions';
-import {getCoctailsByFilter} from '../../helpers/API/operationsDrinks';
+import createSelectOptions from '../../../helpers/createSelectOptions';
 import { 
         FilterStyles, 
         FilterForm,
@@ -19,33 +18,31 @@ import {
   const Filter = ( {categoryList, ingredientList, onChangeFilter} ) => {
       
       //стан
-      const [keyword, setKeyword] = useState([]);
+      const [keyword, setKeyword] = useState("");
       const [category, setCategory] = useState("");
       const [ingredient, setIngredient] = useState("");
 
       //Use effect при кожній зміні полів фільтра
-      useEffect(()=>{
-        const handleChangeFilter = () => { onChangeFilter(keyword, category, ingredient); }
-        handleChangeFilter();
-      },[keyword, category, ingredient]);
+      //useEffect(()=>{
+      //  const handleChangeFilter = () => { onChangeFilter(keyword, category, ingredient) }
+        
+        //handleChangeFilter();
+      //},[keyword, category, ingredient]);
 
     
-        const handleInputChange = (e) => { setKeyword(e.target.value);}
-    
-        const onSubmitForm = (event) =>{
-          event.preventDefault();
-          setKeyword("");
-          onChangeFilter(keyword, category, ingredient);
+        const handleInputChange = (e) => { 
+          console.log("e.target.value",e.target.value)
+          onChangeFilter("keyword", e.target.value);
         }
 
         const handleCategoryChange = (option, action) => { 
-          if (option) {setCategory(option.value);}
-          else {setCategory("");}
+          if (option) onChangeFilter("category", option.value);
+          else onChangeFilter("category", "");
         }
         
         const handleIngredientsChange = (option, action) => { 
-          if (option) { setIngredient(option.value) }
-          else {setIngredient("");}
+          if (option) onChangeFilter("ingredient", option.value);
+          else onChangeFilter("ingredient","");
         }
 
 
@@ -53,7 +50,7 @@ import {
             
             <FilterStyles>
            
-              <FilterForm onSubmit={onSubmitForm}>
+              <FilterForm > {/*onSubmit={onSubmitForm}>*/}
               
                   {/* keyword input */}
                     <Styled_InputLabel>
@@ -64,7 +61,7 @@ import {
                             type = "text"
                             placeholder = "Enter the text"
                             id={"inputKeyword"}  
-                            value={keyword}
+                            //value={keyword}
                             onChange={handleInputChange}
                           />
 

@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import * as Yup from 'yup';
 import { FormButton } from './AddDrinkForm.styled';
 import { addOwn } from '../../../redux/drinks/own/ownOperations';
@@ -10,7 +10,7 @@ import DrinkIngredientsFields from './DrinkIngredientsFields/DrinkIngredientsFie
 import RecipePreparation from './RecipePreparation/RecipePreparation';
 
 const AddDrinkForm = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
@@ -50,20 +50,16 @@ const AddDrinkForm = () => {
       // Добавляем изображение
       formData.append('drinkThumb', values.drinkThumb);
 
-      // Добавляем ингредиенты (предполагая, что ingredients - это массив объектов)
-      values.ingredients.forEach((ingredient, index) => {
-        formData.append(`ingredients[${index}].drink`, ingredient.drink);
-        formData.append(`ingredients[${index}].measure`, ingredient.measure);
-        // Добавьте другие свойства ингредиентов по необходимости
-      });
-
+      const ingredientsStr = JSON.stringify(values.ingredients)
+      console.log('ingredientsStr', ingredientsStr);
+        formData.append('ingredients', ingredientsStr)
       try {
         // Отправка данных на сервер с использованием fetch
         const response = await dispatch(addOwn(formData));
 
         if (response.ok) {
           // Если запрос успешный, перенаправляем пользователя на MyDrinksPage
-          // navigate('/my'); // Используйте navigate для перенаправления
+          navigate('/my'); // Используйте navigate для перенаправления
         } else {
           // Если есть ошибка с сервера, обрабатываем ее
           console.log('Ошибка на сервере:', response.statusText);

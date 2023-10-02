@@ -34,7 +34,9 @@ export const deleteOwn = createAsyncThunk(
   'own/deleteOwn',
   async (drinkId, thunkAPI) => {
     try {
+      console.log(drinkId);
       const { data } = await axios.delete(`/drinks/own/remove/${drinkId}`);
+      console.log(data);
       return data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);

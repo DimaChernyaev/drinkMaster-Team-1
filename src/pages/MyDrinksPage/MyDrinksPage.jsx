@@ -7,10 +7,11 @@ import {
   selectOwnItems,
 } from '../../redux/drinks/own/ownSelector';
 import ErrorPage from '../../pages/ErrorPage/ErrorPage';
-import DrinksList from '../../components/DrinksList/DrinksList';
+import DrinksList from '../../components/DrinksList/DrinksListFavorites';
 import Paginator from '../../components/Paginator/Paginator';
 import { Container } from '../FavoriteDrinksPage/FavoriteDrinksPage.styled';
 import PageTitle from '../../components/DefaultComponents/PageTitle/PageTitle';
+import DrinksListOwn from '../../components/DrinksList/DrinksListOwn';
 
 const MyDrinksPage = () => {
   const dispatch = useDispatch();
@@ -44,8 +45,8 @@ const MyDrinksPage = () => {
   return (
     <Container>
       <PageTitle title="My drinks" />
-      <DrinksList drinks={currentItems} />
-      <Paginator handlePageClick={handlePageClick} pageCount={pageCount} />
+      <DrinksListOwn drinks={currentItems} />
+      <Paginator handlePageClick={handlePageClick} />
       {error && <ErrorPage />}
     </Container>
   );

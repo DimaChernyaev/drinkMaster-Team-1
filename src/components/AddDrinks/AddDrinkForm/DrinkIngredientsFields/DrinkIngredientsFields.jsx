@@ -32,9 +32,10 @@ const DrinkIngredientsFields = ({
     async function fetchIngredients() {
       try {
         const ingredients = await getIngredients();
+        console.log('ingredients', ingredients);
         const ingredientOptions = ingredients.map((ingredient) => ({
           label: ingredient.title,
-          value: ingredient.title,
+          value: ingredient._id,
         }));
         setOptions(ingredientOptions);
       } catch (error) {
@@ -46,8 +47,9 @@ const DrinkIngredientsFields = ({
   }, []);
 
   const handleSelectChange = (selectedOption, index) => {
-    const { value } = selectedOption;
-    setFieldValue(`ingredients[${index}].title`, value);
+    const { value, label } = selectedOption;
+    setFieldValue(`ingredients[${index}].title`, label);
+    setFieldValue(`ingredients[${index}]._id`, value);
     setSelectedOptions((prevOptions) => {
       const newOptions = [...prevOptions];
       newOptions[index] = selectedOption;

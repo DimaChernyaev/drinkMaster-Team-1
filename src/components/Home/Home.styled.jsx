@@ -36,7 +36,7 @@ export const LinkDrinks = styled(Link)`
   @media screen and (min-width: 768px){
     margin-bottom: 140px;
   }
-  @media screen and (min-width: 1440px){
+  @media screen and (min-width: 1280px){
     margin-bottom: 160px;
   }
 

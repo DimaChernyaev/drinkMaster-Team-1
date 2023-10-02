@@ -236,7 +236,6 @@ export const CreatableSelectStyles = (maxHeight, minHeight, controlOption) => {
           },
           ':active': {
             ...baseStyles[':active'],
-            color: `${colorStyled.colorWhiteFifty}`,
             borderRadius: "200px",
           },
   

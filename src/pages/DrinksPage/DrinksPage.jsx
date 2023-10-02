@@ -66,14 +66,14 @@ const DrinksPage = () => {
   ) => {
     try {
       setIsLoading(true);
-      const { drinks, total } = await getCoctailsByFilter(
+      const { drinks, totalResults } = await getCoctailsByFilter(
         keyword,
         category,
         ingredient,
         page,
         per_page,
       );
-      setTotalDrinks(total);
+      setTotalDrinks(totalResults);
       if (drinks.length === 0) {
         setIsEmpty(true);
       } else {
@@ -92,16 +92,13 @@ const DrinksPage = () => {
   };
 
   const handlePageClick = (event) => {
-    console.log('event=', event);
-    const newOffset = (event.selected * per_page) % totalDrinks;
-    console.log('totalDrinks=', totalDrinks);
-    console.log('newOffset=', newOffset);
-    setItemOffset(newOffset);
+    // if (event.selected * per_page >= totalDrinks) return;
+    // setPage(event.selected+1);
   };
 
   return (
-    <>
-      {/* <Container> */}
+    
+      <Container>
 
       <PageTitle title="Drinks" />
 
@@ -138,10 +135,13 @@ const DrinksPage = () => {
         </Loader>
       )}
 
-      <Paginator handlePageClick={handlePageClick} pageCount={page} />
+      <Paginator 
+          handlePageClick={handlePageClick} 
+          pageCount={Math.ceil(totalDrinks/per_page)}
+      />
 
-      {/* </Container> */}
-    </>
+      </Container>
+
   );
 };
 

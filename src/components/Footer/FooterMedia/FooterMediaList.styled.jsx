@@ -6,7 +6,7 @@ import { ReactComponent as InstagramIMG } from '../../../assets/images/link_icon
 import { ReactComponent as YouTubeIMG } from '../../../assets/images/link_icons/youtube.svg';
 
 export const MediaList = styled.ul`
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   gap: 10px;
 `;

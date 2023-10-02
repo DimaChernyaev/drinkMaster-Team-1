@@ -13,9 +13,6 @@ export const FooterContentWrapper = styled.div`
   @media screen and (max-width: 767px) {
     display: block;
   }
-  @media screen and (min-width: 1280px) {
-    padding: 0 20px;
-  }
 `;
 
 export const FooterMedia = styled.div`

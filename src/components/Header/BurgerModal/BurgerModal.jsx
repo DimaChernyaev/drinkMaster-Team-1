@@ -1,17 +1,9 @@
 import Navigation from '../Navigation/Navigation';
-import { BurgerModalWrapper } from './BurgerModal.styled';
-
-export const aBurgerModal = ({ isOpen, onClose }) => {
-  return (
-    <>
-      {isOpen && (
-        <BurgerModalWrapper>
-          <Navigation onClose={onClose} />
-        </BurgerModalWrapper>
-      )}
-    </>
-  );
-};
+import {
+  BurgerModalWrapper,
+  StyledBlockBurger,
+  StyledBlockTwoBurger,
+} from './BurgerModal.styled';
 
 import ReactDOM from 'react-dom';
 
@@ -23,9 +15,14 @@ export const BurgerModal = ({ isOpen, onClose }) => {
   return ReactDOM.createPortal(
     <>
       {isOpen && (
-        <BurgerModalWrapper isOpen={isOpen}>
-          <Navigation onClose={onClose} />
-        </BurgerModalWrapper>
+        <>
+          <BurgerModalWrapper isOpen={isOpen}>
+            <StyledBlockBurger />
+            <StyledBlockBurger />
+            <StyledBlockTwoBurger />
+            <Navigation onClose={onClose} />
+          </BurgerModalWrapper>
+        </>
       )}
     </>,
     modalRoot,

@@ -4,16 +4,16 @@ import ReactPaginate from 'react-paginate';
 
 export const StyledReactPaginate = styled(ReactPaginate)`
   display: flex;
-  width: 295px;
+  max-width: 295px;
   padding: 14px 0;
   margin: 0 auto;
   margin-botom: 80px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  // gap: 24px;
 
   @media (min-width: 768px) {
-    width: 436px;
+    max-width: 436px;
     padding: 14px 24px;
     margin-top: 80px;
     margin-botom: 100px;

@@ -1,4 +1,4 @@
-import{n as t,L as p,j as i}from"./index-af28b7ba.js";const a=t.li`
+import{n as t,L as p,j as i}from"./index-22c47d8f.js";const a=t.li`
   @media (max-width: 374px) {
     &:nth-of-type(2) {
       display: none;
@@ -99,4 +99,4 @@ import{n as t,L as p,j as i}from"./index-af28b7ba.js";const a=t.li`
   margin-top: 14px;
   align-items: center;
   justify-content: space-between;
-`,l=({_id:e,drink:n,drinkThumb:o})=>i.jsxs(a,{children:[i.jsx(d,{src:o,alt:n}),i.jsxs(h,{children:[i.jsx(s,{children:n}),i.jsx(r,{to:`drink/${e}`,children:"See more"})]})]},e);export{l as C};
+`,l=({_id:e,drink:n,drinkThumb:o})=>i.jsxs(a,{children:[i.jsx(d,{src:o,alt:n}),i.jsxs(h,{children:[i.jsx(s,{children:n}),i.jsx(r,{to:`/drink/${e}`,children:"See more"})]})]},e);export{l as C};

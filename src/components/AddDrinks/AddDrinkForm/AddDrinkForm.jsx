@@ -57,7 +57,7 @@ const AddDrinkForm = () => {
         // Отправка данных на сервер с использованием fetch
         const response = await dispatch(addOwn(formData));
 
-        if (response.ok) {
+        if (response) {
           // Если запрос успешный, перенаправляем пользователя на MyDrinksPage
           navigate('/my'); // Используйте navigate для перенаправления
         } else {

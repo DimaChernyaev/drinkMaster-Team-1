@@ -14,11 +14,13 @@ export const Title = styled.h3`
 `;
 
 export const Preparation = styled.p`
-
-    width: 335px;
-    color:  var(--white-color);
-    font-size: 14px;
-    margin-bottom: 40px;
+  @media (max-width: 374px) {
+    width: 300px;
+  }
+  width: 335px;
+  color: var(--white-color);
+  font-size: 14px;
+  margin-bottom: 40px;
 
   @media (min-width: 768px) {
     width: 704px;

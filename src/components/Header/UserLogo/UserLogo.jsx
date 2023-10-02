@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux/es/hooks/useSelector';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { selectUser } from '../../../redux/auth/authSelectors';
 
 import {
@@ -13,6 +13,24 @@ import { UserModal } from '../UserModal/UserModal';
 export const UserLogo = () => {
   const { name, avatarURL } = useSelector(selectUser);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsModalOpen(false);
+      }
+    };
+
+    if (isModalOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.removeEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isModalOpen]);
 
   const handleModal = () => {
     setIsModalOpen((prev) => !prev);

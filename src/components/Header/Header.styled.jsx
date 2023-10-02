@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { colorStyled } from '../../helpers/colorStyled';
 
 export const HeaderEl = styled.header`
   position: relative;

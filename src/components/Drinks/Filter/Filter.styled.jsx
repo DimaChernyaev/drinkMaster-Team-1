@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { colorStyled, transitionStyled } from '../../helpers/colorStyled';
-import { ReactComponent as lookUpSvg } from '../../assets/images/search.svg';
+import { colorStyled, transitionStyled } from '../../../helpers/colorStyled';
+import { ReactComponent as lookUpSvg } from '../../../assets/images/search.svg';
 
 export const FilterStyles = styled.div`
 
@@ -253,4 +253,4 @@ export const CreatableSelectStyles = (maxHeight, minHeight, controlOption) => {
           display: 'none',          
         }),
       }
-  )};
+)};

@@ -18,6 +18,7 @@ export const LinkDrinks = styled(Link)`
   word-wrap: break-word;
   border-radius: 42px;
   cursor: pointer;
+  margin-bottom: 80px;
   transition:
     color var(--transition),
     background var(--transition);
@@ -31,4 +32,12 @@ export const LinkDrinks = styled(Link)`
     background-color: var(--blue-color);
     color: var(--white-color);
   }
+
+  @media screen and (min-width: 768px){
+    margin-bottom: 140px;
+  }
+  @media screen and (min-width: 1280px){
+    margin-bottom: 160px;
+  }
+
 `;

@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const UserLogoWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 24px;
   position: relative;
-  @media screen and (max-width: 1440px) {
+  margin-right: 30px;
+  @media screen and (max-width: 1279px) {
     margin-left: auto;
-    margin-right: 24px;
+    margin-right: 20px;
   }
 `;
 
@@ -27,7 +27,7 @@ export const UserLogoBtn = styled.button`
   line-height: 1.29;
   font-style: normal;
   font-weight: 500;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition);
   &:hover,
   &:focus {
     transform: scale(1.1);
@@ -44,5 +44,5 @@ export const UserLogoText = styled.p`
   font-size: 14px;
   font-weight: 500;
   line-height: 1.3;
-  color: ${colorStyled.colorWhite};
+  color: var(--white-color);
 `;

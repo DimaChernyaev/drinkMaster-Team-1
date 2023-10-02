@@ -34,10 +34,6 @@ const SignIn = () => {
       setIsLoading(false);
 
       if (response.payload.token) {
-        // Notify.success('Welcome!', {
-        //   position: 'center-top',
-        //   distance: '10px',
-        // });
         resetForm();
         navigate('/', { replace: true });
       } else {

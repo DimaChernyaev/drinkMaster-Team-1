@@ -7,18 +7,20 @@ export const StyledReactPaginate = styled(ReactPaginate)`
   width: 295px;
   padding: 14px 0;
   margin: 0 auto;
+  margin-botom: 80px;
   justify-content: center;
   align-items: center;
-  gap: 49px;
+  gap: 24px;
 
   @media (min-width: 768px) {
     width: 436px;
     padding: 14px 24px;
-    gap: 40px;
+    margin-top: 80px;
+    margin-botom: 100px;
   }
 
   li {
-    color: #f3f3f3;
+    color: var(--white-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,12 +29,17 @@ export const StyledReactPaginate = styled(ReactPaginate)`
     cursor: pointer;
 
     &:hover {
-      background-color: rgba(64, 112, 205, 0.5);
+      background-color: var(--hovergreen-color);
       border-radius: 50%;
     }
 
     &.active {
-      background-color: rgba(64, 112, 205, 0.5);
+      background-color: var(--hovergreen-color);
+      border-radius: 50%;
+    }
+
+    &.selected {
+      background-color: var(--hovergreen-color);
       border-radius: 50%;
     }
   }
@@ -41,10 +48,32 @@ export const StyledReactPaginate = styled(ReactPaginate)`
     text-decoration: none;
     display: inline-block;
     text-align: center;
-    color: #f3f3f3;
-
+    color: var(--white-color);
+    font-weight: 500;
     font-size: 12px;
-    // width: 27px;
-    // height: 27px;
+  }
+
+  .previous {
+    margin-right: 24px;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    @media (min-width: 768px) {
+      margin-right: 16px;
+    }
+  }
+
+  .next {
+    margin-left: 24px;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    @media (min-width: 768px) {
+      margin-left: 16px;
+    }
   }
 `;

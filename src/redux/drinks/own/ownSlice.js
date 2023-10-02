@@ -42,7 +42,7 @@ const ownSlice = createSlice({
         state.isLoading = false;
         state.error = false;
         const indexDelete = state.items.findIndex(
-          (drink) => drink.id === action.payload.id,
+          (drink) => drink._id === action.payload._id,
         );
         state.items.splice(indexDelete, 1);
       })

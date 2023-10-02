@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const NavigationList = styled.nav`
   display: flex;
@@ -9,8 +8,12 @@ export const NavigationList = styled.nav`
   gap: 16px;
   margin-left: auto;
   margin-right: auto;
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1279px) {
     flex-direction: column;
+    height: 100%;
+  }
+  @media screen and (max-width: 1279px) and (max-height: 460px) {
+    flex-direction: row;
     height: 100%;
   }
 `;
@@ -24,15 +27,15 @@ export const StyledLink = styled(NavLink)`
   font-weight: 500;
   text-decoration: none;
   border-radius: 40px;
-  border: 1px solid ${colorStyled.colorWhiteTwenty};
+  border: 1px solid var(--whitetwenty-color);
   padding: 8px 16px;
   background-color: transparent;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition);
   &.active {
-    background-color: ${colorStyled.colorBlue};
+    background-color: var(--blue-color);
   }
   &:hover,
   &:focus {
-    background-color: ${colorStyled.colorBlue};
+    background-color: var(--blue-color);
   }
 `;

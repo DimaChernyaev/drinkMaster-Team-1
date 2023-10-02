@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const StyledLogOutWrapper = styled.div`
   display: block;
@@ -9,7 +8,7 @@ export const StyledLogOutWrapper = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
-  background-color: ${colorStyled.colorBlue};
+  background-color: var(--blue-color);
   transform: translate(-50%, -50%);
   z-index: 200;
   color: white;
@@ -32,7 +31,7 @@ export const StyledButtonsWrapper = styled.div`
 `;
 
 export const StyledPar = styled.p`
-  color: ${colorStyled.colorWhite};
+  color: var(--white-color);
 `;
 
 export const LogOutModalBtn = styled.button`
@@ -41,25 +40,25 @@ export const LogOutModalBtn = styled.button`
   padding-left: 45px;
   padding-right: 45px;
   text-align: center;
-  color: ${colorStyled.colorBlue};
-  background-color: ${colorStyled.colorWhite};
+  color: var(--blue-color);
+  background-color: var(--white-color);
   text-decoration: none;
   font-family: inherit;
   font-size: 12px;
   line-height: 1.3;
   font-style: normal;
   font-weight: 600;
-  border: 1px solid ${colorStyled.colorWhite};
+  border: 1px solid var(--white-color);
   border-radius: 22px;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--transition);
 
   &:hover,
   &:focus {
-    color: ${colorStyled.colorWhite};
-    background-color: ${colorStyled.colorBlue};
+    color: var(--white-color);
+    background-color: var(--blue-color);
   }
   &:active {
-    border-color: ${colorStyled.colorWhiteFifty};
+    border-color: var(--whitefifty-color);
   }
   @media screen and (max-width: 768px) {
     gap: 5px;

@@ -20,10 +20,7 @@ import {
   TitleDescription,
   ButtonSeeMore,
   ButtonDel,
-
-  // Text,
 } from './DrinksList.styled';
-// import { FiTrash2 } from 'react-icons/fi';
 
 const DrinksList = ({ drinks }) => {
   const dispatch = useDispatch();
@@ -58,7 +55,6 @@ const DrinksList = ({ drinks }) => {
                     onClick={() => dispatch(deleteFavorite(_id))}
                   >
                     <img src={icon} alt="trash" />
-                    {/* <FiTrash2 /> */}
                   </ButtonDel>
                 </BtnWrap>
               </CardWrap>

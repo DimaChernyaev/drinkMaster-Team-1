@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
@@ -11,8 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { selectIsRefreshing } from './redux/auth/authSelectors';
 import { refresh } from './redux/auth/authOperations';
-import { Loader } from './components/Loader/Loader.styled';
-import { ThreeDots } from 'react-loader-spinner';
+import Loader from './components/Loader/Loader';
 
 const HomePage = lazy(() => import('../src/pages/HomePage/HomePage'));
 const DrinksPage = lazy(() => import('../src/pages/DrinksPage/DrinksPage'));
@@ -28,8 +27,13 @@ const FavoriteDrinksPage = lazy(() =>
 const DrinkPage = lazy(() => import('./pages/DrinkPage/DrinkPage'));
 
 function App() {
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     dispatch(refresh());
@@ -38,9 +42,7 @@ function App() {
   return (
     <>
       {isRefreshing ? (
-        <Loader>
-          <ThreeDots color="#f3f3f3" width="60" />
-        </Loader>
+        <Loader />
       ) : (
         <Routes>
           <Route
@@ -78,18 +80,18 @@ function App() {
               }
             />
             <Route
+              path="drink/:drinkId"
+              element={
+                <PrivateRoute redirectTo="/welcome" component={<DrinkPage />} />
+              }
+            />
+            <Route
               path="drinks"
               element={
                 <PrivateRoute
                   redirectTo="/welcome"
                   component={<DrinksPage />}
                 />
-              }
-            />
-            <Route
-              path="drink/:drinkId"
-              element={
-                <PrivateRoute redirectTo="/welcome" component={<DrinkPage />} />
               }
             />
             <Route

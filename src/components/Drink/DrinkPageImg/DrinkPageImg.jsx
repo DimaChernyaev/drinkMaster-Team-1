@@ -10,7 +10,7 @@ export const DrinkPageImg = () => {
   return (
     <picture>
       <source
-        media="(min-width: 1440px)"
+        media="(min-width: 1280px)"
         srcSet={`${desktopImg}, ${desktopImg2x} 2x`}
         type="image/jpg"
       />

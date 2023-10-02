@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const SubTitle = styled.p`
   margin-bottom: 20px;
   margin-top: 8px;
-  color: ${colorStyled.colorWhiteFifty};
+  color: var(--whitefifty-color);
   font-size: 12px;
   font-weight: 400;
 
@@ -16,7 +15,7 @@ export const SubTitle = styled.p`
 export const ShortDescr = styled.p`
   margin-bottom: 40px;
   width: 335px;
-  color: ${colorStyled.colorWhite};
+  color: var(--white-color);
   font-size: 14px;
   font-weight: 200;
 
@@ -27,17 +26,14 @@ export const ShortDescr = styled.p`
 `;
 
 export const Container = styled.div`
-margin-top: 80px;
-margin-bottom: 80px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 
-
-@media (min-width: 768px) {
+  @media (min-width: 768px) {
     margin-top: 140px;
-
   }
 
-
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     margin-top: 132px;
     margin-bottom: 100px;
     display: flex;

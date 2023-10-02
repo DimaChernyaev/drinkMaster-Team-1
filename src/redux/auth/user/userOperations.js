@@ -18,7 +18,6 @@ export const updateUser = createAsyncThunk(
       const { data } = await axios.patch(`/users/update`, newUser, {
         headers: {
           'Content-Type': 'multipart/form-data',
-          'Access-Control-Allow-Origin': '*',
         },
       });
       return data;

@@ -10,9 +10,9 @@ import { Provider } from 'react-redux';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter basename="/drinkMaster-Team-1">
-      <GlobalStyle />
       <Provider store={store}>
         <PersistGate persistor={persistor}>
+          <GlobalStyle />
           <App />
         </PersistGate>
       </Provider>

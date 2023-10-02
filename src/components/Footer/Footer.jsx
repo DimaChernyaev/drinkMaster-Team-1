@@ -9,6 +9,7 @@ import {
 import { FooterMediaList } from './FooterMedia/FooterMediaList';
 import { FooterNav } from './FooterNav/FooterNavList';
 import { FooterSub } from './FooterSubscription/FooterSub';
+import { FooterTerms } from './FooterTerms/FooterTerms';
 
 const Footer = () => {
   return (
@@ -24,6 +25,7 @@ const Footer = () => {
           </FooterMediaNavWrapper>
           <FooterSub />
         </FooterContentWrapper>
+        <FooterTerms />
       </Container>
     </FooterEl>
   );

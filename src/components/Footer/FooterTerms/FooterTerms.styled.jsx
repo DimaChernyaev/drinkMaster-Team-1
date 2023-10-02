@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const LoweLiner = styled.div`
   margin-top: 20px;
@@ -14,7 +13,7 @@ export const LoweLiner = styled.div`
 `;
 
 export const StyledPar = styled.p`
-  color: ${colorStyled.colorWhiteFifty};
+  color: var(--whitefifty-color);
 `;
 
 export const TermsWrapper = styled.div`
@@ -30,7 +29,7 @@ export const TermsButtons = styled.button`
   text-decoration: none;
   background-color: transparent;
   border: none;
-  color: ${colorStyled.colorWhiteFifty};
+  color: var(--whitefifty-color);
 `;
 
 export const TermsModal = styled.div`
@@ -49,11 +48,11 @@ export const TermsModal = styled.div`
     width: 6px;
   }
   &::-webkit-scrollbar-track {
-    background: ${colorStyled.colorBlue};
+    background: var(--blue-color);
     border-radius: 6px;
   }
   &::-webkit-scrollbar-thumb {
-    background: ${colorStyled.colorWhiteFifty};
+    background: var(--whitefifty-color);
     border-radius: 6px;
   }
   &::-webkit-scrollbar-thumb:hover {
@@ -63,5 +62,5 @@ export const TermsModal = styled.div`
 
 export const StyledModalText = styled.p`
   font-size: 15px;
-  color: ${colorStyled.colorWhite};
+  color: var(--whitefifty-color);
 `;

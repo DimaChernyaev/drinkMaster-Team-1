@@ -33,7 +33,7 @@ export const StyledSubField = styled(Field)`
   width: 309px;
   height: 56px;
   border: none;
-  border: 1px solid ${colorStyled.colorWhiteFifty};
+  border: 1px solid var(--whitefifty-color);
   padding: 10px;
   text-align: center;
   margin-top: 40px;
@@ -61,15 +61,15 @@ export const StyledSubBtn = styled.button`
   width: 309px;
   height: 56px;
   border: none;
-  border: 1px solid ${colorStyled.colorWhiteFifty};
+  border: 1px solid var(--whitefifty-color);
   padding: 10px;
   text-align: center;
   margin-top: 20px;
 
   transition: all 450ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    background-color: ${colorStyled.colorWhite};
-    color: ${colorStyled.colorBlue};
+    background-color: var(--white-color);
+    color: ${colorStyled.colorBlue} var(--blue-color);
   }
 `;
 

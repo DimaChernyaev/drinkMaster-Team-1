@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { colorStyled } from '../../../helpers/colorStyled';
 import { Link } from 'react-router-dom';
 import { ReactComponent as FacebookIMG } from '../../../assets/images/link_icons/facebook.svg';
 import { ReactComponent as InstagramIMG } from '../../../assets/images/link_icons/instagram.svg';
@@ -19,47 +18,47 @@ export const FooterStyledLink = styled(Link)`
   justify-content: center;
   width: 44px;
   height: 44px;
-  border: solid 1px ${colorStyled.colorWhiteFourty};
+  border: solid 1px var(--whitefourty-color);
   border-radius: 10px;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition);
   &:hover,
   &:focus {
     transform: scale(1.1);
-    border: solid 1px ${colorStyled.colorWhite};
+    border: solid 1px var(--white-color);
   }
 `;
 export const StyledFacebookSVG = styled(FacebookIMG)`
   height: 24px;
   width: 24px;
-  fill: ${colorStyled.colorWhiteFourty};
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--whitefourty-color);
+  transition: var(--transition);
   &:hover,
   &:focus {
     transform: scale(1.1);
-    fill: ${colorStyled.colorWhite};
+    fill: var(--white-color);
   }
 `;
 
 export const StyledInstagramSVG = styled(InstagramIMG)`
   height: 24px;
   width: 24px;
-  fill: ${colorStyled.colorWhiteFourty};
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--whitefourty-color);
+  transition: var(--transition);
   &:hover,
   &:focus {
     transform: scale(1.1);
-    fill: ${colorStyled.colorWhite};
+    fill: var(--white-color);
   }
 `;
 
 export const StyledYoutubeSVG = styled(YouTubeIMG)`
   height: 24px;
   width: 24px;
-  fill: ${colorStyled.colorWhiteFourty};
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: var(--whitefourty-color);
+  transition: var(--transition);
   &:hover,
   &:focus {
     transform: scale(1.1);
-    fill: ${colorStyled.colorWhite};
+    fill: var(--white-color);
   }
 `;

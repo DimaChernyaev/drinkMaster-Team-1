@@ -1,4 +1,4 @@
-import{n as o,j as i,L as c,r as s,s as n}from"./index-49da809e.js";import{g as p}from"./operationsDrinks-ae11cf20.js";import{C as l}from"./CardCoctail-d4dd87df.js";const m=o.ul`
+import{n as o,j as i,L as c,r as s,s as n}from"./index-464db67e.js";import{g as p}from"./operationsDrinks-0067fd0c.js";import{C as l}from"./CardCoctail-19b07c0e.js";const m=o.ul`
   display: flex;
   align-items: center;
   justifu-content: center;
@@ -61,7 +61,7 @@ import{n as o,j as i,L as c,r as s,s as n}from"./index-49da809e.js";import{g as 
   @media screen and (min-width: 768px){
     margin-bottom: 140px;
   }
-  @media screen and (min-width: 1440px){
+  @media screen and (min-width: 1280px){
     margin-bottom: 160px;
   }
 

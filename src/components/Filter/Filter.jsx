@@ -48,23 +48,6 @@ import {
           else {setIngredient("");}
         }
 
-        // const handleKeyDown = (event) => {
-        //   if (!keyword) return;
-        //   switch (event.key) {
-        //     case 'Escape': 
-        //         setKeyword('');  
-        //         break;
-        //     case 'Delete': 
-
-
-        //     case 'Tab':
-        //         setKeyword((prev) => [...prev, createOption(inputKeyword)]);
-        //         setInputKeyword('');
-        //         event.preventDefault();
-        //     default: break;
-        //   }
-        // };
-
 
         return (
             

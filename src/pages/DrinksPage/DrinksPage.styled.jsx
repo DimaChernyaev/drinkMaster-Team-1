@@ -1,28 +1,16 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  position: relative;
   width: 100%; 
-  padding-top: 72px;
-  padding-bottom: 80px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  
+  padding-top: 80px;
+  padding-bottom: 80px; 
+
+  //tablet 
   @media screen and (min-width: 768px) {
-    padding-top: 80px;
-    padding-left: 32px;
-    padding-right: 32px;
- }
-
-  @media screen and (min-width: 1280px) {
-      padding-left: 80px;
-      padding-right: 80px;
+    padding-top: 72px;
+    padding-bottom: 140px;
   }
- 
 `;
-
 
 export const Styled_CardListDiv  = styled.div`
     
@@ -57,7 +45,6 @@ export const CardList = styled.ul`
       row-gap: 80px;
     }
 `
-
 
 export const ContainerError = styled.div`
   display: flex;

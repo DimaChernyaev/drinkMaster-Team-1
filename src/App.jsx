@@ -83,18 +83,18 @@ function App() {
               }
             />
             <Route
+              path="drink/:drinkId"
+              element={
+                <PrivateRoute redirectTo="/welcome" component={<DrinkPage />} />
+              }
+            />
+            <Route
               path="drinks"
               element={
                 <PrivateRoute
                   redirectTo="/welcome"
                   component={<DrinksPage />}
                 />
-              }
-            />
-            <Route
-              path="drink/:drinkId"
-              element={
-                <PrivateRoute redirectTo="/welcome" component={<DrinkPage />} />
               }
             />
             <Route

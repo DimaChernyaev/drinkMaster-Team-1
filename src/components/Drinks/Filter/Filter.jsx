@@ -31,7 +31,6 @@ import {
 
     
         const handleInputChange = (e) => { 
-          console.log("e.target.value",e.target.value)
           onChangeFilter("keyword", e.target.value);
         }
 

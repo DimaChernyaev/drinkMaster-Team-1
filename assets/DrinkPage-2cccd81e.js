@@ -1,4 +1,4 @@
-import{s as n,j as t,r as c,A as b,z as j,D as v,I as k,J as u,a as y}from"./index-865138ce.js";import{a as D}from"./operationsFilters-2c3e6733.js";import{P as T}from"./PageTitle-d8b30c4c.js";import{s as z}from"./favoriteSelectors-3a4120d2.js";import{b as I}from"./operationsDrinks-36dc93d8.js";import{T as P}from"./Hourglass-6ad0156d.js";const S=n.li`
+import{s as n,j as t,r as c,A as b,z as j,D as v,I as k,J as u,a as y}from"./index-3d32b9f2.js";import{a as D}from"./operationsFilters-5b9024ae.js";import{P as T}from"./PageTitle-c5ca581d.js";import{s as z}from"./favoriteSelectors-3a4120d2.js";import{b as I}from"./operationsDrinks-b35ba930.js";import{T as P}from"./Hourglass-4568e153.js";const S=n.li`
 
 
   div {

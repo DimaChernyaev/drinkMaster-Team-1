@@ -14,6 +14,17 @@ import { colorStyled } from '../../../../helpers/colorStyled';
 //   colorStyled.buttonCancel: '#434D67',
 // };
 
+// @media (min-width: 375px) {
+//   width: 335px;
+// }
+
+// @media (min-width: 768px) {
+//   width: 342px;
+// }
+
+// @media (min-width: 1280px) {
+//   width: 400px;
+// }
 export const FormError = styled.div`
   font-size: 12px;
   color: #da1414;

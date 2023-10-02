@@ -17,6 +17,18 @@ import Select from 'react-select';
 //   colorStyled.buttonCancel: '#434D67',
 // };
 
+// @media (min-width: 375px) {
+//   width: 335px;
+// }
+
+// @media (min-width: 768px) {
+//   width: 342px;
+// }
+
+// @media (min-width: 1280px) {
+//   width: 400px;
+// }
+
 export const FormError = styled.div`
   flex-basis: 100%;
   font-size: 12px;
@@ -28,12 +40,16 @@ export const FormError = styled.div`
 `;
 
 export const IngredientsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
   margin-top: 80px;
 `;
 export const ControlWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   margin-bottom: 40px;
 `;
 export const IngredientsTitle = styled.h3`
@@ -45,7 +61,7 @@ export const Controls = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  width: 104px;
+  width: 100px;
   height: 38px;
   border-radius: 200px;
   border: 1px solid ${colorStyled.colorWhiteFifty};
@@ -69,12 +85,10 @@ export const ControlsButton = styled.button`
 
 export const IngredientsWrapperSelect = styled.div`
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-
-  margin-bottom: 24px;
+  gap: 8px
 `;
 
 export const IngredientsSelect = ({ options, ...props }) => {
@@ -85,19 +99,20 @@ export const IngredientsSelect = ({ options, ...props }) => {
       styles={{
         container: (provided) => ({
           ...provided,
-          minWidth: '60%',
+          minWidth: '140px',
         }),
         control: (provided, state) => ({
           ...provided,
           height: 'auto',
-          padding: '16px',
+          padding: '6px',
           backgroundColor: 'transparent',
           border: state.isFocused
             ? `1px solid ${colorStyled.colorWhite}`
             : `1px solid ${colorStyled.colorWhiteFifty}`,
+          boxShadow: state.isFocused ? 'none' : 'none',
           borderRadius: '200px',
           '&:hover': {
-            borderColor: `${colorStyled.colorWhite}`, // Измените цвет рамки при наведении
+            borderColor: `${colorStyled.colorWhite}`,
           },
         }),
         placeholder: (provided, state) => ({
@@ -133,6 +148,12 @@ export const IngredientsSelect = ({ options, ...props }) => {
           borderRadius: '20px',
           overflow: 'hidden',
         }),
+        menuList: (provided) => ({
+          ...provided,
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+        }),
         indicatorSeparator: (provided) => ({
           ...provided,
           display: 'none',
@@ -141,15 +162,15 @@ export const IngredientsSelect = ({ options, ...props }) => {
           ...provided,
           color: state.isFocused
             ? `${colorStyled.colorWhiteFifty}`
-            : `${colorStyled.colorWhite}`, // Установите цвет текста элемента списка здесь
+            : `${colorStyled.colorWhite}`,
         }),
         valueContainer: (provided) => ({
           ...provided,
-          padding: 0, // Установите цвет текста элемента списка здесь
+          padding: 0,
         }),
         dropdownIndicator: (provided, state) => ({
           ...provided,
-          transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0deg)', // Поворачиваем стрелку вверх при открытии меню
+          transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0deg)',
         }),
       }}
     />
@@ -160,8 +181,6 @@ export const IngredientsDeleteButton = styled.button`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
-  margin-left: 40px;
 
   font-size: 14px;
   background: transparent;
@@ -181,9 +200,8 @@ export const IngredientsDelete = styled(DeleteSVG)`
   }
 `;
 export const IngredientsInput = styled.input`
-  min-width: 20%;
-  height: 60px;
-  padding: 16px 24px;
+  width: 100px;
+  padding: 15px 24px;
 
   font-size: 14px;
   line-height: 18px;

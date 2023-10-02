@@ -13,7 +13,6 @@ import {
   ImageLabel,
   PlusSVG,
   NameInputWrapper,
-  NameWrapper,
   NameLabel,
   NameInput,
   RecipeWrapper,
@@ -97,6 +96,12 @@ const DrinkDescriptionFields = ({
     }
   };
 
+    const handleImageWrapperClick = () => {
+      // Имитировать клик на ImageInput
+      const imageInput = document.getElementById('image');
+      imageInput.click();
+    };
+
   const handleInputChange = (e) => {
     const { value } = e.target;
     setHasValue(value.trim().length > 1);
@@ -118,7 +123,7 @@ const DrinkDescriptionFields = ({
   };
   return (
     <>
-      <ImageWrapper>
+      <ImageWrapper onClick={handleImageWrapperClick}>
         <ImageInputWrapper>
           <ImageInput
             type="file"
@@ -138,7 +143,7 @@ const DrinkDescriptionFields = ({
         ) : null}
       </ImageWrapper>
 
-      <NameWrapper>
+      <Wrapper>
         <NameInputWrapper>
           <NameLabel
             htmlFor="name"
@@ -167,105 +172,102 @@ const DrinkDescriptionFields = ({
             <FormError>{errors.name}</FormError>
           ) : null}
         </NameInputWrapper>
-      </NameWrapper>
 
-      <RecipeWrapper>
-        <RecipeLabel
-          htmlFor="description"
-          $isFocusedDescription={$isFocusedDescription}
-          $hasValueDescription={$hasValueDescription}
-        >
-          Enter about recipe
-        </RecipeLabel>
-        <RecipeTextarea
-          rows={1}
-          maxLength={234}
-          id="description"
-          name="description"
-          onChange={(e) => {
-            handleDescriptionChange(e);
-            handleChange(e);
-          }}
-          onBlur={(e) => {
-            setIsFocusedDescription(false);
-            handleBlur(e);
-          }}
-          onFocus={() => setIsFocusedDescription(true)}
-          value={values.description}
-          placeholder=" "
-        />
-        {touched.description && errors.description ? (
-          <FormError>{errors.description}</FormError>
-        ) : null}
-      </RecipeWrapper>
-
-      <CategoryWrapper>
-        Category
-        <CategoryLabel htmlFor="category"></CategoryLabel>
-        <CategorySelect
-          name="category"
-          options={categoryOptions}
-          value={selectedCategoriesOption}
-          onChange={(selectedCategoriesOption) =>
-            handleSelectCategoriesChange(selectedCategoriesOption)
-          }
-          placeholder=""
-        />
-      </CategoryWrapper>
-      {touched.category && errors.category ? (
-        <FormError>{errors.category}</FormError>
-      ) : null}
-
-      <ServingWrapper>
-        Glass
-        <ServingLabel htmlFor="serving"></ServingLabel>
-        <ServingSelect
-          name="serving"
-          options={glasseOptions}
-          value={selectedGlassesOption}
-          onChange={(selectedGlassesOption) =>
-            handleSelectGlassesChange(selectedGlassesOption)
-          }
-          placeholder=""
-        >
-        </ServingSelect>
-      </ServingWrapper>
-      {touched.serving && errors.serving ? (
-        <FormError>{errors.serving}</FormError>
-      ) : null}
-
-      <Wrapper>
-        <RadioWrapper>
-          <RadioLabel
-            className={values.isAlcoholic === 'true' ? 'checked' : ''}
+        <RecipeWrapper>
+          <RecipeLabel
+            htmlFor="description"
+            $isFocusedDescription={$isFocusedDescription}
+            $hasValueDescription={$hasValueDescription}
           >
-            <RadioInput
-              type="radio"
-              name="isAlcoholic"
-              value="true"
-              checked={values.isAlcoholic === 'true'}
-              onChange={handleChange}
-            />
-            <RadioSpan></RadioSpan>
-            Alcoholic
-          </RadioLabel>
-          <RadioLabel
-            className={values.isAlcoholic === 'false' ? 'checked' : ''}
-          >
-            <RadioInput
-              type="radio"
-              name="isAlcoholic"
-              value="false"
-              checked={values.isAlcoholic === 'false'}
-              onChange={handleChange}
-            />
-            <RadioSpan></RadioSpan>
-            Non-alcoholic
-          </RadioLabel>
-        </RadioWrapper>
-        {touched.isAlcoholic && errors.isAlcoholic ? (
-          <FormError>{errors.isAlcoholic}</FormError>
+            Enter about recipe
+          </RecipeLabel>
+          <RecipeTextarea
+            rows={1}
+            maxLength={234}
+            id="description"
+            name="description"
+            onChange={(e) => {
+              handleDescriptionChange(e);
+              handleChange(e);
+            }}
+            onBlur={(e) => {
+              setIsFocusedDescription(false);
+              handleBlur(e);
+            }}
+            onFocus={() => setIsFocusedDescription(true)}
+            value={values.description}
+            placeholder=" "
+          />
+          {touched.description && errors.description ? (
+            <FormError>{errors.description}</FormError>
+          ) : null}
+        </RecipeWrapper>
+
+        <CategoryWrapper>
+          Category
+          <CategoryLabel htmlFor="category"></CategoryLabel>
+          <CategorySelect
+            name="category"
+            options={categoryOptions}
+            value={selectedCategoriesOption}
+            onChange={(selectedCategoriesOption) =>
+              handleSelectCategoriesChange(selectedCategoriesOption)
+            }
+            placeholder=""
+          />
+        </CategoryWrapper>
+        {touched.category && errors.category ? (
+          <FormError>{errors.category}</FormError>
         ) : null}
+
+        <ServingWrapper>
+          Glass
+          <ServingLabel htmlFor="serving"></ServingLabel>
+          <ServingSelect
+            name="serving"
+            options={glasseOptions}
+            value={selectedGlassesOption}
+            onChange={(selectedGlassesOption) =>
+              handleSelectGlassesChange(selectedGlassesOption)
+            }
+            placeholder=""
+          ></ServingSelect>
+        </ServingWrapper>
+        {touched.serving && errors.serving ? (
+          <FormError>{errors.serving}</FormError>
+        ) : null}
+
+          <RadioWrapper>
+            <RadioLabel
+              className={values.isAlcoholic === 'true' ? 'checked' : ''}
+            >
+              <RadioInput
+                type="radio"
+                name="isAlcoholic"
+                value="true"
+                checked={values.isAlcoholic === 'true'}
+                onChange={handleChange}
+              />
+              <RadioSpan></RadioSpan>
+              Alcoholic
+            </RadioLabel>
+            <RadioLabel
+              className={values.isAlcoholic === 'false' ? 'checked' : ''}
+            >
+              <RadioInput
+                type="radio"
+                name="isAlcoholic"
+                value="false"
+                checked={values.isAlcoholic === 'false'}
+                onChange={handleChange}
+              />
+              <RadioSpan></RadioSpan>
+              Non-alcoholic
+            </RadioLabel>
+          {touched.isAlcoholic && errors.isAlcoholic ? (
+            <FormError>{errors.isAlcoholic}</FormError>
+          ) : null}
+          </RadioWrapper>
       </Wrapper>
     </>
   );

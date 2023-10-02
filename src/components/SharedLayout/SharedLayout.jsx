@@ -8,6 +8,7 @@ import {
 } from './SharedLayout.styled';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import Loader from '../Loader/Loader';
 
 const SharedLayout = () => {
   return (
@@ -17,7 +18,7 @@ const SharedLayout = () => {
       <Main>
         <Container>
           <StyledBlock></StyledBlock>
-          <Suspense fallback={<div>...Loading</div>}>
+          <Suspense fallback={<Loader />}>
             <Outlet />
             <StyledBlockTwo></StyledBlockTwo>
           </Suspense>

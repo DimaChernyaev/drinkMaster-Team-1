@@ -53,17 +53,18 @@ const Drinks = ({categoryList, ingredientList}) => {
     
 
     const onChangeFilter = (label, value='') => {
-        console.log("label=",label);
-        console.log("value=",value);
         switch (label) {
             case 'keyword': 
                     setKeyword(value); 
+                    setPage(1);
                     break;
             case 'category': 
-                    setCategory(value); 
+                    setCategory(value);
+                    setPage(1);
                     break;
             case 'ingredient': 
-                    setIngredient(value); 
+                    setIngredient(value);
+                    setPage(1);
                     break;
             default: 
                     break;

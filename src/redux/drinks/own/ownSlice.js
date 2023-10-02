@@ -39,6 +39,7 @@ const ownSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(deleteOwn.fulfilled, (state, action) => {
+        console.log(action);
         state.isLoading = false;
         state.error = false;
         const indexDelete = state.items.findIndex(

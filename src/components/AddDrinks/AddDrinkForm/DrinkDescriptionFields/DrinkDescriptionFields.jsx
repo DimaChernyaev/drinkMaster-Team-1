@@ -88,7 +88,7 @@ const DrinkDescriptionFields = ({
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    setFieldValue('image', file);
+    setFieldValue('drinkThumb', file);
     if (file) {
       setSelectedImage(URL.createObjectURL(file));
     } else {
@@ -98,7 +98,7 @@ const DrinkDescriptionFields = ({
 
     const handleImageWrapperClick = () => {
       // Имитировать клик на ImageInput
-      const imageInput = document.getElementById('image');
+      const imageInput = document.getElementById('drinkThumb');
       imageInput.click();
     };
 
@@ -119,7 +119,7 @@ const DrinkDescriptionFields = ({
 
   const handleSelectGlassesChange = (selectedOption) => {
     setSelectedGlassesOption(selectedOption);
-    setFieldValue(`serving`, selectedOption.value);
+    setFieldValue(`glass`, selectedOption.value);
   };
   return (
     <>
@@ -127,26 +127,26 @@ const DrinkDescriptionFields = ({
         <ImageInputWrapper>
           <ImageInput
             type="file"
-            id="image"
-            name="image"
+            id="drinkThumb"
+            name="drinkThumb"
             onChange={(e) => handleImageChange(e)}
-            accept="image/*"
+            accept="drinkThumb/*"
           />
-          <ImageLabel htmlFor="image">
+          <ImageLabel htmlFor="drinkThumb">
             <PlusSVG></PlusSVG>
           </ImageLabel>
         </ImageInputWrapper>
         <p>Add image</p>
         {selectedImage && <ImageDrink src={selectedImage} alt="Selected" />}
-        {touched.image && errors.image ? (
-          <FormError>{errors.image}</FormError>
+        {touched.drinkThumb && errors.drinkThumb ? (
+          <FormError>{errors.drinkThumb}</FormError>
         ) : null}
       </ImageWrapper>
 
       <Wrapper>
         <NameInputWrapper>
           <NameLabel
-            htmlFor="name"
+            htmlFor="drink"
             $isFocused={$isFocused}
             $hasValue={$hasValue}
           >
@@ -154,8 +154,8 @@ const DrinkDescriptionFields = ({
           </NameLabel>
           <NameInput
             type="text"
-            id="name"
-            name="name"
+            id="drink"
+            name="drink"
             onChange={(e) => {
               handleInputChange(e);
               handleChange(e);
@@ -165,11 +165,11 @@ const DrinkDescriptionFields = ({
               handleBlur(e);
             }}
             onFocus={() => setIsFocused(true)}
-            value={values.name}
+            value={values.drink}
             placeholder=" "
           />
-          {touched.name && errors.name ? (
-            <FormError>{errors.name}</FormError>
+          {touched.drink && errors.drink ? (
+            <FormError>{errors.drink}</FormError>
           ) : null}
         </NameInputWrapper>
 
@@ -222,9 +222,9 @@ const DrinkDescriptionFields = ({
 
         <ServingWrapper>
           Glass
-          <ServingLabel htmlFor="serving"></ServingLabel>
+          <ServingLabel htmlFor="glass"></ServingLabel>
           <ServingSelect
-            name="serving"
+            name="glass"
             options={glasseOptions}
             value={selectedGlassesOption}
             onChange={(selectedGlassesOption) =>
@@ -233,41 +233,41 @@ const DrinkDescriptionFields = ({
             placeholder=""
           ></ServingSelect>
         </ServingWrapper>
-        {touched.serving && errors.serving ? (
-          <FormError>{errors.serving}</FormError>
+        {touched.glass && errors.glass ? (
+          <FormError>{errors.glass}</FormError>
         ) : null}
 
-          <RadioWrapper>
-            <RadioLabel
-              className={values.isAlcoholic === 'true' ? 'checked' : ''}
-            >
-              <RadioInput
-                type="radio"
-                name="isAlcoholic"
-                value="true"
-                checked={values.isAlcoholic === 'true'}
-                onChange={handleChange}
-              />
-              <RadioSpan></RadioSpan>
-              Alcoholic
-            </RadioLabel>
-            <RadioLabel
-              className={values.isAlcoholic === 'false' ? 'checked' : ''}
-            >
-              <RadioInput
-                type="radio"
-                name="isAlcoholic"
-                value="false"
-                checked={values.isAlcoholic === 'false'}
-                onChange={handleChange}
-              />
-              <RadioSpan></RadioSpan>
-              Non-alcoholic
-            </RadioLabel>
-          {touched.isAlcoholic && errors.isAlcoholic ? (
-            <FormError>{errors.isAlcoholic}</FormError>
+        <RadioWrapper>
+          <RadioLabel
+            className={values.alcoholic === 'Alcoholic' ? 'checked' : ''}
+          >
+            <RadioInput
+              type="radio"
+              name="alcoholic"
+              value="Alcoholic"
+              checked={values.alcoholic === 'true'}
+              onChange={handleChange}
+            />
+            <RadioSpan></RadioSpan>
+            Alcoholic
+          </RadioLabel>
+          <RadioLabel
+            className={values.alcoholic === 'Non alcoholic' ? 'checked' : ''}
+          >
+            <RadioInput
+              type="radio"
+              name="alcoholic"
+              value="Non alcoholic"
+              checked={values.alcoholic === 'false'}
+              onChange={handleChange}
+            />
+            <RadioSpan></RadioSpan>
+            Non-alcoholic
+          </RadioLabel>
+          {touched.alcoholic && errors.alcoholic ? (
+            <FormError>{errors.alcoholic}</FormError>
           ) : null}
-          </RadioWrapper>
+        </RadioWrapper>
       </Wrapper>
     </>
   );

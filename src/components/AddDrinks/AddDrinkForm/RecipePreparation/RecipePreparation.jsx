@@ -28,34 +28,33 @@ const RecipePreparation = ({
     <>
       <RecipeTitle>Recipe Preparation</RecipeTitle>
       <RecipeWrapper>
-              <RecipeLabel
-        htmlFor="preparationInstructions"
-        $isFocusedDescription={$isFocusedDescription}
-        $hasValueDescription={$hasValueDescription}
-      >
-        Enter the recipe
-      </RecipeLabel>
-      <RecipeTextarea
-        id="preparationInstructions"
-        name="preparationInstructions"
-        rows="6"
-        onChange={(e) => {
-          handleDescriptionChange(e);
-          handleChange(e);
-        }}
-        onBlur={(e) => {
-          setIsFocusedDescription(false);
-          handleBlur(e);
-        }}
-        onFocus={() => setIsFocusedDescription(true)}
-        value={values.preparationInstructions}
-        placeholder=" "
-      />
-      {touched.preparationInstructions && errors.preparationInstructions ? (
-        <FormError>{errors.preparationInstructions}</FormError>
-      ) : null}
+        <RecipeLabel
+          htmlFor="instructions"
+          $isFocusedDescription={$isFocusedDescription}
+          $hasValueDescription={$hasValueDescription}
+        >
+          Enter the recipe
+        </RecipeLabel>
+        <RecipeTextarea
+          id="instructions"
+          name="instructions"
+          rows="6"
+          onChange={(e) => {
+            handleDescriptionChange(e);
+            handleChange(e);
+          }}
+          onBlur={(e) => {
+            setIsFocusedDescription(false);
+            handleBlur(e);
+          }}
+          onFocus={() => setIsFocusedDescription(true)}
+          value={values.instructions}
+          placeholder=" "
+        />
+        {touched.instructions && errors.instructions ? (
+          <FormError>{errors.instructions}</FormError>
+        ) : null}
       </RecipeWrapper>
-
     </>
   );
 };

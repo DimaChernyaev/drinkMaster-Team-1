@@ -15,6 +15,18 @@ import Select from 'react-select';
 //   colorStyled.buttonCancel: '#434D67',
 // };
 
+// @media (min-width: 375px) {
+//   width: 335px;
+// }
+
+// @media (min-width: 768px) {
+//   width: 342px;
+// }
+
+// @media (min-width: 1280px) {
+//   width: 400px;
+// }
+
 export const FormError = styled.div`
   font-size: 12px;
   color: #da1414;
@@ -23,26 +35,37 @@ export const FormError = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
+  width: 100%;
+  height: 320px;
+  margin-bottom: 40px;
+
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  width: 100%;
-  height: 320px;
-
   background: ${colorStyled.colorBlueFifty};
   border-radius: 8px;
-
-  position: relative;
-
   overflow: hidden;
-
   transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
 
   &:hover {
-    background: #161f37;
+    background: ${colorStyled.colorBlue};
   }
+
+  @media (min-width: 375px) {
+    /* width: 335px; */
+  }
+
+   @media (min-width: 768px) {
+     /* width: 342px; */
+   }
+
+   @media (min-width: 1280px) {
+     /* width: 400px; */
+   }
 `;
 
 export const ImageDrink = styled.img`
@@ -69,6 +92,7 @@ export const ImageInput = styled.input`
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
+    pointer-events: none;
   }
 `;
 
@@ -80,6 +104,7 @@ export const ImageLabel = styled.label`
   height: 50px;
   background-color: white;
   border-radius: 6px;
+  
 
   cursor: pointer;
 `;
@@ -91,14 +116,15 @@ export const PlusSVG = styled(MySvg)`
   stroke: ${colorStyled.colorBlue};
 `;
 
-export const NameWrapper = styled.div`
-  /* width: 100%;
+export const Wrapper = styled.div`
+  width: 100%;
   display: inline-flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 14px; */
+  gap: 14px;
 `;
+
 export const NameInputWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -106,8 +132,8 @@ export const NameInputWrapper = styled.div`
 
 export const NameLabel = styled.label`
   position: absolute;
-  top: ${(props) => (props.$isFocused || props.$hasValue ? '3px' : '30px')};
-  left: 10px;
+  top: ${(props) => (props.$isFocused || props.$hasValue ? '-15px' : '10px')};
+  left: 0px;
   transform-origin: left;
   color: ${(props) => (props.$isFocused ? '#F3F3F380' : '#f3f3f3')};
   transition:
@@ -129,7 +155,6 @@ export const NameInput = styled.input`
   transition: border-color 250ms;
   width: 100%;
   font-size: 14px;
-  margin-top: 19px;
 
   &:focus {
     border-bottom: 1px solid;
@@ -149,8 +174,8 @@ export const RecipeWrapper = styled.div`
 export const RecipeLabel = styled.label`
   position: absolute;
   top: ${(props) =>
-    props.$isFocusedDescription || props.$hasValueDescription ? '3px' : '30px'};
-  left: 10px;
+    props.$isFocusedDescription || props.$hasValueDescription ? '-15px' : '10px'};
+  left: 0px;
   transform-origin: left;
   color: ${(props) => (props.$isFocusedDescription ? '#F3F3F380' : '#f3f3f3')};
   transition:
@@ -169,13 +194,12 @@ export const RecipeTextarea = styled.textarea`
   resize: none;
   color: #f3f3f3;
   padding: 8px;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-bottom: 1px solid #f3f3f380;
   background-color: transparent;
   transition: border-color 250ms;
   width: 100%;
   font-size: 14px;
-  margin-top: 19px;
 
   &:focus {
     border-bottom: 1px solid;
@@ -186,16 +210,7 @@ export const RecipeTextarea = styled.textarea`
     font-size: 12px;
   }
   &::-webkit-scrollbar {
-    width: 8px; /* ширина для вертикального скролла */
-    height: 8px; /* высота для горизонтального скролла */
-    background-color: rgba(22, 31, 55, 0.5);
-    border-radius: 9em;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: ${colorStyled.colorWhite};
-    border-radius: 9em;
-    /* box-shadow: inset 1px 1px 10px #f3faf7; */
+    display: none;
   }
 `;
 
@@ -205,8 +220,6 @@ export const CategoryWrapper = styled.div`
   align-items: center;
   position: relative;
   color: #f3f3f380;
-  padding: 8px;
-  border: 2px solid transparent;
   border-bottom: 1px solid #f3f3f380;
   background-color: transparent;
   transition: border-color 250ms;
@@ -243,12 +256,16 @@ export const CategorySelect = ({ options, ...props }) => {
           ...provided,
           width: '240px',
         }),
-        control: (provided, state ) => ({
+        control: (provided, state) => ({
           ...provided,
-
+          minHeight: 'auto',
+          borderColor: state.isFocused ? 'red' : 'red',
           backgroundColor: 'transparent',
           border: state.isFocused ? 'none' : 'none',
-
+          boxShadow: state.isFocused ? 'none' : 'none',
+          '&:hover': {
+            cursor: 'pointer',
+          },
         }),
         placeholder: (provided, state) => ({
           ...provided,
@@ -283,6 +300,12 @@ export const CategorySelect = ({ options, ...props }) => {
           borderRadius: '20px',
           overflow: 'hidden',
         }),
+        menuList: (provided) => ({
+          ...provided,
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+        }),
         indicatorSeparator: (provided) => ({
           ...provided,
           display: 'none',
@@ -313,14 +336,12 @@ export const ServingWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   color: #f3f3f380;
-  padding: 8px;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-bottom: 1px solid #f3f3f380;
   background-color: transparent;
   transition: border-color 250ms;
   width: 100%;
   font-size: 14px;
-  margin-top: 20px;
 `;
 
 export const ServingLabel = styled.label`
@@ -354,9 +375,13 @@ export const ServingSelect = ({ options, ...props }) => {
         }),
         control: (provided, state) => ({
           ...provided,
-
+          borderColor: state.isFocused ? 'red' : 'red',
           backgroundColor: 'transparent',
           border: state.isFocused ? 'none' : 'none',
+          boxShadow: state.isFocused ? 'none' : 'none',
+          '&:hover': {
+            cursor: 'pointer',
+          },
         }),
         placeholder: (provided, state) => ({
           ...provided,
@@ -391,6 +416,12 @@ export const ServingSelect = ({ options, ...props }) => {
           borderRadius: '20px',
           overflow: 'hidden',
         }),
+        menuList: (provided) => ({
+          ...provided,
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+        }),
         indicatorSeparator: (provided) => ({
           ...provided,
           display: 'none',
@@ -415,15 +446,7 @@ export const ServingSelect = ({ options, ...props }) => {
   );
 };
 
-export const Wrapper = styled.div`
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 
-  margin-top: 40px;
-  margin-left: 4px;
-`;
 
 export const Label = styled.label`
   font-weight: bold;
@@ -434,6 +457,7 @@ export const RadioWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 40px;
 `;
 export const RadioLabel = styled.label`
   // Ваши стили для RadioLabel

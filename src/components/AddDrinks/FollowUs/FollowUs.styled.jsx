@@ -12,6 +12,18 @@ import { colorStyled } from '../../../helpers/colorStyled';
 //   colorStyled.backgroundBlackColor: '#0A0A11',
 //   colorStyled.buttonCancel: '#434D67',
 // };
+
+// @media (min-width: 375px) {
+//   width: 335px;
+// }
+
+// @media (min-width: 768px) {
+//   width: 342px;
+// }
+
+// @media (min-width: 1280px) {
+//   width: 400px;
+// }
 export const FollowUsWrapper = styled.div`
   margin-top: 80px;
 `

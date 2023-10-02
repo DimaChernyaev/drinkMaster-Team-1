@@ -47,7 +47,7 @@ const DrinkIngredientsFields = ({
 
   const handleSelectChange = (selectedOption, index) => {
     const { value } = selectedOption;
-    setFieldValue(`ingredients[${index}].name`, value);
+    setFieldValue(`ingredients[${index}].title`, value);
     setSelectedOptions((prevOptions) => {
       const newOptions = [...prevOptions];
       newOptions[index] = selectedOption;
@@ -98,7 +98,7 @@ const DrinkIngredientsFields = ({
       {values.ingredients.map((ingredient, index) => (
         <IngredientsWrapperSelect key={index}>
           <IngredientsSelect
-            name={`ingredients[${index}].name`}
+            name={`ingredients[${index}].title`}
             options={options}
             value={selectedOptions[index]}
             onChange={(selectedOption) =>
@@ -109,9 +109,9 @@ const DrinkIngredientsFields = ({
 
           <IngredientsInput
             type="text"
-            name={`ingredients[${index}].amount`}
+            name={`ingredients[${index}].measure`}
             placeholder="1 cl"
-            value={ingredient.amount || ''}
+            value={ingredient.measure || ''}
             onChange={handleChange}
             onBlur={handleBlur}
           />
@@ -128,7 +128,7 @@ const DrinkIngredientsFields = ({
           errors.ingredients &&
           touched.ingredients[index] &&
           errors.ingredients[index] ? (
-            <FormError>{errors.ingredients[index].name}</FormError>
+            <FormError>{errors.ingredients[index].title}</FormError>
           ) : null}
         </IngredientsWrapperSelect>
       ))}

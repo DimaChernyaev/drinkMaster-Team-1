@@ -11,8 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { selectIsRefreshing } from './redux/auth/authSelectors';
 import { refresh } from './redux/auth/authOperations';
-import { Loader } from './components/Loader/Loader.styled';
-import { ThreeDots } from 'react-loader-spinner';
+import Loader from './components/Loader/Loader';
 
 const HomePage = lazy(() => import('../src/pages/HomePage/HomePage'));
 const DrinksPage = lazy(() => import('../src/pages/DrinksPage/DrinksPage'));
@@ -43,9 +42,7 @@ function App() {
   return (
     <>
       {isRefreshing ? (
-        <Loader>
-          <ThreeDots color="#f3f3f3" width="60" />
-        </Loader>
+        <Loader />
       ) : (
         <Routes>
           <Route

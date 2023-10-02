@@ -1,44 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-export const Card = styled.li`
-  @media (max-width: 374px) {
-    &:nth-of-type(2) {
-      display: none;
-    }
-    &:nth-of-type(3) {
-      display: none;
-    }
-  }
-
-  @media (min-width: 375px) {
-    &:nth-of-type(2) {
-      display: none;
-    }
-    &:nth-of-type(3) {
-      display: none;
-    }
-  }
-
-  @media (min-width: 768px) {
-    &:nth-of-type(2) {
-      display: block;
-    }
-    &:nth-of-type(3) {
-      display: none;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    &:nth-of-type(2) {
-      display: block;
-    }
-    &:nth-of-type(3) {
-      display: block;
-    }
-  }
-`;
-
 export const ImageCard = styled.img`
   display: block;
   border-radius: 8px;

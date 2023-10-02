@@ -27,7 +27,7 @@ const bounce = keyframes`
 
 export const LoaderContainer = styled.div`
   display: flex;
-  flex=direction: column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;

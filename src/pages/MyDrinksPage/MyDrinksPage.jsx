@@ -5,23 +5,16 @@ import { fetchOwn } from '../../redux/drinks/own/ownOperations';
 import {
   selectError,
   selectOwnItems,
-  selectIsLoading,
 } from '../../redux/drinks/own/ownSelector';
 import ErrorPage from '../../pages/ErrorPage/ErrorPage';
 import DrinksList from '../../components/DrinksList/DrinksList';
 import Paginator from '../../components/Paginator/Paginator';
-
-import { ThreeDots } from 'react-loader-spinner';
-import { Loader } from '../../components/Loader/Loader.styled';
-import {
-  Container,
-} from '../FavoriteDrinksPage/FavoriteDrinksPage.styled';
+import { Container } from '../FavoriteDrinksPage/FavoriteDrinksPage.styled';
 import PageTitle from '../../components/DefaultComponents/PageTitle/PageTitle';
 
 const MyDrinksPage = () => {
   const dispatch = useDispatch();
   const drinks = useSelector(selectOwnItems);
-  const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
   // Pagination
@@ -51,11 +44,6 @@ const MyDrinksPage = () => {
   return (
     <Container>
       <PageTitle title="My drinks" />
-      {isLoading && !error && (
-        <Loader>
-          <ThreeDots color="#f3f3f3" width="80" />
-        </Loader>
-      )}
       <DrinksList drinks={currentItems} />
       <Paginator handlePageClick={handlePageClick} pageCount={pageCount} />
       {error && <ErrorPage />}

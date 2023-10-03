@@ -24,11 +24,7 @@ const AddDrinkForm = () => {
     validationSchema: Yup.object().shape({
       drink: Yup.string().required('This field is mandatory'),
       description: Yup.string().required('This field is mandatory'),
-      ingredients: Yup.array().of(
-        Yup.object().shape({
-          title: Yup.string().required('This field is mandatory'),
-        }),
-      ),
+      ingredients: Yup.array().required('This field is mandatory'),
       instructions: Yup.string().required('This field is mandatory'),
       category: Yup.string().required('This field is mandatory'), // Валидация для категории
       glass: Yup.string().required('This field is mandatory'), // Валидация для сервировки
@@ -36,7 +32,6 @@ const AddDrinkForm = () => {
       drinkThumb: Yup.mixed().required('Select a drinkThumb'),
     }),
     onSubmit: async (values) => {
-      // console.log('values', values);
       const formData = new FormData();
 
       // Добавляем значения в FormData

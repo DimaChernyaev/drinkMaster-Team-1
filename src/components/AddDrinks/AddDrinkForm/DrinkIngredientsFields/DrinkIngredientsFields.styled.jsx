@@ -44,6 +44,9 @@ export const IngredientsWrapper = styled.div`
   flex-wrap: wrap;
   gap: 18px;
   margin-top: 80px;
+  @media (min-width: 1280px) {
+    width: 540px;
+  }
 `;
 export const ControlWrapper = styled.div`
   display: flex;
@@ -88,7 +91,11 @@ export const IngredientsWrapperSelect = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  gap: 8px
+  gap: 8px;
+  @media (min-width: 768px) {
+    gap: 14px;
+    justify-content: flex-start;
+  }
 `;
 
 export const IngredientsSelect = ({ options, ...props }) => {
@@ -100,7 +107,14 @@ export const IngredientsSelect = ({ options, ...props }) => {
         container: (provided) => ({
           ...provided,
           minWidth: '140px',
+          '@media (min-width: 375px)': {
+            minWidth: '200px',
+          },
+          '@media (min-width: 768px)': {
+            minWidth: '332px',
+          },
         }),
+
         control: (provided, state) => ({
           ...provided,
           height: 'auto',
@@ -188,6 +202,12 @@ export const IngredientsDeleteButton = styled.button`
   &:disabled ${ControlMinuse} {
     stroke: ${colorStyled.colorWhiteFifty};
   }
+  @media (min-width: 375px) {
+    padding: 0;
+  }
+  @media (min-width: 768px) {
+    margin-left: auto;
+  }
 `;
 
 export const ControlPluse = styled(PlusSVG)`
@@ -216,5 +236,8 @@ export const IngredientsInput = styled.input`
   }
   &:focus {
     color: ${colorStyled.colorWhite};
+  }
+  @media (min-width: 768px) {
+    min-width: 150px;
   }
 `;

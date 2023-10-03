@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
-// import * as Yup from 'yup';
+import * as Yup from 'yup';
 import { FormButton } from './AddDrinkForm.styled';
 import { addOwn } from '../../../redux/drinks/own/ownOperations';
 import { useDispatch } from 'react-redux';
@@ -17,26 +17,26 @@ const AddDrinkForm = () => {
       drink: '',
       ingredients: [{ title: '' }],
       instructions: '',
-      category: '', // Додайте поле для категорії
-      glass: '', // Додайте поле для сервування
-      alcoholic: 'Non alcoholic', // Додайте поле для типу коктейлю
+      category: '', // Добавлено поле для категории
+      glass: '', // Добавлено поле для сервировки
+      alcoholic: 'Non alcoholic', // Добавлено поле для типа коктейля
     },
-    // validationSchema: Yup.object({
-    //   drink: Yup.string().required('This field is mandatory'),
-    //   description: Yup.string().required('This field is mandatory'),
-    //   ingredients: Yup.array().of(
-    //     Yup.object().shape({
-    //       drink: Yup.string().required('This field is mandatory'),
-    //     }),
-    //   ),
-    //   instructions: Yup.string().required('This field is mandatory'),
-    //   category: Yup.string().required('This field is mandatory'),
-    //   glass: Yup.string().required('This field is mandatory'),
-    //   alcoholic: Yup.boolean().required('Select the type of cocktail'),
-    //   drinkThumb: Yup.mixed().required('Select an drinkThumb'),
-    // }),
+    validationSchema: Yup.object().shape({
+      drink: Yup.string().required('This field is mandatory'),
+      description: Yup.string().required('This field is mandatory'),
+      ingredients: Yup.array().of(
+        Yup.object().shape({
+          title: Yup.string().required('This field is mandatory'),
+        }),
+      ),
+      instructions: Yup.string().required('This field is mandatory'),
+      category: Yup.string().required('This field is mandatory'), // Валидация для категории
+      glass: Yup.string().required('This field is mandatory'), // Валидация для сервировки
+      alcoholic: Yup.string().required('Select the type of cocktail'), // Валидация для типа коктейля
+      drinkThumb: Yup.mixed().required('Select a drinkThumb'),
+    }),
     onSubmit: async (values) => {
-      console.log('values', values);
+      // console.log('values', values);
       const formData = new FormData();
 
       // Добавляем значения в FormData
@@ -50,9 +50,8 @@ const AddDrinkForm = () => {
       // Добавляем изображение
       formData.append('drinkThumb', values.drinkThumb);
 
-      const ingredientsStr = JSON.stringify(values.ingredients)
-      console.log('ingredientsStr', ingredientsStr);
-        formData.append('ingredients', ingredientsStr)
+      const ingredientsStr = JSON.stringify(values.ingredients);
+      formData.append('ingredients', ingredientsStr);
       try {
         // Отправка данных на сервер с использованием fetch
         const response = await dispatch(addOwn(formData));

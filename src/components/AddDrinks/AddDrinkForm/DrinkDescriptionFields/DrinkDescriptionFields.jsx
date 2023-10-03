@@ -6,6 +6,7 @@ import {
 } from '../../../../helpers/API/operationsFilters';
 
 import {
+  DescriptionWrapper,
   ImageWrapper,
   ImageDrink,
   ImageInputWrapper,
@@ -122,7 +123,7 @@ const DrinkDescriptionFields = ({
     setFieldValue(`glass`, selectedOption.value);
   };
   return (
-    <>
+    <DescriptionWrapper>
       <ImageWrapper onClick={handleImageWrapperClick}>
         <ImageInputWrapper>
           <ImageInput
@@ -245,7 +246,7 @@ const DrinkDescriptionFields = ({
               type="radio"
               name="alcoholic"
               value="Alcoholic"
-              checked={values.alcoholic === 'true'}
+              checked={values.alcoholic === 'Alcoholic'}
               onChange={handleChange}
             />
             <RadioSpan></RadioSpan>
@@ -258,7 +259,7 @@ const DrinkDescriptionFields = ({
               type="radio"
               name="alcoholic"
               value="Non alcoholic"
-              checked={values.alcoholic === 'false'}
+              checked={values.alcoholic === 'Non alcoholic'}
               onChange={handleChange}
             />
             <RadioSpan></RadioSpan>
@@ -269,7 +270,7 @@ const DrinkDescriptionFields = ({
           ) : null}
         </RadioWrapper>
       </Wrapper>
-    </>
+    </DescriptionWrapper>
   );
 };
 

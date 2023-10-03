@@ -6,7 +6,7 @@ import {
   StyledInstagramSVG,
   StyledYoutubeSVG,
 } from '../../Footer/FooterMedia/FooterMediaList.styled';
-import { FollowUsWrapper, FollowUsTitle, } from './FollowUs.styled';
+import { FollowUsWrapper, FollowUsTitle } from './FollowUs.styled';
 
 const FollowUs = () => {
   const externalLinkProps = {

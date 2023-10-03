@@ -2,30 +2,6 @@ import styled from 'styled-components';
 import { colorStyled } from '../../../../helpers/colorStyled';
 import { ReactComponent as MySvg } from '../../../../assets/AddDrink/plus.svg';
 import Select from 'react-select';
-// export const colorStyled = {
-//   colorStyled.colorWhite: '#F3F3F3',
-//   colorStyled.colorWhiteFifty: 'rgba(243, 243, 243, 0.5)',
-//   colorStyled.colorWhiteFourty: 'rgba(243, 243, 243, 0.4)',
-//   colorStyled.colorWhiteTwenty: 'rgba(243, 243, 243, 0.2)',
-//   colorStyled.colorBlue: '#161F37',
-//   colorStyled.colorBlueFifty: 'rgba(22, 31, 55, 0.5)',
-//   colorStyled.colorHover: 'rgba(64, 112, 205, 0.5)',
-//   colorStyled.welcomePageText: '#FAFAFA',
-//   colorStyled.backgroundBlackColor: '#0A0A11',
-//   colorStyled.buttonCancel: '#434D67',
-// };
-
-// @media (min-width: 375px) {
-//   width: 335px;
-// }
-
-// @media (min-width: 768px) {
-//   width: 342px;
-// }
-
-// @media (min-width: 1280px) {
-//   width: 400px;
-// }
 
 export const FormError = styled.div`
   font-size: 12px;
@@ -84,7 +60,8 @@ export const ImageWrapper = styled.div`
 `;
 
 export const ImageDrink = styled.img`
-  width: 100%; /* Максимальная ширина изображения равна ширине родителя */
+  width: 100%;
+  min-height: 130%; /* Максимальная ширина изображения равна ширине родителя */
   height: auto; /* Автоматическая высота, чтобы сохранить соотношение сторон */
   display: block;
 `;
@@ -160,16 +137,17 @@ export const NameLabel = styled.label`
   pointer-events: none;
   color: ${(props) => (props.$hasValue ? '#3CBC81' : '#F3F3F380')};
   font-size: ${(props) =>
-  props.$isFocused || props.$hasValue ? '12px' : '14px'};
-      @media (min-width: 768px) {
+    props.$isFocused || props.$hasValue ? '12px' : '14px'};
+  @media (min-width: 768px) {
+    top: ${(props) => (props.$isFocused || props.$hasValue ? '-20px' : '10px')};
     font-size: ${(props) =>
-      props.$isFocusedDescription || props.$hasValueDescription
-        ? '12px'
-        : '16px'};
+      props.$isFocused || props.$hasValue ? '14px' : '16px'};
   }
 `;
 
 export const NameInput = styled.input`
+  font-family: Manrope;
+  font-size: 14px;
   color: #f3f3f3;
   padding: 8px;
   border: 1px solid transparent;
@@ -177,7 +155,6 @@ export const NameInput = styled.input`
   background-color: transparent;
   transition: border-color 250ms;
   width: 100%;
-  font-size: 14px;
 
   &:focus {
     border-bottom: 1px solid;
@@ -217,9 +194,13 @@ export const RecipeLabel = styled.label`
       ? '12px'
       : '14px'};
   @media (min-width: 768px) {
+    top: ${(props) =>
+      props.$isFocusedDescription || props.$hasValueDescription
+        ? '-20px'
+        : '10px'};
     font-size: ${(props) =>
       props.$isFocusedDescription || props.$hasValueDescription
-        ? '12px'
+        ? '14px'
         : '16px'};
   }
 `;
@@ -235,8 +216,6 @@ export const RecipeTextarea = styled.textarea`
   border-bottom: 1px solid #f3f3f380;
   background-color: transparent;
   transition: border-color 250ms;
- 
-
 
   &:focus {
     border-bottom: 1px solid;
@@ -332,7 +311,7 @@ export const CategorySelect = ({ options, ...props }) => {
           overflow: 'hidden',
           cursor: 'pointer',
           '&:hover': {
-            color: `${colorStyled.colorWhite}`, // Измените цвет рамки при наведении
+            color: `${colorStyled.colorWhite}`,
           },
         }),
         input: (provided) => ({
@@ -364,15 +343,15 @@ export const CategorySelect = ({ options, ...props }) => {
           textAlign: 'right',
           color: state.isFocused
             ? `${colorStyled.colorWhiteFifty}`
-            : `${colorStyled.colorWhite}`, // Установите цвет текста элемента списка здесь
+            : `${colorStyled.colorWhite}`,
         }),
         valueContainer: (provided) => ({
           ...provided,
-          padding: 0, // Установите цвет текста элемента списка здесь
+          padding: 0,
         }),
         dropdownIndicator: (provided, state) => ({
           ...provided,
-          transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0deg)', // Поворачиваем стрелку вверх при открытии меню
+          transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0deg)',
         }),
       }}
     />
@@ -451,7 +430,7 @@ export const ServingSelect = ({ options, ...props }) => {
           overflow: 'hidden',
           cursor: 'pointer',
           '&:hover': {
-            color: `${colorStyled.colorWhite}`, // Измените цвет рамки при наведении
+            color: `${colorStyled.colorWhite}`,
           },
         }),
         input: (provided) => ({
@@ -483,15 +462,15 @@ export const ServingSelect = ({ options, ...props }) => {
           textAlign: 'right',
           color: state.isFocused
             ? `${colorStyled.colorWhiteFifty}`
-            : `${colorStyled.colorWhite}`, // Установите цвет текста элемента списка здесь
+            : `${colorStyled.colorWhite}`,
         }),
         valueContainer: (provided) => ({
           ...provided,
-          padding: 0, // Установите цвет текста элемента списка здесь
+          padding: 0,
         }),
         dropdownIndicator: (provided, state) => ({
           ...provided,
-          transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0deg)', // Поворачиваем стрелку вверх при открытии меню
+          transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0deg)',
         }),
       }}
     />
@@ -507,10 +486,9 @@ export const RadioWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 26px;
 `;
 export const RadioLabel = styled.label`
-  // Ваши стили для RadioLabel
   display: flex;
   align-items: center;
   margin-right: 20px;
@@ -521,10 +499,13 @@ export const RadioLabel = styled.label`
   &.checked {
     color: #f3f3f3;
   }
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const RadioInput = styled.input`
-  // Ваши стили для RadioInput
   &[type='radio'] {
     position: absolute;
     width: 1px;
@@ -539,7 +520,6 @@ export const RadioInput = styled.input`
   }
 `;
 
-//checked-style
 export const RadioSpan = styled.span`
   position: relative;
   width: 16px;

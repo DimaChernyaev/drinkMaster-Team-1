@@ -4,30 +4,6 @@ import { ReactComponent as PlusSVG } from '../../../../assets/AddDrink/PlusForm.
 import { ReactComponent as MinuseSVG } from '../../../../assets/AddDrink/MinusForm.svg';
 import { ReactComponent as DeleteSVG } from '../../../../assets/AddDrink/X.svg';
 import Select from 'react-select';
-// export const colorStyled = {
-//   colorStyled.colorWhite: '#F3F3F3',
-//   colorStyled.colorWhiteFifty: 'rgba(243, 243, 243, 0.5)',
-//   colorStyled.colorWhiteFourty: 'rgba(243, 243, 243, 0.4)',
-//   colorStyled.colorWhiteTwenty: 'rgba(243, 243, 243, 0.2)',
-//   colorStyled.colorBlue: '#161F37',
-//   colorStyled.colorBlueFifty: 'rgba(22, 31, 55, 0.5)',
-//   colorStyled.colorHover: 'rgba(64, 112, 205, 0.5)',
-//   colorStyled.welcomePageText: '#FAFAFA',
-//   colorStyled.backgroundBlackColor: '#0A0A11',
-//   colorStyled.buttonCancel: '#434D67',
-// };
-
-// @media (min-width: 375px) {
-//   width: 335px;
-// }
-
-// @media (min-width: 768px) {
-//   width: 342px;
-// }
-
-// @media (min-width: 1280px) {
-//   width: 400px;
-// }
 
 export const FormError = styled.div`
   flex-basis: 100%;
@@ -44,6 +20,9 @@ export const IngredientsWrapper = styled.div`
   flex-wrap: wrap;
   gap: 18px;
   margin-top: 80px;
+  @media (min-width: 768px) {
+    gap: 24px;
+  }
   @media (min-width: 1280px) {
     width: 540px;
   }
@@ -53,10 +32,13 @@ export const ControlWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
 `;
 export const IngredientsTitle = styled.h3`
   font-size: 28px;
+  @media (min-width: 768px) {
+    font-size: 40px;
+  }
 `;
 
 export const Controls = styled.div`
@@ -118,7 +100,7 @@ export const IngredientsSelect = ({ options, ...props }) => {
         control: (provided, state) => ({
           ...provided,
           height: 'auto',
-          padding: '6px',
+          padding: '6px 16px',
           backgroundColor: 'transparent',
           border: state.isFocused
             ? `1px solid ${colorStyled.colorWhite}`
@@ -127,6 +109,9 @@ export const IngredientsSelect = ({ options, ...props }) => {
           borderRadius: '200px',
           '&:hover': {
             borderColor: `${colorStyled.colorWhite}`,
+          },
+          '@media (min-width: 768px)': {
+            padding: '9px 19px',
           },
         }),
         placeholder: (provided, state) => ({
@@ -145,7 +130,7 @@ export const IngredientsSelect = ({ options, ...props }) => {
           overflow: 'hidden',
           cursor: 'pointer',
           '&:hover': {
-            color: `${colorStyled.colorWhite}`, // Измените цвет рамки при наведении
+            color: `${colorStyled.colorWhite}`,
           },
         }),
         input: (provided) => ({
@@ -239,5 +224,6 @@ export const IngredientsInput = styled.input`
   }
   @media (min-width: 768px) {
     min-width: 150px;
+    padding: 18px 24px;
   }
 `;

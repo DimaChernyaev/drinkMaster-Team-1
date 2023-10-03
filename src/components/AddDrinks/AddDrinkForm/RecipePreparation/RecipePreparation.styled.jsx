@@ -62,6 +62,10 @@ export const RecipeLabel = styled.label`
   pointer-events: none;
   color: ${(props) => (props.$hasValueDescription ? '#3CBC81' : '#F3F3F380')};
   font-size: 14px;
+    @media (min-width: 768px) {
+    font-size: 17px;
+  }
+
 `;
 export const RecipeTextarea = styled.textarea`
   resize: none;
@@ -72,9 +76,12 @@ export const RecipeTextarea = styled.textarea`
   border: 1px solid ${colorStyled.colorWhiteFifty};
   background-color: transparent;
   color: ${colorStyled.colorWhite};
-  font-size: 16px;
+  font-size: 17px;
   font-family: Manrope;
   font-weight: 600;
   line-height: 18px;
   word-wrap: break-word;
+  @media (min-width: 768px) {
+    width: 480px;
+  }
 `;

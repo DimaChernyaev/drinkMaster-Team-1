@@ -33,6 +33,21 @@ export const FormError = styled.div`
   line-height: 14px;
   margin-top: 8px;
 `;
+export const DescriptionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @media (min-width: 375px) {
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  @media (min-width: 1280px) {
+    width: 833px;
+  }
+`;
 
 export const ImageWrapper = styled.div`
   width: 100%;
@@ -59,13 +74,13 @@ export const ImageWrapper = styled.div`
     /* width: 335px; */
   }
 
-   @media (min-width: 768px) {
-     /* width: 342px; */
-   }
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
 
-   @media (min-width: 1280px) {
-     /* width: 400px; */
-   }
+  @media (min-width: 1280px) {
+    height: 400px;
+  }
 `;
 
 export const ImageDrink = styled.img`
@@ -104,7 +119,6 @@ export const ImageLabel = styled.label`
   height: 50px;
   background-color: white;
   border-radius: 6px;
-  
 
   cursor: pointer;
 `;
@@ -123,6 +137,9 @@ export const Wrapper = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   gap: 14px;
+  @media (min-width: 768px) {
+    gap: 27px;
+  }
 `;
 
 export const NameInputWrapper = styled.div`
@@ -143,7 +160,13 @@ export const NameLabel = styled.label`
   pointer-events: none;
   color: ${(props) => (props.$hasValue ? '#3CBC81' : '#F3F3F380')};
   font-size: ${(props) =>
-    props.$isFocused || props.$hasValue ? '12px' : '14px'};
+  props.$isFocused || props.$hasValue ? '12px' : '14px'};
+      @media (min-width: 768px) {
+    font-size: ${(props) =>
+      props.$isFocusedDescription || props.$hasValueDescription
+        ? '12px'
+        : '16px'};
+  }
 `;
 
 export const NameInput = styled.input`
@@ -164,6 +187,9 @@ export const NameInput = styled.input`
     transform: translate(10px, -30px) scale(0.8);
     font-size: 12px;
   }
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const RecipeWrapper = styled.div`
@@ -174,7 +200,9 @@ export const RecipeWrapper = styled.div`
 export const RecipeLabel = styled.label`
   position: absolute;
   top: ${(props) =>
-    props.$isFocusedDescription || props.$hasValueDescription ? '-15px' : '10px'};
+    props.$isFocusedDescription || props.$hasValueDescription
+      ? '-15px'
+      : '10px'};
   left: 0px;
   transform-origin: left;
   color: ${(props) => (props.$isFocusedDescription ? '#F3F3F380' : '#f3f3f3')};
@@ -188,18 +216,27 @@ export const RecipeLabel = styled.label`
     props.$isFocusedDescription || props.$hasValueDescription
       ? '12px'
       : '14px'};
+  @media (min-width: 768px) {
+    font-size: ${(props) =>
+      props.$isFocusedDescription || props.$hasValueDescription
+        ? '12px'
+        : '16px'};
+  }
 `;
 
 export const RecipeTextarea = styled.textarea`
+  width: 100%;
   resize: none;
+  font-family: Manrope;
+  font-size: 14px;
   color: #f3f3f3;
   padding: 8px;
   border: 1px solid transparent;
   border-bottom: 1px solid #f3f3f380;
   background-color: transparent;
   transition: border-color 250ms;
-  width: 100%;
-  font-size: 14px;
+ 
+
 
   &:focus {
     border-bottom: 1px solid;
@@ -211,6 +248,9 @@ export const RecipeTextarea = styled.textarea`
   }
   &::-webkit-scrollbar {
     display: none;
+  }
+  @media (min-width: 768px) {
+    font-size: 16px;
   }
 `;
 
@@ -225,6 +265,9 @@ export const CategoryWrapper = styled.div`
   transition: border-color 250ms;
   width: 100%;
   font-size: 14px;
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const CategoryLabel = styled.label`
@@ -244,6 +287,12 @@ export const CategoryLabel = styled.label`
     props.$isFocusedDescription || props.$hasValueDescription
       ? '12px'
       : '14px'};
+  @media (min-width: 768px) {
+    font-size: ${(props) =>
+      props.$isFocusedDescription || props.$hasValueDescription
+        ? '12px'
+        : '16px'};
+  }
 `;
 
 export const CategorySelect = ({ options, ...props }) => {
@@ -342,6 +391,9 @@ export const ServingWrapper = styled.div`
   transition: border-color 250ms;
   width: 100%;
   font-size: 14px;
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const ServingLabel = styled.label`
@@ -445,8 +497,6 @@ export const ServingSelect = ({ options, ...props }) => {
     />
   );
 };
-
-
 
 export const Label = styled.label`
   font-weight: bold;

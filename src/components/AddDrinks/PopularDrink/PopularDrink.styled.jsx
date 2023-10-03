@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { colorStyled } from '../../../helpers/colorStyled';
 // export const colorStyled = {
 //   colorStyled.colorWhite: '#F3F3F3',
@@ -25,7 +25,23 @@ import { colorStyled } from '../../../helpers/colorStyled';
 //   width: 400px;
 // }
 
-
+export const PopularWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 80px;
+  @media (min-width: 768px) {
+    margin-bottom: 140px;
+    flex-direction: row;
+    gap: 32px;
+  }
+  @media (min-width: 1280px) {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 0;
+  }
+`;
 export const PopularCoctailsTitle = styled.h4`
   color: ${colorStyled.colorWhite};
   font-size: 18px;
@@ -38,18 +54,25 @@ export const PopularCoctailsTitle = styled.h4`
 `;
 
 export const PopularCoctailsWrapper = styled.div`
-display: inline-flex;
-justify-content: flex-start;
-align-items: center;
-gap: 14px;
-margin-bottom: 24px;
-overflow: hidden;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  @media (min-width: 768px) {
+    width: 336px;
+    margin-bottom: 0;
+  }
+  @media (min-width: 1280px) {
+    width: 312px;
+  }
 `;
 
 export const PopularCoctailsImage = styled.img`
-width: 90px;
-height: 90px;
-border-radius: 8px;
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
 `;
 
 export const PopularCoctailsText = styled.div`

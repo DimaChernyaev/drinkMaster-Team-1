@@ -18,6 +18,10 @@ export const Title = styled.h3`
 `;
 
 export const Preparation = styled.p`
+  @media (max-width: 374px) {
+    width: 300px;
+  }
+  
   width: 335px;
   color: var(--white-color);
   font-size: 14px;

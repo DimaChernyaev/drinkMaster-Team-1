@@ -28,7 +28,9 @@ const DrinksListOwn = ({ drinks }) => {
 
   return (
     <>
-      {!error && !isLoading && drinks.length === 0 && <NotFound />}
+      {!error && !isLoading && drinks.length === 0 && (
+        <NotFound text={"You haven't added any of your own cocktails yet"} />
+      )}
 
       <DrinksListSet>
         {drinks.length > 0 &&

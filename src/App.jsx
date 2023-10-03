@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import { selectIsRefreshing } from './redux/auth/authSelectors';
 import { refresh } from './redux/auth/authOperations';
 import Loader from './components/Loader/Loader';
+import { Container } from './components/SharedLayout/SharedLayout.styled';
 
 const HomePage = lazy(() => import('../src/pages/HomePage/HomePage'));
 const DrinksPage = lazy(() => import('../src/pages/DrinksPage/DrinksPage'));
@@ -42,7 +43,9 @@ function App() {
   return (
     <>
       {isRefreshing ? (
-        <Loader />
+        <Container>
+          <Loader />
+        </Container>
       ) : (
         <Routes>
           <Route

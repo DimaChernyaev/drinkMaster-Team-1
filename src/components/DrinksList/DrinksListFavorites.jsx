@@ -28,7 +28,9 @@ const DrinksListFavorites = ({ drinks }) => {
 
   return (
     <>
-      {!error && !isLoading && drinks.length === 0 && <NotFound />}
+      {!error && !isLoading && drinks.length === 0 && (
+        <NotFound text={"You haven't added any favorites cocktails yet"} />
+      )}
 
       <DrinksListSet>
         {drinks.length > 0 &&

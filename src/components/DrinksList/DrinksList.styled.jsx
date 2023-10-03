@@ -21,9 +21,9 @@ export const DrinksListSet = styled.ul`
   // row-gap: <line-size>;
 `;
 
-export const CardWrap = styled.div`
+export const CardWrap = styled.li`
   display: block;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0;
   margin-bottom: 40px;

@@ -1,9 +1,8 @@
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { deleteFavorite } from '../../redux/drinks/favorites/favoritesOperations';
+import { deleteOwn } from '../../redux/drinks/own/ownOperations';
 import {
   selectError,
-  // selectFavoriteItems,
   selectIsLoading,
 } from '../../redux/drinks/favorites/favoriteSelectors';
 import NotFound from '../NotFound/NotFound';
@@ -22,16 +21,16 @@ import {
   ButtonDel,
 } from './DrinksList.styled';
 
-const DrinksList = ({ drinks }) => {
+const DrinksListOwn = ({ drinks }) => {
   const dispatch = useDispatch();
-  // const drinks = useSelector(selectFavoriteItems);
-  // console.log('drinks', drinks);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
   return (
     <>
-      {!error && !isLoading && drinks.length === 0 && <NotFound />}
+      {!error && !isLoading && drinks.length === 0 && (
+        <NotFound text={"You haven't added any of your own cocktails yet"} />
+      )}
 
       <DrinksListSet>
         {drinks.length > 0 &&
@@ -52,7 +51,7 @@ const DrinksList = ({ drinks }) => {
 
                   <ButtonDel
                     type="button"
-                    onClick={() => dispatch(deleteFavorite(_id))}
+                    onClick={() => dispatch(deleteOwn(_id))}
                   >
                     <img src={icon} alt="trash" />
                   </ButtonDel>
@@ -65,4 +64,4 @@ const DrinksList = ({ drinks }) => {
   );
 };
 
-export default DrinksList;
+export default DrinksListOwn;

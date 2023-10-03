@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
+
+
+@media (max-width: 374px) {
+      margin-left: 40px;
+      
+    }
+
   width: 222px;
   color: var(--blue-color);
   background-color: var(--white-color);
@@ -13,8 +20,9 @@ export const Button = styled.button`
   margin-bottom: 80px;
   transition:
     background-color var(--transition),
-    color var(--transition),
-    box-shadow var(--transition);
+    color var(--transition);
+
+
 
   &:hover {
     background-color: var(--blue-color);
@@ -22,9 +30,9 @@ export const Button = styled.button`
   }
 
   &:active {
-    background-color:  var(--blue-color);
-    color:  var(--white-color);
-    box-shadow: 0 0 10px  var(--whitefifty-color);
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    box-shadow: 0 0 10px var(--whitefifty-color);
   }
 
   @media (min-width: 768px) {

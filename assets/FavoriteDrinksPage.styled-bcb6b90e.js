@@ -1,4 +1,4 @@
-import{r as a,n as i,j as e}from"./index-f7767359.js";function m(){const[o,n]=a.useState();return a.useEffect(()=>{function t(){window.innerWidth<1438?n(4):n(9)}return window.addEventListener("resize",t),t(),()=>{window.removeEventListener("resize",t)}},[]),o}const r="/drinkMaster-Team-1/assets/asr_blue_iced_tea_1-e64cabfc.png",p=i.div`
+import{r as o,n as i,j as n}from"./index-f6e3e287.js";function m(){const[t,a]=o.useState();return o.useEffect(()=>{function e(){window.innerWidth<1438?a(4):a(9)}return window.addEventListener("resize",e),e(),()=>{window.removeEventListener("resize",e)}},[]),t}const r="/drinkMaster-Team-1/assets/asr_blue_iced_tea_1-e64cabfc.png",p=i.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@ import{r as a,n as i,j as e}from"./index-f7767359.js";function m(){const[o,n]=a.
   @media (min-width: 1440px) {
     margin-top: 67px;
   }
-`,d=i.img`
+`,s=i.img`
   width: 198px;
   height: 247px;
 
@@ -29,7 +29,7 @@ import{r as a,n as i,j as e}from"./index-f7767359.js";function m(){const[o,n]=a.
 
   @media (min-width: 1440px) {
   }
-`,s=i.p`
+`,d=i.p`
   width: 205px;
   color: var(--white-color);
   text-align: center;
@@ -46,7 +46,7 @@ import{r as a,n as i,j as e}from"./index-f7767359.js";function m(){const[o,n]=a.
   @media (min-width: 1440px) {
     // margin-top: 27px;
   }
-`,l=()=>e.jsxs(p,{children:[e.jsx(d,{src:r,alt:"blue iced tea"}),e.jsx(s,{children:" You haven't added any favorite cocktails yet"})]}),c="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",g=i.ul`
+`,l=({text:t})=>n.jsxs(p,{children:[n.jsx(s,{src:r,alt:"blue iced tea"}),n.jsxs(d,{children:[" ",t]})]}),c="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",g=i.ul`
   padding: 0;
   margin: 0;
   margin-top: 40px;
@@ -65,9 +65,9 @@ import{r as a,n as i,j as e}from"./index-f7767359.js";function m(){const[o,n]=a.
 
   // column-gap: <line-size>;
   // row-gap: <line-size>;
-`,h=i.div`
+`,h=i.li`
   display: block;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0;
   margin-bottom: 40px;

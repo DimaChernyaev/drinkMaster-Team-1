@@ -27,7 +27,6 @@ import {
   ServingSelect,
   Wrapper,
   RadioWrapper,
-  //  Label,
   RadioLabel,
   RadioInput,
   RadioSpan,
@@ -97,25 +96,24 @@ const DrinkDescriptionFields = ({
     }
   };
 
-    const handleImageWrapperClick = () => {
-      // Имитировать клик на ImageInput
-      const imageInput = document.getElementById('drinkThumb');
-      imageInput.click();
-    };
+  const handleImageWrapperClick = () => {
+    const imageInput = document.getElementById('drinkThumb');
+    imageInput.click();
+  };
 
   const handleInputChange = (e) => {
     const { value } = e.target;
-    setHasValue(value.trim().length > 1);
+    setHasValue(value.trim().length >= 1);
   };
 
   const handleDescriptionChange = (e) => {
     const { value } = e.target;
-    setHasValueDescription(value.trim().length > 25);
+    setHasValueDescription(value.trim().length >= 1);
   };
 
   const handleSelectCategoriesChange = (selectedOption) => {
     setSelectedCategoriesOption(selectedOption);
-    setFieldValue(`category`, selectedOption.value); // Установите значение в формик
+    setFieldValue(`category`, selectedOption.value);
   };
 
   const handleSelectGlassesChange = (selectedOption) => {

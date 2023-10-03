@@ -6,8 +6,6 @@ export const fetchOwn = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await axios.get('/drinks/own');
-      // const response = await axios.get('/drinks/favorite');
-      // При успішному запиті повертаємо проміс із даними
       return data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);
@@ -19,6 +17,7 @@ export const addOwn = createAsyncThunk(
   'own/addOwn',
   async (dataUser, thunkAPI) => {
     try {
+      console.log(dataUser);
       const { data } = await axios.post('/drinks/own/add', dataUser, {
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -35,7 +34,9 @@ export const deleteOwn = createAsyncThunk(
   'own/deleteOwn',
   async (drinkId, thunkAPI) => {
     try {
+      console.log(drinkId);
       const { data } = await axios.delete(`/drinks/own/remove/${drinkId}`);
+      console.log(data);
       return data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);

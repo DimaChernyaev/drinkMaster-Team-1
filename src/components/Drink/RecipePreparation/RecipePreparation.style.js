@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const Recipe = styled.div`
+  margin-bottom: 80px;
+  @media (min-width: 768px) {
+    margin-bottom: 140px;
+  }
   @media (min-width: 1280px) {
     display: flex;
     flex-direction: row-reverse;
@@ -17,6 +21,7 @@ export const Preparation = styled.p`
   @media (max-width: 374px) {
     width: 300px;
   }
+  
   width: 335px;
   color: var(--white-color);
   font-size: 14px;

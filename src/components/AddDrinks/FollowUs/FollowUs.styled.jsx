@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const FollowUsWrapper = styled.div`
   margin-top: 80px;
@@ -8,9 +7,8 @@ export const FollowUsWrapper = styled.div`
   }
 `;
 export const FollowUsTitle = styled.h4`
-  color: ${colorStyled.colorWhite};
+  color: var(--white-color);
   font-size: 18px;
-  font-family: Manrope;
   font-weight: 500;
   line-height: 24px;
   @media (min-width: 768px) {

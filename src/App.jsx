@@ -44,7 +44,7 @@ function App() {
     <>
       {isRefreshing ? (
         <Container>
-          <Loader />
+          <Loader text={'Loading...'} />
         </Container>
       ) : (
         <Routes>

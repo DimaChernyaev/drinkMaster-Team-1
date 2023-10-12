@@ -40,7 +40,6 @@ export const UserInfoModal = ({ isOpen, handleClose }) => {
 
   const handleChangeAvatar = ({ target }) => {
     const file = target.files[0];
-    console.log(file);
     const maxSizeFile = 5 * 1024 * 1024;
     if (file.size > maxSizeFile) {
       Notify.failure('Файл повинен бути менше 5Mb', {

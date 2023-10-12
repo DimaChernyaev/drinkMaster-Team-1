@@ -1,6 +1,31 @@
 import styled from '@emotion/styled';
 import ReactPaginate from 'react-paginate';
-// import { colorStyled } from '../../helpers/colorStyled';
+import {
+  MdOutlineArrowBackIos,
+  MdOutlineArrowForwardIos,
+} from 'react-icons/md';
+
+export const PreviousButton = styled(MdOutlineArrowBackIos)`
+  color: rgba(243, 243, 243, 0.3);
+  width: 15px;
+  height: 15px;
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--white-color);
+  }
+`;
+
+export const NextButton = styled(MdOutlineArrowForwardIos)`
+  color: rgba(243, 243, 243, 0.3);
+  width: 15px;
+  height: 15px;
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--white-color);
+  }
+`;
 
 export const StyledReactPaginate = styled(ReactPaginate)`
   display: flex;
@@ -27,15 +52,15 @@ export const StyledReactPaginate = styled(ReactPaginate)`
     width: 28px;
     height: 28px;
     cursor: pointer;
+    border-radius: 50%;
+    transition: background var(--transition);
 
     &:hover {
       background-color: var(--hovergreen-color);
-      border-radius: 50%;
     }
 
     &.active {
       background-color: var(--hovergreen-color);
-      border-radius: 50%;
     }
 
     &.selected {
@@ -51,6 +76,7 @@ export const StyledReactPaginate = styled(ReactPaginate)`
     color: var(--white-color);
     font-weight: 500;
     font-size: 12px;
+    border-radius: 50%;
   }
 
   .previous {

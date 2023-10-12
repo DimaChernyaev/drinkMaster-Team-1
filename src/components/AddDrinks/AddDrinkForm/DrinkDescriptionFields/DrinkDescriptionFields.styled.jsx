@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { colorStyled } from '../../../../helpers/colorStyled';
 import { ReactComponent as MySvg } from '../../../../assets/AddDrink/plus.svg';
 import Select from 'react-select';
 
 export const FormError = styled.div`
   font-size: 12px;
-  color: #da1414;
+  color: var(--errorred-color);
   line-height: 14px;
   margin-top: 8px;
 `;
@@ -36,14 +35,14 @@ export const ImageWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  background: ${colorStyled.colorBlueFifty};
+  background: var(--bluefifty-color);
   border-radius: 8px;
   overflow: hidden;
-  transition: background-color 0.3s ease-in-out;
+  transition: background var(--transition);
   cursor: pointer;
 
   &:hover {
-    background: ${colorStyled.colorBlue};
+    background: var(--blue-color);
   }
 
   @media (min-width: 375px) {
@@ -60,9 +59,10 @@ export const ImageWrapper = styled.div`
 `;
 
 export const ImageDrink = styled.img`
-  width: 100%;
+  min-width: 100%;
   min-height: 130%; /* Максимальная ширина изображения равна ширине родителя */
   height: auto; /* Автоматическая высота, чтобы сохранить соотношение сторон */
+  object-fit: cover;
   display: block;
 `;
 
@@ -104,7 +104,7 @@ export const PlusSVG = styled(MySvg)`
   height: 28px;
   color: green;
   fill: red;
-  stroke: ${colorStyled.colorBlue};
+  stroke: var(--blue-color);
 `;
 
 export const Wrapper = styled.div`
@@ -129,13 +129,15 @@ export const NameLabel = styled.label`
   top: ${(props) => (props.$isFocused || props.$hasValue ? '-15px' : '10px')};
   left: 0px;
   transform-origin: left;
-  color: ${(props) => (props.$isFocused ? '#F3F3F380' : '#f3f3f3')};
+  color: ${(props) =>
+    props.$isFocused ? `var(--whiteeighty-color)` : `var(--white-color)`};
   transition:
     transform 25ms,
-    font-size 250ms,
-    color 200ms;
+    font-size var(--transition),
+    color var(--transition);
   pointer-events: none;
-  color: ${(props) => (props.$hasValue ? '#3CBC81' : '#F3F3F380')};
+  color: ${(props) =>
+    props.$hasValue ? `var(--successgren-color)` : `var(--whiteeighty-color)`};
   font-size: ${(props) =>
     props.$isFocused || props.$hasValue ? '12px' : '14px'};
   @media (min-width: 768px) {
@@ -146,14 +148,16 @@ export const NameLabel = styled.label`
 `;
 
 export const NameInput = styled.input`
-  font-family: Manrope;
   font-size: 14px;
-  color: #f3f3f3;
+  color: var(--white-color);
   padding: 8px;
   border: 1px solid transparent;
-  border-bottom: 1px solid #f3f3f380;
+  border-bottom: 1px solid var(--whiteeighty-color);
   background-color: transparent;
-  transition: border-color 250ms;
+  transition:
+    border-color var(--transition),
+    transform var(--transition),
+    font-size var(--transition);
   width: 100%;
 
   &:focus {
@@ -182,13 +186,19 @@ export const RecipeLabel = styled.label`
       : '10px'};
   left: 0px;
   transform-origin: left;
-  color: ${(props) => (props.$isFocusedDescription ? '#F3F3F380' : '#f3f3f3')};
+  color: ${(props) =>
+    props.$isFocusedDescription
+      ? `var(--whiteeighty-color)`
+      : `var(--white-color)`};
   transition:
     transform 25ms,
-    font-size 250ms,
-    color 200ms;
+    font-size var(--transition),
+    color var(--transition);
   pointer-events: none;
-  color: ${(props) => (props.$hasValueDescription ? '#3CBC81' : '#F3F3F380')};
+  color: ${(props) =>
+    props.$hasValueDescription
+      ? `var(--successgren-color)`
+      : `var(--whiteeighty-color)`};
   font-size: ${(props) =>
     props.$isFocusedDescription || props.$hasValueDescription
       ? '12px'
@@ -208,14 +218,16 @@ export const RecipeLabel = styled.label`
 export const RecipeTextarea = styled.textarea`
   width: 100%;
   resize: none;
-  font-family: Manrope;
   font-size: 14px;
-  color: #f3f3f3;
+  color: var(--white-color);
   padding: 8px;
   border: 1px solid transparent;
-  border-bottom: 1px solid #f3f3f380;
+  border-bottom: 1px solid var(--whiteeighty-color);
   background-color: transparent;
-  transition: border-color 250ms;
+  transition:
+    border-color var(--transition),
+    transform var(--transition),
+    font-size var(--transition);
 
   &:focus {
     border-bottom: 1px solid;
@@ -238,10 +250,10 @@ export const CategoryWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  color: #f3f3f380;
-  border-bottom: 1px solid #f3f3f380;
+  color: var(--whiteeighty-color);
+  border-bottom: 1px solid var(--whiteeighty-color);
   background-color: transparent;
-  transition: border-color 250ms;
+  transition: border-color var(--transition);
   width: 100%;
   font-size: 14px;
   @media (min-width: 768px) {
@@ -255,13 +267,19 @@ export const CategoryLabel = styled.label`
     props.$isFocusedDescription || props.$hasValueDescription ? '5px' : '30px'};
   left: 10px;
   transform-origin: left;
-  color: ${(props) => (props.$isFocusedDescription ? '#F3F3F380' : '#f3f3f3')};
+  color: ${(props) =>
+    props.$isFocusedDescription
+      ? `var(--whiteeighty-color)`
+      : `var(--white-color)`};
   transition:
     transform 25ms,
-    font-size 250ms,
-    color 200ms;
+    font-size var(--transition),
+    color var(--transition);
   pointer-events: none;
-  color: ${(props) => (props.$hasValueDescription ? '#3CBC81' : '#F3F3F380')};
+  color: ${(props) =>
+    props.$hasValueDescription
+      ? `var(--successgren-color)`
+      : `var(--whiteeighty-color)`};
   font-size: ${(props) =>
     props.$isFocusedDescription || props.$hasValueDescription
       ? '12px'
@@ -299,19 +317,20 @@ export const CategorySelect = ({ options, ...props }) => {
           ...provided,
           margin: 0,
           color: state.isFocused
-            ? `${colorStyled.colorWhite}`
-            : `${colorStyled.colorWhiteFifty}`,
+            ? `var(--white-color)`
+            : `var(--whitefifty-color)`,
         }),
         option: (provided) => ({
           ...provided,
           padding: '14px',
-          color: `${colorStyled.colorWhiteFifty}`,
-          background: '#161F37',
+          color: `var(--whitefifty-color)`,
+          background: `var(--blue-color)`,
           borderRadius: '20px',
           overflow: 'hidden',
           cursor: 'pointer',
+          transition: `color var(--transition)`,
           '&:hover': {
-            color: `${colorStyled.colorWhite}`,
+            color: `var(--white-color)`,
           },
         }),
         input: (provided) => ({
@@ -319,12 +338,12 @@ export const CategorySelect = ({ options, ...props }) => {
           padding: 0,
           margin: 0,
           border: 'none',
-          color: `${colorStyled.colorWhite}`,
+          color: `var(--white-color)`,
         }),
         menu: (provided) => ({
           ...provided,
           padding: '14px',
-          background: '#161F37',
+          background: `var(--blue-color)`,
           borderRadius: '20px',
           overflow: 'hidden',
         }),
@@ -342,8 +361,8 @@ export const CategorySelect = ({ options, ...props }) => {
           ...provided,
           textAlign: 'right',
           color: state.isFocused
-            ? `${colorStyled.colorWhiteFifty}`
-            : `${colorStyled.colorWhite}`,
+            ? `var(--whitefifty-color)`
+            : `var(--white-color)`,
         }),
         valueContainer: (provided) => ({
           ...provided,
@@ -363,11 +382,11 @@ export const ServingWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #f3f3f380;
+  color: var(--whiteeighty-color);
   border: 1px solid transparent;
-  border-bottom: 1px solid #f3f3f380;
+  border-bottom: 1px solid var(--whiteeighty-color);
   background-color: transparent;
-  transition: border-color 250ms;
+  transition: border-color var(--transition);
   width: 100%;
   font-size: 14px;
   @media (min-width: 768px) {
@@ -381,13 +400,19 @@ export const ServingLabel = styled.label`
     props.$isFocusedDescription || props.$hasValueDescription ? '5px' : '30px'};
   left: 10px;
   transform-origin: left;
-  color: ${(props) => (props.$isFocusedDescription ? '#F3F3F380' : '#f3f3f3')};
+  color: ${(props) =>
+    props.$isFocusedDescription
+      ? `var(--whiteeighty-color)`
+      : `var(--white-color)`};
   transition:
     transform 25ms,
-    font-size 250ms,
-    color 200ms;
+    font-size var(--transition),
+    color var(--transition);
   pointer-events: none;
-  color: ${(props) => (props.$hasValueDescription ? '#3CBC81' : '#F3F3F380')};
+  color: ${(props) =>
+    props.$hasValueDescription
+      ? `var(--successgren-color)`
+      : `var(--whiteeighty-color)`};
   font-size: ${(props) =>
     props.$isFocusedDescription || props.$hasValueDescription
       ? '12px'
@@ -418,19 +443,20 @@ export const ServingSelect = ({ options, ...props }) => {
           ...provided,
           margin: 0,
           color: state.isFocused
-            ? `${colorStyled.colorWhite}`
-            : `${colorStyled.colorWhiteFifty}`,
+            ? `var(--white-color)`
+            : `var(--whitefifty-color)`,
         }),
         option: (provided) => ({
           ...provided,
           padding: '14px',
-          color: `${colorStyled.colorWhiteFifty}`,
-          background: '#161F37',
+          color: `var(--whitefifty-color)`,
+          background: `var(--blue-color)`,
           borderRadius: '20px',
           overflow: 'hidden',
           cursor: 'pointer',
+          transition: `color var(--transition)`,
           '&:hover': {
-            color: `${colorStyled.colorWhite}`,
+            color: `var(--white-color)`,
           },
         }),
         input: (provided) => ({
@@ -438,12 +464,12 @@ export const ServingSelect = ({ options, ...props }) => {
           padding: 0,
           margin: 0,
           border: 'none',
-          color: `${colorStyled.colorWhite}`,
+          color: `var(--white-color)`,
         }),
         menu: (provided) => ({
           ...provided,
           padding: '14px',
-          background: '#161F37',
+          background: `var(--blue-color)`,
           borderRadius: '20px',
           overflow: 'hidden',
         }),
@@ -461,8 +487,8 @@ export const ServingSelect = ({ options, ...props }) => {
           ...provided,
           textAlign: 'right',
           color: state.isFocused
-            ? `${colorStyled.colorWhiteFifty}`
-            : `${colorStyled.colorWhite}`,
+            ? `var(--whitefifty-color)`
+            : `var(--white-color)`,
         }),
         valueContainer: (provided) => ({
           ...provided,
@@ -494,10 +520,11 @@ export const RadioLabel = styled.label`
   margin-right: 20px;
   cursor: pointer;
   font-size: 14px;
-  color: ${(props) => (props.checked ? '#F3F3F3' : '#F3F3F380')};
+  color: ${(props) =>
+    props.checked ? `var(--white-color)` : `var(--whiteeighty-color)`};
 
   &.checked {
-    color: #f3f3f3;
+    color: var(--white-color);
   }
 
   @media (min-width: 768px) {
@@ -525,19 +552,19 @@ export const RadioSpan = styled.span`
   width: 16px;
   height: 16px;
   margin-right: 4px;
-  border: 1.3px solid ${colorStyled.colorWhiteFifty};
+  border: 1.3px solid var(--whitefifty-color);
   border-radius: 50%;
   box-sizing: border-box;
 
   ${RadioInput}:checked + & {
-    border-color: ${colorStyled.colorWhite};
+    border-color: var(--white-color);
   }
 
   ${RadioInput}:checked + &::before {
     content: '';
     width: 8px;
     height: 8px;
-    background-color: ${colorStyled.colorWhite};
+    background-color: var(--white-color);
     border-radius: 50%;
     position: absolute;
     top: 50%;

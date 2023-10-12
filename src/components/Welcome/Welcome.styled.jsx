@@ -39,7 +39,7 @@ export const StyledDiv = styled.div`
 export const StyledSection = styled.section`
   width: 100%;
   height: 100vh;
-  background-color: #0a0a11;
+  background-color: var(--mainbackground-color);
   background-image: linear-gradient(
       0deg,
       rgba(10, 10, 17, 0.2) 0%,
@@ -71,15 +71,19 @@ export const StyledButton = styled(Button)`
   display: flex;
   gap: 10px;
   border-radius: 42px;
-  background: rgba(243, 243, 243, 0.2);
-  border: 1px solid rgba(243, 243, 243, 0.2);
-  color: #f3f3f3;
+  background: var(--whitetwenty-color);
+  border: 1px solid var(--whitetwenty-color);
+  color: var(--white-color);
+  transition:
+    color var(--transition),
+    background var(--transition),
+    transform var(--transition);
 
   && {
     &:hover,
     &:focus {
-      background-color: #f3f3f3;
-      color: #161f37;
+      background-color: var(--white-color);
+      color: var(--blue-color);
       transform: scale(1.05);
     }
   }
@@ -90,8 +94,7 @@ export const StyledButton = styled(Button)`
     gap: 14px;
   }
 
-  @media screen and (min-width: 1440px){
-    
+  @media screen and (min-width: 1440px) {
   }
 `;
 export const StyledTypographyH2 = styled(Typography)`
@@ -150,4 +153,3 @@ export const StyledBoxBig = styled(Box)`
   filter: blur(104.8543701171875px);
   z-index: 1;
 `;
-

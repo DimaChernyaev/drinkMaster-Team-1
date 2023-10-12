@@ -18,7 +18,7 @@ const SharedLayout = () => {
       <Main>
         <Container>
           <StyledBlock></StyledBlock>
-          <Suspense fallback={<Loader />}>
+          <Suspense fallback={<Loader text={'Loading...'} />}>
             <Outlet />
             <StyledBlockTwo></StyledBlockTwo>
           </Suspense>

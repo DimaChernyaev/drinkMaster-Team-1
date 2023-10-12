@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colorStyled } from '../../../../helpers/colorStyled';
 import { ReactComponent as PlusSVG } from '../../../../assets/AddDrink/PlusForm.svg';
 import { ReactComponent as MinuseSVG } from '../../../../assets/AddDrink/MinusForm.svg';
 import { ReactComponent as DeleteSVG } from '../../../../assets/AddDrink/X.svg';
@@ -8,7 +7,7 @@ import Select from 'react-select';
 export const FormError = styled.div`
   flex-basis: 100%;
   font-size: 12px;
-  color: #da1414;
+  color: var(--errorred-color);
   line-height: 14px;
   margin-top: 4px;
   padding-left: 20px;
@@ -49,11 +48,11 @@ export const Controls = styled.div`
   width: 100px;
   height: 38px;
   border-radius: 200px;
-  border: 1px solid ${colorStyled.colorWhiteFifty};
+  border: 1px solid var(--whitefifty-color);
 `;
 
 export const ControlMinuse = styled(MinuseSVG)`
-  stroke: ${colorStyled.colorWhite};
+  stroke: var(--white-color);
 `;
 
 export const ControlsButton = styled.button`
@@ -64,7 +63,7 @@ export const ControlsButton = styled.button`
   background: transparent;
   border: none;
   &:disabled ${ControlMinuse} {
-    stroke: ${colorStyled.colorWhiteFifty};
+    stroke: var(--whitefifty-color);
   }
 `;
 
@@ -103,12 +102,13 @@ export const IngredientsSelect = ({ options, ...props }) => {
           padding: '6px 16px',
           backgroundColor: 'transparent',
           border: state.isFocused
-            ? `1px solid ${colorStyled.colorWhite}`
-            : `1px solid ${colorStyled.colorWhiteFifty}`,
+            ? `1px solid var(--white-color)`
+            : `1px solid var(--whitefifty-color)`,
           boxShadow: state.isFocused ? 'none' : 'none',
           borderRadius: '200px',
+          transition: `border-color var(--transition)`,
           '&:hover': {
-            borderColor: `${colorStyled.colorWhite}`,
+            borderColor: `var(--white-color)`,
           },
           '@media (min-width: 768px)': {
             padding: '9px 19px',
@@ -118,19 +118,20 @@ export const IngredientsSelect = ({ options, ...props }) => {
           ...provided,
           margin: 0,
           color: state.isFocused
-            ? `${colorStyled.colorWhite}`
-            : `${colorStyled.colorWhiteFifty}`,
+            ? `var(--white-color)`
+            : `var(--whitefifty-color)`,
         }),
         option: (provided) => ({
           ...provided,
           padding: '14px',
-          color: `${colorStyled.colorWhiteFifty}`,
-          background: '#161F37',
+          color: `var(--whitefifty-color)`,
+          background: `var(--blue-color)`,
           borderRadius: '20px',
           overflow: 'hidden',
           cursor: 'pointer',
+          transition: `color var(--transition)`,
           '&:hover': {
-            color: `${colorStyled.colorWhite}`,
+            color: `var(--white-color)`,
           },
         }),
         input: (provided) => ({
@@ -138,12 +139,12 @@ export const IngredientsSelect = ({ options, ...props }) => {
           padding: 0,
           margin: 0,
           border: 'none',
-          color: `${colorStyled.colorWhite}`,
+          color: `var(--white-color)`,
         }),
         menu: (provided) => ({
           ...provided,
           padding: '14px',
-          background: '#161F37',
+          background: `var(--blue-color)`,
           borderRadius: '20px',
           overflow: 'hidden',
         }),
@@ -160,8 +161,8 @@ export const IngredientsSelect = ({ options, ...props }) => {
         singleValue: (provided, state) => ({
           ...provided,
           color: state.isFocused
-            ? `${colorStyled.colorWhiteFifty}`
-            : `${colorStyled.colorWhite}`,
+            ? `var(--whitefifty-color)`
+            : `var(--white-color)`,
         }),
         valueContainer: (provided) => ({
           ...provided,
@@ -185,7 +186,7 @@ export const IngredientsDeleteButton = styled.button`
   background: transparent;
   border: none;
   &:disabled ${ControlMinuse} {
-    stroke: ${colorStyled.colorWhiteFifty};
+    stroke: var(--whitefifty-color);
   }
   @media (min-width: 375px) {
     padding: 0;
@@ -196,12 +197,14 @@ export const IngredientsDeleteButton = styled.button`
 `;
 
 export const ControlPluse = styled(PlusSVG)`
-  stroke: ${colorStyled.colorWhite};
+  stroke: var(--white-color);
 `;
 export const IngredientsDelete = styled(DeleteSVG)`
-  stroke: ${colorStyled.colorWhiteFifty};
+  stroke: var(--whitefifty-color);
+  transition: stroke var(--transition);
+
   &:hover {
-    stroke: ${colorStyled.colorWhite};
+    stroke: var(--white-color);
   }
 `;
 export const IngredientsInput = styled.input`
@@ -210,17 +213,19 @@ export const IngredientsInput = styled.input`
 
   font-size: 14px;
   line-height: 18px;
-  color: ${colorStyled.colorWhiteFifty};
+  color: var(--whitefifty-color);
   background-color: transparent;
 
   border-radius: 200px;
-  border: 1px rgba(243, 243, 243, 0.5) solid;
+  border: 1px solid var(--whitefifty-color);
   box-sizing: border-box;
+  transition: border-color var(--transition);
+
   &:hover {
-    border-color: ${colorStyled.colorWhite};
+    border-color: var(--white-color);
   }
   &:focus {
-    color: ${colorStyled.colorWhite};
+    color: var(--white-color);
   }
   @media (min-width: 768px) {
     min-width: 150px;

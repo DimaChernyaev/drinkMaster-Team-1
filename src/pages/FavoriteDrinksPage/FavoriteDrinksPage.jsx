@@ -11,7 +11,6 @@ import DrinksListFavorites from '../../components/DrinksList/DrinksListFavorites
 import Paginator from '../../components/Paginator/Paginator';
 import { Container } from './FavoriteDrinksPage.styled';
 import PageTitle from '../../components/DefaultComponents/PageTitle/PageTitle';
-import { deleteFavorite } from '../../redux/drinks/favorites/favoritesOperations';
 
 const FavoriteDrinksPage = () => {
   const dispatch = useDispatch();

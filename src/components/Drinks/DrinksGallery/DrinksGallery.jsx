@@ -1,11 +1,9 @@
-
 import ErrorPage from '../../../pages/ErrorPage/ErrorPage';
 import Paginator from '../../Paginator/Paginator';
 import { Loader } from '../../Loader/Loader.styled';
 import { ThreeDots } from 'react-loader-spinner';
 import {Styled_CardListDiv, CardList } from '../../Drinks/DrinksGallery/DrinksGallery.styled';
 import {CardCoctali } from '../../../helpers/CardCoctail/CardCoctail';
-//import { Insights } from '@mui/icons-material';
 
 
 // Компонент DrinksGallery. Рендерить галерею напоїв та уомпонент пагінації Paginator.

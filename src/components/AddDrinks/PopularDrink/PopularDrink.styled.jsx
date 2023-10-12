@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const PopularWrapper = styled.div`
   display: flex;
@@ -19,9 +18,8 @@ export const PopularWrapper = styled.div`
   }
 `;
 export const PopularCoctailsTitle = styled.h4`
-  color: ${colorStyled.colorWhite};
+  color: var(--white-color);
   font-size: 18px;
-  font-family: Manrope;
   font-weight: 500;
   line-height: 24px;
   word-wrap: break-word;
@@ -65,9 +63,8 @@ export const PopularCoctailsText = styled.div`
   gap: 8px;
 `;
 export const PopularCoctailsName = styled.p`
-  color: ${colorStyled.colorWhite};
+  color: var(--white-color);
   font-size: 16px;
-  font-family: Manrope;
   font-weight: 500;
   line-height: 22px;
   word-wrap: break-word;
@@ -75,9 +72,8 @@ export const PopularCoctailsName = styled.p`
 
 export const PopularCoctailsDescription = styled.p`
   height: 63px;
-  color: rgba(243, 243, 243, 0.5);
+  color: var(--whitefifty-color);
   font-size: 14px;
-  font-family: Manrope;
   font-weight: 400;
   line-height: 19px;
 `;

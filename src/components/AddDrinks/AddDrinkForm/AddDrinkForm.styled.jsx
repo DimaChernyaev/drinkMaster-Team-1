@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const FormButton = styled.button`
   margin-top: 20px;
@@ -10,19 +9,21 @@ export const FormButton = styled.button`
   padding-left: 40px;
 
   font-size: 14px;
-  font-family: Manrope;
   font-weight: 600;
   line-height: 18px;
 
-  color: ${colorStyled.colorBlue};
-  background-color: ${colorStyled.colorWhite};
+  color: var(--blue-color);
+  background-color: var(--white-color);
 
   border: none;
   border-radius: 42px;
   word-wrap: break-word;
+  transition:
+    color var(--transition),
+    background var(--transition);
   &:hover {
-    color: ${colorStyled.colorWhite};
-    background-color: ${colorStyled.colorBlue};
+    color: var(--white-color);
+    background-color: var(--blue-color);
   }
 
   @media (min-width: 768px) {

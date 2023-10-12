@@ -49,7 +49,7 @@ export const StyledForm = styled(Form)`
 export const StyledDialogTitle = styled(DialogTitle)`
   padding: 0;
   margin-bottom: 28px;
-  color: #f3f3f3;
+  color: var(--white-color);
   font-feature-settings: 'liga' off;
   font-size: 28px;
   font-style: normal;
@@ -75,36 +75,32 @@ export const StyledField = styled(Field)`
   padding-top: 14px;
   padding-bottom: 14px;
   padding-left: 24px;
-  // border: 1px solid
-  //   ${(props) =>
-    props.error === 'true' ? '#da1414' : 'rgba(243, 243, 243, 0.5)'};
-  // border: 1px solid
-  //   ${(props) =>
-    props.success === 'true' ? '#3CBC81' : 'rgba(243, 243, 243, 0.5)'};
   border: 1px solid
     ${(props) =>
       props.error === 'true'
-        ? '#da1414'
+        ? `var(--errorred-color)`
         : props.success === 'true'
-        ? '#3CBC81'
-        : 'rgba(243, 243, 243, 0.5)'};
+        ? `var(--successgren-color)`
+        : `var(--whitefifty-color)`};
   background-color: rgba(243, 243, 243, 0);
   border-radius: 24px;
-  color: #f3f3f3;
+  color: var(--white-color);
+  transition: border var(--transition);
 
   &::placeholder {
-    color: rgba(243, 243, 243, 0.5);
+    color: var(--whitefifty-color);
     font-size: 17px;
     font-style: normal;
     font-weight: 400;
     line-height: 156%;
+    transition: color var(--transition);
   }
 
   &:hover,
   &:focus {
-    border: 1px solid rgba(243, 243, 243, 0.5);
+    border: 1px solid var(--whitefifty-color);
     ::placeholder {
-      color: rgba(243, 243, 243);
+      color: var(--white-color);
     }
   }
 
@@ -128,17 +124,19 @@ export const StyledButton = styled(Button)`
   padding-bottom: 18px;
   background-color: rgba(243, 243, 243, 0);
   border-radius: 42px;
-  color: #f3f3f3;
+  color: var(--white-color);
   text-decoration-line: underline;
+  transition:
+    color var(--transition),
+    background var(--transition),
+    text-decoration-line var(--transition);
 
   && {
     &:hover,
     &:focus {
-      background-color: #f3f3f3;
-      color: #161f37;
+      background-color: var(--white-color);
+      color: var(--blue-color);
       text-decoration-line: none;
-      font-size: 14px;
-      line-height: 18px;
     }
   }
 `;
@@ -146,7 +144,7 @@ export const StyledButton = styled(Button)`
 export const TypographyError = styled(Typography)`
   margin-left: 24px;
   margin-bottom: 0;
-  color: #da1414;
+  color: var(--errorred-color);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -155,7 +153,7 @@ export const TypographyError = styled(Typography)`
 export const TypographySuccess = styled(Typography)`
   margin-left: 24px;
   margin-bottom: 0;
-  color: #3cbc81;
+  color: var(--successgren-color);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;

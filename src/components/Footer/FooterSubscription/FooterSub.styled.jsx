@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Field, ErrorMessage, Form } from 'formik';
-import { colorStyled } from '../../../helpers/colorStyled';
 
 export const SubWrapper = styled.div`
   @media screen and (max-width: 767px) {
@@ -27,7 +26,7 @@ export const StyledSubLabel = styled.label`
   display: none;
 `;
 export const StyledSubField = styled(Field)`
-  color: ${colorStyled.colorWhite};
+  color: var(--white-color);
   background-color: transparent;
   border-radius: 30px;
   width: 309px;
@@ -55,7 +54,7 @@ export const StyledSubError = styled(ErrorMessage)`
   }
 `;
 export const StyledSubBtn = styled.button`
-  color: ${colorStyled.colorWhite};
+  color: var(--white-color);
   background-color: transparent;
   border-radius: 30px;
   width: 309px;
@@ -66,7 +65,9 @@ export const StyledSubBtn = styled.button`
   text-align: center;
   margin-top: 20px;
 
-  transition: all 450ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
   &:hover {
     background-color: var(--white-color);
     color: var(--blue-color);

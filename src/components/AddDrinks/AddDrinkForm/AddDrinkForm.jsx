@@ -4,12 +4,15 @@ import * as Yup from 'yup';
 import { FormButton } from './AddDrinkForm.styled';
 import { addOwn } from '../../../redux/drinks/own/ownOperations';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 
 import DrinkDescriptionFields from './DrinkDescriptionFields/DrinkDescriptionFields';
 import DrinkIngredientsFields from './DrinkIngredientsFields/DrinkIngredientsFields';
 import RecipePreparation from './RecipePreparation/RecipePreparation';
+import Loader from '../../Loader/Loader';
 
 const AddDrinkForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const formik = useFormik({
@@ -32,7 +35,6 @@ const AddDrinkForm = () => {
       drinkThumb: Yup.mixed().required('Select a drinkThumb'),
     }),
     onSubmit: async (values) => {
-
       const formData = new FormData();
 
       formData.append('drink', values.drink);
@@ -47,8 +49,9 @@ const AddDrinkForm = () => {
       const ingredientsStr = JSON.stringify(values.ingredients);
       formData.append('ingredients', ingredientsStr);
       try {
+        setIsLoading(true);
         const response = await dispatch(addOwn(formData));
-
+        setIsLoading(false);
         if (response) {
           navigate('/my');
         } else {
@@ -61,32 +64,38 @@ const AddDrinkForm = () => {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <DrinkDescriptionFields
-        values={formik.values}
-        errors={formik.errors}
-        touched={formik.touched}
-        handleChange={formik.handleChange}
-        handleBlur={formik.handleBlur}
-        setFieldValue={formik.setFieldValue}
-      />
-      <DrinkIngredientsFields
-        values={formik.values}
-        errors={formik.errors}
-        touched={formik.touched}
-        handleChange={formik.handleChange}
-        handleBlur={formik.handleBlur}
-        setFieldValue={formik.setFieldValue}
-      />
-      <RecipePreparation
-        values={formik.values}
-        errors={formik.errors}
-        touched={formik.touched}
-        handleChange={formik.handleChange}
-        handleBlur={formik.handleBlur}
-      />
-      <FormButton type="submit">Add</FormButton>
-    </form>
+    <>
+      {isLoading ? (
+        <Loader text={'Please wait, we add your coctail...'} />
+      ) : (
+        <form onSubmit={formik.handleSubmit}>
+          <DrinkDescriptionFields
+            values={formik.values}
+            errors={formik.errors}
+            touched={formik.touched}
+            handleChange={formik.handleChange}
+            handleBlur={formik.handleBlur}
+            setFieldValue={formik.setFieldValue}
+          />
+          <DrinkIngredientsFields
+            values={formik.values}
+            errors={formik.errors}
+            touched={formik.touched}
+            handleChange={formik.handleChange}
+            handleBlur={formik.handleBlur}
+            setFieldValue={formik.setFieldValue}
+          />
+          <RecipePreparation
+            values={formik.values}
+            errors={formik.errors}
+            touched={formik.touched}
+            handleChange={formik.handleChange}
+            handleBlur={formik.handleBlur}
+          />
+          <FormButton type="submit">Add</FormButton>
+        </form>
+      )}
+    </>
   );
 };
 

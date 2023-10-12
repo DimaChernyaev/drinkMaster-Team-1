@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colorStyled } from '../../../../helpers/colorStyled';
 
 export const FormError = styled.div`
   font-size: 12px;
@@ -9,8 +8,7 @@ export const FormError = styled.div`
 `;
 
 export const RecipeTitle = styled.h3`
-  color: ${colorStyled.colorWhite};
-  font-family: Manrope;
+  color: var(--white-color);
   font-size: 28px;
   font-weight: 600;
   line-height: 32px;
@@ -32,13 +30,19 @@ export const RecipeLabel = styled.label`
       : '30px'};
   left: 18px;
   transform-origin: left;
-  color: ${(props) => (props.$isFocusedDescription ? '#F3F3F380' : '#f3f3f3')};
+  color: ${(props) =>
+    props.$isFocusedDescription
+      ? `var(--whitefifty-color)`
+      : `(--white-color)`};
   transition:
     transform 25ms,
-    font-size 250ms,
-    color 200ms;
+    font-size var(--transition),
+    color var(--transition);
   pointer-events: none;
-  color: ${(props) => (props.$hasValueDescription ? '#3CBC81' : '#F3F3F380')};
+  color: ${(props) =>
+    props.$hasValueDescription
+      ? `var(--successgren-color)`
+      : `var(--whiteeighty-color)`};
   font-size: 14px;
   @media (min-width: 768px) {
     font-size: 17px;
@@ -50,11 +54,10 @@ export const RecipeTextarea = styled.textarea`
   height: 184px;
   padding: 8px;
   border-radius: 14px;
-  border: 1px solid ${colorStyled.colorWhiteFifty};
+  border: 1px solid var(--whitefifty-color);
   background-color: transparent;
-  color: ${colorStyled.colorWhite};
+  color: var(--white-color);
   font-size: 17px;
-  font-family: Manrope;
   font-weight: 600;
   line-height: 18px;
   word-wrap: break-word;

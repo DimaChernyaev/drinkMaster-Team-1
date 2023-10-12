@@ -17,7 +17,6 @@ export const addOwn = createAsyncThunk(
   'own/addOwn',
   async (dataUser, thunkAPI) => {
     try {
-      console.log(dataUser);
       const { data } = await axios.post('/drinks/own/add', dataUser, {
         headers: {
           'Content-Type': 'multipart/form-data',

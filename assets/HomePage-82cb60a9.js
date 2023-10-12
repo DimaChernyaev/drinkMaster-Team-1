@@ -1,4 +1,4 @@
-import{n as o,j as i,L as p,r as s,s as n}from"./index-e5ba5edb.js";import{g as x}from"./operationsDrinks-62c126dd.js";import{C as l}from"./CardCoctail-6136d9b6.js";const m=o.ul`
+import{n as o,j as i,L as c,r as s,s as n}from"./index-ce99f813.js";import{g as x}from"./operationsDrinks-a74242b4.js";import{C as l}from"./CardCoctail-45fa917a.js";const m=o.ul`
   display: flex;
   align-items: center;
   justifu-content: center;
@@ -49,12 +49,12 @@ import{n as o,j as i,L as p,r as s,s as n}from"./index-e5ba5edb.js";import{g as 
   @media (min-width: 768px) {
     font-size: 40px;
   }
-`,g=({drinks:r})=>i.jsx(i.Fragment,{children:r.map(([e,d])=>i.jsxs("div",{children:[i.jsx(h,{children:e}),i.jsx(m,{children:d.map(({_id:t,drink:a,drinkThumb:c})=>i.jsx(l,{_id:t,drink:a,drinkThumb:c},t))})]},e))}),f=o.div`
+`,g=({drinks:r})=>i.jsx(i.Fragment,{children:r.map(([e,d])=>i.jsxs("div",{children:[i.jsx(h,{children:e}),i.jsx(m,{children:d.map(({_id:t,drink:a,drinkThumb:p})=>i.jsx(l,{_id:t,drink:a,drinkThumb:p},t))})]},e))}),f=o.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 80px;
-`,w=o(p)`
+`,w=o(c)`
   font-size: 16px;
   color: var(--blue-color);
   background-color: var(--white-color);
@@ -86,7 +86,7 @@ import{n as o,j as i,L as p,r as s,s as n}from"./index-e5ba5edb.js";import{g as 
     margin-bottom: 160px;
   }
 
-`,b=()=>{const[r,e]=s.useState([]);return s.useEffect(()=>{(async()=>{try{const t=await x(),a=Object.entries(t);e([...a])}catch(t){console.error("Error fetching drinks:",t)}})()},[]),i.jsxs(f,{children:[i.jsx(g,{drinks:r}),i.jsx(w,{to:"/drinks",children:"Other Drinks"})]})},u="/drinkMaster-Team-1/assets/desktop2x-93bacedb.png",k=n.div`
+`,b=()=>{const[r,e]=s.useState([]);return s.useEffect(()=>{(async()=>{try{const t=await x(),a=Object.entries(t);e([...a])}catch(t){console.error("Error fetching drinks:",t)}})()},[]),i.jsxs(f,{children:[i.jsx(g,{drinks:r}),i.jsx(w,{to:"/drinks",children:"Other Drinks"})]})},u="/drinkMaster-Team-1/assets/coctailPhoto-1d38e785.png",y=n.div`
   display: flex;
 
   @media screen and (max-width: 767px) {
@@ -103,7 +103,7 @@ import{n as o,j as i,L as p,r as s,s as n}from"./index-e5ba5edb.js";import{g as 
     padding-top: 185px;
     padding-bottom: 140px;
   }
-`,y=n.img`
+`,k=n.img`
   @media screen and (max-width: 767px) {
     width: 252;
     height: 313px;
@@ -166,7 +166,7 @@ import{n as o,j as i,L as p,r as s,s as n}from"./index-e5ba5edb.js";import{g as 
     margin: 0;
     padding-bottom: 40px;
   }
-`,z=n(p)`
+`,z=n(c)`
   border-radius: 42px;
   background: var(--white-color);
   color: var(--blue-color);
@@ -228,4 +228,4 @@ import{n as o,j as i,L as p,r as s,s as n}from"./index-e5ba5edb.js";import{g as 
   @media screen and (min-width: 1280px) {
     margin-right: 130px;
   }
-`,T=()=>i.jsx(k,{children:i.jsxs(D,{children:[i.jsxs(B,{children:[i.jsxs(v,{children:["Craft Your Perfect ",i.jsx("b",{})," Drink with Drink Master"]}),i.jsx(j,{children:"Unlock your inner mixologist with Drink Master, your one-stop destination for exploring, crafting, and mastering the world´s finest beverages."}),i.jsx(z,{to:"/add",children:"Add drink"})]}),i.jsx(y,{src:u,alt:"main-coctail"}),i.jsx(C,{})]})}),L=()=>i.jsxs(i.Fragment,{children:[i.jsx(T,{}),i.jsx(b,{})]});export{L as default};
+`,T=()=>i.jsx(y,{children:i.jsxs(D,{children:[i.jsxs(B,{children:[i.jsxs(v,{children:["Craft Your Perfect ",i.jsx("b",{})," Drink with Drink Master"]}),i.jsx(j,{children:"Unlock your inner mixologist with Drink Master, your one-stop destination for exploring, crafting, and mastering the world´s finest beverages."}),i.jsx(z,{to:"/add",children:"Add drink"})]}),i.jsx(k,{src:u,alt:"main-coctail"}),i.jsx(C,{})]})}),L=()=>i.jsxs(i.Fragment,{children:[i.jsx(T,{}),i.jsx(b,{})]});export{L as default};

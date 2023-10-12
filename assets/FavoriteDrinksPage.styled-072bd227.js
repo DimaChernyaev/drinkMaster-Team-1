@@ -1,4 +1,4 @@
-import{r as o,n as i,j as n}from"./index-e5ba5edb.js";function m(){const[t,a]=o.useState();return o.useEffect(()=>{function e(){window.innerWidth<1438?a(4):a(9)}return window.addEventListener("resize",e),e(),()=>{window.removeEventListener("resize",e)}},[]),t}const r="/drinkMaster-Team-1/assets/asr_blue_iced_tea_1-e64cabfc.png",p=i.div`
+import{r as o,n as i,j as n}from"./index-ce99f813.js";function m(){const[t,a]=o.useState();return o.useEffect(()=>{function e(){window.innerWidth<1438?a(4):a(9)}return window.addEventListener("resize",e),e(),()=>{window.removeEventListener("resize",e)}},[]),t}const r="/drinkMaster-Team-1/assets/asr_blue_iced_tea_1-e64cabfc.png",p=i.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,11 +92,11 @@ import{r as o,n as i,j as n}from"./index-e5ba5edb.js";function m(){const[t,a]=o.
   background-color: #fff;
 
   @media (min-width: 768px) {
-    flex-basis: calc((100% - 2 * 20px) / 3);
+    flex-basis: calc((100% - 20px) / 2);
   }
 
   @media (min-width: 1280px) {
-    flex-basis: calc((100% - 3 * 20px) / 4);
+    flex-basis: calc((100% - 40px) / 3);
   }
 `;const w=i.img`
   // width: 100%;
@@ -145,11 +145,11 @@ import{r as o,n as i,j as n}from"./index-e5ba5edb.js";function m(){const[t,a]=o.
   margin-bottom: 18px;
 `;i.span`
   margin-left: 15px;
-`;const y=i.div`
+`;const k=i.div`
   display: flex;
   align-items: flex-start;
   gap: 8px;
-`,k=i.button`
+`,y=i.button`
   display: flex;
   padding: 14px 40px;
   align-items: flex-start;
@@ -165,11 +165,14 @@ import{r as o,n as i,j as n}from"./index-e5ba5edb.js";function m(){const[t,a]=o.
   color: var(--white-color);
 
   transform: scale(1);
-  transition: transform 800ms;
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    color var(--transition);
 
   &:hover,
   &:focus {
-    transform: scale(1.1);
+    transform: scale(1.05);
     background: var(--white-color);
     color: var(--blue-color);
   }
@@ -187,12 +190,14 @@ import{r as o,n as i,j as n}from"./index-e5ba5edb.js";function m(){const[t,a]=o.
   background: var(--blue-color);
 
   transform: scale(1);
-  transition: transform 800ms;
+  transition:
+    transform var(--transition),
+    background var(--transition);
 
   &:hover,
   &:focus {
     background: var(--buttoncancel-color);
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 `;i.p`
   font-size: 14px;
@@ -219,4 +224,4 @@ import{r as o,n as i,j as n}from"./index-e5ba5edb.js";function m(){const[t,a]=o.
   //     padding: 158px 100px;
   //   }
   //
-`;export{y as B,h as C,g as D,w as I,l as N,f as T,u as a,b,v as c,k as d,z as e,T as f,c as i,m as u};
+`;export{k as B,h as C,g as D,w as I,l as N,f as T,u as a,b,v as c,y as d,z as e,T as f,c as i,m as u};

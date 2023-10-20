@@ -7,7 +7,7 @@ import {
   selectFavoriteItems,
 } from '../../redux/drinks/favorites/favoriteSelectors';
 import ErrorPage from '../../pages/ErrorPage/ErrorPage';
-import DrinksList from '../../components/DrinksList/DrinksList';
+import DrinksListFavorites from '../../components/DrinksList/DrinksListFavorites';
 import Paginator from '../../components/Paginator/Paginator';
 import { Container } from './FavoriteDrinksPage.styled';
 import PageTitle from '../../components/DefaultComponents/PageTitle/PageTitle';
@@ -44,7 +44,7 @@ const FavoriteDrinksPage = () => {
   return (
     <Container>
       <PageTitle title="Favorites" />
-      <DrinksList drinks={currentItems} />
+      <DrinksListFavorites drinks={currentItems} />
       <Paginator handlePageClick={handlePageClick} pageCount={pageCount} />
       {error && <ErrorPage />}
     </Container>

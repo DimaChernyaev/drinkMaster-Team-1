@@ -11,10 +11,17 @@ export const Title = styled.p`
 `;
 
 export const IngredientList = styled.ul`
+
+
   display: flex;
   flex-wrap: wrap;
   gap: 21px;
   margin-bottom: 80px;
+
+
+  @media (max-width: 374px) {
+justify-content: center;
+}
 
   @media (min-width: 768px) {
     gap: 22px;

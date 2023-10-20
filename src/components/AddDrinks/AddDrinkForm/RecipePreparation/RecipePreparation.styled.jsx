@@ -1,30 +1,5 @@
-import styled from "styled-components";
-import { colorStyled } from '../../../../helpers/colorStyled';
+import styled from 'styled-components';
 
-// export const colorStyled = {
-//   colorStyled.colorWhite: '#F3F3F3',
-//   colorStyled.colorWhiteFifty: 'rgba(243, 243, 243, 0.5)',
-//   colorStyled.colorWhiteFourty: 'rgba(243, 243, 243, 0.4)',
-//   colorStyled.colorWhiteTwenty: 'rgba(243, 243, 243, 0.2)',
-//   colorStyled.colorBlue: '#161F37',
-//   colorStyled.colorBlueFifty: 'rgba(22, 31, 55, 0.5)',
-//   colorStyled.colorHover: 'rgba(64, 112, 205, 0.5)',
-//   colorStyled.welcomePageText: '#FAFAFA',
-//   colorStyled.backgroundBlackColor: '#0A0A11',
-//   colorStyled.buttonCancel: '#434D67',
-// };
-
-// @media (min-width: 375px) {
-//   width: 335px;
-// }
-
-// @media (min-width: 768px) {
-//   width: 342px;
-// }
-
-// @media (min-width: 1280px) {
-//   width: 400px;
-// }
 export const FormError = styled.div`
   font-size: 12px;
   color: #da1414;
@@ -33,8 +8,7 @@ export const FormError = styled.div`
 `;
 
 export const RecipeTitle = styled.h3`
-  color: ${colorStyled.colorWhite};
-  font-family: Manrope;
+  color: var(--white-color);
   font-size: 28px;
   font-weight: 600;
   line-height: 32px;
@@ -51,17 +25,28 @@ export const RecipeWrapper = styled.div`
 export const RecipeLabel = styled.label`
   position: absolute;
   top: ${(props) =>
-    props.$isFocusedDescription || props.$hasValueDescription ? '-30px' : '30px'};
+    props.$isFocusedDescription || props.$hasValueDescription
+      ? '-30px'
+      : '30px'};
   left: 18px;
   transform-origin: left;
-  color: ${(props) => (props.$isFocusedDescription ? '#F3F3F380' : '#f3f3f3')};
+  color: ${(props) =>
+    props.$isFocusedDescription
+      ? `var(--whitefifty-color)`
+      : `(--white-color)`};
   transition:
     transform 25ms,
-    font-size 250ms,
-    color 200ms;
+    font-size var(--transition),
+    color var(--transition);
   pointer-events: none;
-  color: ${(props) => (props.$hasValueDescription ? '#3CBC81' : '#F3F3F380')};
+  color: ${(props) =>
+    props.$hasValueDescription
+      ? `var(--successgren-color)`
+      : `var(--whiteeighty-color)`};
   font-size: 14px;
+  @media (min-width: 768px) {
+    font-size: 17px;
+  }
 `;
 export const RecipeTextarea = styled.textarea`
   resize: none;
@@ -69,12 +54,14 @@ export const RecipeTextarea = styled.textarea`
   height: 184px;
   padding: 8px;
   border-radius: 14px;
-  border: 1px solid ${colorStyled.colorWhiteFifty};
+  border: 1px solid var(--whitefifty-color);
   background-color: transparent;
-  color: ${colorStyled.colorWhite};
-  font-size: 16px;
-  font-family: Manrope;
+  color: var(--white-color);
+  font-size: 17px;
   font-weight: 600;
   line-height: 18px;
   word-wrap: break-word;
+  @media (min-width: 768px) {
+    width: 480px;
+  }
 `;

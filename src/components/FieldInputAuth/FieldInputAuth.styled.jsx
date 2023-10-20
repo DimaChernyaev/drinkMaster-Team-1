@@ -7,34 +7,30 @@ export const StyledField = styled(Field)`
   padding-top: 14px;
   padding-bottom: 14px;
   padding-left: 24px;
-  // border: 1px solid
-  //   ${(props) =>
-    props.error === 'true' ? '#da1414' : 'rgba(243, 243, 243, 0.5)'};
-  // border: 1px solid
-  //   ${(props) =>
-    props.success === 'true' ? '#3CBC81' : 'rgba(243, 243, 243, 0.5)'};
   border: 1px solid
     ${(props) =>
       props.error === 'true'
-        ? '#da1414'
+        ? `var(--errorred-color)`
         : props.success === 'true'
-        ? '#3CBC81'
-        : 'rgba(243, 243, 243, 0.5)'};
+        ? `var(--successgren-color)`
+        : `var(--whitefifty-color)`};
   background-color: rgba(243, 243, 243, 0);
   border-radius: 24px;
-  color: #f3f3f3;
+  color: var(--white-color);
+  transition: border var(--transition);
 
   ::placeholder {
-    color: rgba(243, 243, 243, 0.5);
+    color: var(--whitefifty-color);
     font-size: 17px;
     font-style: normal;
     font-weight: 400;
     line-height: 156%;
+    transition: color var(--transition);
   }
 
   :hover,
   :focus {
-    border: 1px solid rgba(243, 243, 243, 0.5);
+    border: 1px solid var(--whitefifty-color);
     ::placeholder {
       color: rgba(243, 243, 243);
     }
@@ -48,7 +44,7 @@ export const StyledField = styled(Field)`
 export const TypographyError = styled(Typography)`
   margin-left: 24px;
   margin-bottom: 0;
-  color: #da1414;
+  color: var(--errorred-color);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -57,7 +53,7 @@ export const TypographyError = styled(Typography)`
 export const TypographySuccess = styled(Typography)`
   margin-left: 24px;
   margin-bottom: 0;
-  color: #3cbc81;
+  color: var(--successgren-color);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;

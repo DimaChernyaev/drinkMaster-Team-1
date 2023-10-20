@@ -31,9 +31,8 @@ export const LoaderContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
-
   width: 100%;
-  height: 100vh;
+  height: 100%;
 `;
 
 export const LoaderSVG = styled(LoaderIcon)`
@@ -56,4 +55,5 @@ export const LoaderText = styled.p`
   color: var(--white-color);
   font-size: 24px;
   font-weight: 600;
+  text-align: center;
 `;

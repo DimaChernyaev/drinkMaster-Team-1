@@ -1,4 +1,4 @@
-import img from '../../Home/HomePageImg/desktop2x.png';
+import img from '../../../assets/images/coctailPhoto.png';
 import {
   Box,
   ContentContainer,

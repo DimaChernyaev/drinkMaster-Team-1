@@ -15,15 +15,14 @@ const RecipePreparation = ({
   handleChange,
   handleBlur,
 }) => {
-
   const [$isFocusedDescription, setIsFocusedDescription] = useState(false);
   const [$hasValueDescription, setHasValueDescription] = useState(false);
 
-    const handleDescriptionChange = (e) => {
-      const { value } = e.target;
-      setHasValueDescription(value.trim().length > 25);
-    };
-  
+  const handleDescriptionChange = (e) => {
+    const { value } = e.target;
+    setHasValueDescription(value.trim().length > 25);
+  };
+
   return (
     <>
       <RecipeTitle>Recipe Preparation</RecipeTitle>

@@ -18,8 +18,9 @@ export const DrinksListSet = styled.ul`
   }
 `;
 
-export const CardWrap = styled.div`
+export const CardWrap = styled.li`
   display: block;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0;
   margin-bottom: 40px;
@@ -46,11 +47,11 @@ export const DrinksItem = styled.li`
   background-color: #fff;
 
   @media (min-width: 768px) {
-    flex-basis: calc((100% - 2 * 20px) / 3);
+    flex-basis: calc((100% - 20px) / 2);
   }
 
   @media (min-width: 1280px) {
-    flex-basis: calc((100% - 3 * 20px) / 4);
+    flex-basis: calc((100% - 40px) / 3);
   }
 `;
 
@@ -131,11 +132,14 @@ export const ButtonSeeMore = styled.button`
   color: var(--white-color);
 
   transform: scale(1);
-  transition: transform 800ms;
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    color var(--transition);
 
   &:hover,
   &:focus {
-    transform: scale(1.1);
+    transform: scale(1.05);
     background: var(--white-color);
     color: var(--blue-color);
   }
@@ -155,12 +159,14 @@ export const ButtonDel = styled.button`
   background: var(--blue-color);
 
   transform: scale(1);
-  transition: transform 800ms;
+  transition:
+    transform var(--transition),
+    background var(--transition);
 
   &:hover,
   &:focus {
     background: var(--buttoncancel-color);
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 `;
 

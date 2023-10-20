@@ -1,16 +1,23 @@
-import PageTitle from '../DefaultComponents/PageTitle/PageTitle';
 import AddDrinkForm from './AddDrinkForm/AddDrinkForm';
+import {
+  TotalWrapper,
+  TotalLinkWrspper,
+  AddDrinkTitle,
+} from './AddDrinks.styled';
 import FollowUs from './FollowUs/FollowUs';
 import PopularDrink from './PopularDrink/PopularDrink';
-
 
 const AddDrinks = () => {
   return (
     <>
-      <PageTitle title="Add drink" />
-      <AddDrinkForm />
-      <FollowUs />
-      <PopularDrink />
+      <AddDrinkTitle>Add drink</AddDrinkTitle>
+      <TotalWrapper>
+        <AddDrinkForm />
+        <TotalLinkWrspper>
+          <FollowUs />
+          <PopularDrink />
+        </TotalLinkWrspper>
+      </TotalWrapper>
     </>
   );
 };

@@ -72,7 +72,6 @@ const Drinks = ({categoryList, ingredientList}) => {
     };
 
     const onClickPaginator = (pageNumber) => {
-        console.log(pageNumber);
         if (pageNumber < Math.ceil(totalDrinks/per_page)) {
             setPage(pageNumber+1);                              // рахунок сторінок в state йде від 1, а в пагінаторі від 0 , тому додаємо 1
         }

@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-   src: url(../src/assets/fonts/Manrope-SemiBold.ttf) format('ttf');
+    src: url(../src/assets/fonts/Manrope-SemiBold.ttf) format('ttf');
     font-family: 'Manrope', sans-serif;
     font-weight: 600;
     font-display: swap;
@@ -36,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
     --whitefifty-color: rgba(243, 243, 243, 0.5);
     --whitefourty-color: rgba(243, 243, 243, 0.4);
     --whitetwenty-color: rgba(243, 243, 243, 0.2);
+    --whiteeighty-color: #F3F3F380;
     --blue-color: #161F37;
     --bluefifty-color: rgba(22, 31, 55, 0.5);
     // --hovergreen-color: rgba(64, 112, 205, 0.5);
@@ -44,6 +45,8 @@ const GlobalStyle = createGlobalStyle`
     --buttoncancel-color: #434D67;
     --red-color: rgba(218, 20, 20, 0.5);
     --green-color: rgba(60, 188, 129, 0.5);
+    --errorred-color: #da1414;
+    --successgren-color: #3CBC81;
 
     --transition: 300ms ease-in; 
   }

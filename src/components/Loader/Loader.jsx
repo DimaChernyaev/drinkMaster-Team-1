@@ -1,10 +1,10 @@
 import { LoaderContainer, LoaderSVG, LoaderText } from './Loader.styled';
 
-const Loader = () => {
+const Loader = ({ text }) => {
   return (
     <LoaderContainer>
       <LoaderSVG />
-      <LoaderText>Loading...</LoaderText>
+      <LoaderText>{text}</LoaderText>
     </LoaderContainer>
   );
 };

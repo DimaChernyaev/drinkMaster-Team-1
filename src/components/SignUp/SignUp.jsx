@@ -116,7 +116,7 @@ const SignUp = () => {
                     <Box sx={{ position: 'relative', width: '100%' }}>
                       <StyledField
                         name="birthdate"
-                        placeholder="dd/mm/yyyy"
+                        placeholder="mm/dd/yyyy"
                         id="birthdate"
                         error={
                           errors.birthdate && touched.birthdate

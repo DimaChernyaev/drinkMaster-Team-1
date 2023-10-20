@@ -20,7 +20,9 @@ export const FooterStyledLink = styled(Link)`
   height: 44px;
   border: solid 1px var(--whitefourty-color);
   border-radius: 10px;
-  transition: var(--transition);
+  transition:
+    transform var(--transition),
+    border var(--transition);
   &:hover,
   &:focus {
     transform: scale(1.1);
@@ -31,7 +33,9 @@ export const StyledFacebookSVG = styled(FacebookIMG)`
   height: 24px;
   width: 24px;
   fill: var(--whitefourty-color);
-  transition: var(--transition);
+  transition:
+    transform var(--transition),
+    fill var(--transition);
   &:hover,
   &:focus {
     transform: scale(1.1);
@@ -43,7 +47,9 @@ export const StyledInstagramSVG = styled(InstagramIMG)`
   height: 24px;
   width: 24px;
   fill: var(--whitefourty-color);
-  transition: var(--transition);
+  transition:
+    transform var(--transition),
+    fill var(--transition);
   &:hover,
   &:focus {
     transform: scale(1.1);
@@ -55,7 +61,9 @@ export const StyledYoutubeSVG = styled(YouTubeIMG)`
   height: 24px;
   width: 24px;
   fill: var(--whitefourty-color);
-  transition: var(--transition);
+  transition:
+    transform var(--transition),
+    fill var(--transition);
   &:hover,
   &:focus {
     transform: scale(1.1);

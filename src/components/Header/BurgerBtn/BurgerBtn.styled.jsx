@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { colorStyled } from '../../../helpers/colorStyled';
 import { ReactComponent as BurgerIMG } from '../../../assets/images/burgermenu/burger.svg';
 import { ReactComponent as BurgerCloseIMG } from '../../../assets/images/burgermenu/burgerclose.svg';
 

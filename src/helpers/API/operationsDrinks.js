@@ -3,8 +3,6 @@ import axios from 'axios';
 // отримання конкретного коктеля по id для сторінки Дрінк
 export async function getCurrentCoctail(id) {
   try {
-    console.log('axios', axios);
-
     const { data } = await axios.get(`/drinks/${id}`);
     return data;
   } catch (error) {
@@ -47,13 +45,11 @@ export async function getCoctailsByFilter(
   if (page) url = url + 'page=' + page + '&';
   if (per_page) url = url + 'per_page=' + per_page;
 
-  //console.log(url);
-
   try {
     axios.defaults.params;
     const { data } = await axios.get(url);
     return data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    console.log(error.message);
   }
 }

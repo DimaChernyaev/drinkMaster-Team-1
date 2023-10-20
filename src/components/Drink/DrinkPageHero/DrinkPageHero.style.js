@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const SubTitle = styled.p`
+
   margin-bottom: 20px;
   margin-top: 8px;
   color: var(--whitefifty-color);
@@ -13,6 +14,11 @@ export const SubTitle = styled.p`
 `;
 
 export const ShortDescr = styled.p`
+
+@media (max-width: 374px) {
+    width: 310px;
+  }
+
   margin-bottom: 40px;
   width: 335px;
   color: var(--white-color);

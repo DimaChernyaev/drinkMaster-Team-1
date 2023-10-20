@@ -9,7 +9,7 @@ export const StyledForm = styled(Form)`
   width: 335px;
   padding: 50px 25px;
   border-radius: 16px;
-  background-color: #161f37;
+  background-color: var(--blue-color);
 
   @media screen and (min-width: 768px) {
     width: 500px;
@@ -52,7 +52,7 @@ export const StyledCloseIcon = styled(CloseIcon)`
   right: 14px;
   width: 24px;
   height: 24px;
-  color: #f3f3f3;
+  color: var(--white-color);
 
   @media screen and (min-width: 768px) {
     width: 32px;
@@ -67,14 +67,13 @@ export const StyledField = styled(Field)`
   padding-top: 18px;
   padding-bottom: 18px;
   padding-left: 24px;
-  border: 1px solid rgba(243, 243, 243, 0.5);
+  border: 1px solid var(--whitefifty-color);
   background-color: rgba(243, 243, 243, 0);
   border-radius: 24px;
-  color: #f3f3f3;
+  color: var(--white-color);
 
   ::placeholder {
-    color: #f3f3f3;
-    font-family: Manrope;
+    color: var(--white-color);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -113,4 +112,4 @@ export const StyledLabel = styled.label`
 export const StyledDialog = styled(Dialog)`
   .css-1t1j96h-MuiPaper-root-MuiDialog-paper {
     background-color: transparent;
-`
+`;

@@ -6,6 +6,7 @@ import {
 } from '../../../../helpers/API/operationsFilters';
 
 import {
+  DescriptionWrapper,
   ImageWrapper,
   ImageDrink,
   ImageInputWrapper,
@@ -26,7 +27,6 @@ import {
   ServingSelect,
   Wrapper,
   RadioWrapper,
-  //  Label,
   RadioLabel,
   RadioInput,
   RadioSpan,
@@ -96,25 +96,24 @@ const DrinkDescriptionFields = ({
     }
   };
 
-    const handleImageWrapperClick = () => {
-      // Имитировать клик на ImageInput
-      const imageInput = document.getElementById('drinkThumb');
-      imageInput.click();
-    };
+  const handleImageWrapperClick = () => {
+    const imageInput = document.getElementById('drinkThumb');
+    imageInput.click();
+  };
 
   const handleInputChange = (e) => {
     const { value } = e.target;
-    setHasValue(value.trim().length > 1);
+    setHasValue(value.trim().length >= 1);
   };
 
   const handleDescriptionChange = (e) => {
     const { value } = e.target;
-    setHasValueDescription(value.trim().length > 25);
+    setHasValueDescription(value.trim().length >= 1);
   };
 
   const handleSelectCategoriesChange = (selectedOption) => {
     setSelectedCategoriesOption(selectedOption);
-    setFieldValue(`category`, selectedOption.value); // Установите значение в формик
+    setFieldValue(`category`, selectedOption.value);
   };
 
   const handleSelectGlassesChange = (selectedOption) => {
@@ -122,7 +121,7 @@ const DrinkDescriptionFields = ({
     setFieldValue(`glass`, selectedOption.value);
   };
   return (
-    <>
+    <DescriptionWrapper>
       <ImageWrapper onClick={handleImageWrapperClick}>
         <ImageInputWrapper>
           <ImageInput
@@ -245,7 +244,7 @@ const DrinkDescriptionFields = ({
               type="radio"
               name="alcoholic"
               value="Alcoholic"
-              checked={values.alcoholic === 'true'}
+              checked={values.alcoholic === 'Alcoholic'}
               onChange={handleChange}
             />
             <RadioSpan></RadioSpan>
@@ -258,7 +257,7 @@ const DrinkDescriptionFields = ({
               type="radio"
               name="alcoholic"
               value="Non alcoholic"
-              checked={values.alcoholic === 'false'}
+              checked={values.alcoholic === 'Non alcoholic'}
               onChange={handleChange}
             />
             <RadioSpan></RadioSpan>
@@ -269,7 +268,7 @@ const DrinkDescriptionFields = ({
           ) : null}
         </RadioWrapper>
       </Wrapper>
-    </>
+    </DescriptionWrapper>
   );
 };
 

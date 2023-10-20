@@ -1,37 +1,27 @@
 import styled from 'styled-components';
-import { colorStyled } from '../../../../helpers/colorStyled';
 import { ReactComponent as MySvg } from '../../../../assets/AddDrink/plus.svg';
 import Select from 'react-select';
-// export const colorStyled = {
-//   colorStyled.colorWhite: '#F3F3F3',
-//   colorStyled.colorWhiteFifty: 'rgba(243, 243, 243, 0.5)',
-//   colorStyled.colorWhiteFourty: 'rgba(243, 243, 243, 0.4)',
-//   colorStyled.colorWhiteTwenty: 'rgba(243, 243, 243, 0.2)',
-//   colorStyled.colorBlue: '#161F37',
-//   colorStyled.colorBlueFifty: 'rgba(22, 31, 55, 0.5)',
-//   colorStyled.colorHover: 'rgba(64, 112, 205, 0.5)',
-//   colorStyled.welcomePageText: '#FAFAFA',
-//   colorStyled.backgroundBlackColor: '#0A0A11',
-//   colorStyled.buttonCancel: '#434D67',
-// };
-
-// @media (min-width: 375px) {
-//   width: 335px;
-// }
-
-// @media (min-width: 768px) {
-//   width: 342px;
-// }
-
-// @media (min-width: 1280px) {
-//   width: 400px;
-// }
 
 export const FormError = styled.div`
   font-size: 12px;
-  color: #da1414;
+  color: var(--errorred-color);
   line-height: 14px;
   margin-top: 8px;
+`;
+export const DescriptionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @media (min-width: 375px) {
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  @media (min-width: 1280px) {
+    width: 833px;
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -45,32 +35,34 @@ export const ImageWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  background: ${colorStyled.colorBlueFifty};
+  background: var(--bluefifty-color);
   border-radius: 8px;
   overflow: hidden;
-  transition: background-color 0.3s ease-in-out;
+  transition: background var(--transition);
   cursor: pointer;
 
   &:hover {
-    background: ${colorStyled.colorBlue};
+    background: var(--blue-color);
   }
 
   @media (min-width: 375px) {
     /* width: 335px; */
   }
 
-   @media (min-width: 768px) {
-     /* width: 342px; */
-   }
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
 
-   @media (min-width: 1280px) {
-     /* width: 400px; */
-   }
+  @media (min-width: 1280px) {
+    height: 400px;
+  }
 `;
 
 export const ImageDrink = styled.img`
-  width: 100%; /* Максимальная ширина изображения равна ширине родителя */
+  min-width: 100%;
+  min-height: 130%; /* Максимальная ширина изображения равна ширине родителя */
   height: auto; /* Автоматическая высота, чтобы сохранить соотношение сторон */
+  object-fit: cover;
   display: block;
 `;
 
@@ -104,7 +96,6 @@ export const ImageLabel = styled.label`
   height: 50px;
   background-color: white;
   border-radius: 6px;
-  
 
   cursor: pointer;
 `;
@@ -113,7 +104,7 @@ export const PlusSVG = styled(MySvg)`
   height: 28px;
   color: green;
   fill: red;
-  stroke: ${colorStyled.colorBlue};
+  stroke: var(--blue-color);
 `;
 
 export const Wrapper = styled.div`
@@ -123,6 +114,9 @@ export const Wrapper = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   gap: 14px;
+  @media (min-width: 768px) {
+    gap: 27px;
+  }
 `;
 
 export const NameInputWrapper = styled.div`
@@ -135,26 +129,36 @@ export const NameLabel = styled.label`
   top: ${(props) => (props.$isFocused || props.$hasValue ? '-15px' : '10px')};
   left: 0px;
   transform-origin: left;
-  color: ${(props) => (props.$isFocused ? '#F3F3F380' : '#f3f3f3')};
+  color: ${(props) =>
+    props.$isFocused ? `var(--whiteeighty-color)` : `var(--white-color)`};
   transition:
     transform 25ms,
-    font-size 250ms,
-    color 200ms;
+    font-size var(--transition),
+    color var(--transition);
   pointer-events: none;
-  color: ${(props) => (props.$hasValue ? '#3CBC81' : '#F3F3F380')};
+  color: ${(props) =>
+    props.$hasValue ? `var(--successgren-color)` : `var(--whiteeighty-color)`};
   font-size: ${(props) =>
     props.$isFocused || props.$hasValue ? '12px' : '14px'};
+  @media (min-width: 768px) {
+    top: ${(props) => (props.$isFocused || props.$hasValue ? '-20px' : '10px')};
+    font-size: ${(props) =>
+      props.$isFocused || props.$hasValue ? '14px' : '16px'};
+  }
 `;
 
 export const NameInput = styled.input`
-  color: #f3f3f3;
+  font-size: 14px;
+  color: var(--white-color);
   padding: 8px;
   border: 1px solid transparent;
-  border-bottom: 1px solid #f3f3f380;
+  border-bottom: 1px solid var(--whiteeighty-color);
   background-color: transparent;
-  transition: border-color 250ms;
+  transition:
+    border-color var(--transition),
+    transform var(--transition),
+    font-size var(--transition);
   width: 100%;
-  font-size: 14px;
 
   &:focus {
     border-bottom: 1px solid;
@@ -163,6 +167,9 @@ export const NameInput = styled.input`
   &:focus + ${NameLabel}, &:not(:placeholder-shown) + ${NameLabel} {
     transform: translate(10px, -30px) scale(0.8);
     font-size: 12px;
+  }
+  @media (min-width: 768px) {
+    font-size: 16px;
   }
 `;
 
@@ -174,32 +181,53 @@ export const RecipeWrapper = styled.div`
 export const RecipeLabel = styled.label`
   position: absolute;
   top: ${(props) =>
-    props.$isFocusedDescription || props.$hasValueDescription ? '-15px' : '10px'};
+    props.$isFocusedDescription || props.$hasValueDescription
+      ? '-15px'
+      : '10px'};
   left: 0px;
   transform-origin: left;
-  color: ${(props) => (props.$isFocusedDescription ? '#F3F3F380' : '#f3f3f3')};
+  color: ${(props) =>
+    props.$isFocusedDescription
+      ? `var(--whiteeighty-color)`
+      : `var(--white-color)`};
   transition:
     transform 25ms,
-    font-size 250ms,
-    color 200ms;
+    font-size var(--transition),
+    color var(--transition);
   pointer-events: none;
-  color: ${(props) => (props.$hasValueDescription ? '#3CBC81' : '#F3F3F380')};
+  color: ${(props) =>
+    props.$hasValueDescription
+      ? `var(--successgren-color)`
+      : `var(--whiteeighty-color)`};
   font-size: ${(props) =>
     props.$isFocusedDescription || props.$hasValueDescription
       ? '12px'
       : '14px'};
+  @media (min-width: 768px) {
+    top: ${(props) =>
+      props.$isFocusedDescription || props.$hasValueDescription
+        ? '-20px'
+        : '10px'};
+    font-size: ${(props) =>
+      props.$isFocusedDescription || props.$hasValueDescription
+        ? '14px'
+        : '16px'};
+  }
 `;
 
 export const RecipeTextarea = styled.textarea`
+  width: 100%;
   resize: none;
-  color: #f3f3f3;
+  font-size: 14px;
+  color: var(--white-color);
   padding: 8px;
   border: 1px solid transparent;
-  border-bottom: 1px solid #f3f3f380;
+  border-bottom: 1px solid var(--whiteeighty-color);
   background-color: transparent;
-  transition: border-color 250ms;
-  width: 100%;
-  font-size: 14px;
+  transition:
+    border-color var(--transition),
+    transform var(--transition),
+    font-size var(--transition);
 
   &:focus {
     border-bottom: 1px solid;
@@ -212,6 +240,9 @@ export const RecipeTextarea = styled.textarea`
   &::-webkit-scrollbar {
     display: none;
   }
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const CategoryWrapper = styled.div`
@@ -219,12 +250,15 @@ export const CategoryWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  color: #f3f3f380;
-  border-bottom: 1px solid #f3f3f380;
+  color: var(--whiteeighty-color);
+  border-bottom: 1px solid var(--whiteeighty-color);
   background-color: transparent;
-  transition: border-color 250ms;
+  transition: border-color var(--transition);
   width: 100%;
   font-size: 14px;
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const CategoryLabel = styled.label`
@@ -233,17 +267,29 @@ export const CategoryLabel = styled.label`
     props.$isFocusedDescription || props.$hasValueDescription ? '5px' : '30px'};
   left: 10px;
   transform-origin: left;
-  color: ${(props) => (props.$isFocusedDescription ? '#F3F3F380' : '#f3f3f3')};
+  color: ${(props) =>
+    props.$isFocusedDescription
+      ? `var(--whiteeighty-color)`
+      : `var(--white-color)`};
   transition:
     transform 25ms,
-    font-size 250ms,
-    color 200ms;
+    font-size var(--transition),
+    color var(--transition);
   pointer-events: none;
-  color: ${(props) => (props.$hasValueDescription ? '#3CBC81' : '#F3F3F380')};
+  color: ${(props) =>
+    props.$hasValueDescription
+      ? `var(--successgren-color)`
+      : `var(--whiteeighty-color)`};
   font-size: ${(props) =>
     props.$isFocusedDescription || props.$hasValueDescription
       ? '12px'
       : '14px'};
+  @media (min-width: 768px) {
+    font-size: ${(props) =>
+      props.$isFocusedDescription || props.$hasValueDescription
+        ? '12px'
+        : '16px'};
+  }
 `;
 
 export const CategorySelect = ({ options, ...props }) => {
@@ -271,19 +317,20 @@ export const CategorySelect = ({ options, ...props }) => {
           ...provided,
           margin: 0,
           color: state.isFocused
-            ? `${colorStyled.colorWhite}`
-            : `${colorStyled.colorWhiteFifty}`,
+            ? `var(--white-color)`
+            : `var(--whitefifty-color)`,
         }),
         option: (provided) => ({
           ...provided,
           padding: '14px',
-          color: `${colorStyled.colorWhiteFifty}`,
-          background: '#161F37',
+          color: `var(--whitefifty-color)`,
+          background: `var(--blue-color)`,
           borderRadius: '20px',
           overflow: 'hidden',
           cursor: 'pointer',
+          transition: `color var(--transition)`,
           '&:hover': {
-            color: `${colorStyled.colorWhite}`, // Измените цвет рамки при наведении
+            color: `var(--white-color)`,
           },
         }),
         input: (provided) => ({
@@ -291,12 +338,12 @@ export const CategorySelect = ({ options, ...props }) => {
           padding: 0,
           margin: 0,
           border: 'none',
-          color: `${colorStyled.colorWhite}`,
+          color: `var(--white-color)`,
         }),
         menu: (provided) => ({
           ...provided,
           padding: '14px',
-          background: '#161F37',
+          background: `var(--blue-color)`,
           borderRadius: '20px',
           overflow: 'hidden',
         }),
@@ -314,16 +361,16 @@ export const CategorySelect = ({ options, ...props }) => {
           ...provided,
           textAlign: 'right',
           color: state.isFocused
-            ? `${colorStyled.colorWhiteFifty}`
-            : `${colorStyled.colorWhite}`, // Установите цвет текста элемента списка здесь
+            ? `var(--whitefifty-color)`
+            : `var(--white-color)`,
         }),
         valueContainer: (provided) => ({
           ...provided,
-          padding: 0, // Установите цвет текста элемента списка здесь
+          padding: 0,
         }),
         dropdownIndicator: (provided, state) => ({
           ...provided,
-          transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0deg)', // Поворачиваем стрелку вверх при открытии меню
+          transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0deg)',
         }),
       }}
     />
@@ -335,13 +382,16 @@ export const ServingWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #f3f3f380;
+  color: var(--whiteeighty-color);
   border: 1px solid transparent;
-  border-bottom: 1px solid #f3f3f380;
+  border-bottom: 1px solid var(--whiteeighty-color);
   background-color: transparent;
-  transition: border-color 250ms;
+  transition: border-color var(--transition);
   width: 100%;
   font-size: 14px;
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const ServingLabel = styled.label`
@@ -350,13 +400,19 @@ export const ServingLabel = styled.label`
     props.$isFocusedDescription || props.$hasValueDescription ? '5px' : '30px'};
   left: 10px;
   transform-origin: left;
-  color: ${(props) => (props.$isFocusedDescription ? '#F3F3F380' : '#f3f3f3')};
+  color: ${(props) =>
+    props.$isFocusedDescription
+      ? `var(--whiteeighty-color)`
+      : `var(--white-color)`};
   transition:
     transform 25ms,
-    font-size 250ms,
-    color 200ms;
+    font-size var(--transition),
+    color var(--transition);
   pointer-events: none;
-  color: ${(props) => (props.$hasValueDescription ? '#3CBC81' : '#F3F3F380')};
+  color: ${(props) =>
+    props.$hasValueDescription
+      ? `var(--successgren-color)`
+      : `var(--whiteeighty-color)`};
   font-size: ${(props) =>
     props.$isFocusedDescription || props.$hasValueDescription
       ? '12px'
@@ -387,19 +443,20 @@ export const ServingSelect = ({ options, ...props }) => {
           ...provided,
           margin: 0,
           color: state.isFocused
-            ? `${colorStyled.colorWhite}`
-            : `${colorStyled.colorWhiteFifty}`,
+            ? `var(--white-color)`
+            : `var(--whitefifty-color)`,
         }),
         option: (provided) => ({
           ...provided,
           padding: '14px',
-          color: `${colorStyled.colorWhiteFifty}`,
-          background: '#161F37',
+          color: `var(--whitefifty-color)`,
+          background: `var(--blue-color)`,
           borderRadius: '20px',
           overflow: 'hidden',
           cursor: 'pointer',
+          transition: `color var(--transition)`,
           '&:hover': {
-            color: `${colorStyled.colorWhite}`, // Измените цвет рамки при наведении
+            color: `var(--white-color)`,
           },
         }),
         input: (provided) => ({
@@ -407,12 +464,12 @@ export const ServingSelect = ({ options, ...props }) => {
           padding: 0,
           margin: 0,
           border: 'none',
-          color: `${colorStyled.colorWhite}`,
+          color: `var(--white-color)`,
         }),
         menu: (provided) => ({
           ...provided,
           padding: '14px',
-          background: '#161F37',
+          background: `var(--blue-color)`,
           borderRadius: '20px',
           overflow: 'hidden',
         }),
@@ -430,23 +487,21 @@ export const ServingSelect = ({ options, ...props }) => {
           ...provided,
           textAlign: 'right',
           color: state.isFocused
-            ? `${colorStyled.colorWhiteFifty}`
-            : `${colorStyled.colorWhite}`, // Установите цвет текста элемента списка здесь
+            ? `var(--whitefifty-color)`
+            : `var(--white-color)`,
         }),
         valueContainer: (provided) => ({
           ...provided,
-          padding: 0, // Установите цвет текста элемента списка здесь
+          padding: 0,
         }),
         dropdownIndicator: (provided, state) => ({
           ...provided,
-          transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0deg)', // Поворачиваем стрелку вверх при открытии меню
+          transform: state.isFocused ? 'rotate(180deg)' : 'rotate(0deg)',
         }),
       }}
     />
   );
 };
-
-
 
 export const Label = styled.label`
   font-weight: bold;
@@ -457,24 +512,27 @@ export const RadioWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 26px;
 `;
 export const RadioLabel = styled.label`
-  // Ваши стили для RadioLabel
   display: flex;
   align-items: center;
   margin-right: 20px;
   cursor: pointer;
   font-size: 14px;
-  color: ${(props) => (props.checked ? '#F3F3F3' : '#F3F3F380')};
+  color: ${(props) =>
+    props.checked ? `var(--white-color)` : `var(--whiteeighty-color)`};
 
   &.checked {
-    color: #f3f3f3;
+    color: var(--white-color);
+  }
+
+  @media (min-width: 768px) {
+    font-size: 16px;
   }
 `;
 
 export const RadioInput = styled.input`
-  // Ваши стили для RadioInput
   &[type='radio'] {
     position: absolute;
     width: 1px;
@@ -489,25 +547,24 @@ export const RadioInput = styled.input`
   }
 `;
 
-//checked-style
 export const RadioSpan = styled.span`
   position: relative;
   width: 16px;
   height: 16px;
   margin-right: 4px;
-  border: 1.3px solid ${colorStyled.colorWhiteFifty};
+  border: 1.3px solid var(--whitefifty-color);
   border-radius: 50%;
   box-sizing: border-box;
 
   ${RadioInput}:checked + & {
-    border-color: ${colorStyled.colorWhite};
+    border-color: var(--white-color);
   }
 
   ${RadioInput}:checked + &::before {
     content: '';
     width: 8px;
     height: 8px;
-    background-color: ${colorStyled.colorWhite};
+    background-color: var(--white-color);
     border-radius: 50%;
     position: absolute;
     top: 50%;

@@ -1,4 +1,4 @@
-import{r as o,n as i,j as n}from"./index-ce99f813.js";function m(){const[t,a]=o.useState();return o.useEffect(()=>{function e(){window.innerWidth<1438?a(4):a(9)}return window.addEventListener("resize",e),e(),()=>{window.removeEventListener("resize",e)}},[]),t}const r="/drinkMaster-Team-1/assets/asr_blue_iced_tea_1-e64cabfc.png",p=i.div`
+import{r as o,n as i,j as e}from"./index-aa87328d.js";function m(){const[t,a]=o.useState();return o.useEffect(()=>{function n(){window.innerWidth<1438?a(4):a(9)}return window.addEventListener("resize",n),n(),()=>{window.removeEventListener("resize",n)}},[]),t}const r="/drinkMaster-Team-1/assets/asr_blue_iced_tea_1-e64cabfc.png",p=i.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@ import{r as o,n as i,j as n}from"./index-ce99f813.js";function m(){const[t,a]=o.
   @media (min-width: 1440px) {
     margin-top: 67px;
   }
-`,s=i.img`
+`,d=i.img`
   width: 198px;
   height: 247px;
 
@@ -29,7 +29,7 @@ import{r as o,n as i,j as n}from"./index-ce99f813.js";function m(){const[t,a]=o.
 
   @media (min-width: 1440px) {
   }
-`,d=i.p`
+`,s=i.p`
   width: 205px;
   color: var(--white-color);
   text-align: center;
@@ -46,7 +46,7 @@ import{r as o,n as i,j as n}from"./index-ce99f813.js";function m(){const[t,a]=o.
   @media (min-width: 1440px) {
     // margin-top: 27px;
   }
-`,l=({text:t})=>n.jsxs(p,{children:[n.jsx(s,{src:r,alt:"blue iced tea"}),n.jsxs(d,{children:[" ",t]})]}),c="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",g=i.ul`
+`,l=({text:t})=>e.jsxs(p,{children:[e.jsx(d,{src:r,alt:"blue iced tea"}),e.jsxs(s,{children:[" ",t]})]}),c="/drinkMaster-Team-1/assets/trash-fc07c8dc.svg",g=i.ul`
   padding: 0;
   margin: 0;
   margin-top: 40px;
@@ -62,9 +62,6 @@ import{r as o,n as i,j as n}from"./index-ce99f813.js";function m(){const[t,a]=o.
   @media (min-width: 1280px) {
     margin-top: 62px;
   }
-
-  // column-gap: <line-size>;
-  // row-gap: <line-size>;
 `,h=i.li`
   display: block;
   flex-wrap: wrap;
@@ -99,13 +96,9 @@ import{r as o,n as i,j as n}from"./index-ce99f813.js";function m(){const[t,a]=o.
     flex-basis: calc((100% - 40px) / 3);
   }
 `;const w=i.img`
-  // width: 100%;
   width: 335px;
   display: block;
-  // align-items: center;
-  // justify-content: space-between;
   margin-bottom: 18px;
-  // background-color: #fff;
 
   border-radius: 8px;
   background: linear-gradient(

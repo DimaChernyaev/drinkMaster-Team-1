@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { useState, useEffect } from 'react';
 import { selectUser } from '../../../redux/auth/authSelectors';
-
 import {
   UserLogoBtn,
   UserLogoImg,
@@ -9,6 +8,8 @@ import {
   UserLogoWrapper,
 } from './UserLogog.styled';
 import { UserModal } from '../UserModal/UserModal';
+import ThemeToggler from '../ThemeToggler/ThemeToggler';
+import { StyledDesktopThemeTogler } from './UserLogog.styled';
 
 export const UserLogo = () => {
   const { name, avatarURL } = useSelector(selectUser);
@@ -38,6 +39,9 @@ export const UserLogo = () => {
 
   return (
     <UserLogoWrapper>
+      <StyledDesktopThemeTogler>
+        <ThemeToggler />
+      </StyledDesktopThemeTogler>
       <UserLogoBtn onClick={handleModal}>
         <UserLogoImg src={avatarURL} alt="user icon" />
         <UserLogoText>{name}</UserLogoText>

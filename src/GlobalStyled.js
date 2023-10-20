@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
     --whitetwenty-color: rgba(243, 243, 243, 0.2);
     --blue-color: #161F37;
     --bluefifty-color: rgba(22, 31, 55, 0.5);
-    --hovergreen-color: rgba(64, 112, 205, 0.5);
+    // --hovergreen-color: rgba(64, 112, 205, 0.5);
     --welcomepagetext-color: #FAFAFA;
     --mainbackground-color: #0A0A11;
     --buttoncancel-color: #434D67;
@@ -48,13 +48,33 @@ const GlobalStyle = createGlobalStyle`
     --transition: 300ms ease-in; 
   }
 
+  
+  html {
+    /* dark theme */
+  &[data-theme='dark'] {
+    --background-color: var(--mainbackground-color);
+    --text-color: #F3F3F3;
+    --whitefifty-color: rgba(243, 243, 243, 0.5);
+    --hovergreen-color: rgba(64, 112, 205, 0.5);
+    --fill-paginator: rgba(243, 243, 243, 0.30);
+  }
+
+  &[data-theme='light'] {
+    --background-color: var( --white-color);
+    --text-color: #0A0A11;
+    --whitefifty-color: rgba(10, 10, 17, 0.5);
+    --hovergreen-color: rgba(64, 112, 205, 1);
+    --fill-paginator: rgba(10, 10, 17, 0.30);
+  }
+
   body {
-    background-color: var(--mainbackground-color);
+    background-color: var(--background-color);
     font-family: 'Manrope', sans-serif;
-    color: var(--white-color);
+    color: var(--text-color);
     word-wrap: break-word;
     line-height: 1.2;
   }
+
 
 h1,
 h2,

@@ -46,3 +46,13 @@ export const UserLogoText = styled.p`
   line-height: 1.3;
   color: var(--white-color);
 `;
+
+export const StyledDesktopThemeTogler = styled.div`
+  // display: none;
+  // @media (min-width: 1280px) {
+  //   display: block;
+  // }
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;

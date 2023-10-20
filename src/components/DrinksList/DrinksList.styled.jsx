@@ -16,9 +16,6 @@ export const DrinksListSet = styled.ul`
   @media (min-width: 1280px) {
     margin-top: 62px;
   }
-
-  // column-gap: <line-size>;
-  // row-gap: <line-size>;
 `;
 
 export const CardWrap = styled.li`
@@ -59,13 +56,9 @@ export const DrinksItem = styled.li`
 `;
 
 export const ImgCard = styled.img`
-  // width: 100%;
   width: 335px;
   display: block;
-  // align-items: center;
-  // justify-content: space-between;
   margin-bottom: 18px;
-  // background-color: #fff;
 
   border-radius: 8px;
   background: linear-gradient(

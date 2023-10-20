@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
     --whiteeighty-color: #F3F3F380;
     --blue-color: #161F37;
     --bluefifty-color: rgba(22, 31, 55, 0.5);
-    // --hovergreen-color: rgba(64, 112, 205, 0.5);
+    --hovergreen-color: rgba(64, 112, 205, 0.5);
     --welcomepagetext-color: #FAFAFA;
     --mainbackground-color: #0A0A11;
     --buttoncancel-color: #434D67;
@@ -53,6 +53,8 @@ const GlobalStyle = createGlobalStyle`
 
   
   html {
+
+    --background-color: var(--mainbackground-color);
     /* dark theme */
   &[data-theme='dark'] {
     --background-color: var(--mainbackground-color);
@@ -73,7 +75,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: var(--background-color);
     font-family: 'Manrope', sans-serif;
-    color: var(--text-color);
+    color: var(--white-color);
     word-wrap: break-word;
     line-height: 1.2;
   }

@@ -12,7 +12,7 @@ export const StyledBurgerBtn = styled.button`
   background-color: transparent;
   border: 1px solid transparent;
   font-family: inherit;
-  color: var(--white-color: #F3F3F3;);
+  color: var(--header-color);
   transition: border var(--transition);
   &:active {
     border: 1px solid var(--bluefifty-color);
@@ -22,12 +22,14 @@ export const StyledBurgerBtn = styled.button`
 export const BurgerSVG = styled(BurgerIMG)`
   width: 30px;
   height: 30px;
-  fill: currentColor;
+  fill: var(--header-color);
+  stroke: var(--header-color);
 `;
 
 export const CloseBurgerSVG = styled(BurgerCloseIMG)`
   width: 30px;
   height: 30px;
-  fill: currentColor;
+  fill: var(--header-color);
+  stroke: var(--header-color);
   transition: all var(--transition);
 `;

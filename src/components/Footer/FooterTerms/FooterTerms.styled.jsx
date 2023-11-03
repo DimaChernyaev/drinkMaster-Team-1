@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const LoweLiner = styled.div`
   margin-top: 20px;
   width: 100%;
-  display: flex;
+  display: flex;f
   justify-content: space-between;
   @media screen and (max-width: 767px) {
     display: flex;

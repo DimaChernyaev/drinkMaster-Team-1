@@ -6,24 +6,24 @@ import {
 } from 'react-icons/md';
 
 export const PreviousButton = styled(MdOutlineArrowBackIos)`
-  color: rgba(243, 243, 243, 0.3);
+  color: var(--fill-paginator);
   width: 15px;
   height: 15px;
   transition: color var(--transition);
 
   &:hover {
-    color: var(--white-color);
+    color: var(--fill-paginator-hover);
   }
 `;
 
 export const NextButton = styled(MdOutlineArrowForwardIos)`
-  color: rgba(243, 243, 243, 0.3);
+  color: var(--fill-paginator);
   width: 15px;
   height: 15px;
   transition: color var(--transition);
 
   &:hover {
-    color: var(--white-color);
+    color: var(--fill-paginator-hover);
   }
 `;
 

@@ -8,7 +8,7 @@ export const FormError = styled.div`
 `;
 
 export const RecipeTitle = styled.h3`
-  color: var(--white-color);
+  color: var(--text-color);
   font-size: 28px;
   font-weight: 600;
   line-height: 32px;
@@ -31,9 +31,7 @@ export const RecipeLabel = styled.label`
   left: 18px;
   transform-origin: left;
   color: ${(props) =>
-    props.$isFocusedDescription
-      ? `var(--whitefifty-color)`
-      : `(--white-color)`};
+    props.$isFocusedDescription ? `var(--whitefifty-color)` : `(--text-color)`};
   transition:
     transform 25ms,
     font-size var(--transition),
@@ -56,12 +54,28 @@ export const RecipeTextarea = styled.textarea`
   border-radius: 14px;
   border: 1px solid var(--whitefifty-color);
   background-color: transparent;
-  color: var(--white-color);
+  color: var(--text-color);
   font-size: 17px;
   font-weight: 600;
   line-height: 18px;
   word-wrap: break-word;
+
+  &::placeholder {
+    color: var(--placeholder-color);
+    padding-top: 8px;
+    padding-left: 10px;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.28;
+  }
+
   @media (min-width: 768px) {
     width: 480px;
+    font-size: 17px;
+    line-height: 1.56;
+    padding-top: 6px;
+    padding-left: 16px;
   }
 `;

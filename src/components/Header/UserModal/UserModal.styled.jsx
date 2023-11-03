@@ -37,7 +37,7 @@ export const LogOutBtn = styled.button`
     background-color: var(--blue-color);
   }
   &:active {
-    border-color: var(--whitefifty-color);
+    border-color: var(--white-fifty-color);
   }
 `;
 

@@ -1,8 +1,8 @@
 import { LogoLink, LogoSVG, LogoText } from './Logo.styled';
 
-export const Logo = () => {
+export const Logo = ({ customStyle }) => {
   return (
-    <LogoLink to="/">
+    <LogoLink to="/" style={customStyle}>
       <LogoSVG />
       <LogoText>Drink master</LogoText>
     </LogoLink>

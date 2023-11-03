@@ -38,7 +38,7 @@ export const Image = styled.img`
 `;
 
 export const Title = styled.p`
-  color: rgba(243, 243, 243, 0.1);
+  color: var(--error-text);
   font-size: 120px;
   font-weight: 600;
   line-height: 1.02;

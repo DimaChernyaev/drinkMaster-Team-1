@@ -3,7 +3,8 @@ import styled from '@emotion/styled';
 export const FooterEl = styled.footer`
   padding-top: 40px;
   padding-bottom: 22px;
-  border-top: 1px solid var(--whitetwenty-color);
+  border-top: 1px solid rgba(10, 10, 17, 0.5);
+  background-color: var(--mainbackground-color);
 `;
 
 export const FooterContentWrapper = styled.div`

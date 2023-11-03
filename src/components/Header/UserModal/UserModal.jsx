@@ -68,7 +68,7 @@ export const UserModal = ({ isModalOpen, setIsModalOpen }) => {
             marginBottom: '38px',
           }}
         >
-          <Typography>Edit profile</Typography>
+          <Typography color="var(--white-color)">Edit profile</Typography>
           <IconButton onClick={handleOpenProfile}>
             <EditIcon
               sx={{ width: '14px', height: '14px', color: '#F3F3F3' }}

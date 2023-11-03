@@ -12,18 +12,19 @@ export const FormButton = styled.button`
   font-weight: 600;
   line-height: 18px;
 
-  color: var(--blue-color);
-  background-color: var(--white-color);
+  color: var(--btn-add-drink-color);
+  background-color: var(--btn-add-drink-background);
 
-  border: none;
+  border: 1px solid #161f37;
   border-radius: 42px;
   word-wrap: break-word;
   transition:
-    color var(--transition),
-    background var(--transition);
+    background-color var(--transition),
+    color var(--transition);
+
   &:hover {
-    color: var(--white-color);
-    background-color: var(--blue-color);
+    background-color: var(--btn-add-drink-color);
+    color: var(--btn-add-drink-background);
   }
 
   @media (min-width: 768px) {

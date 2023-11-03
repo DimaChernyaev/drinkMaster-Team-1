@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const AddDrinkTitle = styled.h2`
+  color: var(--text-color);
   font-size: 32px;
   font-weight: 600;
   line-height: 1.1875;

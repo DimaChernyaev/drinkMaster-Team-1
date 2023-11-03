@@ -32,7 +32,7 @@ export const StyledSubField = styled(Field)`
   width: 309px;
   height: 56px;
   border: none;
-  border: 1px solid var(--whitefifty-color);
+  border: 1px solid rgba(243, 243, 243, 0.5);
   padding: 10px;
   text-align: center;
   margin-top: 40px;
@@ -60,7 +60,7 @@ export const StyledSubBtn = styled.button`
   width: 309px;
   height: 56px;
   border: none;
-  border: 1px solid var(--whitefifty-color);
+  border: 1px solid rgba(243, 243, 243, 0.5);
   padding: 10px;
   text-align: center;
   margin-top: 20px;
@@ -76,8 +76,13 @@ export const StyledSubBtn = styled.button`
 
 export const StyledSubText = styled.p`
   width: 309px;
+  color: var(--white-color);
+  font-weight: 400;
+  line-height: 1.33;
+
   @media screen and (max-width: 767px) {
     width: 100%;
+    line-height: 1.42;
   }
 `;
 

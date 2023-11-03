@@ -10,8 +10,8 @@ export const HomeContainer = styled.div`
 
 export const LinkDrinks = styled(Link)`
   font-size: 16px;
-  color: var(--blue-color);
-  background-color: var(--white-color);
+  background: var(--btn-add-drink-background);
+  color: var(--btn-add-drink-color);
   padding: 18px 44px;
   font-weight: 600;
   line-height: 18px;
@@ -23,21 +23,16 @@ export const LinkDrinks = styled(Link)`
     color var(--transition),
     background var(--transition);
 
-  &:hover {
-    background-color: var(--blue-color);
-    color: var(--white-color);
-  }
-
+  &:hover,
   &:focus {
-    background-color: var(--blue-color);
-    color: var(--white-color);
+    background: var(--btn-add-drink-color);
+    color: var(--btn-add-drink-background);
   }
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     margin-bottom: 140px;
   }
-  @media screen and (min-width: 1280px){
+  @media screen and (min-width: 1280px) {
     margin-bottom: 160px;
   }
-
 `;

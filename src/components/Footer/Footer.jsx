@@ -18,7 +18,12 @@ const Footer = () => {
         <FooterContentWrapper>
           <FooterMediaNavWrapper>
             <FooterMedia>
-              <Logo />
+              <Logo
+                customStyle={{
+                  color: 'var(--white-color)',
+                  fill: 'var(--white-color)',
+                }}
+              />
               <FooterMediaList />
             </FooterMedia>
             <FooterNav />

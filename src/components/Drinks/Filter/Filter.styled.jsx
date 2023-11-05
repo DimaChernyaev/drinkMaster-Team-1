@@ -58,14 +58,14 @@ export const Styled_Input = styled.input`
   padding: 14px 24px 14px 24px;
   border-radius: 20em;
   background-color: transparent;
-  border: 1px solid var(--whitetwenty-color);
-  color: var(--white-color);
+  border: 1px solid var(--filter-border);
+  color: var(--text-color);
   transition:
     border-color var(--transition),
     background-color var(--transition);
 
   &::placeholder {
-    color: var(--white-color);
+    color: var(--text-color);
   }
 
   &:hover {
@@ -176,7 +176,7 @@ export const CreatableSelectStyles = (maxHeight, minHeight, controlOption) => {
       fontSize: '14px',
       fontHeight: '1.56',
 
-      backgroundColor: `var(--blue-color)`,
+      backgroundColor: `var(--filter-background)`,
       border: 'none',
       borderRadius: '20px',
 
@@ -213,9 +213,9 @@ export const CreatableSelectStyles = (maxHeight, minHeight, controlOption) => {
       backgroundColor: 'transparent',
       color:
         controlOption === ''
-          ? `var(--white-color)`
+          ? `color: var(--text-color)`
           : isSelected
-          ? `var(--white-color)`
+          ? `color: var(--text-color)`
           : `var(--whitefourty-color)`,
       cursor: isDisabled ? 'not-allowed' : 'default',
       transition: `color var(--transition)`,

@@ -67,7 +67,7 @@ export const StyledField = styled(Field)`
   padding-top: 18px;
   padding-bottom: 18px;
   padding-left: 24px;
-  border: 1px solid var(--whitefifty-color);
+  border: 1px solid var(--white-fifty-color);
   background-color: rgba(243, 243, 243, 0);
   border-radius: 24px;
   color: var(--white-color);

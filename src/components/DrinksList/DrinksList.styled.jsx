@@ -125,7 +125,7 @@ export const ButtonSeeMore = styled.button`
   font-weight: 600;
   font-size: 14px;
   line-height: 1.28;
-  border: none;
+  border: 1px solid #161f37;
   outline: none;
   border-radius: 42px;
   background: var(--blue-color);
@@ -142,6 +142,7 @@ export const ButtonSeeMore = styled.button`
     transform: scale(1.05);
     background: var(--white-color);
     color: var(--blue-color);
+    border: 1px solid var(--filter-border);
   }
 `;
 

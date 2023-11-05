@@ -21,14 +21,17 @@ export const Preparation = styled.p`
   @media (max-width: 374px) {
     width: 300px;
   }
-  
+
   width: 335px;
-  color: var(--white-color);
+  color: var(--text-color);
   font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
   margin-bottom: 40px;
 
   @media (min-width: 768px) {
     width: 704px;
+    line-height: 1.37;
   }
 
   @media (min-width: 1280px) {

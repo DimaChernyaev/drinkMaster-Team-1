@@ -18,7 +18,7 @@ export const FooterStyledLink = styled(Link)`
   justify-content: center;
   width: 44px;
   height: 44px;
-  border: solid 1px var(--whitefourty-color);
+  border: solid 1px rgba(243, 243, 243, 0.5);
   border-radius: 10px;
   transition:
     transform var(--transition),

@@ -44,7 +44,7 @@ export const UserLogoText = styled.p`
   font-size: 14px;
   font-weight: 500;
   line-height: 1.3;
-  color: var(--white-color);
+  color: var(--header-color);
 `;
 
 export const StyledDesktopThemeTogler = styled.div`

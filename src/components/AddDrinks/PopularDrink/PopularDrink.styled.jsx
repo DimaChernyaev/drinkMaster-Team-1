@@ -18,7 +18,7 @@ export const PopularWrapper = styled.div`
   }
 `;
 export const PopularCoctailsTitle = styled.h4`
-  color: var(--white-color);
+  color: var(--text-color);
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -63,7 +63,7 @@ export const PopularCoctailsText = styled.div`
   gap: 8px;
 `;
 export const PopularCoctailsName = styled.p`
-  color: var(--white-color);
+  color: var(--text-color);
   font-size: 16px;
   font-weight: 500;
   line-height: 22px;

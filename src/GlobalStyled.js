@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
 
     :root {
     --white-color: #F3F3F3;
-    --whitefifty-color: rgba(243, 243, 243, 0.5);
+    --white-fifty-color: rgba(243, 243, 243, 0.5);
     --whitefourty-color: rgba(243, 243, 243, 0.4);
     --whitetwenty-color: rgba(243, 243, 243, 0.2);
     --whiteeighty-color: #F3F3F380;
@@ -41,8 +41,7 @@ const GlobalStyle = createGlobalStyle`
     --bluefifty-color: rgba(22, 31, 55, 0.5);
     --hovergreen-color: rgba(64, 112, 205, 0.5);
     --welcomepagetext-color: #FAFAFA;
-    --mainbackground-color: #0A0A11;
-    --buttoncancel-color: #434D67;
+    --mainbackground-color: #0A0A11;   
     --red-color: rgba(218, 20, 20, 0.5);
     --green-color: rgba(60, 188, 129, 0.5);
     --errorred-color: #da1414;
@@ -50,32 +49,65 @@ const GlobalStyle = createGlobalStyle`
 
     --transition: 300ms ease-in; 
   }
-
   
-  html {
-
-    --background-color: var(--mainbackground-color);
+  html {    
     /* dark theme */
   &[data-theme='dark'] {
     --background-color: var(--mainbackground-color);
-    --text-color: #F3F3F3;
-    --whitefifty-color: rgba(243, 243, 243, 0.5);
-    --hovergreen-color: rgba(64, 112, 205, 0.5);
+    --background-image-color: var(--bluefifty-color);
+    --background-image-color-hover: var(--blue-color);
+    --background-color-ingredients: transparent;
+    --btn-add-drink-color: var(--blue-color);
+    --btn-add-drink-background: var(--white-color);
+    --buttoncancel-color: #434D67;
+    --error-text: rgba(243, 243, 243, 0.1);
     --fill-paginator: rgba(243, 243, 243, 0.30);
+    --fill-paginator-hover: var(--white-color);
+    --filter-background: var(--blue-color);      
+    --filter-border: rgba(243, 243, 243, 0.20);
+    --filter-text: var(--white-color); 
+    --form-add-drink-text: var(--white-color);
+    --hovergreen-color: rgba(64, 112, 205, 0.5);    
+    --header-color: #F3F3F3; 
+    --ingridientTitle-color: rgba(243, 243, 243, 0.50);
+    --navigation-border-color: rgba(243, 243, 243, 0.20);
+    --placeholder-color: rgba(243, 243, 243, 0.50);
+    --subTitle-color: rgba(243, 243, 243, 0.50);
+    --text-color: #F3F3F3;     
+    --whitefifty-color: rgba(243, 243, 243, 0.5);
   }
+
+  
 
   &[data-theme='light'] {
-    --background-color: var( --white-color);
-    --text-color: #0A0A11;
-    --whitefifty-color: rgba(10, 10, 17, 0.5);
-    --hovergreen-color: rgba(64, 112, 205, 1);
+    --background-color: var(--white-color);
+    --background-image-color: var(--blue-color);
+    --background-image-color-hover: var(--bluefifty-color);
+    --background-color-ingredients: red;
+    --btn-add-drink-color: var(--white-color);
+    --btn-add-drink-background: var(--blue-color);
+    --buttoncancel-color: #F3F3F3;
+    --error-text: rgba(64, 112, 205, 0.10);
     --fill-paginator: rgba(10, 10, 17, 0.30);
+    --fill-paginator-hover: #4070CD;
+    --filter-background: #FFF;     
+    --filter-border: rgba(10, 10, 17, 0.20);
+    --filter-text: #0A0A11;
+    --form-add-drink-text: var(--mainbackground-color);  
+    --hovergreen-color: rgba(64, 112, 205, 1);    
+    --header-color: var(--blue-color);
+    --ingridientTitle-color:  rgba(10, 10, 17, 0.50);
+    --navigation-border-color: rgba(22, 31, 55, 0.20);
+    --placeholder-color: rgba(10, 10, 17, 0.5);
+    --subTitle-color: rgba(22, 31, 55, 0.50);
+    --text-color: #0A0A11;
+    --whitefifty-color: rgba(10, 10, 17, 0.5);    
   }
-
+ 
   body {
     background-color: var(--background-color);
     font-family: 'Manrope', sans-serif;
-    color: var(--white-color);
+    color: var(--text-color);
     word-wrap: break-word;
     line-height: 1.2;
   }

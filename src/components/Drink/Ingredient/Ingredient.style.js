@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const IngredientItem = styled.li`
-
-
   div {
     display: flex;
     justify-content: space-between;
@@ -16,12 +14,12 @@ export const IngredientItem = styled.li`
 
   p {
     font-size: 14px;
-    color:  var(--white-color);
+    color: var(--text-color);
   }
 
   span {
     font-size: 14px;
-    color: var(--whitefifty-color);
+    color: var(--ingridientTitle-color);
   }
 
   @media (min-width: 768px) {
@@ -32,7 +30,6 @@ export const IngredientItem = styled.li`
     img {
       width: 175px;
       height: 175px;
-      
     }
     p {
       font-size: 18px;
@@ -46,16 +43,15 @@ export const IngredientItem = styled.li`
 
 export const ImageThumb = styled.div`
   margin-bottom: 8px;
-border-radius:8px;
+  border-radius: 8px;
   width: 157px;
   height: 157px;
   padding: 25px;
-  background-color:  var(--blue-color);
+  background-color: var(--blue-color);
 
   @media (min-width: 768px) {
     width: 220px;
     height: 220px;
     padding: 22px;
-    
   }
 `;

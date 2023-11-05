@@ -41,7 +41,12 @@ const Header = () => {
     <HeaderEl>
       <Container>
         <HeaderContainer>
-          <Logo />
+          <Logo
+            customStyle={{
+              color: 'var(--header-color)',
+              fill: 'var(--header-color)',
+            }}
+          />
           {width >= 1280 && <Navigation />}
           <UserLogo />
           {width < 1280 && <BurgerBtn />}

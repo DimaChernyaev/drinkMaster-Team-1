@@ -27,15 +27,19 @@ export const StyledLink = styled(NavLink)`
   font-weight: 500;
   text-decoration: none;
   border-radius: 40px;
-  border: 1px solid var(--whitetwenty-color);
+  border: 1px solid var(--navigation-border-color);
   padding: 8px 16px;
   background-color: transparent;
-  transition: background-color var(--transition);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
   &.active {
     background-color: var(--blue-color);
+    color: var(--white-color);
   }
   &:hover,
   &:focus {
     background-color: var(--blue-color);
+    color: var(--white-color);
   }
 `;

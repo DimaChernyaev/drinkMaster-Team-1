@@ -26,6 +26,7 @@ export const IngredientsWrapper = styled.div`
     width: 540px;
   }
 `;
+
 export const ControlWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -33,6 +34,7 @@ export const ControlWrapper = styled.div`
   width: 100%;
   margin-bottom: 16px;
 `;
+
 export const IngredientsTitle = styled.h3`
   font-size: 28px;
   @media (min-width: 768px) {
@@ -48,11 +50,11 @@ export const Controls = styled.div`
   width: 100px;
   height: 38px;
   border-radius: 200px;
-  border: 1px solid var(--whitefifty-color);
+  border: 1px solid var(--placeholder-color);
 `;
 
 export const ControlMinuse = styled(MinuseSVG)`
-  stroke: var(--white-color);
+  stroke: var(--text-color);
 `;
 
 export const ControlsButton = styled.button`
@@ -102,13 +104,13 @@ export const IngredientsSelect = ({ options, ...props }) => {
           padding: '6px 16px',
           backgroundColor: 'transparent',
           border: state.isFocused
-            ? `1px solid var(--white-color)`
+            ? `1px solid var(--text-color)`
             : `1px solid var(--whitefifty-color)`,
           boxShadow: state.isFocused ? 'none' : 'none',
           borderRadius: '200px',
           transition: `border-color var(--transition)`,
           '&:hover': {
-            borderColor: `var(--white-color)`,
+            borderColor: `var(--text-color)`,
           },
           '@media (min-width: 768px)': {
             padding: '9px 19px',
@@ -118,20 +120,20 @@ export const IngredientsSelect = ({ options, ...props }) => {
           ...provided,
           margin: 0,
           color: state.isFocused
-            ? `var(--white-color)`
+            ? `var(--text-color)`
             : `var(--whitefifty-color)`,
         }),
         option: (provided) => ({
           ...provided,
           padding: '14px',
           color: `var(--whitefifty-color)`,
-          background: `var(--blue-color)`,
+          background: `var(--filter-background)`,
           borderRadius: '20px',
           overflow: 'hidden',
           cursor: 'pointer',
           transition: `color var(--transition)`,
           '&:hover': {
-            color: `var(--white-color)`,
+            color: `var(--text-color)`,
           },
         }),
         input: (provided) => ({
@@ -139,12 +141,12 @@ export const IngredientsSelect = ({ options, ...props }) => {
           padding: 0,
           margin: 0,
           border: 'none',
-          color: `var(--white-color)`,
+          color: `var(--text-color)`,
         }),
         menu: (provided) => ({
           ...provided,
           padding: '14px',
-          background: `var(--blue-color)`,
+          background: `var(--filter-background)`,
           borderRadius: '20px',
           overflow: 'hidden',
         }),
@@ -162,7 +164,7 @@ export const IngredientsSelect = ({ options, ...props }) => {
           ...provided,
           color: state.isFocused
             ? `var(--whitefifty-color)`
-            : `var(--white-color)`,
+            : `var(--text-color)`,
         }),
         valueContainer: (provided) => ({
           ...provided,
@@ -197,16 +199,18 @@ export const IngredientsDeleteButton = styled.button`
 `;
 
 export const ControlPluse = styled(PlusSVG)`
-  stroke: var(--white-color);
+  stroke: var(--text-color);
 `;
+
 export const IngredientsDelete = styled(DeleteSVG)`
   stroke: var(--whitefifty-color);
   transition: stroke var(--transition);
 
   &:hover {
-    stroke: var(--white-color);
+    stroke: var(--text-color);
   }
 `;
+
 export const IngredientsInput = styled.input`
   width: 100px;
   padding: 15px 24px;
@@ -215,6 +219,7 @@ export const IngredientsInput = styled.input`
   line-height: 18px;
   color: var(--whitefifty-color);
   background-color: transparent;
+  // background-color: var(--background-color-ingredients);
 
   border-radius: 200px;
   border: 1px solid var(--whitefifty-color);
@@ -222,10 +227,10 @@ export const IngredientsInput = styled.input`
   transition: border-color var(--transition);
 
   &:hover {
-    border-color: var(--white-color);
+    border-color: var(--text-color);
   }
   &:focus {
-    color: var(--white-color);
+    color: var(--text-color);
   }
   @media (min-width: 768px) {
     min-width: 150px;

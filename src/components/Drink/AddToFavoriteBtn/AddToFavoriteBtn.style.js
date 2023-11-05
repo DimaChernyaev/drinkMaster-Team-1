@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-
-
-@media (max-width: 374px) {
-      margin-left: 40px;
-      
-    }
+  @media (max-width: 374px) {
+    margin-left: 40px;
+  }
 
   width: 222px;
-  color: var(--blue-color);
-  background-color: var(--white-color);
+  color: var(--btn-add-drink-color);
+  background-color: var(--btn-add-drink-background);
   border-radius: 42px;
   border-color: transparent;
   font-size: 14px;
@@ -22,16 +19,15 @@ export const Button = styled.button`
     background-color var(--transition),
     color var(--transition);
 
-
-
-  &:hover {
-    background-color: var(--blue-color);
-    color: var(--white-color);
+  &:hover,
+  &:focus {
+    background: var(--btn-add-drink-color);
+    color: var(--btn-add-drink-background);
   }
 
   &:active {
-    background-color: var(--blue-color);
-    color: var(--white-color);
+    babackground: var(--btn-add-drink-color);
+    color: var(--btn-add-drink-background);
     box-shadow: 0 0 10px var(--whitefifty-color);
   }
 

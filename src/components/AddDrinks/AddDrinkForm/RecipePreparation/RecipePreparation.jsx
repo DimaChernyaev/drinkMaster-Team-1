@@ -32,7 +32,7 @@ const RecipePreparation = ({
           $isFocusedDescription={$isFocusedDescription}
           $hasValueDescription={$hasValueDescription}
         >
-          Enter the recipe
+          {/* Enter the recipe */}
         </RecipeLabel>
         <RecipeTextarea
           id="instructions"
@@ -48,7 +48,8 @@ const RecipePreparation = ({
           }}
           onFocus={() => setIsFocusedDescription(true)}
           value={values.instructions}
-          placeholder=" "
+          placeholder="Enter the recipe"
+          // style={{ color: 'red' }}
         />
         {touched.instructions && errors.instructions ? (
           <FormError>{errors.instructions}</FormError>

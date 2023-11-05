@@ -33,7 +33,7 @@ export const ImgMain = styled.img`
 `;
 
 export const Title = styled.h1`
-  color: var(--white-color);
+  color: var(--text-color);
   font-size: 32px;
   font-style: normal;
   font-weight: 600;
@@ -62,7 +62,7 @@ export const Title = styled.h1`
 `;
 
 export const Text = styled.p`
-  color: var(--white-color);
+  color: var(--text-color);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -70,19 +70,17 @@ export const Text = styled.p`
   padding-bottom: 32px;
 
   @media screen and (min-width: 768px) {
-    color: var(--white-color);
     font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
+    // font-style: normal;
+    // font-weight: 400;
     line-height: 20px;
     padding-bottom: 48px;
   }
 
   @media screen and (min-width: 1280px) {
-    color: var(--white-color);
     font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
+    // font-style: normal;
+    // font-weight: 400;
     line-height: 24px;
     margin: 0;
     padding-bottom: 40px;
@@ -91,8 +89,10 @@ export const Text = styled.p`
 
 export const BtnAddDrinks = styled(Link)`
   border-radius: 42px;
-  background: var(--white-color);
-  color: var(--blue-color);
+  background: var(--btn-add-drink-background);
+  color: var(--btn-add-drink-color);
+  font-style: normal;
+  font-weight: 600;
   padding: 18px 44px;
   cursor: pointer;
   margin-bottom: 47px;
@@ -102,14 +102,14 @@ export const BtnAddDrinks = styled(Link)`
 
   &:hover,
   &:focus {
-    background: var(--blue-color);
-    color: var(--white-color);
+    background: var(--btn-add-drink-color);
+    color: var(--btn-add-drink-background);
   }
 
   @media screen and (min-width: 1280px) {
     border-radius: 42px;
-    background: var(--white-color);
-    color: var(--blue-color);
+    // background: var(--white-color);
+    // color: var(--blue-color);
     padding: 18px 44px;
     cursor: pointer;
   }

@@ -135,7 +135,7 @@ const DrinkDescriptionFields = ({
             <PlusSVG></PlusSVG>
           </ImageLabel>
         </ImageInputWrapper>
-        <p>Add image</p>
+        <p style={{ color: 'var(--white-color)' }}>Add image</p>
         {selectedImage && <ImageDrink src={selectedImage} alt="Selected" />}
         {touched.drinkThumb && errors.drinkThumb ? (
           <FormError>{errors.drinkThumb}</FormError>
@@ -165,7 +165,7 @@ const DrinkDescriptionFields = ({
             }}
             onFocus={() => setIsFocused(true)}
             value={values.drink}
-            placeholder=" "
+            // placeholder="Enter item title"
           />
           {touched.drink && errors.drink ? (
             <FormError>{errors.drink}</FormError>

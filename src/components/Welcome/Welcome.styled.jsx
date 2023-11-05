@@ -120,6 +120,7 @@ export const StyledTypography = styled(Typography)`
   line-height: 18px;
   text-transform: none;
   letter-spacing: -0.28px;
+  color: #fafafa;
 
   @media screen and (min-width: 768px) {
     font-size: 18px;

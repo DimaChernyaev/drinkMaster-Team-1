@@ -6,7 +6,6 @@ export const LogoLink = styled(Link)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: var(--white-color);
   gap: 8px;
   transition: transform var(--transition);
   &:hover,
@@ -24,5 +23,4 @@ export const LogoText = styled.p`
 export const LogoSVG = styled(LogoImg)`
   width: 28px;
   height: 28px;
-  fill: currentColor;
 `;

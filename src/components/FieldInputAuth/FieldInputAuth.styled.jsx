@@ -13,14 +13,14 @@ export const StyledField = styled(Field)`
         ? `var(--errorred-color)`
         : props.success === 'true'
         ? `var(--successgren-color)`
-        : `var(--whitefifty-color)`};
+        : `var(--white-fifty-color)`};
   background-color: rgba(243, 243, 243, 0);
   border-radius: 24px;
   color: var(--white-color);
   transition: border var(--transition);
 
   ::placeholder {
-    color: var(--whitefifty-color);
+    color: var(--white-fifty-color);
     font-size: 17px;
     font-style: normal;
     font-weight: 400;
@@ -30,7 +30,7 @@ export const StyledField = styled(Field)`
 
   :hover,
   :focus {
-    border: 1px solid var(--whitefifty-color);
+    border: 1px solid var(--white-fifty-color);
     ::placeholder {
       color: rgba(243, 243, 243);
     }

@@ -37,9 +37,11 @@ export const Card = styled.img`
 
 export const Text = styled.p`
   width: 205px;
-  color: var(--white-color);
+  color: var(--text-color);
   text-align: center;
   font-size: 14px;
+  font-family: Manrope;
+  font-style: normal;
   font-weight: 500;
   line-height: 1.28;
 

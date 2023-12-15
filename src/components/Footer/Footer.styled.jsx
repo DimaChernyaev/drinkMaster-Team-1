@@ -5,6 +5,7 @@ export const FooterEl = styled.footer`
   padding-bottom: 22px;
   border-top: 1px solid rgba(10, 10, 17, 0.5);
   background-color: var(--mainbackground-color);
+  
 `;
 
 export const FooterContentWrapper = styled.div`

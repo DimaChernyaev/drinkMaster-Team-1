@@ -49,8 +49,8 @@ const GlobalStyle = createGlobalStyle`
 
     --transition: 300ms ease-in; 
   }
-  
-  html {    
+
+      html {    
     /* dark theme */
   &[data-theme='dark'] {
     --background-color: var(--mainbackground-color);
@@ -76,8 +76,6 @@ const GlobalStyle = createGlobalStyle`
     --text-color: #F3F3F3;     
     --whitefifty-color: rgba(243, 243, 243, 0.5);
   }
-
-  
 
   &[data-theme='light'] {
     --background-color: var(--white-color);

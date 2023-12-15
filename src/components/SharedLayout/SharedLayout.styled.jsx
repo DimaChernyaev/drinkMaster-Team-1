@@ -40,20 +40,17 @@ export const StyledBlock = styled.div`
   z-index: -10;
 `;
 
-export const StyledBlockTwo = styled.div`
-  position: absolute;
-  display: flex;
-  z-index: -1;
-  top: 498px;
-  right: -470px;
-  width: 549px;
-  height: 543px;
-  border-radius: 550px;
-  background: rgba(64, 112, 205, 0.5);
-  filter: blur(104.854px);
-  z-index: -10;
-`;
+// export const StyledBlockTwo = styled.div`
+//   position: absolute;
+//   display: flex;
+//   z-index: -1;
+//   top: 498px;
+//   right: -470px;
+//   width: 549px;
+//   height: 543px;
+//   border-radius: 550px;
+//   background: rgba(64, 112, 205, 0.5);
+//   filter: blur(104.854px);
+//   z-index: -10;
+// `;
 
-export const Main = styled.main`
-  overflow: hidden;
-`;

@@ -10,17 +10,22 @@ import {
   PopularCoctailsName,
   PopularCoctailsDescription,
 } from './PopularDrink.styled';
+import LoaderDots from '../../Loader/LoaderDots';
 
 const PopularDrink = () => {
   const [popularCoctails, setPopularCoctails] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     const fetchPopularCoctails = async () => {
       try {
         const data = await getPopularCoctails();
         setPopularCoctails(data);
       } catch (error) {
         console.error('Error fetching drinks:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -30,26 +35,30 @@ const PopularDrink = () => {
   return (
     <>
       <PopularCoctailsTitle>PopularDrink</PopularCoctailsTitle>
-      <PopularWrapper>
-        {' '}
-        {popularCoctails
-          .slice(0, 4)
-          .map(({ drinkThumb, drink, description, _id }, index) => {
-            return (
-              <Link key={index} to={`/drink/${_id}`}>
-                <PopularCoctailsWrapper>
-                  <PopularCoctailsImage src={drinkThumb} alt={drink} />
-                  <PopularCoctailsText>
-                    <PopularCoctailsName>{drink}</PopularCoctailsName>
-                    <PopularCoctailsDescription>
-                      {description}
-                    </PopularCoctailsDescription>
-                  </PopularCoctailsText>
-                </PopularCoctailsWrapper>
-              </Link>
-            );
-          })}
-      </PopularWrapper>
+      {isLoading ? (
+        <LoaderDots />
+      ) : (
+        <PopularWrapper>
+          {' '}
+          {popularCoctails
+            .slice(0, 4)
+            .map(({ drinkThumb, drink, description, _id }, index) => {
+              return (
+                <Link key={index} to={`/drink/${_id}`}>
+                  <PopularCoctailsWrapper>
+                    <PopularCoctailsImage src={drinkThumb} alt={drink} />
+                    <PopularCoctailsText>
+                      <PopularCoctailsName>{drink}</PopularCoctailsName>
+                      <PopularCoctailsDescription>
+                        {description}
+                      </PopularCoctailsDescription>
+                    </PopularCoctailsText>
+                  </PopularCoctailsWrapper>
+                </Link>
+              );
+            })}
+        </PopularWrapper>
+      )}
     </>
   );
 };

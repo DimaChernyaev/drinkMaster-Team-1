@@ -12,11 +12,13 @@ import Paginator from '../../components/Paginator/Paginator';
 import { Container } from '../FavoriteDrinksPage/FavoriteDrinksPage.styled';
 import PageTitle from '../../components/DefaultComponents/PageTitle/PageTitle';
 import DrinksListOwn from '../../components/DrinksList/DrinksListOwn';
+import LoaderDots from '../../components/Loader/LoaderDots';
 
 const MyDrinksPage = () => {
   const dispatch = useDispatch();
   const drinks = useSelector(selectOwnItems);
   const error = useSelector(selectError);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Pagination
   const [currentItems, setCurrentItems] = useState([]);
@@ -25,7 +27,14 @@ const MyDrinksPage = () => {
   const itemsPerPage = useItemsPerPage();
 
   useEffect(() => {
-    dispatch(fetchOwn());
+    setIsLoading(true);
+    try {
+      dispatch(fetchOwn());
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
   }, [dispatch]);
 
   // Pagination
@@ -45,8 +54,14 @@ const MyDrinksPage = () => {
   return (
     <Container>
       <PageTitle title="My drinks" />
-      <DrinksListOwn drinks={currentItems} />
-      <Paginator handlePageClick={handlePageClick} />
+      {isLoading ? (
+        <LoaderDots />
+      ) : (
+        <>
+          <DrinksListOwn drinks={currentItems} />
+          <Paginator handlePageClick={handlePageClick} />
+        </>
+      )}
       {error && <ErrorPage />}
     </Container>
   );

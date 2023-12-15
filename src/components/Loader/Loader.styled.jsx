@@ -2,11 +2,6 @@ import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import { ReactComponent as LoaderIcon } from '../../assets/images/loader.svg';
 
-export const Loader = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
 const bounce = keyframes`
   from, 20%, 53%, 80%, to {
     transform: translate3d(0,0,0);
@@ -31,12 +26,14 @@ export const LoaderContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 20px;
-  width: 100%;
-  height: 100%;
-  padding: 80px 0;
+  margin-top: 80px;
+  margin-bottom: 80px;
 `;
 
 export const LoaderSVG = styled(LoaderIcon)`
+  fill: var(--text-color);
+  color: var(--text-color);
+  stroke: var(--text-color);
   animation: ${bounce} 1s ease infinite;
 
   @media (min-width: 375px) {
@@ -53,7 +50,7 @@ export const LoaderSVG = styled(LoaderIcon)`
 `;
 
 export const LoaderText = styled.p`
-  color: var(--white-color);
+  color: var(--text-color);
   font-size: 24px;
   font-weight: 600;
   text-align: center;

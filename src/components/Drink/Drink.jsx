@@ -4,16 +4,12 @@ import { DrinkPageHero } from './DrinkPageHero/DrinkPageHero';
 import { RecipePreparation } from './RecipePreparation/RecipePreparation';
 import { useEffect, useState } from 'react';
 import { getCurrentCoctail } from '../../helpers/API/operationsDrinks';
-import { ThreeDots } from 'react-loader-spinner';
-import { Loader } from '../Loader/Loader.styled';
+import LoaderDots from '../Loader/LoaderDots';
 
 const Drink = () => {
   const [coctailData, setCoctailData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const { drinkId } = useParams();
-
-  // console.log(drinkId);
-  // console.log(coctailData)
 
   useEffect(() => {
     setIsLoading(true);
@@ -32,9 +28,7 @@ const Drink = () => {
   }, [drinkId]);
 
   return isLoading ? (
-    <Loader>
-      <ThreeDots color="#f3f3f3" width="80" />
-    </Loader>
+    <LoaderDots />
   ) : (
     <>
       <DrinkPageHero coctailInfo={coctailData} />

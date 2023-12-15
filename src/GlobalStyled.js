@@ -37,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
     --whitefourty-color: rgba(243, 243, 243, 0.4);
     --whitetwenty-color: rgba(243, 243, 243, 0.2);
     --whiteeighty-color: #F3F3F380;
+    --blacktwenty-color: rgba(0, 0, 0, 0.2);
     --blue-color: #161F37;
     --bluefifty-color: rgba(22, 31, 55, 0.5);
     --hovergreen-color: rgba(64, 112, 205, 0.5);
@@ -50,9 +51,9 @@ const GlobalStyle = createGlobalStyle`
     --transition: 300ms ease-in; 
   }
 
-      html {    
-    /* dark theme */
-  &[data-theme='dark'] {
+  html {
+    
+        &[data-theme='dark'] {
     --background-color: var(--mainbackground-color);
     --background-image-color: var(--bluefifty-color);
     --background-image-color-hover: var(--blue-color);
@@ -68,23 +69,24 @@ const GlobalStyle = createGlobalStyle`
     --filter-text: var(--white-color); 
     --form-add-drink-text: var(--white-color);
     --hovergreen-color: rgba(64, 112, 205, 0.5);    
-    --header-color: #F3F3F3; 
+    --header-color: var(--white-color); 
     --ingridientTitle-color: rgba(243, 243, 243, 0.50);
     --navigation-border-color: rgba(243, 243, 243, 0.20);
     --placeholder-color: rgba(243, 243, 243, 0.50);
     --subTitle-color: rgba(243, 243, 243, 0.50);
-    --text-color: #F3F3F3;     
+    --text-color: var(--white-color);     
     --whitefifty-color: rgba(243, 243, 243, 0.5);
+    --header-line: var(--whitetwenty-color);
   }
 
-  &[data-theme='light'] {
+    &[data-theme='light'] {
     --background-color: var(--white-color);
     --background-image-color: var(--blue-color);
     --background-image-color-hover: var(--bluefifty-color);
     --background-color-ingredients: red;
     --btn-add-drink-color: var(--white-color);
     --btn-add-drink-background: var(--blue-color);
-    --buttoncancel-color: #F3F3F3;
+    --buttoncancel-color: var(--white-color);
     --error-text: rgba(64, 112, 205, 0.10);
     --fill-paginator: rgba(10, 10, 17, 0.30);
     --fill-paginator-hover: #4070CD;
@@ -99,10 +101,13 @@ const GlobalStyle = createGlobalStyle`
     --placeholder-color: rgba(10, 10, 17, 0.5);
     --subTitle-color: rgba(22, 31, 55, 0.50);
     --text-color: #0A0A11;
-    --whitefifty-color: rgba(10, 10, 17, 0.5);    
+    --whitefifty-color: rgba(10, 10, 17, 0.5);
+    --header-line: var(--blacktwenty-color); 
   }
+}
  
   body {
+    margin: 0;
     background-color: var(--background-color);
     font-family: 'Manrope', sans-serif;
     color: var(--text-color);

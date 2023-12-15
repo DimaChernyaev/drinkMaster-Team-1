@@ -4,7 +4,7 @@ export const HeaderEl = styled.header`
   position: relative;
   padding-top: 22px;
   padding-bottom: 22px;
-  border-bottom: 1px solid var(--whitetwenty-color);
+  border-bottom: 1px solid var(--header-line);
   z-index: 150;
 `;
 
